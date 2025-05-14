@@ -268,12 +268,12 @@ class AppNavigationSuiteScope internal constructor(
 fun AppNavigationBarPreview() {
     val items = listOf("For you", "Saved", "Interests")
     val icons = listOf(
-        AppIcons.UpcomingBorder,
+        AppIcons.StoreBorder,
         AppIcons.BookmarksBorder,
         AppIcons.Grid3x3,
     )
     val selectedIcons = listOf(
-        AppIcons.Upcoming,
+        AppIcons.Store,
         AppIcons.Bookmarks,
         AppIcons.Grid3x3,
     )
@@ -308,12 +308,12 @@ fun AppNavigationBarPreview() {
 fun AppNavigationRailPreview() {
     val items = listOf("For you", "Saved", "Interests")
     val icons = listOf(
-        AppIcons.UpcomingBorder,
+        AppIcons.StoreBorder,
         AppIcons.BookmarksBorder,
         AppIcons.Grid3x3,
     )
     val selectedIcons = listOf(
-        AppIcons.Upcoming,
+        AppIcons.Store,
         AppIcons.Bookmarks,
         AppIcons.Grid3x3,
     )

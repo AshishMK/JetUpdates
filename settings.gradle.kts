@@ -36,6 +36,9 @@ include(":core:designsystem")
 include(":core:screenshot-testing")
 include(":ui-test-hilt-manifest")
 include(":core:testing")
+include(":core:ui")
+include(":feature:store")
+include(":core:model")
 
 
 check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
