@@ -110,6 +110,7 @@ gradlePlugin {
             id = libs.plugins.jetupdates.android.lint.get().pluginId
             implementationClass = "AndroidLintConventionPlugin"
         }
+
         register("jvmLibrary") {
             id = libs.plugins.jetupdates.jvm.library.get().pluginId
             implementationClass = "JvmLibraryConventionPlugin"

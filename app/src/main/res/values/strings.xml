@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JetUpdates</string>
+    <string name="feature_settings_top_app_bar_action_icon_description">Settings</string>
+    <string name="feature_settings_top_app_bar_navigation_icon_description">Search</string>
 </resources>
