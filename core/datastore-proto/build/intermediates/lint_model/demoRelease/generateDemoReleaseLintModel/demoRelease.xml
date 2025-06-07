@@ -1,0 +1,31 @@
+<variant
+    name="demoRelease"
+    package="com.demo.jetupdates.core.datastore.proto"
+    minSdkVersion="21"
+    targetSdkVersion="35"
+    mergedManifest="build/intermediates/merged_manifest/demoRelease/processDemoReleaseManifest/AndroidManifest.xml"
+    manifestMergeReport="build/outputs/logs/manifest-merger-demo-release-report.txt"
+    proguardFiles="build/intermediates/default_proguard_files/global/proguard-android.txt-8.9.0"
+    partialResultsDir="build/intermediates/lint_partial_results/demoRelease/lintAnalyzeDemoRelease/out">
+  <buildFeatures
+      coreLibraryDesugaring="true"
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src/main/AndroidManifest.xml"
+        javaDirectories="src/main/java:src/demo/java:src/release/java:src/demoRelease/java:build/generated/source/proto/demoRelease/java:src/main/kotlin:src/demo/kotlin:src/release/kotlin:src/demoRelease/kotlin:build/generated/source/proto/demoRelease/kotlin"
+        resDirectories="src/main/res:src/demo/res:src/release/res:src/demoRelease/res"
+        assetsDirectories="src/main/assets:src/demo/assets:src/release/assets:src/demoRelease/assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      classOutputs="build/intermediates/javac/demoRelease/compileDemoReleaseJavaWithJavac/classes:build/tmp/kotlin-classes/demoRelease:build/intermediates/compile_r_class_jar/demoRelease/generateDemoReleaseRFile/R.jar"
+      type="MAIN"
+      applicationId="com.demo.jetupdates.core.datastore.proto"
+      generatedSourceFolders="build/generated/source/proto/demoRelease/java:build/generated/source/proto/demoRelease/kotlin:build/generated/ap_generated_sources/demoRelease/out"
+      desugaredMethodsFiles="/Users/ashish_nautiyal/.gradle/caches/8.13/transforms/1a0146441cb8f3f0fa59be4e2742b2cf/transformed/desugar_jdk_libs_configuration-2.1.4-desugar-lint.txt:/Users/ashish_nautiyal/.gradle/caches/8.13/transforms/f1b1d32e7b3d1364170bc4630b4bc6ec/transformed/D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>
