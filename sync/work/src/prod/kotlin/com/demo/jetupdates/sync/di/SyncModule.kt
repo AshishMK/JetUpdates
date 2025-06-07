@@ -17,24 +17,17 @@
 package com.demo.jetupdates.sync.di
 
 import com.demo.jetupdates.core.data.util.SyncManager
-import com.demo.jetupdates.sync.status.FirebaseSyncSubscriber
 import com.demo.jetupdates.sync.status.StubSyncSubscriber
 import com.demo.jetupdates.sync.status.SyncSubscriber
 import com.demo.jetupdates.sync.status.WorkManagerSyncManager
-import com.google.firebase.Firebase
-import com.google.firebase.messaging.FirebaseMessaging
-import com.google.firebase.messaging.messaging
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class SyncModule {
-
 
     @Binds
     internal abstract fun bindsSyncStatusMonitor(
