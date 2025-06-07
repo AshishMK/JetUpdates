@@ -18,7 +18,6 @@ package com.demo.jetupdates.core.network.di
 
 import com.demo.jetupdates.core.network.AppNetworkDataSource
 import com.demo.jetupdates.core.network.demo.DemoAppNetworkDataSource
-import com.demo.jetupdates.core.network.retrofit.RetrofitAppNetwork
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

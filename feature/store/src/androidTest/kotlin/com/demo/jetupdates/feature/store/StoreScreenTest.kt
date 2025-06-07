@@ -128,7 +128,7 @@ class StoreScreenTest {
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
                     onDeepLinkOpened = {},
-                    showCategoryList = false,
+                    showCategoryList = true,
                     categoryActionClicked = {},
                 )
             }
