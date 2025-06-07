@@ -1,11 +1,31 @@
-import com.demo.jetupdates.NiaBuildType
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import com.demo.jetupdates.AppBuildType
 
 plugins {
     alias(libs.plugins.jetupdates.android.application)
     alias(libs.plugins.jetupdates.android.application.compose)
     alias(libs.plugins.jetupdates.android.application.flavors)
     alias(libs.plugins.jetupdates.hilt)
+    alias(libs.plugins.jetupdates.android.application.jacoco)
+    alias(libs.plugins.baselineprofile)
     alias(libs.plugins.kotlin.serialization)
+
+    id("com.google.android.gms.oss-licenses-plugin")
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -16,7 +36,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "com.demo.jetupdates.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
     }
 
@@ -29,11 +49,11 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = NiaBuildType.DEBUG.applicationIdSuffix
+            applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
         }
         release {
             isMinifyEnabled = true
-            applicationIdSuffix = NiaBuildType.RELEASE.applicationIdSuffix
+            applicationIdSuffix = AppBuildType.RELEASE.applicationIdSuffix
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
 
             // To publish on the Play store a private signing key is required, but to allow anyone
@@ -41,7 +61,7 @@ android {
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
             signingConfig = signingConfigs.named("debug").get()
             // Ensure Baseline Profile is fresh for release builds.
-          //  baselineProfile.automaticGenerationDuringBuild = true
+            baselineProfile.automaticGenerationDuringBuild = true
         }
     }
 
@@ -62,6 +82,11 @@ dependencies {
 
     implementation(projects.core.ui)
     implementation(projects.feature.store)
+    implementation(projects.core.common)
+    implementation(projects.core.data)
+    implementation(projects.sync.work)
+    implementation(projects.core.data)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -86,10 +111,40 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
 
+
+
+
     ksp(libs.hilt.compiler)
     debugImplementation(libs.androidx.compose.ui.testManifest)
     debugImplementation(projects.uiTestHiltManifest)
 
     kspTest(libs.hilt.compiler)
+    testImplementation(libs.hilt.android.testing)
+    testImplementation(projects.core.dataTest)
+    testDemoImplementation(projects.core.screenshotTesting)
+    testDemoImplementation(libs.robolectric)
+    testDemoImplementation(libs.roborazzi)
+    testImplementation(projects.sync.syncTest)
+    testImplementation(libs.kotlin.test)
 
+    androidTestImplementation(libs.androidx.compose.ui.test)
+    androidTestImplementation(projects.core.dataTest)
+    androidTestImplementation(projects.core.testing)
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+
+    baselineProfile(projects.benchmarks)
+}
+
+baselineProfile {
+    // Don't build on every iteration of a full assemble.
+    // Instead enable generation directly for the release build variant.
+    automaticGenerationDuringBuild = false
+
+    // Make use of Dex Layout Optimizations via Startup Profiles
+    dexLayoutOptimization = true
+}
+
+dependencyGuard {
+    configuration("prodReleaseRuntimeClasspath")
 }

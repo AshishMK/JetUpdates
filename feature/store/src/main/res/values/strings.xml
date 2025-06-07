@@ -19,7 +19,7 @@
     <string name="feature_store_done">Done</string>
     <string name="feature_store_loading">Loading for you…</string>
     <string name="feature_store_navigate_up">Navigate up</string>
-    <string name="feature_store_onboarding_guidance_title">What are you interested in?</string>
-    <string name="feature_store_onboarding_guidance_subtitle">Updates from topics you follow will appear here. Follow some things to get started.</string>
+    <string name="feature_store_onboarding_guidance_title">Vibe. Style. Repeat</string>
+    <string name="feature_store_onboarding_guidance_subtitle">Your personalized lifestyle updates will show up here. Follow your favorite sections to begin!</string>
 
 </resources>

@@ -16,39 +16,34 @@
 
 package com.demo.jetupdates
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
-class MainActivityViewModel @Inject constructor(
-) : ViewModel() {
-
-}
+class MainActivityViewModel @Inject constructor() : ViewModel()
 
 sealed interface MainActivityUiState {
+
     data object Loading : MainActivityUiState
 
-/*    data class Success(val userData: UserData) : MainActivityUiState {
-        override val shouldDisableDynamicTheming = !userData.useDynamicColor
+    /*    data class Success(val userData: UserData) : MainActivityUiState {
+            override val shouldDisableDynamicTheming = !userData.useDynamicColor
 
-        override val shouldUseAndroidTheme: Boolean = when (userData.themeBrand) {
-            ThemeBrand.DEFAULT -> false
-            ThemeBrand.ANDROID -> true
-        }
-
-        override fun shouldUseDarkTheme(isSystemDarkTheme: Boolean) =
-            when (userData.darkThemeConfig) {
-                DarkThemeConfig.FOLLOW_SYSTEM -> isSystemDarkTheme
-                DarkThemeConfig.LIGHT -> false
-                DarkThemeConfig.DARK -> true
+            override val shouldUseAndroidTheme: Boolean = when (userData.themeBrand) {
+                ThemeBrand.DEFAULT -> false
+                ThemeBrand.ANDROID -> true
             }
-    }*/
+
+            override fun shouldUseDarkTheme(isSystemDarkTheme: Boolean) =
+                when (userData.darkThemeConfig) {
+                    DarkThemeConfig.FOLLOW_SYSTEM -> isSystemDarkTheme
+                    DarkThemeConfig.LIGHT -> false
+                    DarkThemeConfig.DARK -> true
+                }
+        }*/
 
     /**
      * Returns `true` if the state wasn't loaded yet and it should keep showing the splash screen.

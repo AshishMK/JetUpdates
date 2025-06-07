@@ -30,7 +30,7 @@ import org.jetbrains.uast.UQualifiedReferenceExpression
 
 /**
  * A detector that checks for incorrect usages of Compose Material APIs over equivalents in
- * the Now in Android design system module.
+ * the JU App design system module.
  */
 class DesignSystemDetector : Detector(), Detector.UastScanner {
 
@@ -48,7 +48,7 @@ class DesignSystemDetector : Detector(), Detector.UastScanner {
                     context,
                     node,
                     name,
-                    preferredName
+                    preferredName,
                 )
             }
 
@@ -59,7 +59,7 @@ class DesignSystemDetector : Detector(), Detector.UastScanner {
                     context,
                     node,
                     name,
-                    preferredName
+                    preferredName,
                 )
             }
         }

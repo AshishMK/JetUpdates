@@ -19,9 +19,9 @@ package com.demo.jetupdates.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.demo.jetupdates.feature.store.navigation.StoreBaseRoute
+import com.demo.jetupdates.feature.store.navigation.storeSection
 import com.demo.jetupdates.ui.JUAppState
-import com.demo.jetupdates.feature.foryou.navigation.StoreBaseRoute
-import com.demo.jetupdates.feature.foryou.navigation.storeSection
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -34,6 +34,7 @@ import com.demo.jetupdates.feature.foryou.navigation.storeSection
 fun AppNavHost(
     appState: JUAppState,
     onShowSnackbar: suspend (String, String?) -> Boolean,
+    showCategoryList: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val navController = appState.navController
@@ -42,7 +43,6 @@ fun AppNavHost(
         startDestination = StoreBaseRoute,
         modifier = modifier,
     ) {
-        storeSection(onItemClick = {})
-
+        storeSection(onCategoryClick = {}, showCategoryList)
     }
 }

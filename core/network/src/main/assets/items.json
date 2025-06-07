@@ -1,0 +1,3574 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Face Cream",
+    "category": "Accessories",
+    "price": 212.35,
+    "description": "The luxury face cream is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-10-04T23:00:00.000Z",
+    "type": "1",
+    "stock": 159,
+    "categories": [
+      "1"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Portable Scented Candle Set",
+    "category": "Electronics",
+    "price": 349.16,
+    "description": "The portable scented candle set is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-10-06T23:00:00.000Z",
+    "type": "2",
+    "stock": 241,
+    "categories": [
+      "1",
+      "3",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Handcrafted Sneakers",
+    "category": "Accessories",
+    "price": 350.14,
+    "description": "The handcrafted sneakers is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 198,
+    "publishDate": "2022-09-27T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "2",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Stylish Travel Mug",
+    "category": "Toys",
+    "price": 111.6,
+    "description": "The stylish travel mug is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 26,
+    "publishDate": "2022-09-29T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Eco-Friendly Rain Jacket",
+    "category": "Accessories",
+    "price": 227.08,
+    "description": "The eco-friendly rain jacket is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-10-06T23:00:00.000Z",
+    "type": "3",
+    "stock": 115,
+    "categories": [
+      "2",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Nzhf/prod_42.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Nzdf/prod_41.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Innovative Sunglasses",
+    "category": "Furniture",
+    "price": 473.76,
+    "description": "The innovative sunglasses is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 128,
+    "publishDate": "2022-09-29T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "2",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzRf/prod_40.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzNf/prod_39.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Lightweight Backpack",
+    "category": "Furniture",
+    "price": 232.03,
+    "description": "The lightweight backpack is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 67,
+    "publishDate": "2022-10-05T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzJf/prod_38.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzFf/prod_37.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Innovative Blender",
+    "category": "Kitchenware",
+    "price": 475.46,
+    "description": "The innovative blender is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 328,
+    "publishDate": "2022-09-22T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "5",
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzBf/prod_36.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Njlf/prod_35.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Durable Backpack",
+    "category": "Toys",
+    "price": 336.52,
+    "description": "The durable backpack is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 215,
+    "publishDate": "2022-10-05T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "12",
+      "7",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Njhf/prod_34.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Njdf/prod_33.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Eco-Friendly Sunglasses",
+    "category": "Fitness",
+    "price": 154.02,
+    "description": "The eco-friendly sunglasses is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 140,
+    "publishDate": "2022-09-27T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "3",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjZf/prod_32.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjVf/prod_31.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Lightweight Yoga Mat",
+    "category": "Clothing",
+    "price": 292.76,
+    "description": "The lightweight yoga mat is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 26,
+    "publishDate": "2022-09-26T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "1",
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjRf/prod_30.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjNf/prod_29.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Modern Blender",
+    "category": "Furniture",
+    "price": 94.37,
+    "description": "The modern blender is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 288,
+    "publishDate": "2022-09-15T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "8",
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjJf/prod_28.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjFf/prod_27.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Premium Portable Charger",
+    "category": "Personal Care",
+    "price": 9.54,
+    "description": "The premium portable charger is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 59,
+    "publishDate": "2022-09-19T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "7",
+      "18",
+      "6"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjBf/prod_26.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTlf/prod_25.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Modern Fitness Tracker",
+    "category": "Books",
+    "price": 261.02,
+    "description": "The modern fitness tracker is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 469,
+    "publishDate": "2022-09-14T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "8",
+      "6"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NThf/prod_24.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTdf/prod_23.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Compact Sneakers",
+    "category": "Beauty",
+    "price": 418.09,
+    "description": "The compact sneakers is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 142,
+    "publishDate": "2022-09-12T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTZf/prod_22.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTVf/prod_21.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Modern Hair Dryer",
+    "category": "Footwear",
+    "price": 309.03,
+    "description": "The modern hair dryer is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 282,
+    "publishDate": "2022-09-12T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "12",
+      "2",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Multi-functional Standing Desk",
+    "category": "Books",
+    "price": 280.39,
+    "description": "The multi-functional standing desk is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 108,
+    "publishDate": "2022-09-06T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "8",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTFf/prod_18.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTBf/prod_17.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Premium Bluetooth Speaker",
+    "category": "Kitchenware",
+    "price": 191.29,
+    "description": "The premium bluetooth speaker is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 219,
+    "publishDate": "2022-09-05T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "5",
+      "7",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDlf/prod_16.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDhf/prod_15.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Classic Picture Frame",
+    "category": "Accessories",
+    "price": 454.92,
+    "description": "The classic picture frame is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 347,
+    "publishDate": "2022-09-13T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "12",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDdf/prod_14.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDZf/prod_13.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Luxury Sneakers",
+    "category": "Electronics",
+    "price": 437.46,
+    "description": "The luxury sneakers is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 450,
+    "publishDate": "2022-09-13T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "7",
+      "11",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDVf/prod_12.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDRf/prod_11.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Luxury Pet Bed",
+    "category": "Personal Care",
+    "price": 270.64,
+    "description": "The luxury pet bed is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-09-13T23:00:00.000Z",
+    "type": "3",
+    "stock": 462,
+    "categories": [
+      "7",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDNf/prod_10.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDJf/prod_9.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Durable Picture Frame",
+    "category": "Beauty",
+    "price": 247.59,
+    "description": "The durable picture frame is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 73,
+    "publishDate": "2022-09-13T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "3",
+      "8",
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDFf/prod_8.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDBf/prod_7.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Portable Standing Desk",
+    "category": "Beauty",
+    "price": 253.29,
+    "description": "The portable standing desk is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 416,
+    "publishDate": "2022-09-13T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "2",
+      "3",
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Mzlf/prod_6.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Mzhf/prod_5.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Classic Pet Bed",
+    "category": "Kitchenware",
+    "price": 12.87,
+    "description": "The classic pet bed is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 414,
+    "publishDate": "2022-09-13T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Mzdf/prod_4.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3MzZf/prod_3.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Eco-Friendly Noise-Canceling Earbuds",
+    "category": "Outdoors",
+    "price": 178.87,
+    "description": "The eco-friendly noise-canceling earbuds is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 449,
+    "publishDate": "2022-09-01T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "3",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3MzVf/prod_2.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3MzRf/prod_1.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Classic Scented Candle Set",
+    "category": "Books",
+    "price": 173.54,
+    "description": "The classic scented candle set is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-31T23:00:00.000Z",
+    "type": "2",
+    "stock": 303,
+    "categories": [
+      "19",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzZf/prod_100.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzVf/prod_99.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Premium Noise-Canceling Earbuds",
+    "category": "Electronics",
+    "price": 230.76,
+    "description": "The premium noise-canceling earbuds is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-09-06T23:00:00.000Z",
+    "type": "3",
+    "stock": 321,
+    "categories": [
+      "3",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzRf/prod_98.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzNf/prod_97.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Stylish LED Monitor",
+    "category": "Outdoors",
+    "price": 480.76,
+    "description": "The stylish led monitor is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 208,
+    "publishDate": "2022-09-07T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "3",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzJf/prod_96.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Luxury Noise-Canceling Earbuds",
+    "category": "Kitchenware",
+    "price": 416.15,
+    "description": "The luxury noise-canceling earbuds is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-31T23:00:00.000Z",
+    "type": "1",
+    "stock": 160,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzBf/prod_94.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4Mjlf/prod_93.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Innovative Garden Tools Set",
+    "category": "Toys",
+    "price": 164.14,
+    "description": "The innovative garden tools set is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-25T23:00:00.000Z",
+    "type": "2",
+    "stock": 227,
+    "categories": [
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4Mjhf/prod_92.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4Mjdf/prod_91.jpg"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Durable Travel Mug",
+    "category": "Toys",
+    "price": 425.29,
+    "description": "The durable travel mug is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 47,
+    "publishDate": "2022-08-23T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "6",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjZf/prod_90.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjVf/prod_89.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Eco-Friendly Desk Lamp",
+    "category": "Outdoors",
+    "price": 271.48,
+    "description": "The eco-friendly desk lamp is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 413,
+    "publishDate": "2022-08-23T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "2",
+      "8",
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjRf/prod_88.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjNf/prod_87.jpg"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Eco-Friendly Garden Tools Set",
+    "category": "Footwear",
+    "price": 151.7,
+    "description": "The eco-friendly garden tools set is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-21T23:00:00.000Z",
+    "type": "1",
+    "stock": 117,
+    "categories": [
+      "12",
+      "6"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjJf/prod_86.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjFf/prod_85.jpg"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Ergonomic Running Shorts",
+    "category": "Personal Care",
+    "price": 104.66,
+    "description": "The ergonomic running shorts is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-16T23:00:00.000Z",
+    "type": "1",
+    "stock": 362,
+    "categories": [
+      "7",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjBf/prod_84.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTlf/prod_83.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Multi-functional Travel Mug",
+    "category": "Accessories",
+    "price": 331.3,
+    "description": "The multi-functional travel mug is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 246,
+    "publishDate": "2022-08-22T23:00:00.000Z",
+    "type": "3",
+    "categories": [
+      "13",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MThf/prod_82.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTdf/prod_81.jpg"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Portable Fitness Tracker",
+    "category": "Clothing",
+    "price": 473.55,
+    "description": "The portable fitness tracker is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-10-25T23:00:00.000Z",
+    "type": "2",
+    "stock": 173,
+    "categories": [
+      "10",
+      "6"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTZf/prod_80.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTVf/prod_79.jpg"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Waterproof Throw Blanket",
+    "category": "Toys",
+    "price": 193.49,
+    "description": "The waterproof throw blanket is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 37,
+    "publishDate": "2022-08-31T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "1",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTRf/prod_78.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTNf/prod_77.jpg"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Premium Noise-Canceling Earbuds",
+    "category": "Beauty",
+    "price": 94,
+    "description": "The premium noise-canceling earbuds is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-31T23:00:00.000Z",
+    "type": "2",
+    "stock": 465,
+    "categories": [
+      "1",
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTJf/prod_76.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTFf/prod_75.jpg"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Lightweight Yoga Mat",
+    "category": "Toys",
+    "price": 467.48,
+    "description": "The lightweight yoga mat is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-25T23:00:00.000Z",
+    "type": "1",
+    "stock": 497,
+    "categories": [
+      "3",
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTBf/prod_74.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDlf/prod_73.jpg"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Lightweight Portable Charger",
+    "category": "Fitness",
+    "price": 272.03,
+    "description": "The lightweight portable charger is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-23T23:00:00.000Z",
+    "type": "2",
+    "stock": 433,
+    "categories": [
+      "5",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDhf/prod_72.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDdf/prod_71.jpg"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Advanced Children's Puzzle",
+    "category": "Accessories",
+    "price": 119.39,
+    "description": "The advanced children's puzzle is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-18T23:00:00.000Z",
+    "type": "3",
+    "stock": 369,
+    "categories": [
+      "16",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDZf/prod_70.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDVf/prod_69.jpg"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Multi-functional Laptop Bag",
+    "category": "Outdoors",
+    "price": 445.31,
+    "description": "The multi-functional laptop bag is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-09T23:00:00.000Z",
+    "type": "1",
+    "stock": 271,
+    "categories": [
+      "3",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDRf/prod_68.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDNf/prod_67.jpg"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Premium Face Cream",
+    "category": "Accessories",
+    "price": 432.11,
+    "description": "The premium face cream is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-10T23:00:00.000Z",
+    "type": "1",
+    "stock": 60,
+    "categories": [
+      "19",
+      "2",
+      "16",
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDJf/prod_66.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDFf/prod_65.jpg"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Compact Wall Clock",
+    "category": "Outdoors",
+    "price": 343.63,
+    "description": "The compact wall clock is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-14T23:00:00.000Z",
+    "type": "2",
+    "stock": 175,
+    "categories": [
+      "11",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDBf/prod_64.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTlf/prod_63.jpg"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Durable Cookware Set",
+    "category": "Clothing",
+    "price": 396.16,
+    "description": "The durable cookware set is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-09T23:00:00.000Z",
+    "type": "3",
+    "stock": 370,
+    "categories": [
+      "5",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OThf/prod_62.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTdf/prod_61.jpg"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Portable Minimalist Watch",
+    "category": "Home Decor",
+    "price": 207.1,
+    "description": "The portable minimalist watch is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-24T23:00:00.000Z",
+    "type": "2",
+    "stock": 422,
+    "categories": [
+      "2",
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTZf/prod_60.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTVf/prod_59.jpg"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Advanced Sunglasses",
+    "category": "Beauty",
+    "price": 166.6,
+    "description": "The advanced sunglasses is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-12T23:00:00.000Z",
+    "type": "3",
+    "stock": 363,
+    "categories": [
+      "19",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTRf/prod_58.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTNf/prod_57.jpg"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Portable Standing Desk",
+    "category": "Kitchenware",
+    "price": 23.16,
+    "description": "The portable standing desk is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-24T23:00:00.000Z",
+    "type": "1",
+    "stock": 93,
+    "categories": [
+      "1",
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTJf/prod_56.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTFf/prod_55.jpg"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Lightweight Blender",
+    "category": "Fitness",
+    "price": 208.31,
+    "description": "The lightweight blender is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-02T23:00:00.000Z",
+    "type": "3",
+    "stock": 214,
+    "categories": [
+      "1",
+      "5",
+      "3",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTBf/prod_54.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODlf/prod_53.jpg"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Innovative Wireless Mouse",
+    "category": "Outdoors",
+    "price": 56.08,
+    "description": "The innovative wireless mouse is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 156,
+    "categories": [
+      "1"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODhf/prod_52.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODdf/prod_51.jpg"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Lightweight Laptop Bag",
+    "category": "Outdoors",
+    "price": 131.52,
+    "description": "The lightweight laptop bag is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 338,
+    "categories": [
+      "1",
+      "3",
+      "2",
+      "5",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3MzRf/prod_1.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3MzVf/prod_2.jpg"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Premium Children's Puzzle",
+    "category": "Outdoors",
+    "price": 491.55,
+    "description": "The premium children's puzzle is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-08-02T23:00:00.000Z",
+    "type": "3",
+    "stock": 434,
+    "categories": [
+      "3",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3MzZf/prod_3.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Mzdf/prod_4.jpg"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Luxury Travel Mug",
+    "category": "Accessories",
+    "price": 363.65,
+    "description": "The luxury travel mug is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-19T23:00:00.000Z",
+    "type": "3",
+    "stock": 174,
+    "categories": [
+      "3",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Mzhf/prod_5.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Mzlf/prod_6.jpg"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Durable Scented Candle Set",
+    "category": "Electronics",
+    "price": 361.25,
+    "description": "The durable scented candle set is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-20T23:00:00.000Z",
+    "type": "1",
+    "stock": 309,
+    "categories": [
+      "3",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDBf/prod_7.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDFf/prod_8.jpg"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Compact Sneakers",
+    "category": "Fitness",
+    "price": 178.66,
+    "description": "The compact sneakers is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 265,
+    "publishDate": "2022-07-21T23:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "3",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDJf/prod_9.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDNf/prod_10.jpg"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "Ergonomic Travel Mug",
+    "category": "Beauty",
+    "price": 157.86,
+    "description": "The ergonomic travel mug is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 177,
+    "publishDate": "2022-07-24T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "3",
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDRf/prod_11.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDVf/prod_12.jpg"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Ergonomic Sneakers",
+    "category": "Outdoors",
+    "price": 108.2,
+    "description": "The ergonomic sneakers is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-31T23:00:00.000Z",
+    "type": "1",
+    "stock": 207,
+    "categories": [
+      "3",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDZf/prod_13.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDdf/prod_14.jpg"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Eco-Friendly Running Shorts",
+    "category": "Toys",
+    "price": 368.67,
+    "description": "The eco-friendly running shorts is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-28T23:00:00.000Z",
+    "type": "3",
+    "stock": 119,
+    "categories": [
+      "3",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDhf/prod_15.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDlf/prod_16.jpg"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Stylish Electric Toothbrush",
+    "category": "Personal Care",
+    "price": 328.64,
+    "description": "The stylish electric toothbrush is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-24T23:00:00.000Z",
+    "type": "2",
+    "stock": 149,
+    "categories": [
+      "5",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTBf/prod_17.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTFf/prod_18.jpg"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Lightweight Minimalist Watch",
+    "category": "Fitness",
+    "price": 477.16,
+    "description": "The lightweight minimalist watch is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-22T23:00:00.000Z",
+    "type": "3",
+    "stock": 61,
+    "categories": [
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Handcrafted Scented Candle Set",
+    "category": "Furniture",
+    "price": 247.2,
+    "description": "The handcrafted scented candle set is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-28T23:00:00.000Z",
+    "type": "2",
+    "stock": 155,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTVf/prod_21.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTZf/prod_22.jpg"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Compact Wireless Router",
+    "category": "Footwear",
+    "price": 188.08,
+    "description": "The compact wireless router is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-21T23:00:00.000Z",
+    "type": "1",
+    "stock": 149,
+    "categories": [
+      "13",
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTdf/prod_23.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NThf/prod_24.jpg"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Modern Picture Frame",
+    "category": "Personal Care",
+    "price": 389.13,
+    "description": "The modern picture frame is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-10T23:00:00.000Z",
+    "type": "3",
+    "stock": 244,
+    "categories": [
+      "13",
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTlf/prod_25.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjBf/prod_26.jpg"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Ergonomic Pet Bed",
+    "category": "Fitness",
+    "price": 121.12,
+    "description": "The ergonomic pet bed is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-05T23:00:00.000Z",
+    "type": "2",
+    "stock": 13,
+    "categories": [
+      "13",
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjFf/prod_27.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjJf/prod_28.jpg"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Classic Sunglasses",
+    "category": "Fitness",
+    "price": 387.33,
+    "description": "The classic sunglasses is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-07-05T23:00:00.000Z",
+    "type": "1",
+    "stock": 420,
+    "categories": [
+      "13",
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjNf/prod_29.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjRf/prod_30.jpg"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Luxury LED Monitor",
+    "category": "Kitchenware",
+    "price": 372.18,
+    "description": "The luxury led monitor is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-30T23:00:00.000Z",
+    "type": "1",
+    "stock": 72,
+    "categories": [
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjVf/prod_31.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjZf/prod_32.jpg"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Innovative Wireless Router",
+    "category": "Fitness",
+    "price": 87.67,
+    "description": "The innovative wireless router is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-29T23:00:00.000Z",
+    "type": "3",
+    "stock": 428,
+    "categories": [
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Njdf/prod_33.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Njhf/prod_34.jpg"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Ergonomic Wireless Router",
+    "category": "Footwear",
+    "price": 92.34,
+    "description": "The ergonomic wireless router is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-28T23:00:00.000Z",
+    "type": "2",
+    "stock": 141,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Njlf/prod_35.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzBf/prod_36.jpg"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Portable Wireless Mouse",
+    "category": "Personal Care",
+    "price": 233.98,
+    "description": "The portable wireless mouse is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-07T23:00:00.000Z",
+    "type": "1",
+    "stock": 376,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzFf/prod_37.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzJf/prod_38.jpg"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Waterproof Children's Puzzle",
+    "category": "Home Decor",
+    "price": 35.5,
+    "description": "The waterproof children's puzzle is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-12T23:00:00.000Z",
+    "type": "3",
+    "stock": 283,
+    "categories": [
+      "19",
+      "3",
+      "8",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzNf/prod_39.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzRf/prod_40.jpg"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Waterproof Travel Mug",
+    "category": "Toys",
+    "price": 424.66,
+    "description": "The waterproof travel mug is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-15T23:00:00.000Z",
+    "type": "3",
+    "stock": 236,
+    "categories": [
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Nzdf/prod_41.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Nzhf/prod_42.jpg"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Multi-functional Blender",
+    "category": "Accessories",
+    "price": 31.11,
+    "description": "The multi-functional blender is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-07T23:00:00.000Z",
+    "type": "2",
+    "stock": 445,
+    "categories": [
+      "16",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Modern Sneakers",
+    "category": "Home Decor",
+    "price": 22.34,
+    "description": "The modern sneakers is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-22T23:00:00.000Z",
+    "type": "3",
+    "stock": 145,
+    "categories": [
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "Eco-Friendly Standing Desk",
+    "category": "Footwear",
+    "price": 371.47,
+    "description": "The eco-friendly standing desk is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-22T23:00:00.000Z",
+    "type": "2",
+    "stock": 285,
+    "categories": [
+      "12",
+      "8",
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "Advanced Noise-Canceling Earbuds",
+    "category": "Clothing",
+    "price": 409.49,
+    "description": "The advanced noise-canceling earbuds is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-30T23:00:00.000Z",
+    "type": "1",
+    "stock": 261,
+    "categories": [
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Innovative Standing Desk",
+    "category": "Furniture",
+    "price": 12.03,
+    "description": "The innovative standing desk is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-05T23:00:00.000Z",
+    "type": "1",
+    "stock": 224,
+    "categories": [
+      "2",
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODdf/prod_51.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODhf/prod_52.jpg"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Modern Face Cream",
+    "category": "Furniture",
+    "price": 471.11,
+    "description": "The modern face cream is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-15T23:00:00.000Z",
+    "type": "2",
+    "stock": 401,
+    "categories": [
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODlf/prod_53.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTBf/prod_54.jpg"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Ergonomic Picture Frame",
+    "category": "Accessories",
+    "price": 45.82,
+    "description": "The ergonomic picture frame is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-16T23:00:00.000Z",
+    "type": "3",
+    "stock": 112,
+    "categories": [
+      "2",
+      "3",
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTFf/prod_55.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTJf/prod_56.jpg"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Modern Desk Lamp",
+    "category": "Electronics",
+    "price": 466.03,
+    "description": "The modern desk lamp is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 121,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTNf/prod_57.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTRf/prod_58.jpg"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Waterproof Bamboo Cutting Board",
+    "category": "Toys",
+    "price": 480.02,
+    "description": "The waterproof bamboo cutting board is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-31T23:00:00.000Z",
+    "type": "1",
+    "stock": 42,
+    "categories": [
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTVf/prod_59.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTZf/prod_60.jpg"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Luxury Electric Toothbrush",
+    "category": "Beauty",
+    "price": 363.37,
+    "description": "The luxury electric toothbrush is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-06-02T23:00:00.000Z",
+    "type": "1",
+    "stock": 332,
+    "categories": [
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTdf/prod_61.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OThf/prod_62.jpg"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Portable Camping Tent",
+    "category": "Fitness",
+    "price": 472.64,
+    "description": "The portable camping tent is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-10T23:00:00.000Z",
+    "type": "3",
+    "stock": 228,
+    "categories": [
+      "11",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTlf/prod_63.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDBf/prod_64.jpg"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Ergonomic Blender",
+    "category": "Kitchenware",
+    "price": 437.49,
+    "description": "The ergonomic blender is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-05-10T23:00:00.000Z",
+    "type": "2",
+    "stock": 109,
+    "categories": [
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDFf/prod_65.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDJf/prod_66.jpg"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Stylish Pet Bed",
+    "category": "Electronics",
+    "price": 266,
+    "description": "The stylish pet bed is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-05-25T23:00:00.000Z",
+    "type": "1",
+    "stock": 296,
+    "categories": [
+      "12",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDNf/prod_67.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDRf/prod_68.jpg"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Multi-functional Throw Blanket",
+    "category": "Accessories",
+    "price": 190.24,
+    "description": "The multi-functional throw blanket is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-05-31T23:00:00.000Z",
+    "type": "2",
+    "categories": [
+      "4"
+    ],
+    "stock": 37,
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDVf/prod_69.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDZf/prod_70.jpg"
+    ]
+  },
+  {
+    "id": 86,
+    "title": "Advanced Picture Frame",
+    "category": "Beauty",
+    "price": 177.86,
+    "description": "The advanced picture frame is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-05-25T23:00:00.000Z",
+    "type": "1",
+    "stock": 139,
+    "categories": [
+      "16",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDdf/prod_71.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDhf/prod_72.jpg"
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Waterproof Hair Dryer",
+    "category": "Footwear",
+    "price": 423,
+    "description": "The waterproof hair dryer is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-05-24T23:00:00.000Z",
+    "type": "3",
+    "stock": 28,
+    "categories": [
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDlf/prod_73.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTBf/prod_74.jpg"
+    ]
+  },
+  {
+    "id": 88,
+    "title": "Durable Bluetooth Speaker",
+    "category": "Home Decor",
+    "price": 485.73,
+    "description": "The durable bluetooth speaker is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-01T23:00:00.000Z",
+    "type": "3",
+    "stock": 432,
+    "categories": [
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTFf/prod_75.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTJf/prod_76.jpg"
+    ]
+  },
+  {
+    "id": 89,
+    "title": "Luxury Backpack",
+    "category": "Home Decor",
+    "price": 325.68,
+    "description": "The luxury backpack is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-01T23:00:00.000Z",
+    "type": "1",
+    "stock": 95,
+    "categories": [
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTNf/prod_77.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTRf/prod_78.jpg"
+    ]
+  },
+  {
+    "id": 90,
+    "title": "Waterproof Bluetooth Speaker",
+    "category": "Beauty",
+    "price": 475,
+    "description": "The waterproof bluetooth speaker is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-02T23:00:00.000Z",
+    "type": "2",
+    "stock": 285,
+    "categories": [
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTVf/prod_79.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTZf/prod_80.jpg"
+    ]
+  },
+  {
+    "id": 91,
+    "title": "Modern Electric Kettle",
+    "category": "Books",
+    "price": 174,
+    "description": "The modern electric kettle is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-06T23:00:00.000Z",
+    "type": "1",
+    "stock": 184,
+    "categories": [
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTdf/prod_81.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MThf/prod_82.jpg"
+    ]
+  },
+  {
+    "id": 92,
+    "title": "Multi-functional Pet Bed",
+    "category": "Toys",
+    "price": 34.6,
+    "description": "The multi-functional pet bed is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-07T23:00:00.000Z",
+    "type": "3",
+    "stock": 256,
+    "categories": [
+      "4",
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTlf/prod_83.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjBf/prod_84.jpg"
+    ]
+  },
+  {
+    "id": 93,
+    "title": "Multi-functional Desk Lamp",
+    "category": "Toys",
+    "price": 458.32,
+    "description": "The multi-functional desk lamp is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-08T23:00:00.000Z",
+    "type": "2",
+    "stock": 28,
+    "categories": [
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjFf/prod_85.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjJf/prod_86.jpg"
+    ]
+  },
+  {
+    "id": 94,
+    "title": "Portable Running Shorts",
+    "category": "Outdoors",
+    "price": 329.87,
+    "description": "The portable running shorts is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-09T23:00:00.000Z",
+    "type": "1",
+    "stock": 410,
+    "categories": [
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjNf/prod_87.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjRf/prod_88.jpg"
+    ]
+  },
+  {
+    "id": 95,
+    "title": "Luxury Cookware Set",
+    "category": "Personal Care",
+    "price": 294.2,
+    "description": "The luxury cookware set is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-08T23:00:00.000Z",
+    "type": "2",
+    "stock": 327,
+    "categories": [
+      "2",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjVf/prod_89.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjZf/prod_90.jpg"
+    ]
+  },
+  {
+    "id": 96,
+    "title": "Ergonomic Rain Jacket",
+    "category": "Books",
+    "price": 215.76,
+    "description": "The ergonomic rain jacket is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-08T23:00:00.000Z",
+    "type": "3",
+    "stock": 256,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4Mjdf/prod_91.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4Mjhf/prod_92.jpg"
+    ]
+  },
+  {
+    "id": 97,
+    "title": "Multi-functional Bluetooth Speaker",
+    "category": "Home Decor",
+    "price": 101.25,
+    "description": "The multi-functional bluetooth speaker is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-07T23:00:00.000Z",
+    "type": "1",
+    "stock": 181,
+    "categories": [
+      "4",
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4Mjlf/prod_93.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzBf/prod_94.jpg"
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Innovative Bluetooth Speaker",
+    "category": "Beauty",
+    "price": 146.71,
+    "description": "The innovative bluetooth speaker is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-09T23:00:00.000Z",
+    "type": "1",
+    "stock": 435,
+    "categories": [
+      "6",
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzJf/prod_96.jpg"
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Ergonomic Picture Frame",
+    "category": "Outdoors",
+    "price": 183.39,
+    "description": "The ergonomic picture frame is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-13T23:00:00.000Z",
+    "type": "2",
+    "stock": 43,
+    "categories": [
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzNf/prod_97.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzRf/prod_98.jpg"
+    ]
+  },
+  {
+    "id": 100,
+    "title": "Stylish Yoga Mat",
+    "category": "Toys",
+    "price": 20.16,
+    "description": "The stylish yoga mat is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-13T23:00:00.000Z",
+    "type": "1",
+    "stock": 487,
+    "categories": [
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzVf/prod_99.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzZf/prod_100.jpg"
+    ]
+  },
+  {
+    "id": 101,
+    "title": "Luxury Wireless Router",
+    "category": "Beauty",
+    "price": 299.34,
+    "description": "The luxury wireless router is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-27T23:00:00.000Z",
+    "type": "1",
+    "stock": 430,
+    "categories": [
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg"
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Waterproof Garden Tools Set",
+    "category": "Accessories",
+    "price": 399.35,
+    "description": "The waterproof garden tools set is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-29T23:00:00.000Z",
+    "type": "2",
+    "stock": 186,
+    "categories": [
+      "2",
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODdf/prod_51.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODhf/prod_52.jpg"
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Durable Blender",
+    "category": "Clothing",
+    "price": 453.14,
+    "description": "The durable blender is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-06-29T23:00:00.000Z",
+    "type": "1",
+    "stock": 285,
+    "categories": [
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODlf/prod_53.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTBf/prod_54.jpg"
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Classic LED Monitor",
+    "category": "Outdoors",
+    "price": 160.27,
+    "description": "The classic led monitor is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-07-25T23:00:00.000Z",
+    "type": "2",
+    "stock": 357,
+    "categories": [
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTFf/prod_55.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTJf/prod_56.jpg"
+    ]
+  },
+  {
+    "id": 105,
+    "title": "Advanced Electric Kettle",
+    "category": "Books",
+    "price": 374.69,
+    "description": "The advanced electric kettle is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-07-27T23:00:00.000Z",
+    "type": "1",
+    "stock": 346,
+    "categories": [
+      "3",
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTNf/prod_57.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTRf/prod_58.jpg"
+    ]
+  },
+  {
+    "id": 106,
+    "title": "Multi-functional Fitness Tracker",
+    "category": "Kitchenware",
+    "price": 350.69,
+    "description": "The multi-functional fitness tracker is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-07-27T23:00:00.000Z",
+    "type": "3",
+    "stock": 80,
+    "categories": [
+      "1"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTVf/prod_59.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTZf/prod_60.jpg"
+    ]
+  },
+  {
+    "id": 107,
+    "title": "Handcrafted Travel Mug",
+    "category": "Fitness",
+    "price": 85.39,
+    "description": "The handcrafted travel mug is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-07-27T23:00:00.000Z",
+    "type": "2",
+    "stock": 368,
+    "categories": [
+      "3",
+      "2",
+      "13",
+      "1"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTdf/prod_61.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OThf/prod_62.jpg"
+    ]
+  },
+  {
+    "id": 108,
+    "title": "Luxury Standing Desk",
+    "category": "Outdoors",
+    "price": 134.41,
+    "description": "The luxury standing desk is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-08-31T23:00:00.000Z",
+    "type": "2",
+    "stock": 231,
+    "categories": [
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTlf/prod_63.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDBf/prod_64.jpg"
+    ]
+  },
+  {
+    "id": 109,
+    "title": "Portable Yoga Mat",
+    "category": "Personal Care",
+    "price": 469.15,
+    "description": "The portable yoga mat is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-02T23:00:00.000Z",
+    "type": "1",
+    "stock": 482,
+    "categories": [
+      "2",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDFf/prod_65.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDJf/prod_66.jpg"
+    ]
+  },
+  {
+    "id": 110,
+    "title": "Stylish Smartphone Stand",
+    "category": "Home Decor",
+    "price": 291.63,
+    "description": "The stylish smartphone stand is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-06T23:00:00.000Z",
+    "type": "3",
+    "stock": 421,
+    "categories": [
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDNf/prod_67.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDRf/prod_68.jpg"
+    ]
+  },
+  {
+    "id": 111,
+    "title": "Waterproof Wall Clock",
+    "category": "Outdoors",
+    "price": 456.2,
+    "description": "The waterproof wall clock is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-07T23:00:00.000Z",
+    "type": "1",
+    "stock": 180,
+    "categories": [
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDVf/prod_69.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDZf/prod_70.jpg"
+    ]
+  },
+  {
+    "id": 112,
+    "title": "Modern Desk Lamp",
+    "category": "Kitchenware",
+    "price": 97.37,
+    "description": "The modern desk lamp is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-08T23:00:00.000Z",
+    "type": "2",
+    "stock": 142,
+    "categories": [
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDdf/prod_71.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDhf/prod_72.jpg"
+    ]
+  },
+  {
+    "id": 113,
+    "title": "Durable Hair Dryer",
+    "category": "Home Decor",
+    "price": 36.43,
+    "description": "The durable hair dryer is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-09T23:00:00.000Z",
+    "type": "2",
+    "stock": 116,
+    "categories": [
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDlf/prod_73.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTBf/prod_74.jpg"
+    ]
+  },
+  {
+    "id": 114,
+    "title": "Eco-Friendly Laptop Bag",
+    "category": "Clothing",
+    "price": 85.89,
+    "description": "The eco-friendly laptop bag is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-12T23:00:00.000Z",
+    "type": "1",
+    "stock": 496,
+    "categories": [
+      "2",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTFf/prod_75.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTJf/prod_76.jpg"
+    ]
+  },
+  {
+    "id": 115,
+    "title": "Durable Face Cream",
+    "category": "Footwear",
+    "price": 219.28,
+    "description": "The durable face cream is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-13T23:00:00.000Z",
+    "type": "2",
+    "stock": 343,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3MzRf/prod_1.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3MzVf/prod_2.jpg"
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Handcrafted Bluetooth Speaker",
+    "category": "Furniture",
+    "price": 218.13,
+    "description": "The handcrafted bluetooth speaker is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-19T23:00:00.000Z",
+    "type": "2",
+    "stock": 64,
+    "categories": [
+      "3",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3MzZf/prod_3.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Mzdf/prod_4.jpg"
+    ]
+  },
+  {
+    "id": 117,
+    "title": "Waterproof Backpack",
+    "category": "Electronics",
+    "price": 137.34,
+    "description": "The waterproof backpack is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-16T23:00:00.000Z",
+    "type": "1",
+    "stock": 149,
+    "categories": [
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Mzhf/prod_5.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Mzlf/prod_6.jpg"
+    ]
+  },
+  {
+    "id": 118,
+    "title": "Classic Wireless Mouse",
+    "category": "Kitchenware",
+    "price": 225.19,
+    "description": "The classic wireless mouse is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-20T23:00:00.000Z",
+    "type": "1",
+    "stock": 380,
+    "categories": [
+      "4",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDBf/prod_7.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDFf/prod_8.jpg"
+    ]
+  },
+  {
+    "id": 119,
+    "title": "Classic Fitness Tracker",
+    "category": "Outdoors",
+    "price": 364.93,
+    "description": "The classic fitness tracker is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-03T23:00:00.000Z",
+    "type": "3",
+    "stock": 192,
+    "categories": [
+      "3",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDJf/prod_9.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDNf/prod_10.jpg"
+    ]
+  },
+  {
+    "id": 120,
+    "title": "Handcrafted Blender",
+    "category": "Clothing",
+    "price": 399.14,
+    "description": "The handcrafted blender is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-05T23:00:00.000Z",
+    "type": "3",
+    "stock": 481,
+    "categories": [
+      "1",
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg"
+    ]
+  },
+  {
+    "id": 121,
+    "title": "Luxury Sunglasses",
+    "category": "Toys",
+    "price": 278.5,
+    "description": "The luxury sunglasses is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-14T23:00:00.000Z",
+    "type": "1",
+    "stock": 209,
+    "categories": [
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDRf/prod_11.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDVf/prod_12.jpg"
+    ]
+  },
+  {
+    "id": 122,
+    "title": "Classic Foldable Chair",
+    "category": "Beauty",
+    "price": 195.16,
+    "description": "The classic foldable chair is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-06T23:00:00.000Z",
+    "type": "2",
+    "stock": 284,
+    "categories": [
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDZf/prod_13.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDdf/prod_14.jpg"
+    ]
+  },
+  {
+    "id": 123,
+    "title": "Stylish Cookware Set",
+    "category": "Outdoors",
+    "price": 372.54,
+    "description": "The stylish cookware set is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-14T23:00:00.000Z",
+    "type": "3",
+    "stock": 249,
+    "categories": [
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDhf/prod_15.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDlf/prod_16.jpg"
+    ]
+  },
+  {
+    "id": 124,
+    "title": "Eco-Friendly Camping Tent",
+    "category": "Kitchenware",
+    "price": 160.82,
+    "description": "The eco-friendly camping tent is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-06T23:00:00.000Z",
+    "type": "2",
+    "stock": 478,
+    "categories": [
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTBf/prod_17.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTFf/prod_18.jpg"
+    ]
+  },
+  {
+    "id": 125,
+    "title": "Advanced Children's Puzzle",
+    "category": "Home Decor",
+    "price": 218.42,
+    "description": "The advanced children's puzzle is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-09T23:00:00.000Z",
+    "type": "2",
+    "stock": 199,
+    "categories": [
+      "16",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg"
+    ]
+  },
+  {
+    "id": 126,
+    "title": "Portable Rain Jacket",
+    "category": "Accessories",
+    "price": 203.21,
+    "description": "The portable rain jacket is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-10T23:00:00.000Z",
+    "type": "1",
+    "stock": 376,
+    "categories": [
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTVf/prod_21.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTZf/prod_22.jpg"
+    ]
+  },
+  {
+    "id": 127,
+    "title": "Classic Backpack",
+    "category": "Books",
+    "price": 198.07,
+    "description": "The classic backpack is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-11T23:00:00.000Z",
+    "type": "2",
+    "stock": 169,
+    "categories": [
+      "2",
+      "5",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTdf/prod_23.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NThf/prod_24.jpg"
+    ]
+  },
+  {
+    "id": 128,
+    "title": "Classic Hair Dryer",
+    "category": "Beauty",
+    "price": 323.81,
+    "description": "The classic hair dryer is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-12T23:00:00.000Z",
+    "type": "3",
+    "stock": 128,
+    "categories": [
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTlf/prod_25.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjBf/prod_26.jpg"
+    ]
+  },
+  {
+    "id": 129,
+    "title": "Compact Wireless Router",
+    "category": "Footwear",
+    "price": 224.5,
+    "description": "The compact wireless router is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-16T23:00:00.000Z",
+    "type": "2",
+    "stock": 343,
+    "categories": [
+      "19",
+      "3",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTNf/prod_77.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTRf/prod_78.jpg"
+    ]
+  },
+  {
+    "id": 130,
+    "title": "Handcrafted Cookware Set",
+    "category": "Personal Care",
+    "price": 144.66,
+    "description": "The handcrafted cookware set is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-17T23:00:00.000Z",
+    "type": "2",
+    "stock": 497,
+    "categories": [
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTVf/prod_79.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTZf/prod_80.jpg"
+    ]
+  },
+  {
+    "id": 131,
+    "title": "Classic Rain Jacket",
+    "category": "Books",
+    "price": 293.36,
+    "description": "The classic rain jacket is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-17T23:00:00.000Z",
+    "type": "1",
+    "stock": 191,
+    "categories": [
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTdf/prod_81.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MThf/prod_82.jpg"
+    ]
+  },
+  {
+    "id": 132,
+    "title": "Portable Electric Kettle",
+    "category": "Clothing",
+    "price": 29.61,
+    "description": "The portable electric kettle is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-17T23:00:00.000Z",
+    "type": "3",
+    "stock": 398,
+    "categories": [
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTlf/prod_83.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjBf/prod_84.jpg"
+    ]
+  },
+  {
+    "id": 133,
+    "title": "Stylish Pet Bed",
+    "category": "Outdoors",
+    "price": 240.99,
+    "description": "The stylish pet bed is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-20T23:00:00.000Z",
+    "type": "1",
+    "stock": 12,
+    "categories": [
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjFf/prod_85.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjJf/prod_86.jpg"
+    ]
+  },
+  {
+    "id": 134,
+    "title": "Innovative Blender",
+    "category": "Accessories",
+    "price": 262.33,
+    "description": "The innovative blender is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-20T23:00:00.000Z",
+    "type": "2",
+    "stock": 85,
+    "categories": [
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjNf/prod_87.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjRf/prod_88.jpg"
+    ]
+  },
+  {
+    "id": 135,
+    "title": "Handcrafted Electric Kettle",
+    "category": "Footwear",
+    "price": 248.25,
+    "description": "The handcrafted electric kettle is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-20T23:00:00.000Z",
+    "type": "1",
+    "stock": 66,
+    "categories": [
+      "1",
+      "10",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjVf/prod_89.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjZf/prod_90.jpg"
+    ]
+  },
+  {
+    "id": 136,
+    "title": "Stylish Backpack",
+    "category": "Footwear",
+    "price": 308.68,
+    "description": "The stylish backpack is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-20T23:00:00.000Z",
+    "type": "2",
+    "stock": 489,
+    "categories": [
+      "7",
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4Mjdf/prod_91.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4Mjhf/prod_92.jpg"
+    ]
+  },
+  {
+    "id": 137,
+    "title": "Waterproof Wall Clock",
+    "category": "Clothing",
+    "price": 461.68,
+    "description": "The waterproof wall clock is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-20T23:00:00.000Z",
+    "type": "3",
+    "stock": 168,
+    "categories": [
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4Mjlf/prod_93.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzBf/prod_94.jpg"
+    ]
+  },
+  {
+    "id": 138,
+    "title": "Lightweight Blender",
+    "category": "Toys",
+    "price": 313.51,
+    "description": "The lightweight blender is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-20T23:00:00.000Z",
+    "type": "2",
+    "stock": 463,
+    "categories": [
+      "17",
+      "7",
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzJf/prod_96.jpg"
+    ]
+  },
+  {
+    "id": 139,
+    "title": "Lightweight Minimalist Watch",
+    "category": "Toys",
+    "price": 374.71,
+    "description": "The lightweight minimalist watch is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 362,
+    "categories": [
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzNf/prod_97.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzRf/prod_98.jpg"
+    ]
+  },
+  {
+    "id": 140,
+    "title": "Innovative Noise-Canceling Earbuds",
+    "category": "Footwear",
+    "price": 274.75,
+    "description": "The innovative noise-canceling earbuds is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 266,
+    "categories": [
+      "10",
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzVf/prod_99.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzZf/prod_100.jpg"
+    ]
+  },
+  {
+    "id": 141,
+    "title": "Compact Bluetooth Speaker",
+    "category": "Outdoors",
+    "price": 214.95,
+    "categories": [
+      "3",
+      "8"
+    ],
+    "description": "The compact bluetooth speaker is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 438,
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjFf/prod_27.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjJf/prod_28.jpg"
+    ]
+  },
+  {
+    "id": 142,
+    "title": "Advanced Blender",
+    "category": "Outdoors",
+    "price": 353.53,
+    "description": "The advanced blender is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "3",
+    "stock": 452,
+    "categories": [
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjNf/prod_29.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjRf/prod_30.jpg"
+    ]
+  },
+  {
+    "id": 143,
+    "title": "Modern Sneakers",
+    "category": "Beauty",
+    "price": 156.72,
+    "description": "The modern sneakers is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 299,
+    "categories": [
+      "8"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjVf/prod_31.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjZf/prod_32.jpg"
+    ]
+  },
+  {
+    "id": 144,
+    "title": "Compact Sneakers",
+    "category": "Clothing",
+    "price": 8.92,
+    "description": "The compact sneakers is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 334,
+    "categories": [
+      "5",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Njdf/prod_33.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Njhf/prod_34.jpg"
+    ]
+  },
+  {
+    "id": 145,
+    "title": "Modern Fitness Tracker",
+    "category": "Furniture",
+    "price": 338.54,
+    "description": "The modern fitness tracker is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 226,
+    "categories": [
+      "1",
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Njlf/prod_35.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzBf/prod_36.jpg"
+    ]
+  },
+  {
+    "id": 146,
+    "title": "Luxury Bamboo Cutting Board",
+    "category": "Footwear",
+    "price": 488.27,
+    "description": "The luxury bamboo cutting board is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 337,
+    "categories": [
+      "19",
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzFf/prod_37.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzJf/prod_38.jpg"
+    ]
+  },
+  {
+    "id": 147,
+    "title": "Classic Wireless Router",
+    "category": "Accessories",
+    "price": 49.88,
+    "description": "The classic wireless router is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 336,
+    "categories": [
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzNf/prod_39.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzRf/prod_40.jpg"
+    ]
+  },
+  {
+    "id": 148,
+    "title": "Compact Desk Lamp",
+    "category": "Personal Care",
+    "price": 320.53,
+    "description": "The compact desk lamp is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "3",
+    "stock": 294,
+    "categories": [
+      "14",
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Nzdf/prod_41.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Nzhf/prod_42.jpg"
+    ]
+  },
+  {
+    "id": 149,
+    "title": "Innovative Hair Dryer",
+    "category": "Electronics",
+    "price": 225.79,
+    "description": "The innovative hair dryer is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "3",
+    "stock": 139,
+    "categories": [
+      "8",
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg"
+    ]
+  },
+  {
+    "id": 150,
+    "title": "Stylish Noise-Canceling Earbuds",
+    "category": "Kitchenware",
+    "price": 344.95,
+    "description": "The stylish noise-canceling earbuds is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 70,
+    "categories": [
+      "9",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg"
+    ]
+  },
+  {
+    "id": 151,
+    "title": "Compact Camping Tent",
+    "category": "Home Decor",
+    "price": 408.67,
+    "description": "The compact camping tent is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 116,
+    "categories": [
+      "8",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjRf/prod_88.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjNf/prod_87.jpg"
+    ]
+  },
+  {
+    "id": 152,
+    "title": "Portable Laptop Bag",
+    "category": "Clothing",
+    "price": 46.63,
+    "description": "The portable laptop bag is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 136,
+    "categories": [
+      "7",
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjJf/prod_86.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjFf/prod_85.jpg"
+    ]
+  },
+  {
+    "id": 153,
+    "title": "Waterproof Sneakers",
+    "category": "Outdoors",
+    "price": 365.9,
+    "description": "The waterproof sneakers is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "1",
+    "stock": 202,
+    "categories": [
+      "8",
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjBf/prod_84.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTlf/prod_83.jpg"
+    ]
+  },
+  {
+    "id": 154,
+    "title": "Durable Fitness Tracker",
+    "category": "Personal Care",
+    "price": 10.73,
+    "description": "The durable fitness tracker is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-01T00:00:00.000Z",
+    "type": "3",
+    "stock": 221,
+    "categories": [
+      "7",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MThf/prod_82.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTdf/prod_81.jpg"
+    ]
+  },
+  {
+    "id": 155,
+    "title": "Portable Face Cream",
+    "category": "Toys",
+    "price": 429.85,
+    "description": "The portable face cream is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-08T00:00:00.000Z",
+    "type": "3",
+    "stock": 149,
+    "categories": [
+      "5",
+      "7",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTZf/prod_80.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTVf/prod_79.jpg"
+    ]
+  },
+  {
+    "id": 156,
+    "title": "Advanced Foldable Chair",
+    "category": "Books",
+    "price": 102.8,
+    "description": "The advanced foldable chair is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-09T00:00:00.000Z",
+    "type": "2",
+    "stock": 103,
+    "categories": [
+      "4",
+      "7",
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTRf/prod_78.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTNf/prod_77.jpg"
+    ]
+  },
+  {
+    "id": 157,
+    "title": "Stylish Garden Tools Set",
+    "category": "Books",
+    "price": 161.75,
+    "description": "The stylish garden tools set is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-11T00:00:00.000Z",
+    "type": "1",
+    "stock": 59,
+    "categories": [
+      "10",
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTJf/prod_76.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MTFf/prod_75.jpg"
+    ]
+  },
+  {
+    "id": 158,
+    "title": "Stylish Noise-Canceling Earbuds",
+    "category": "Fitness",
+    "price": 326.83,
+    "description": "The stylish noise-canceling earbuds is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-12T00:00:00.000Z",
+    "type": "1",
+    "stock": 361,
+    "categories": [
+      "15",
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MTBf/prod_74.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDlf/prod_73.jpg"
+    ]
+  },
+  {
+    "id": 159,
+    "title": "Ergonomic Children's Puzzle",
+    "category": "Kitchenware",
+    "price": 481.32,
+    "description": "The ergonomic children's puzzle is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-15T00:00:00.000Z",
+    "type": "2",
+    "stock": 332,
+    "categories": [
+      "1",
+      "5",
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Mzdf/prod_4.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3MzZf/prod_3.jpg"
+    ]
+  },
+  {
+    "id": 160,
+    "title": "Portable Picture Frame",
+    "category": "Personal Care",
+    "price": 221.74,
+    "description": "The portable picture frame is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-15T00:00:00.000Z",
+    "type": "1",
+    "stock": 253,
+    "categories": [
+      "12",
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3MzVf/prod_2.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3MzRf/prod_1.jpg"
+    ]
+  },
+  {
+    "id": 161,
+    "title": "Lightweight Smartphone Stand",
+    "category": "Electronics",
+    "price": 317.8,
+    "description": "The lightweight smartphone stand is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-15T00:00:00.000Z",
+    "type": "2",
+    "stock": 50,
+    "categories": [
+      "3",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzZf/prod_100.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzVf/prod_99.jpg"
+    ]
+  },
+  {
+    "id": 162,
+    "title": "Durable Electric Toothbrush",
+    "category": "Accessories",
+    "price": 368.44,
+    "description": "The durable electric toothbrush is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-16T00:00:00.000Z",
+    "type": "2",
+    "stock": 292,
+    "categories": [
+      "7",
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzRf/prod_98.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzNf/prod_97.jpg"
+    ]
+  },
+  {
+    "id": 163,
+    "title": "Luxury LED Monitor",
+    "category": "Outdoors",
+    "price": 82.39,
+    "description": "The luxury led monitor is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-17T00:00:00.000Z",
+    "type": "1",
+    "stock": 50,
+    "categories": [
+      "6",
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzJf/prod_96.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg"
+
+    ]
+  },
+  {
+    "id": 164,
+    "title": "Stylish Desk Lamp",
+    "category": "Footwear",
+    "price": 246.77,
+    "description": "The stylish desk lamp is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-17T00:00:00.000Z",
+    "type": "3",
+    "stock": 286,
+    "categories": [
+      "11"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MzBf/prod_94.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4Mjlf/prod_93.jpg"
+    ]
+  },
+  {
+    "id": 165,
+    "title": "Stylish Electric Kettle",
+    "category": "Accessories",
+    "price": 100.06,
+    "description": "The stylish electric kettle is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-17T00:00:00.000Z",
+    "type": "2",
+    "stock": 196,
+    "categories": [
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4Mjhf/prod_92.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4Mjdf/prod_91.jpg"
+    ]
+  },
+  {
+    "id": 166,
+    "title": "Handcrafted Sneakers",
+    "category": "Personal Care",
+    "price": 118.15,
+    "description": "The handcrafted sneakers is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-17T00:00:00.000Z",
+    "type": "1",
+    "stock": 282,
+    "categories": [
+      "11",
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MjZf/prod_90.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MjVf/prod_89.jpg"
+    ]
+  },
+  {
+    "id": 167,
+    "title": "Ergonomic Scented Candle Set",
+    "category": "Beauty",
+    "price": 139.5,
+    "description": "The ergonomic scented candle set is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-17T00:00:00.000Z",
+    "type": "2",
+    "stock": 145,
+    "categories": [
+      "19",
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDhf/prod_72.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDdf/prod_71.jpg"
+    ]
+  },
+  {
+    "id": 168,
+    "title": "Waterproof Foldable Chair",
+    "category": "Accessories",
+    "price": 64.81,
+    "description": "The waterproof foldable chair is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-17T00:00:00.000Z",
+    "type": "2",
+    "stock": 56,
+    "categories": [
+      "1",
+      "3"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDZf/prod_70.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDVf/prod_69.jpg"
+    ]
+  },
+  {
+    "id": 169,
+    "title": "Durable Wireless Router",
+    "category": "Furniture",
+    "price": 426.83,
+    "description": "The durable wireless router is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-19T00:00:00.000Z",
+    "type": "1",
+    "stock": 374,
+    "categories": [
+      "5",
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDRf/prod_68.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDNf/prod_67.jpg"
+    ]
+  },
+  {
+    "id": 170,
+    "title": "Ergonomic Bamboo Cutting Board",
+    "category": "Personal Care",
+    "price": 351.63,
+    "description": "The ergonomic bamboo cutting board is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-22T00:00:00.000Z",
+    "type": "3",
+    "stock": 474,
+    "categories": [
+      "4",
+      "12"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDJf/prod_66.jpg",
+      "https://od.lk/d/NzlfNTQxMjE4MDFf/prod_65.jpg"
+    ]
+  },
+  {
+    "id": 171,
+    "title": "Lightweight Blender",
+    "category": "Fitness",
+    "price": 238.14,
+    "description": "The lightweight blender is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-29T00:00:00.000Z",
+    "type": "3",
+    "stock": 237,
+    "categories": [
+      "2",
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE4MDBf/prod_64.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTlf/prod_63.jpg"
+    ]
+  },
+  {
+    "id": 172,
+    "title": "Modern Sneakers",
+    "category": "Outdoors",
+    "price": 433.35,
+    "description": "The modern sneakers is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-30T00:00:00.000Z",
+    "type": "2",
+    "stock": 209,
+    "categories": [
+      "9",
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OThf/prod_62.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTdf/prod_61.jpg"
+    ]
+  },
+  {
+    "id": 173,
+    "title": "Portable Noise-Canceling Earbuds",
+    "category": "Home Decor",
+    "price": 265.97,
+    "description": "The portable noise-canceling earbuds is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-26T23:00:00.000Z",
+    "type": "3",
+    "stock": 147,
+    "categories": [
+      "13",
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTZf/prod_60.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTVf/prod_59.jpg"
+    ]
+  },
+  {
+    "id": 174,
+    "title": "Premium Picture Frame",
+    "category": "Electronics",
+    "price": 333.55,
+    "description": "The premium picture frame is perfect for enhancing your everyday experience, whether at home or on the go. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-05-17T23:00:00.000Z",
+    "type": "1",
+    "stock": 106,
+    "categories": [
+      "6",
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTRf/prod_58.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTNf/prod_57.jpg"
+    ]
+  },
+  {
+    "id": 175,
+    "title": "Stylish Wireless Router",
+    "category": "Outdoors",
+    "price": 355.04,
+    "description": "The stylish wireless router is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-15T00:00:00.000Z",
+    "type": "1",
+    "stock": 423,
+    "categories": [
+      "7",
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTJf/prod_56.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3OTFf/prod_55.jpg"
+    ]
+  },
+  {
+    "id": 176,
+    "title": "Stylish Running Shorts",
+    "category": "Outdoors",
+    "price": 19.19,
+    "description": "The stylish running shorts is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-09-26T23:00:00.000Z",
+    "type": "2",
+    "stock": 288,
+    "categories": [
+      "4",
+      "9",
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3OTBf/prod_54.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODlf/prod_53.jpg"
+    ]
+  },
+  {
+    "id": 177,
+    "title": "Ergonomic Throw Blanket",
+    "category": "Books",
+    "price": 177.19,
+    "description": "The ergonomic throw blanket is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-08-22T23:00:00.000Z",
+    "type": "3",
+    "stock": 31,
+    "categories": [
+      "8",
+      "11",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODhf/prod_52.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODdf/prod_51.jpg"
+    ]
+  },
+  {
+    "id": 178,
+    "title": "Classic Wireless Mouse",
+    "category": "Kitchenware",
+    "price": 54.05,
+    "description": "The classic wireless mouse is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-07-18T23:00:00.000Z",
+    "type": "2",
+    "stock": 186,
+    "categories": [
+      "4",
+      "9",
+      "17"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg"
+    ]
+  },
+  {
+    "id": 179,
+    "title": "Modern Picture Frame",
+    "category": "Beauty",
+    "price": 235.25,
+    "description": "The modern picture frame is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-03-25T00:00:00.000Z",
+    "type": "1",
+    "stock": 105,
+    "categories": [
+      "1",
+      "15",
+      "6"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg"
+    ]
+  },
+  {
+    "id": 180,
+    "title": "Handcrafted Sneakers",
+    "category": "Electronics",
+    "price": 224.37,
+    "description": "The handcrafted sneakers is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-03-01T00:00:00.000Z",
+    "type": "1",
+    "stock": 219,
+    "categories": [
+      "2",
+      "19"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg"
+    ]
+  },
+  {
+    "id": 181,
+    "title": "Handcrafted Yoga Mat",
+    "category": "Personal Care",
+    "price": 110.19,
+    "description": "The handcrafted yoga mat is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-01-19T00:00:00.000Z",
+    "type": "2",
+    "stock": 443,
+    "categories": [
+      "2",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg"
+    ]
+  },
+  {
+    "id": 182,
+    "title": "Lightweight Minimalist Watch",
+    "category": "Beauty",
+    "price": 61.8,
+    "description": "The lightweight minimalist watch is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-14T00:00:00.000Z",
+    "type": "2",
+    "stock": 405,
+    "categories": [
+      "8",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Nzhf/prod_42.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Nzdf/prod_41.jpg"
+    ]
+  },
+  {
+    "id": 183,
+    "title": "Luxury Camping Tent",
+    "category": "Home Decor",
+    "price": 313.06,
+    "description": "The luxury camping tent is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-07T00:00:00.000Z",
+    "type": "1",
+    "stock": 453,
+    "categories": [
+      "1",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzRf/prod_40.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzNf/prod_39.jpg"
+    ]
+  },
+  {
+    "id": 184,
+    "title": "Ergonomic Wireless Router",
+    "category": "Toys",
+    "price": 96.03,
+    "description": "The ergonomic wireless router is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-10-03T23:00:00.000Z",
+    "type": "2",
+    "stock": 438,
+    "categories": [
+      "7",
+      "10"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzJf/prod_38.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NzFf/prod_37.jpg"
+    ]
+  },
+  {
+    "id": 185,
+    "title": "Eco-Friendly Blender",
+    "category": "Toys",
+    "price": 326.51,
+    "description": "The eco-friendly blender is crafted with precision to offer unmatched quality and performance. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-01-11T00:00:00.000Z",
+    "type": "3",
+    "stock": 275,
+    "categories": [
+      "2",
+      "4"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NzBf/prod_36.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Njlf/prod_35.jpg"
+    ]
+  },
+  {
+    "id": 186,
+    "title": "Premium Wall Clock",
+    "category": "Beauty",
+    "price": 19.34,
+    "description": "The premium wall clock is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-16T00:00:00.000Z",
+    "type": "1",
+    "stock": 71,
+    "categories": [
+      "12",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Njhf/prod_34.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Njdf/prod_33.jpg"
+    ]
+  },
+  {
+    "id": 187,
+    "title": "Durable Rain Jacket",
+    "category": "Beauty",
+    "price": 470.15,
+    "description": "The durable rain jacket is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-30T00:00:00.000Z",
+    "type": "2",
+    "stock": 235,
+    "categories": [
+      "7",
+      "18"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjZf/prod_32.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjVf/prod_31.jpg"
+    ]
+  },
+  {
+    "id": 188,
+    "title": "Luxury Camping Tent",
+    "category": "Outdoors",
+    "price": 402.4,
+    "description": "The luxury camping tent is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-01-14T00:00:00.000Z",
+    "type": "1",
+    "stock": 357,
+    "categories": [
+      "5",
+      "15"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjRf/prod_30.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjNf/prod_29.jpg"
+    ]
+  },
+  {
+    "id": 189,
+    "title": "Lightweight Throw Blanket",
+    "category": "Home Decor",
+    "price": 457.2,
+    "description": "The lightweight throw blanket is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-22T00:00:00.000Z",
+    "type": "3",
+    "stock": 224,
+    "categories": [
+      "8",
+      "16"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjJf/prod_28.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NjFf/prod_27.jpg"
+    ]
+  },
+  {
+    "id": 190,
+    "title": "Classic Picture Frame",
+    "category": "Accessories",
+    "price": 159.9,
+    "description": "The classic picture frame is blends traditional craftsmanship with contemporary innovations for the best results. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-03T00:00:00.000Z",
+    "type": "3",
+    "stock": 279,
+    "categories": [
+      "3",
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NjBf/prod_26.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTlf/prod_25.jpg"
+    ]
+  },
+  {
+    "id": 191,
+    "title": "Ergonomic Sunglasses",
+    "category": "Books",
+    "price": 31.7,
+    "description": "The ergonomic sunglasses is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-15T00:00:00.000Z",
+    "type": "2",
+    "stock": 470,
+    "categories": [
+      "8",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NThf/prod_24.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTdf/prod_23.jpg"
+    ]
+  },
+  {
+    "id": 192,
+    "title": "Compact Foldable Chair",
+    "category": "Clothing",
+    "price": 219.03,
+    "description": "The compact foldable chair is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2022-01-18T00:00:00.000Z",
+    "type": "1",
+    "stock": 436,
+    "categories": [
+      "7",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTZf/prod_22.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTVf/prod_21.jpg"
+    ]
+  },
+  {
+    "id": 193,
+    "title": "Eco-Friendly Running Shorts",
+    "category": "Home Decor",
+    "price": 71.79,
+    "description": "The eco-friendly running shorts is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-01T00:00:00.000Z",
+    "type": "3",
+    "stock": 458,
+    "categories": [
+      "6",
+      "13"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg"
+    ]
+  },
+  {
+    "id": 194,
+    "title": "Eco-Friendly Pet Bed",
+    "category": "Fitness",
+    "price": 291.88,
+    "description": "The eco-friendly pet bed is offers versatile usage for various settings and lifestyle needs. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "stock": 277,
+    "publishDate": "2022-01-18T00:00:00.000Z",
+    "type": "1",
+    "categories": [
+      "8",
+      "1"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NTFf/prod_18.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NTBf/prod_17.jpg"
+    ]
+  },
+  {
+    "id": 195,
+    "title": "Durable Sneakers",
+    "category": "Home Decor",
+    "price": 465.14,
+    "description": "The durable sneakers is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-16T00:00:00.000Z",
+    "type": "2",
+    "stock": 186,
+    "categories": [
+      "13",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDlf/prod_16.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDhf/prod_15.jpg"
+    ]
+  },
+  {
+    "id": 196,
+    "title": "Luxury Sunglasses",
+    "category": "Footwear",
+    "price": 475.87,
+    "description": "The luxury sunglasses is built with eco-conscious practices without compromising on excellence. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-11-29T00:00:00.000Z",
+    "type": "2",
+    "stock": 279,
+    "categories": [
+      "18",
+      "9"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDdf/prod_14.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDZf/prod_13.jpg"
+    ]
+  },
+  {
+    "id": 197,
+    "title": "Compact Standing Desk",
+    "category": "Books",
+    "price": 240.49,
+    "description": "The compact standing desk is designed for individuals who value both style and functionality. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-15T00:00:00.000Z",
+    "type": "3",
+    "stock": 20,
+    "categories": [
+      "7",
+      "14"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDVf/prod_12.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDRf/prod_11.jpg"
+    ]
+  },
+  {
+    "id": 198,
+    "title": "Durable Standing Desk",
+    "category": "Outdoors",
+    "price": 441.55,
+    "description": "The durable standing desk is specially curated to deliver an outstanding user experience in every scenario. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-01T00:00:00.000Z",
+    "type": "3",
+    "stock": 153,
+    "categories": [
+      "13",
+      "5"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDNf/prod_10.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDJf/prod_9.jpg"
+    ]
+  },
+  {
+    "id": 199,
+    "title": "Stylish Running Shorts",
+    "category": "Accessories",
+    "price": 135.23,
+    "description": "The stylish running shorts is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-14T00:00:00.000Z",
+    "type": "1",
+    "stock": 200,
+    "categories": [
+      "11",
+      "2"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3NDFf/prod_8.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3NDBf/prod_7.jpg"
+    ]
+  },
+  {
+    "id": 200,
+    "title": "Eco-Friendly Laptop Bag",
+    "category": "Footwear",
+    "price": 379.62,
+    "description": "The eco-friendly laptop bag is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
+    "publishDate": "2021-12-01T00:00:00.000Z",
+    "type": "2",
+    "stock": 140,
+    "categories": [
+      "19",
+      "7"
+    ],
+    "images": [
+      "https://od.lk/d/NzlfNTQxMjE3Mzlf/prod_6.jpg",
+      "https://od.lk/d/NzlfNTQxMjE3Mzhf/prod_5.jpg"
+    ]
+  }
+]

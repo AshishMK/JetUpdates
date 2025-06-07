@@ -21,14 +21,19 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.metrics.performance.JankStats
-import com.demo.designsystem.theme.AppTheme
 import com.demo.jetupdates.MainActivityUiState.Loading
+import com.demo.jetupdates.core.data.repository.UserDataRepository
+import com.demo.jetupdates.core.data.util.TimeZoneMonitor
+import com.demo.jetupdates.core.designsystem.theme.AppTheme
+import com.demo.jetupdates.core.ui.LocalTimeZone
 import com.demo.jetupdates.ui.JUApp
 import com.demo.jetupdates.ui.rememberJUAppState
 import com.demo.jetupdates.util.isSystemInDarkTheme
@@ -43,6 +48,14 @@ class MainActivity : ComponentActivity() {
      */
     @Inject
     lateinit var lazyStats: dagger.Lazy<JankStats>
+
+    @Inject
+    lateinit var timeZoneMonitor: TimeZoneMonitor
+
+    private val viewModel: MainActivityViewModel by viewModels()
+
+    @Inject
+    lateinit var userDataRepository: UserDataRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
@@ -74,7 +87,7 @@ class MainActivity : ComponentActivity() {
                     .map { it.darkTheme }
                     .distinctUntilChanged()
                     .collect { darkTheme ->
-                        trace("niaEdgeToEdge") {
+                        trace("appEdgeToEdge") {
                             // Turn off the decor fitting system windows, which allows us to handle insets,
                             // including IME animations, and go edge-to-edge.
                             // This is the same parameters as the default enableEdgeToEdge call, but we manually
@@ -98,29 +111,31 @@ class MainActivity : ComponentActivity() {
         // Keep the splash screen on-screen until the UI state is loaded. This condition is
         // evaluated each time the app needs to be redrawn so it should be fast to avoid blocking
         // the UI.
-        splashScreen.setKeepOnScreenCondition { true }//viewModel.uiState.value.shouldKeepSplashScreen() }
+        splashScreen.setKeepOnScreenCondition { true } // viewModel.uiState.value.shouldKeepSplashScreen() }
         Handler(Looper.getMainLooper()).postDelayed(
             { splashScreen.setKeepOnScreenCondition { false } },
-            1000
+            1000,
         )
         setContent {
             val appState = rememberJUAppState(
+                userDataRepository,
+                timeZoneMonitor,
             )
 
-         //   val currentTimeZone by appState.currentTimeZone.collectAsStateWithLifecycle()
+            val currentTimeZone by appState.currentTimeZone.collectAsStateWithLifecycle()
 
-            /*    CompositionLocalProvider(
-                    LocalAnalyticsHelper provides analyticsHelper,
-                    LocalTimeZone provides currentTimeZone,
-                ) {*/
-            AppTheme(
-                darkTheme = themeSettings.darkTheme,
-                androidTheme = themeSettings.androidTheme,
-                disableDynamicTheming = themeSettings.disableDynamicTheming,
+            CompositionLocalProvider(
+                // LocalAnalyticsHelper provides analyticsHelper,
+                LocalTimeZone provides currentTimeZone,
             ) {
-                JUApp(appState)
+                AppTheme(
+                    darkTheme = themeSettings.darkTheme,
+                    androidTheme = themeSettings.androidTheme,
+                    disableDynamicTheming = themeSettings.disableDynamicTheming,
+                ) {
+                    JUApp(appState)
+                }
             }
-            // }
         }
     }
 

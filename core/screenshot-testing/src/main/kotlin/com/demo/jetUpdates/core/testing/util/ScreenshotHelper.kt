@@ -16,7 +16,7 @@
 
 @file:OptIn(ExperimentalRoborazziApi::class)
 
-package com.google.samples.apps.nowinandroid.core.testing.util
+package com.demo.jetUpdates.core.testing.util
 
 import android.graphics.Bitmap.CompressFormat.PNG
 import androidx.activity.ComponentActivity
@@ -33,7 +33,7 @@ import androidx.compose.ui.test.DeviceConfigurationOverride
 import androidx.compose.ui.test.junit4.AndroidComposeTestRule
 import androidx.compose.ui.test.onRoot
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import com.demo.designsystem.theme.AppTheme
+import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
 import com.github.takahirom.roborazzi.RoborazziATFAccessibilityCheckOptions
 import com.github.takahirom.roborazzi.RoborazziATFAccessibilityChecker

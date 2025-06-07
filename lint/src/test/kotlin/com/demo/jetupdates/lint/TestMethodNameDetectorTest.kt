@@ -19,8 +19,8 @@ package com.demo.jetupdates.lint
 import com.android.tools.lint.checks.infrastructure.TestFile
 import com.android.tools.lint.checks.infrastructure.TestFiles.kotlin
 import com.android.tools.lint.checks.infrastructure.TestLintTask.lint
-import com.google.samples.apps.nowinandroid.lint.TestMethodNameDetector.Companion.FORMAT
-import com.google.samples.apps.nowinandroid.lint.TestMethodNameDetector.Companion.PREFIX
+import com.demo.jetupdates.lint.TestMethodNameDetector.Companion.FORMAT
+import com.demo.jetupdates.lint.TestMethodNameDetector.Companion.PREFIX
 import org.junit.Test
 
 class TestMethodNameDetectorTest {
