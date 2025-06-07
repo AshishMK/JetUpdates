@@ -18,12 +18,12 @@ package com.demo.jetupdates.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.demo.designsystem.icon.AppIcons
 import com.demo.jetupdates.R
-import com.demo.jetupdates.feature.foryou.navigation.StoreBaseRoute
-import com.demo.jetupdates.feature.foryou.navigation.StoreRoute
+import com.demo.jetupdates.core.designsystem.icon.AppIcons
+import com.demo.jetupdates.feature.store.navigation.StoreBaseRoute
+import com.demo.jetupdates.feature.store.navigation.StoreRoute
 import kotlin.reflect.KClass
-import com.demo.jetupdates.feature.foryou.R as forYouR
+import com.demo.jetupdates.feature.store.R as forYouR
 
 /**
  * Type for the top level destinations in the application. Contains metadata about the destination

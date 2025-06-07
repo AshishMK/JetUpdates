@@ -17,10 +17,10 @@
 package com.demo.jetupdates.core.model.data
 
 /**
- * External data layer representation of a NiA Topic
+ * External data layer representation of a APP Category
  */
 data class Category(
-    val id: String,
+    val id: Int,
     val name: String,
     val shortDescription: String,
     val longDescription: String,

@@ -39,7 +39,7 @@ class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
                     /*
                     Exclusion of protobuf / protolite dependencies is necessary as the
                     datastore-proto brings in protobuf dependencies. These are the source of truth
-                    for Now in Android.
+                    for JU App
                     That's why the duplicate classes from below dependencies are excluded.
                     */
                     exclude(group = "com.google.protobuf", module = "protobuf-javalite")

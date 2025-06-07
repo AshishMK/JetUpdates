@@ -16,6 +16,7 @@
 
 package com.demo.jetupdates.ui
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -30,7 +31,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarDuration.Indefinite
 import androidx.compose.material3.SnackbarDuration.Short
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -61,17 +61,18 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
-import com.demo.designsystem.component.AppBackground
-import com.demo.designsystem.component.AppNavigationSuiteScaffold
-import com.demo.designsystem.component.AppTopAppBar
-import com.demo.designsystem.icon.AppIcons
 import com.demo.jetupdates.R
+import com.demo.jetupdates.core.designsystem.component.AppBackground
+import com.demo.jetupdates.core.designsystem.component.AppNavigationSuiteScaffold
+import com.demo.jetupdates.core.designsystem.component.AppTopAppBar
+import com.demo.jetupdates.core.designsystem.icon.AppIcons
 import com.demo.jetupdates.navigation.AppNavHost
 import com.demo.jetupdates.navigation.TopLevelDestination
 import kotlin.reflect.KClass
 
 @Composable
 fun JUApp(
+
     appState: JUAppState,
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
@@ -79,15 +80,14 @@ fun JUApp(
     val shouldShowGradientBackground =
         appState.currentTopLevelDestination == TopLevelDestination.STORE
     var showSettingsDialog by rememberSaveable { mutableStateOf(false) }
-
+    var showCategoryList by rememberSaveable { mutableStateOf(true) }
     AppBackground(modifier = modifier) {
-      
-            val snackbarHostState = remember { SnackbarHostState() }
+        val snackbarHostState = remember { SnackbarHostState() }
 
-           // val isOffline by appState.isOffline.collectAsStateWithLifecycle()
+        // val isOffline by appState.isOffline.collectAsStateWithLifecycle()
 
-            // If user is not connected to the internet show a snack bar to inform them.
-           // val notConnectedMessage = stringResource(R.string.not_connected)
+        // If user is not connected to the internet show a snack bar to inform them.
+        // val notConnectedMessage = stringResource(R.string.not_connected)
          /*   LaunchedEffect(isOffline) {
                 if (isOffline) {
                     snackbarHostState.showSnackbar(
@@ -96,17 +96,25 @@ fun JUApp(
                     )
                 }
             }*/
-
-            JUApp(
-                appState = appState,
-                snackbarHostState = snackbarHostState,
-                showSettingsDialog = showSettingsDialog,
-                onSettingsDismissed = { showSettingsDialog = false },
-                onTopAppBarActionClick = { showSettingsDialog = true },
-                windowAdaptiveInfo = windowAdaptiveInfo,
-            )
+        val shouldShowOnboarding by appState.shouldShowOnboarding.collectAsStateWithLifecycle()
+        LaunchedEffect(shouldShowOnboarding) {
+            Log.v("ghjhh", "ghjhh $shouldShowOnboarding")
+            if (shouldShowOnboarding == 0) {
+                showCategoryList = false
+            }
         }
-    
+
+        JUApp(
+            appState = appState,
+            showCategoryList = showCategoryList,
+            snackbarHostState = snackbarHostState,
+            showSettingsDialog = showSettingsDialog,
+            onSettingsDismissed = { showSettingsDialog = false },
+            onTopAppBarActionClick = { showSettingsDialog = true },
+            onTopAppBarCategoryActionClick = { showCategoryList = !showCategoryList },
+            windowAdaptiveInfo = windowAdaptiveInfo,
+        )
+    }
 }
 
 @Composable
@@ -116,10 +124,12 @@ fun JUApp(
 )
 internal fun JUApp(
     appState: JUAppState,
+    showCategoryList: Boolean,
     snackbarHostState: SnackbarHostState,
     showSettingsDialog: Boolean,
     onSettingsDismissed: () -> Unit,
     onTopAppBarActionClick: () -> Unit,
+    onTopAppBarCategoryActionClick: () -> Unit,
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
@@ -136,7 +146,7 @@ internal fun JUApp(
     AppNavigationSuiteScaffold(
         navigationSuiteItems = {
             appState.topLevelDestinations.forEach { destination ->
-             //   val hasUnread = unreadDestinations.contains(destination)
+                //   val hasUnread = unreadDestinations.contains(destination)
                 val selected = currentDestination
                     .isRouteInHierarchy(destination.baseRoute)
                 item(
@@ -157,8 +167,8 @@ internal fun JUApp(
                     label = { Text(stringResource(destination.iconTextId)) },
                     modifier =
                     Modifier
-                        .testTag("AppNavItem")
-                        //.then(if (hasUnread) Modifier.notificationDot() else Modifier),
+                        .testTag("AppNavItem"),
+                    // .then(if (hasUnread) Modifier.notificationDot() else Modifier),
                 )
             }
         },
@@ -205,11 +215,18 @@ internal fun JUApp(
                         actionIconContentDescription = stringResource(
                             id = R.string.feature_settings_top_app_bar_action_icon_description,
                         ),
+                        actionIconCategories = AppIcons.Category,
+                        actionIconCategoriesContentDescription = stringResource(
+                            id = R.string.feature_categories_top_app_bar_navigation_icon_description,
+                        ),
+
                         colors = TopAppBarDefaults.topAppBarColors(
                             containerColor = Color.Transparent,
                         ),
+
+                        onNavigationClick = { },
                         onActionClick = { onTopAppBarActionClick() },
-                        onNavigationClick = {  },
+                        onCategoryActionClick = { onTopAppBarCategoryActionClick() },
                     )
                 }
 
@@ -232,6 +249,7 @@ internal fun JUApp(
                                 duration = Short,
                             ) == ActionPerformed
                         },
+                        showCategoryList = showCategoryList,
                     )
                 }
 

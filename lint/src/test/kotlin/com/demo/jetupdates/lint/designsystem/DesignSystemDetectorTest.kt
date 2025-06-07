@@ -19,9 +19,9 @@ package com.demo.jetupdates.lint.designsystem
 import com.android.tools.lint.checks.infrastructure.TestFile
 import com.android.tools.lint.checks.infrastructure.TestFiles.kotlin
 import com.android.tools.lint.checks.infrastructure.TestLintTask.lint
-import com.google.samples.apps.nowinandroid.lint.designsystem.DesignSystemDetector.Companion.ISSUE
-import com.google.samples.apps.nowinandroid.lint.designsystem.DesignSystemDetector.Companion.METHOD_NAMES
-import com.google.samples.apps.nowinandroid.lint.designsystem.DesignSystemDetector.Companion.RECEIVER_NAMES
+import com.demo.jetupdates.lint.designsystem.DesignSystemDetector.Companion.ISSUE
+import com.demo.jetupdates.lint.designsystem.DesignSystemDetector.Companion.METHOD_NAMES
+import com.demo.jetupdates.lint.designsystem.DesignSystemDetector.Companion.RECEIVER_NAMES
 import org.junit.Test
 
 class DesignSystemDetectorTest {

@@ -30,16 +30,25 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import androidx.tracing.trace
+import com.demo.jetupdates.core.data.repository.UserDataRepository
+import com.demo.jetupdates.core.data.util.TimeZoneMonitor
 import com.demo.jetupdates.core.ui.TrackDisposableJank
+import com.demo.jetupdates.feature.store.navigation.navigateToStore
 import com.demo.jetupdates.navigation.TopLevelDestination
 import com.demo.jetupdates.navigation.TopLevelDestination.STORE
-import com.demo.jetupdates.feature.foryou.navigation.navigateToStore
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.datetime.TimeZone
 
 @Composable
 fun rememberJUAppState(
+    userDataRepository: UserDataRepository,
+    timeZoneMonitor: TimeZoneMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
+
 ): JUAppState {
     NavigationTrackingSideEffect(navController)
     return remember(
@@ -47,17 +56,30 @@ fun rememberJUAppState(
         coroutineScope,
     ) {
         JUAppState(
+            userDataRepository = userDataRepository,
+            timeZoneMonitor = timeZoneMonitor,
             navController = navController,
             coroutineScope = coroutineScope,
+
         )
     }
 }
 
 @Stable
 class JUAppState(
+    userDataRepository: UserDataRepository,
+    timeZoneMonitor: TimeZoneMonitor,
     val navController: NavHostController,
     coroutineScope: CoroutineScope,
+
 ) {
+    val shouldShowOnboarding = userDataRepository.userData.map { if (it.shouldHideOnboarding) 0 else 1 }
+        .stateIn(
+            scope = coroutineScope,
+            started = SharingStarted.WhileSubscribed(5_000),
+            initialValue = -1,
+        )
+
     private val previousDestination = mutableStateOf<NavDestination?>(null)
 
     val currentDestination: NavDestination?
@@ -81,13 +103,13 @@ class JUAppState(
             }
         }
 
-/*    val isOffline = networkMonitor.isOnline
-        .map(Boolean::not)
-        .stateIn(
-            scope = coroutineScope,
-            started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = false,
-        )*/
+    /*    val isOffline = networkMonitor.isOnline
+            .map(Boolean::not)
+            .stateIn(
+                scope = coroutineScope,
+                started = SharingStarted.WhileSubscribed(5_000),
+                initialValue = false,
+            )*/
 
     /**
      * Map of top level destinations to be used in the TopBar, BottomBar and NavRail. The key is the
@@ -96,28 +118,28 @@ class JUAppState(
     val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.entries
 
     /**
-     * The top level destinations that have unread news resources.
+     * The top level destinations that have unread Shop Items.
      */
-    //val topLevelDestinationsWithUnreadResources: StateFlow<Set<TopLevelDestination>> =
-/*        userNewsResourceRepository.observeAllForFollowedTopics()
-            .combine(userNewsResourceRepository.observeAllBookmarked()) { forYouNewsResources, bookmarkedNewsResources ->
-                setOfNotNull(
-                    FOR_YOU.takeIf { forYouNewsResources.any { !it.hasBeenViewed } },
-                    BOOKMARKS.takeIf { bookmarkedNewsResources.any { !it.hasBeenViewed } },
-                )
-            }
-            .stateIn(
-                coroutineScope,
-                SharingStarted.WhileSubscribed(5_000),
-                initialValue = emptySet(),
-            )*/
+    // val topLevelDestinationsWithUnreadResources: StateFlow<Set<TopLevelDestination>> =
+    /*        userShopItemRepository.observeAllForFollowedCategories()
+                .combine(userShopItemRepository.observeAllBookmarked()) { storeShopItems, bookmarkedShopItems->
+                    setOfNotNull(
+                        STORE.takeIf { storeShopItems.any { !it.hasBeenViewed } },
+                        BOOKMARKS.takeIf { bookmarkedShopItems.any { !it.hasBeenViewed } },
+                    )
+                }
+                .stateIn(
+                    coroutineScope,
+                    SharingStarted.WhileSubscribed(5_000),
+                    initialValue = emptySet(),
+                )*/
 
-   /* val currentTimeZone = timeZoneMonitor.currentTimeZone
+    val currentTimeZone = timeZoneMonitor.currentTimeZone
         .stateIn(
             coroutineScope,
             SharingStarted.WhileSubscribed(5_000),
             TimeZone.currentSystemDefault(),
-        )*/
+        )
 
     /**
      * UI logic for navigating to a top level destination in the app. Top level destinations have
@@ -148,7 +170,7 @@ class JUAppState(
         }
     }
 
-   // fun navigateToSearch() = navController.navigateToSearch()
+    // fun navigateToSearch() = navController.navigateToSearch()
 }
 
 /**

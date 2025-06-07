@@ -12,7 +12,9 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+
 }
+
 
 dependencyResolutionManagement {
     repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
@@ -39,11 +41,22 @@ include(":core:testing")
 include(":core:ui")
 include(":feature:store")
 include(":core:model")
-
-
+include(":core:data")
+include(":core:data-test")
+include(":core:database")
+include(":core:datastore")
+include(":core:datastore-proto")
+include(":core:common")
+include(":core:network")
+include(":core:domain")
+include(":core:notifications")
+include(":sync:work")
+include(":core:datastore-test")
+include(":sync:sync-test")
+include(":benchmarks")
 check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     """
-    Now in Android requires JDK 17+ but it is currently using JDK ${JavaVersion.current()}.
+    JU App requires JDK 17+ but it is currently using JDK ${JavaVersion.current()}.
     Java Home: [${System.getProperty("java.home")}]
     https://developer.android.com/build/jdks#jdk-config-in-studio
     """.trimIndent()

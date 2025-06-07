@@ -16,10 +16,10 @@
 
 package com.demo.jetupdates.core.model.data
 /**
- * A [topic] with the additional information for whether or not it is followed.
+ * A [category] with the additional information for whether or not it is followed.
  */
-// TODO consider changing to UserTopic and flattening
- data class FollowableCategory2(
+// TODO consider changing to UserCategory and flattening
+data class FollowableCategory2(
     val category: Category,
-    val isFollowed :Boolean
+    val isFollowed: Boolean,
 )

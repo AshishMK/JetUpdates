@@ -17,6 +17,9 @@
 <resources>
     <string name="core_ui_bookmark">Bookmark</string>
     <string name="core_ui_unbookmark">Unbookmark</string>
+
+    <string name="core_ui_add_to_cart">Add To Bookmark</string>
+    <string name="core_ui_remove_from_cart">Remove From Cart</string>
     <string name="core_ui_back">Back</string>
 
     <string name="core_ui_unread_resource_dot_content_description">Unread</string>
@@ -24,8 +27,8 @@
     <string name="core_ui_card_tap_action">Open Resource Link</string>
     <string name="core_ui_card_meta_data_text">%1$s • %2$s</string>
 
-    <string name="core_ui_topic_chip_content_description_when_followed">%1$s is followed</string>
-    <string name="core_ui_topic_chip_content_description_when_not_followed">%1$s is not followed</string>
+    <string name="core_ui_category_chip_content_description_when_followed">%1$s is followed</string>
+    <string name="core_ui_category_chip_content_description_when_not_followed">%1$s is not followed</string>
 
     <string name="core_ui_interests_card_follow_button_content_desc">Follow interest</string>
     <string name="core_ui_interests_card_unfollow_button_content_desc">Unfollow interest</string>

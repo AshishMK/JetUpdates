@@ -24,11 +24,12 @@ android {
 
 dependencies {
     api(libs.kotlinx.coroutines.test)
+    api(projects.core.data)
     //api(projects.core.analytics)
   /*  api(projects.core.common)
-    api(projects.core.data)
-    api(projects.core.model)
-    api(projects.core.notifications)*/
+
+    api(projects.core.model)*/
+    api(projects.core.notifications)
 
 
     implementation(libs.androidx.test.rules)

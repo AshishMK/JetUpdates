@@ -22,6 +22,12 @@ plugins {
 android {
     namespace = "com.demo.jetupdates.core.ui"
 }
+/*configurations.configureEach {
+    resolutionStrategy {
+        force(libs.androidx.test.core)
+        // or force libs.test.core
+    }
+}*/
 
 dependencies {
     api(libs.androidx.metrics)
@@ -32,7 +38,8 @@ dependencies {
     implementation(libs.androidx.browser)
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
-
+    implementation(libs.androidx.compose.runtime)
     androidTestImplementation(libs.bundles.androidx.compose.ui.test)
     androidTestImplementation(projects.core.testing)
+    androidTestImplementation(libs.androidx.test.core)
 }
