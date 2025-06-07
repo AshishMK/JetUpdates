@@ -28,7 +28,7 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>
 
-    <style name="Theme.MyApp.Splash" parent="NightAdjusted.Theme.Splash">
+    <style name="Theme.App.Splash" parent="NightAdjusted.Theme.Splash">
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
         <item name="postSplashScreenTheme">@style/Theme.App</item>
     </style>
