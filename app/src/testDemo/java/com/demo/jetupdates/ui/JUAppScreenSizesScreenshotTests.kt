@@ -99,10 +99,8 @@ class JUAppScreenSizesScreenshotTests {
         // Configure user data
         runBlocking {
             userDataRepository.setShouldHideOnboarding(true)
-            val p =  categoriesRepository.getCategories().first()
-            println("ajss ${p.size}")
             userDataRepository.setFollowedCategoryIds(
-                setOf(p.first().id),
+                setOf(categoriesRepository.getCategories().first().first().id),
             )
         }
     }
