@@ -13,7 +13,19 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ScrollForYouFeedBenchmark">
+      <SelectionState runConfigName="topLevelDestinations_showSettingsIcon()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="homeDestination_back_quitsApp()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="navigationBar_backFromAnyDestination_returnsToForYou()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="navigationBar_multipleBackStackInterests()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="navigatingToCategoryFromStore_showsCategoryDetails()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

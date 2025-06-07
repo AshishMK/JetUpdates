@@ -197,7 +197,7 @@ fun ItemResourceCardForList2(
             .semantics {
                 onClick(label = clickActionLabel, action = null)
             }
-            .testTag("itemResourceCard:${userShopItem.id}"),
+            .testTag("shopItemCard:${userShopItem.id}"),
     ) {
         Column {
             if (userShopItem.images.isNotEmpty() && !userShopItem.images[0].isNullOrEmpty()) {

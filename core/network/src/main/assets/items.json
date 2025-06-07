@@ -9,7 +9,7 @@
     "type": "1",
     "stock": 159,
     "categories": [
-      "1"
+      1
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg",
@@ -26,9 +26,9 @@
     "type": "2",
     "stock": 241,
     "categories": [
-      "1",
-      "3",
-      "19"
+      1,
+      3,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg",
@@ -45,8 +45,8 @@
     "publishDate": "2022-09-27T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "2",
-      "14"
+      2,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg",
@@ -63,7 +63,7 @@
     "publishDate": "2022-09-29T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "3"
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg",
@@ -80,8 +80,8 @@
     "type": "3",
     "stock": 115,
     "categories": [
-      "2",
-      "5"
+      2,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Nzhf/prod_42.jpg",
@@ -98,8 +98,8 @@
     "publishDate": "2022-09-29T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "2",
-      "5"
+      2,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzRf/prod_40.jpg",
@@ -116,7 +116,7 @@
     "publishDate": "2022-10-05T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "10"
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzJf/prod_38.jpg",
@@ -133,8 +133,8 @@
     "publishDate": "2022-09-22T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "5",
-      "15"
+      5,
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzBf/prod_36.jpg",
@@ -151,9 +151,9 @@
     "publishDate": "2022-10-05T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "12",
-      "7",
-      "13"
+      12,
+      7,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Njhf/prod_34.jpg",
@@ -170,8 +170,8 @@
     "publishDate": "2022-09-27T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "3",
-      "19"
+      3,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjZf/prod_32.jpg",
@@ -188,8 +188,8 @@
     "publishDate": "2022-09-26T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "1",
-      "3"
+      1,
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjRf/prod_30.jpg",
@@ -206,8 +206,8 @@
     "publishDate": "2022-09-15T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "8",
-      "4"
+      8,
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjJf/prod_28.jpg",
@@ -224,9 +224,9 @@
     "publishDate": "2022-09-19T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "7",
-      "18",
-      "6"
+      7,
+      18,
+      6
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjBf/prod_26.jpg",
@@ -243,8 +243,8 @@
     "publishDate": "2022-09-14T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "8",
-      "6"
+      8,
+      6
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NThf/prod_24.jpg",
@@ -261,7 +261,7 @@
     "publishDate": "2022-09-12T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "18"
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTZf/prod_22.jpg",
@@ -278,9 +278,9 @@
     "publishDate": "2022-09-12T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "12",
-      "2",
-      "5"
+      12,
+      2,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg",
@@ -297,8 +297,8 @@
     "publishDate": "2022-09-06T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "8",
-      "19"
+      8,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTFf/prod_18.jpg",
@@ -315,9 +315,9 @@
     "publishDate": "2022-09-05T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "5",
-      "7",
-      "2"
+      5,
+      7,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDlf/prod_16.jpg",
@@ -334,8 +334,8 @@
     "publishDate": "2022-09-13T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "12",
-      "2"
+      12,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDdf/prod_14.jpg",
@@ -352,9 +352,9 @@
     "publishDate": "2022-09-13T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "7",
-      "11",
-      "5"
+      7,
+      11,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDVf/prod_12.jpg",
@@ -371,8 +371,8 @@
     "type": "3",
     "stock": 462,
     "categories": [
-      "7",
-      "5"
+      7,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDNf/prod_10.jpg",
@@ -389,9 +389,9 @@
     "publishDate": "2022-09-13T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "3",
-      "8",
-      "4"
+      3,
+      8,
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDFf/prod_8.jpg",
@@ -408,9 +408,9 @@
     "publishDate": "2022-09-13T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "2",
-      "3",
-      "10"
+      2,
+      3,
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Mzlf/prod_6.jpg",
@@ -427,7 +427,7 @@
     "publishDate": "2022-09-13T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "3"
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Mzdf/prod_4.jpg",
@@ -444,8 +444,8 @@
     "publishDate": "2022-09-01T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "3",
-      "19"
+      3,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3MzVf/prod_2.jpg",
@@ -462,8 +462,8 @@
     "type": "2",
     "stock": 303,
     "categories": [
-      "19",
-      "2"
+      19,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzZf/prod_100.jpg",
@@ -480,8 +480,8 @@
     "type": "3",
     "stock": 321,
     "categories": [
-      "3",
-      "2"
+      3,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzRf/prod_98.jpg",
@@ -498,8 +498,8 @@
     "publishDate": "2022-09-07T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "3",
-      "2"
+      3,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg",
@@ -516,7 +516,7 @@
     "type": "1",
     "stock": 160,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzBf/prod_94.jpg",
@@ -533,7 +533,7 @@
     "type": "2",
     "stock": 227,
     "categories": [
-      "2"
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4Mjhf/prod_92.jpg",
@@ -550,8 +550,8 @@
     "publishDate": "2022-08-23T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "6",
-      "13"
+      6,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjZf/prod_90.jpg",
@@ -568,9 +568,9 @@
     "publishDate": "2022-08-23T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "2",
-      "8",
-      "12"
+      2,
+      8,
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjRf/prod_88.jpg",
@@ -587,8 +587,8 @@
     "type": "1",
     "stock": 117,
     "categories": [
-      "12",
-      "6"
+      12,
+      6
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjJf/prod_86.jpg",
@@ -605,8 +605,8 @@
     "type": "1",
     "stock": 362,
     "categories": [
-      "7",
-      "2"
+      7,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjBf/prod_84.jpg",
@@ -623,8 +623,8 @@
     "publishDate": "2022-08-22T23:00:00.000Z",
     "type": "3",
     "categories": [
-      "13",
-      "2"
+      13,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MThf/prod_82.jpg",
@@ -641,8 +641,8 @@
     "type": "2",
     "stock": 173,
     "categories": [
-      "10",
-      "6"
+      10,
+      6
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTZf/prod_80.jpg",
@@ -659,8 +659,8 @@
     "publishDate": "2022-08-31T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "1",
-      "13"
+      1,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTRf/prod_78.jpg",
@@ -677,8 +677,8 @@
     "type": "2",
     "stock": 465,
     "categories": [
-      "1",
-      "12"
+      1,
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTJf/prod_76.jpg",
@@ -695,8 +695,8 @@
     "type": "1",
     "stock": 497,
     "categories": [
-      "3",
-      "11"
+      3,
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTBf/prod_74.jpg",
@@ -713,8 +713,8 @@
     "type": "2",
     "stock": 433,
     "categories": [
-      "5",
-      "5"
+      5,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDhf/prod_72.jpg",
@@ -731,8 +731,8 @@
     "type": "3",
     "stock": 369,
     "categories": [
-      "16",
-      "8"
+      16,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDZf/prod_70.jpg",
@@ -749,8 +749,8 @@
     "type": "1",
     "stock": 271,
     "categories": [
-      "3",
-      "5"
+      3,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDRf/prod_68.jpg",
@@ -767,10 +767,10 @@
     "type": "1",
     "stock": 60,
     "categories": [
-      "19",
-      "2",
-      "16",
-      "15"
+      19,
+      2,
+      16,
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDJf/prod_66.jpg",
@@ -787,8 +787,8 @@
     "type": "2",
     "stock": 175,
     "categories": [
-      "11",
-      "13"
+      11,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDBf/prod_64.jpg",
@@ -805,8 +805,8 @@
     "type": "3",
     "stock": 370,
     "categories": [
-      "5",
-      "13"
+      5,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OThf/prod_62.jpg",
@@ -823,8 +823,8 @@
     "type": "2",
     "stock": 422,
     "categories": [
-      "2",
-      "3"
+      2,
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTZf/prod_60.jpg",
@@ -841,8 +841,8 @@
     "type": "3",
     "stock": 363,
     "categories": [
-      "19",
-      "2"
+      19,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTRf/prod_58.jpg",
@@ -859,8 +859,8 @@
     "type": "1",
     "stock": 93,
     "categories": [
-      "1",
-      "15"
+      1,
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTJf/prod_56.jpg",
@@ -877,10 +877,10 @@
     "type": "3",
     "stock": 214,
     "categories": [
-      "1",
-      "5",
-      "3",
-      "8"
+      1,
+      5,
+      3,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTBf/prod_54.jpg",
@@ -897,7 +897,7 @@
     "type": "2",
     "stock": 156,
     "categories": [
-      "1"
+      1
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODhf/prod_52.jpg",
@@ -914,11 +914,11 @@
     "type": "2",
     "stock": 338,
     "categories": [
-      "1",
-      "3",
-      "2",
-      "5",
-      "19"
+      1,
+      3,
+      2,
+      5,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3MzRf/prod_1.jpg",
@@ -935,8 +935,8 @@
     "type": "3",
     "stock": 434,
     "categories": [
-      "3",
-      "2"
+      3,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3MzZf/prod_3.jpg",
@@ -953,8 +953,8 @@
     "type": "3",
     "stock": 174,
     "categories": [
-      "3",
-      "8"
+      3,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Mzhf/prod_5.jpg",
@@ -971,8 +971,8 @@
     "type": "1",
     "stock": 309,
     "categories": [
-      "3",
-      "5"
+      3,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDBf/prod_7.jpg",
@@ -989,8 +989,8 @@
     "publishDate": "2022-07-21T23:00:00.000Z",
     "type": "1",
     "categories": [
-      "3",
-      "5"
+      3,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDJf/prod_9.jpg",
@@ -1007,8 +1007,8 @@
     "publishDate": "2022-07-24T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "3",
-      "7"
+      3,
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDRf/prod_11.jpg",
@@ -1025,8 +1025,8 @@
     "type": "1",
     "stock": 207,
     "categories": [
-      "3",
-      "2"
+      3,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDZf/prod_13.jpg",
@@ -1043,8 +1043,8 @@
     "type": "3",
     "stock": 119,
     "categories": [
-      "3",
-      "2"
+      3,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDhf/prod_15.jpg",
@@ -1061,8 +1061,8 @@
     "type": "2",
     "stock": 149,
     "categories": [
-      "5",
-      "2"
+      5,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTBf/prod_17.jpg",
@@ -1079,7 +1079,7 @@
     "type": "3",
     "stock": 61,
     "categories": [
-      "2"
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg",
@@ -1096,7 +1096,7 @@
     "type": "2",
     "stock": 155,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTVf/prod_21.jpg",
@@ -1113,8 +1113,8 @@
     "type": "1",
     "stock": 149,
     "categories": [
-      "13",
-      "11"
+      13,
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTdf/prod_23.jpg",
@@ -1131,8 +1131,8 @@
     "type": "3",
     "stock": 244,
     "categories": [
-      "13",
-      "11"
+      13,
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTlf/prod_25.jpg",
@@ -1149,8 +1149,8 @@
     "type": "2",
     "stock": 13,
     "categories": [
-      "13",
-      "11"
+      13,
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjFf/prod_27.jpg",
@@ -1167,8 +1167,8 @@
     "type": "1",
     "stock": 420,
     "categories": [
-      "13",
-      "7"
+      13,
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjNf/prod_29.jpg",
@@ -1185,7 +1185,7 @@
     "type": "1",
     "stock": 72,
     "categories": [
-      "18"
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjVf/prod_31.jpg",
@@ -1202,7 +1202,7 @@
     "type": "3",
     "stock": 428,
     "categories": [
-      "7"
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Njdf/prod_33.jpg",
@@ -1219,7 +1219,7 @@
     "type": "2",
     "stock": 141,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Njlf/prod_35.jpg",
@@ -1236,7 +1236,7 @@
     "type": "1",
     "stock": 376,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzFf/prod_37.jpg",
@@ -1253,10 +1253,10 @@
     "type": "3",
     "stock": 283,
     "categories": [
-      "19",
-      "3",
-      "8",
-      "13"
+      19,
+      3,
+      8,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzNf/prod_39.jpg",
@@ -1273,7 +1273,7 @@
     "type": "3",
     "stock": 236,
     "categories": [
-      "8"
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Nzdf/prod_41.jpg",
@@ -1290,8 +1290,8 @@
     "type": "2",
     "stock": 445,
     "categories": [
-      "16",
-      "13"
+      16,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg",
@@ -1308,7 +1308,7 @@
     "type": "3",
     "stock": 145,
     "categories": [
-      "15"
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg",
@@ -1325,9 +1325,9 @@
     "type": "2",
     "stock": 285,
     "categories": [
-      "12",
-      "8",
-      "11"
+      12,
+      8,
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg",
@@ -1344,7 +1344,7 @@
     "type": "1",
     "stock": 261,
     "categories": [
-      "12"
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg",
@@ -1361,8 +1361,8 @@
     "type": "1",
     "stock": 224,
     "categories": [
-      "2",
-      "15"
+      2,
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODdf/prod_51.jpg",
@@ -1379,7 +1379,7 @@
     "type": "2",
     "stock": 401,
     "categories": [
-      "12"
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODlf/prod_53.jpg",
@@ -1396,9 +1396,9 @@
     "type": "3",
     "stock": 112,
     "categories": [
-      "2",
-      "3",
-      "10"
+      2,
+      3,
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTFf/prod_55.jpg",
@@ -1415,7 +1415,7 @@
     "type": "2",
     "stock": 121,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTNf/prod_57.jpg",
@@ -1432,7 +1432,7 @@
     "type": "1",
     "stock": 42,
     "categories": [
-      "4"
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTVf/prod_59.jpg",
@@ -1449,7 +1449,7 @@
     "type": "1",
     "stock": 332,
     "categories": [
-      "4"
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTdf/prod_61.jpg",
@@ -1466,8 +1466,8 @@
     "type": "3",
     "stock": 228,
     "categories": [
-      "11",
-      "13"
+      11,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTlf/prod_63.jpg",
@@ -1484,7 +1484,7 @@
     "type": "2",
     "stock": 109,
     "categories": [
-      "12"
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDFf/prod_65.jpg",
@@ -1501,8 +1501,8 @@
     "type": "1",
     "stock": 296,
     "categories": [
-      "12",
-      "13"
+      12,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDNf/prod_67.jpg",
@@ -1518,7 +1518,7 @@
     "publishDate": "2021-05-31T23:00:00.000Z",
     "type": "2",
     "categories": [
-      "4"
+      4
     ],
     "stock": 37,
     "images": [
@@ -1536,8 +1536,8 @@
     "type": "1",
     "stock": 139,
     "categories": [
-      "16",
-      "14"
+      16,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDdf/prod_71.jpg",
@@ -1554,7 +1554,7 @@
     "type": "3",
     "stock": 28,
     "categories": [
-      "16"
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDlf/prod_73.jpg",
@@ -1571,7 +1571,7 @@
     "type": "3",
     "stock": 432,
     "categories": [
-      "16"
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTFf/prod_75.jpg",
@@ -1588,7 +1588,7 @@
     "type": "1",
     "stock": 95,
     "categories": [
-      "12"
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTNf/prod_77.jpg",
@@ -1605,7 +1605,7 @@
     "type": "2",
     "stock": 285,
     "categories": [
-      "12"
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTVf/prod_79.jpg",
@@ -1622,7 +1622,7 @@
     "type": "1",
     "stock": 184,
     "categories": [
-      "17"
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTdf/prod_81.jpg",
@@ -1639,8 +1639,8 @@
     "type": "3",
     "stock": 256,
     "categories": [
-      "4",
-      "3"
+      4,
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTlf/prod_83.jpg",
@@ -1657,7 +1657,7 @@
     "type": "2",
     "stock": 28,
     "categories": [
-      "2"
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjFf/prod_85.jpg",
@@ -1674,7 +1674,7 @@
     "type": "1",
     "stock": 410,
     "categories": [
-      "8"
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjNf/prod_87.jpg",
@@ -1691,8 +1691,8 @@
     "type": "2",
     "stock": 327,
     "categories": [
-      "2",
-      "8"
+      2,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjVf/prod_89.jpg",
@@ -1709,7 +1709,7 @@
     "type": "3",
     "stock": 256,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4Mjdf/prod_91.jpg",
@@ -1726,8 +1726,8 @@
     "type": "1",
     "stock": 181,
     "categories": [
-      "4",
-      "18"
+      4,
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4Mjlf/prod_93.jpg",
@@ -1744,8 +1744,8 @@
     "type": "1",
     "stock": 435,
     "categories": [
-      "6",
-      "16"
+      6,
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg",
@@ -1762,7 +1762,7 @@
     "type": "2",
     "stock": 43,
     "categories": [
-      "16"
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzNf/prod_97.jpg",
@@ -1779,7 +1779,7 @@
     "type": "1",
     "stock": 487,
     "categories": [
-      "12"
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzVf/prod_99.jpg",
@@ -1796,7 +1796,7 @@
     "type": "1",
     "stock": 430,
     "categories": [
-      "8"
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg",
@@ -1813,8 +1813,8 @@
     "type": "2",
     "stock": 186,
     "categories": [
-      "2",
-      "10"
+      2,
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODdf/prod_51.jpg",
@@ -1831,7 +1831,7 @@
     "type": "1",
     "stock": 285,
     "categories": [
-      "17"
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODlf/prod_53.jpg",
@@ -1848,7 +1848,7 @@
     "type": "2",
     "stock": 357,
     "categories": [
-      "9"
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTFf/prod_55.jpg",
@@ -1865,8 +1865,8 @@
     "type": "1",
     "stock": 346,
     "categories": [
-      "3",
-      "12"
+      3,
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTNf/prod_57.jpg",
@@ -1883,7 +1883,7 @@
     "type": "3",
     "stock": 80,
     "categories": [
-      "1"
+      1
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTVf/prod_59.jpg",
@@ -1900,10 +1900,10 @@
     "type": "2",
     "stock": 368,
     "categories": [
-      "3",
-      "2",
-      "13",
-      "1"
+      3,
+      2,
+      13,
+      1
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTdf/prod_61.jpg",
@@ -1920,7 +1920,7 @@
     "type": "2",
     "stock": 231,
     "categories": [
-      "9"
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTlf/prod_63.jpg",
@@ -1937,8 +1937,8 @@
     "type": "1",
     "stock": 482,
     "categories": [
-      "2",
-      "19"
+      2,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDFf/prod_65.jpg",
@@ -1955,7 +1955,7 @@
     "type": "3",
     "stock": 421,
     "categories": [
-      "11"
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDNf/prod_67.jpg",
@@ -1972,7 +1972,7 @@
     "type": "1",
     "stock": 180,
     "categories": [
-      "17"
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDVf/prod_69.jpg",
@@ -1989,7 +1989,7 @@
     "type": "2",
     "stock": 142,
     "categories": [
-      "18"
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDdf/prod_71.jpg",
@@ -2006,7 +2006,7 @@
     "type": "2",
     "stock": 116,
     "categories": [
-      "9"
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDlf/prod_73.jpg",
@@ -2023,8 +2023,8 @@
     "type": "1",
     "stock": 496,
     "categories": [
-      "2",
-      "13"
+      2,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTFf/prod_75.jpg",
@@ -2041,7 +2041,7 @@
     "type": "2",
     "stock": 343,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3MzRf/prod_1.jpg",
@@ -2058,8 +2058,8 @@
     "type": "2",
     "stock": 64,
     "categories": [
-      "3",
-      "8"
+      3,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3MzZf/prod_3.jpg",
@@ -2076,7 +2076,7 @@
     "type": "1",
     "stock": 149,
     "categories": [
-      "9"
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Mzhf/prod_5.jpg",
@@ -2093,8 +2093,8 @@
     "type": "1",
     "stock": 380,
     "categories": [
-      "4",
-      "19"
+      4,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDBf/prod_7.jpg",
@@ -2111,8 +2111,8 @@
     "type": "3",
     "stock": 192,
     "categories": [
-      "3",
-      "5"
+      3,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDJf/prod_9.jpg",
@@ -2129,8 +2129,8 @@
     "type": "3",
     "stock": 481,
     "categories": [
-      "1",
-      "9"
+      1,
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg",
@@ -2147,7 +2147,7 @@
     "type": "1",
     "stock": 209,
     "categories": [
-      "15"
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDRf/prod_11.jpg",
@@ -2164,7 +2164,7 @@
     "type": "2",
     "stock": 284,
     "categories": [
-      "7"
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDZf/prod_13.jpg",
@@ -2181,7 +2181,7 @@
     "type": "3",
     "stock": 249,
     "categories": [
-      "18"
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDhf/prod_15.jpg",
@@ -2198,7 +2198,7 @@
     "type": "2",
     "stock": 478,
     "categories": [
-      "4"
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTBf/prod_17.jpg",
@@ -2215,8 +2215,8 @@
     "type": "2",
     "stock": 199,
     "categories": [
-      "16",
-      "14"
+      16,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg",
@@ -2233,7 +2233,7 @@
     "type": "1",
     "stock": 376,
     "categories": [
-      "14"
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTVf/prod_21.jpg",
@@ -2250,9 +2250,9 @@
     "type": "2",
     "stock": 169,
     "categories": [
-      "2",
-      "5",
-      "8"
+      2,
+      5,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTdf/prod_23.jpg",
@@ -2269,7 +2269,7 @@
     "type": "3",
     "stock": 128,
     "categories": [
-      "8"
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTlf/prod_25.jpg",
@@ -2286,9 +2286,9 @@
     "type": "2",
     "stock": 343,
     "categories": [
-      "19",
-      "3",
-      "8"
+      19,
+      3,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTNf/prod_77.jpg",
@@ -2305,7 +2305,7 @@
     "type": "2",
     "stock": 497,
     "categories": [
-      "4"
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTVf/prod_79.jpg",
@@ -2322,7 +2322,7 @@
     "type": "1",
     "stock": 191,
     "categories": [
-      "5"
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTdf/prod_81.jpg",
@@ -2339,7 +2339,7 @@
     "type": "3",
     "stock": 398,
     "categories": [
-      "9"
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTlf/prod_83.jpg",
@@ -2356,7 +2356,7 @@
     "type": "1",
     "stock": 12,
     "categories": [
-      "2"
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjFf/prod_85.jpg",
@@ -2373,7 +2373,7 @@
     "type": "2",
     "stock": 85,
     "categories": [
-      "14"
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjNf/prod_87.jpg",
@@ -2390,9 +2390,9 @@
     "type": "1",
     "stock": 66,
     "categories": [
-      "1",
-      "10",
-      "14"
+      1,
+      10,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjVf/prod_89.jpg",
@@ -2409,8 +2409,8 @@
     "type": "2",
     "stock": 489,
     "categories": [
-      "7",
-      "16"
+      7,
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4Mjdf/prod_91.jpg",
@@ -2427,7 +2427,7 @@
     "type": "3",
     "stock": 168,
     "categories": [
-      "13"
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4Mjlf/prod_93.jpg",
@@ -2444,9 +2444,9 @@
     "type": "2",
     "stock": 463,
     "categories": [
-      "17",
-      "7",
-      "10"
+      17,
+      7,
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzFf/prod_95.jpg",
@@ -2463,7 +2463,7 @@
     "type": "1",
     "stock": 362,
     "categories": [
-      "10"
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzNf/prod_97.jpg",
@@ -2480,8 +2480,8 @@
     "type": "2",
     "stock": 266,
     "categories": [
-      "10",
-      "8"
+      10,
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzVf/prod_99.jpg",
@@ -2494,8 +2494,8 @@
     "category": "Outdoors",
     "price": 214.95,
     "categories": [
-      "3",
-      "8"
+      3,
+      8
     ],
     "description": "The compact bluetooth speaker is combines elegant design with highly practical features for modern living. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
     "publishDate": "2021-10-26T23:00:00.000Z",
@@ -2516,7 +2516,7 @@
     "type": "3",
     "stock": 452,
     "categories": [
-      "7"
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjNf/prod_29.jpg",
@@ -2533,7 +2533,7 @@
     "type": "1",
     "stock": 299,
     "categories": [
-      "8"
+      8
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjVf/prod_31.jpg",
@@ -2550,8 +2550,8 @@
     "type": "2",
     "stock": 334,
     "categories": [
-      "5",
-      "5"
+      5,
+      1
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Njdf/prod_33.jpg",
@@ -2568,8 +2568,8 @@
     "type": "2",
     "stock": 226,
     "categories": [
-      "1",
-      "9"
+      1,
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Njlf/prod_35.jpg",
@@ -2586,8 +2586,8 @@
     "type": "1",
     "stock": 337,
     "categories": [
-      "19",
-      "11"
+      19,
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzFf/prod_37.jpg",
@@ -2604,7 +2604,7 @@
     "type": "1",
     "stock": 336,
     "categories": [
-      "5"
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzNf/prod_39.jpg",
@@ -2621,8 +2621,8 @@
     "type": "3",
     "stock": 294,
     "categories": [
-      "14",
-      "7"
+      14,
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Nzdf/prod_41.jpg",
@@ -2639,8 +2639,8 @@
     "type": "3",
     "stock": 139,
     "categories": [
-      "8",
-      "18"
+      8,
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg",
@@ -2657,8 +2657,8 @@
     "type": "2",
     "stock": 70,
     "categories": [
-      "9",
-      "19"
+      9,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg",
@@ -2675,8 +2675,8 @@
     "type": "1",
     "stock": 116,
     "categories": [
-      "8",
-      "2"
+      8,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjRf/prod_88.jpg",
@@ -2693,8 +2693,8 @@
     "type": "1",
     "stock": 136,
     "categories": [
-      "7",
-      "3"
+      7,
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjJf/prod_86.jpg",
@@ -2711,8 +2711,8 @@
     "type": "1",
     "stock": 202,
     "categories": [
-      "8",
-      "4"
+      8,
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjBf/prod_84.jpg",
@@ -2729,8 +2729,8 @@
     "type": "3",
     "stock": 221,
     "categories": [
-      "7",
-      "2"
+      7,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MThf/prod_82.jpg",
@@ -2747,9 +2747,9 @@
     "type": "3",
     "stock": 149,
     "categories": [
-      "5",
-      "7",
-      "13"
+      5,
+      7,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTZf/prod_80.jpg",
@@ -2766,9 +2766,9 @@
     "type": "2",
     "stock": 103,
     "categories": [
-      "4",
-      "7",
-      "17"
+      4,
+      7,
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTRf/prod_78.jpg",
@@ -2785,8 +2785,8 @@
     "type": "1",
     "stock": 59,
     "categories": [
-      "10",
-      "3"
+      10,
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTJf/prod_76.jpg",
@@ -2803,8 +2803,8 @@
     "type": "1",
     "stock": 361,
     "categories": [
-      "15",
-      "9"
+      15,
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MTBf/prod_74.jpg",
@@ -2821,9 +2821,9 @@
     "type": "2",
     "stock": 332,
     "categories": [
-      "1",
-      "5",
-      "12"
+      1,
+      5,
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Mzdf/prod_4.jpg",
@@ -2840,8 +2840,8 @@
     "type": "1",
     "stock": 253,
     "categories": [
-      "12",
-      "16"
+      12,
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3MzVf/prod_2.jpg",
@@ -2858,8 +2858,8 @@
     "type": "2",
     "stock": 50,
     "categories": [
-      "3",
-      "19"
+      3,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzZf/prod_100.jpg",
@@ -2876,8 +2876,8 @@
     "type": "2",
     "stock": 292,
     "categories": [
-      "7",
-      "17"
+      7,
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzRf/prod_98.jpg",
@@ -2894,8 +2894,8 @@
     "type": "1",
     "stock": 50,
     "categories": [
-      "6",
-      "16"
+      6,
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzJf/prod_96.jpg",
@@ -2913,7 +2913,7 @@
     "type": "3",
     "stock": 286,
     "categories": [
-      "11"
+      11
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MzBf/prod_94.jpg",
@@ -2930,7 +2930,7 @@
     "type": "2",
     "stock": 196,
     "categories": [
-      "19"
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4Mjhf/prod_92.jpg",
@@ -2947,8 +2947,8 @@
     "type": "1",
     "stock": 282,
     "categories": [
-      "11",
-      "12"
+      11,
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MjZf/prod_90.jpg",
@@ -2965,8 +2965,8 @@
     "type": "2",
     "stock": 145,
     "categories": [
-      "19",
-      "18"
+      19,
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDhf/prod_72.jpg",
@@ -2983,8 +2983,8 @@
     "type": "2",
     "stock": 56,
     "categories": [
-      "1",
-      "3"
+      1,
+      3
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDZf/prod_70.jpg",
@@ -3001,8 +3001,8 @@
     "type": "1",
     "stock": 374,
     "categories": [
-      "5",
-      "18"
+      5,
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDRf/prod_68.jpg",
@@ -3019,8 +3019,8 @@
     "type": "3",
     "stock": 474,
     "categories": [
-      "4",
-      "12"
+      4,
+      12
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDJf/prod_66.jpg",
@@ -3037,8 +3037,8 @@
     "type": "3",
     "stock": 237,
     "categories": [
-      "2",
-      "18"
+      2,
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE4MDBf/prod_64.jpg",
@@ -3055,8 +3055,8 @@
     "type": "2",
     "stock": 209,
     "categories": [
-      "9",
-      "4"
+      9,
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OThf/prod_62.jpg",
@@ -3073,8 +3073,8 @@
     "type": "3",
     "stock": 147,
     "categories": [
-      "13",
-      "16"
+      13,
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTZf/prod_60.jpg",
@@ -3091,8 +3091,8 @@
     "type": "1",
     "stock": 106,
     "categories": [
-      "6",
-      "15"
+      6,
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTRf/prod_58.jpg",
@@ -3109,8 +3109,8 @@
     "type": "1",
     "stock": 423,
     "categories": [
-      "7",
-      "17"
+      7,
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTJf/prod_56.jpg",
@@ -3127,9 +3127,9 @@
     "type": "2",
     "stock": 288,
     "categories": [
-      "4",
-      "9",
-      "17"
+      4,
+      9,
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3OTBf/prod_54.jpg",
@@ -3146,9 +3146,9 @@
     "type": "3",
     "stock": 31,
     "categories": [
-      "8",
-      "11",
-      "14"
+      8,
+      11,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODhf/prod_52.jpg",
@@ -3165,9 +3165,9 @@
     "type": "2",
     "stock": 186,
     "categories": [
-      "4",
-      "9",
-      "17"
+      4,
+      9,
+      17
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg",
@@ -3184,9 +3184,9 @@
     "type": "1",
     "stock": 105,
     "categories": [
-      "1",
-      "15",
-      "6"
+      1,
+      15,
+      6
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg",
@@ -3203,8 +3203,8 @@
     "type": "1",
     "stock": 219,
     "categories": [
-      "2",
-      "19"
+      2,
+      19
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg",
@@ -3221,8 +3221,8 @@
     "type": "2",
     "stock": 443,
     "categories": [
-      "2",
-      "13"
+      2,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg",
@@ -3239,8 +3239,8 @@
     "type": "2",
     "stock": 405,
     "categories": [
-      "8",
-      "2"
+      8,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Nzhf/prod_42.jpg",
@@ -3257,8 +3257,8 @@
     "type": "1",
     "stock": 453,
     "categories": [
-      "1",
-      "13"
+      1,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzRf/prod_40.jpg",
@@ -3275,8 +3275,8 @@
     "type": "2",
     "stock": 438,
     "categories": [
-      "7",
-      "10"
+      7,
+      10
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzJf/prod_38.jpg",
@@ -3293,8 +3293,8 @@
     "type": "3",
     "stock": 275,
     "categories": [
-      "2",
-      "4"
+      2,
+      4
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NzBf/prod_36.jpg",
@@ -3311,8 +3311,8 @@
     "type": "1",
     "stock": 71,
     "categories": [
-      "12",
-      "14"
+      12,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Njhf/prod_34.jpg",
@@ -3329,8 +3329,8 @@
     "type": "2",
     "stock": 235,
     "categories": [
-      "7",
-      "18"
+      7,
+      18
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjZf/prod_32.jpg",
@@ -3347,8 +3347,8 @@
     "type": "1",
     "stock": 357,
     "categories": [
-      "5",
-      "15"
+      5,
+      15
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjRf/prod_30.jpg",
@@ -3365,8 +3365,8 @@
     "type": "3",
     "stock": 224,
     "categories": [
-      "8",
-      "16"
+      8,
+      16
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjJf/prod_28.jpg",
@@ -3383,8 +3383,8 @@
     "type": "3",
     "stock": 279,
     "categories": [
-      "3",
-      "7"
+      3,
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NjBf/prod_26.jpg",
@@ -3401,8 +3401,8 @@
     "type": "2",
     "stock": 470,
     "categories": [
-      "8",
-      "2"
+      8,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NThf/prod_24.jpg",
@@ -3419,8 +3419,8 @@
     "type": "1",
     "stock": 436,
     "categories": [
-      "7",
-      "13"
+      7,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTZf/prod_22.jpg",
@@ -3437,8 +3437,8 @@
     "type": "3",
     "stock": 458,
     "categories": [
-      "6",
-      "13"
+      6,
+      13
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg",
@@ -3455,8 +3455,8 @@
     "publishDate": "2022-01-18T00:00:00.000Z",
     "type": "1",
     "categories": [
-      "8",
-      "1"
+      8,
+      1
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NTFf/prod_18.jpg",
@@ -3473,8 +3473,8 @@
     "type": "2",
     "stock": 186,
     "categories": [
-      "13",
-      "5"
+      13,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDlf/prod_16.jpg",
@@ -3491,8 +3491,8 @@
     "type": "2",
     "stock": 279,
     "categories": [
-      "18",
-      "9"
+      18,
+      9
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDdf/prod_14.jpg",
@@ -3509,8 +3509,8 @@
     "type": "3",
     "stock": 20,
     "categories": [
-      "7",
-      "14"
+      7,
+      14
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDVf/prod_12.jpg",
@@ -3527,8 +3527,8 @@
     "type": "3",
     "stock": 153,
     "categories": [
-      "13",
-      "5"
+      13,
+      5
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDNf/prod_10.jpg",
@@ -3545,8 +3545,8 @@
     "type": "1",
     "stock": 200,
     "categories": [
-      "11",
-      "2"
+      11,
+      2
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3NDFf/prod_8.jpg",
@@ -3563,8 +3563,8 @@
     "type": "2",
     "stock": 140,
     "categories": [
-      "19",
-      "7"
+      19,
+      7
     ],
     "images": [
       "https://od.lk/d/NzlfNTQxMjE3Mzlf/prod_6.jpg",
