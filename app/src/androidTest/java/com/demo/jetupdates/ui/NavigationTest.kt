@@ -277,7 +277,7 @@ class NavigationTest {
             // Get its first topic and follow it
             val topic = newsResource.categories.first()
             onNodeWithText(topic.name).performClick()
-
+            Thread.sleep(1000)
             // Get the news feed and scroll to the news resource
             // Note: Possible flakiness. If the content of the news resource is long then the topic
             // tag might not be visible meaning it cannot be clicked
