@@ -87,12 +87,10 @@ dependencies {
     implementation(projects.sync.work)
     implementation(projects.core.data)
 
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.activity.compose)
-
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.adaptive)
     implementation(libs.androidx.compose.material3.adaptive.layout)
@@ -126,6 +124,8 @@ dependencies {
     testDemoImplementation(libs.roborazzi)
     testImplementation(projects.sync.syncTest)
     testImplementation(libs.kotlin.test)
+
+    testImplementation(projects.core.datastoreTest)
 
     androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(projects.core.dataTest)
