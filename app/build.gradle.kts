@@ -126,6 +126,8 @@ dependencies {
     testImplementation(libs.kotlin.test)
 
     testImplementation(projects.core.datastoreTest)
+    testDemoImplementation(libs.androidx.navigation.testing)
+
 
     androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(projects.core.dataTest)
