@@ -1,0 +1,31 @@
+<variant
+    name="prodRelease"
+    package="com.demo.jetupdates.core.datastore.proto"
+    minSdkVersion="21"
+    targetSdkVersion="35"
+    mergedManifest="build/intermediates/merged_manifest/prodRelease/processProdReleaseManifest/AndroidManifest.xml"
+    proguardFiles="build/intermediates/default_proguard_files/global/proguard-android.txt-8.9.0"
+    partialResultsDir="build/intermediates/lint_partial_results/prodRelease/lintAnalyzeProdRelease/out"
+    desugaredMethodsFiles="/Users/ashish_nautiyal/.gradle/caches/8.13/transforms/1a0146441cb8f3f0fa59be4e2742b2cf/transformed/desugar_jdk_libs_configuration-2.1.4-desugar-lint.txt:/Users/ashish_nautiyal/.gradle/caches/8.13/transforms/f1b1d32e7b3d1364170bc4630b4bc6ec/transformed/D8BackportedDesugaredMethods.txt">
+  <buildFeatures
+      coreLibraryDesugaring="true"
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src/main/AndroidManifest.xml"
+        javaDirectories="src/main/java:src/prod/java:src/release/java:src/prodRelease/java:build/generated/source/proto/prodRelease/java:src/main/kotlin:src/prod/kotlin:src/release/kotlin:src/prodRelease/kotlin:build/generated/source/proto/prodRelease/kotlin"
+        resDirectories="src/main/res:src/prod/res:src/release/res:src/prodRelease/res"
+        assetsDirectories="src/main/assets:src/prod/assets:src/release/assets:src/prodRelease/assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      classOutputs="build/intermediates/javac/prodRelease/compileProdReleaseJavaWithJavac/classes:build/tmp/kotlin-classes/prodRelease:build/intermediates/compile_r_class_jar/prodRelease/generateProdReleaseRFile/R.jar"
+      type="MAIN"
+      applicationId="com.demo.jetupdates.core.datastore.proto"
+      generatedSourceFolders="build/generated/source/proto/prodRelease/java:build/generated/source/proto/prodRelease/kotlin:build/generated/ap_generated_sources/prodRelease/out"
+      desugaredMethodsFiles="/Users/ashish_nautiyal/.gradle/caches/8.13/transforms/1a0146441cb8f3f0fa59be4e2742b2cf/transformed/desugar_jdk_libs_configuration-2.1.4-desugar-lint.txt:/Users/ashish_nautiyal/.gradle/caches/8.13/transforms/f1b1d32e7b3d1364170bc4630b4bc6ec/transformed/D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>
