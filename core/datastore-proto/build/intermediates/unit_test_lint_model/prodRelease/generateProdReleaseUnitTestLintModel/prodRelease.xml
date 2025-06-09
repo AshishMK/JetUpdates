@@ -1,0 +1,26 @@
+<variant
+    name="prodRelease"
+    package="com.demo.jetupdates.core.datastore.proto"
+    minSdkVersion="21"
+    targetSdkVersion="35"
+    mergedManifest="build/intermediates/merged_manifest/prodRelease/processProdReleaseManifest/AndroidManifest.xml"
+    manifestMergeReport="build/outputs/logs/manifest-merger-prod-release-report.txt"
+    partialResultsDir="build/intermediates/unit_test_lint_partial_results/prodRelease/lintAnalyzeProdReleaseUnitTest/out">
+  <buildFeatures
+      coreLibraryDesugaring="true"
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+  </sourceProviders>
+  <testSourceProviders>
+    <sourceProvider
+        manifests="src/test/AndroidManifest.xml"
+        javaDirectories="src/test/java:src/testProd/java:src/testRelease/java:src/testProdRelease/java:src/test/kotlin:src/testProd/kotlin:src/testRelease/kotlin:src/testProdRelease/kotlin"
+        assetsDirectories="src/test/assets:src/testProd/assets:src/testRelease/assets:src/testProdRelease/assets"
+        unitTest="true"/>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      type="UNIT_TEST">
+  </artifact>
+</variant>
