@@ -282,10 +282,10 @@ class NavigationTest {
             // Note: Possible flakiness. If the content of the news resource is long then the topic
             // tag might not be visible meaning it cannot be clicked
             onNodeWithTag("store:feed")
-                .performScrollToNode(hasTestTag("shopItemCardP:${newsResource.id}"))
+                .performScrollToNode(hasTestTag("shopItemCard:${newsResource.id}"))
                 .fetchSemanticsNode()
                 .apply {
-                    val newsResourceCardNode = onNodeWithTag("shopItemCardP:${newsResource.id}")
+                    val newsResourceCardNode = onNodeWithTag("shopItemCard:${newsResource.id}")
                         .fetchSemanticsNode()
                     config[ScrollBy].action?.invoke(
                         0f,
