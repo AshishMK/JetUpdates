@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml:2:13-83
+INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml:2:13-83
+	package
+		INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml
+	xmlns:android
+		ADDED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml:2:23-81
+uses-sdk
+INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml reason: use-sdk injection requested
+INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml
+INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml
+	android:targetSdkVersion
+		INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml
+	android:minSdkVersion
+		INJECTED from /Users/ashish_nautiyal/AndroidStudioProjects/JetUpdates/core/datastore-proto/build/intermediates/tmp/ProcessLibraryManifest/prod/release/tempAndroidManifest7836414020695778825.xml
