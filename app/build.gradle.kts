@@ -19,13 +19,12 @@ plugins {
     alias(libs.plugins.jetupdates.android.application)
     alias(libs.plugins.jetupdates.android.application.compose)
     alias(libs.plugins.jetupdates.android.application.flavors)
-    alias(libs.plugins.jetupdates.hilt)
     alias(libs.plugins.jetupdates.android.application.jacoco)
-    alias(libs.plugins.baselineprofile)
-    alias(libs.plugins.kotlin.serialization)
-
+    alias(libs.plugins.jetupdates.hilt)
     id("com.google.android.gms.oss-licenses-plugin")
+    alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -40,12 +39,12 @@ android {
 
     }
 
- /*   buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
-        }
-    }*/
+    /*   buildTypes {
+           release {
+               isMinifyEnabled = false
+               proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+           }
+       }*/
 
     buildTypes {
         debug {
@@ -117,25 +116,32 @@ dependencies {
     debugImplementation(projects.uiTestHiltManifest)
 
     kspTest(libs.hilt.compiler)
-    testImplementation(libs.hilt.android.testing)
+
     testImplementation(projects.core.dataTest)
-    testDemoImplementation(projects.core.screenshotTesting)
-    testDemoImplementation(libs.robolectric)
-    testDemoImplementation(libs.roborazzi)
+    testImplementation(projects.core.datastoreTest)
+    testImplementation(libs.hilt.android.testing)
     testImplementation(projects.sync.syncTest)
     testImplementation(libs.kotlin.test)
 
-    testImplementation(projects.core.datastoreTest)
     testDemoImplementation(libs.androidx.navigation.testing)
+    testDemoImplementation(libs.robolectric)
+    testDemoImplementation(libs.roborazzi)
+    testDemoImplementation(projects.core.screenshotTesting)
+    testDemoImplementation(projects.core.testing)
 
 
-    androidTestImplementation(libs.androidx.compose.ui.test)
-    androidTestImplementation(projects.core.dataTest)
+
+
+
     androidTestImplementation(projects.core.testing)
-    androidTestImplementation(libs.hilt.android.testing)
-    androidTestImplementation(libs.androidx.test.espresso.core)
-    androidTestImplementation(libs.kotlin.test)
+    androidTestImplementation(projects.core.dataTest)
     androidTestImplementation(projects.core.datastoreTest)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.compose.ui.test)
+    androidTestImplementation(libs.hilt.android.testing)
+
+    androidTestImplementation(libs.kotlin.test)
+
     baselineProfile(projects.benchmarks)
 }
 
