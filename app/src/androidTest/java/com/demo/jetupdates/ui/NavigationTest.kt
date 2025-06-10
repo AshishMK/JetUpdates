@@ -219,6 +219,7 @@ class NavigationTest {
         }
     }
 
+     */
     /*
      * There should always be at most one instance of a top-level destination at the same time.
      */
