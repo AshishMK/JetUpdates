@@ -50,7 +50,7 @@ jobs:
           -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
 
       - name: Build release variant including baseline profile generation
-        run: ./gradlew :app:assembleProdRelease
+        run: ./gradlew :app:assembleDemoRelease
              -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile
              -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
              -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
