@@ -277,7 +277,9 @@ class NavigationTest {
             // Get its first topic and follow it
             val topic = newsResource.categories.first()
             onNodeWithText(topic.name).performClick()
-            Thread.sleep(1000)
+            Thread.sleep(500)
+            // composeTestRule.waitForIdle()
+            //   composeTestRule.mainClock.autoAdvance = false // Default
             // Get the news feed and scroll to the news resource
             // Note: Possible flakiness. If the content of the news resource is long then the topic
             // tag might not be visible meaning it cannot be clicked
@@ -292,10 +294,10 @@ class NavigationTest {
                         // to ensure the bottom of the card is visible,
                         // manually scroll the difference between the height of
                         // the scrolling node and the height of the card
-                        (newsResourceCardNode.size.height - size.height).coerceAtLeast(0).toFloat(),
+                        (newsResourceCardNode.size.height - size.height).coerceAtLeast(0)
+                            .toFloat(),
                     )
                 }
-
             // Click the first topic tag
             /*   onAllNodesWithTag("topicTag:${topic.id}", useUnmergedTree = true)
                    .onFirst()
