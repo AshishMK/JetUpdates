@@ -278,24 +278,29 @@ class NavigationTest {
             val topic = newsResource.categories.first()
             onNodeWithText(topic.name).performClick()
             composeTestRule.waitForIdle()
-            // Get the news feed and scroll to the news resource
-            // Note: Possible flakiness. If the content of the news resource is long then the topic
-            // tag might not be visible meaning it cannot be clicked
-            onNodeWithTag("store:feed")
-                .performScrollToNode(hasTestTag("shopItemCard:${newsResource.id}"))
-                .fetchSemanticsNode()
-                .apply {
-                    val newsResourceCardNode = onNodeWithTag("shopItemCard:${newsResource.id}")
-                        .fetchSemanticsNode()
-                    config[ScrollBy].action?.invoke(
-                        0f,
-                        // to ensure the bottom of the card is visible,
-                        // manually scroll the difference between the height of
-                        // the scrolling node and the height of the card
-                        (newsResourceCardNode.size.height - size.height).coerceAtLeast(0).toFloat(),
-                    )
-                }
+            //composeTestRule.mainClock.autoAdvance = false // Default
+            composeTestRule.waitUntil(1000) {
 
+                // Get the news feed and scroll to the news resource
+                // Note: Possible flakiness. If the content of the news resource is long then the topic
+                // tag might not be visible meaning it cannot be clicked
+                onNodeWithTag("store:feed")
+                    .performScrollToNode(hasTestTag("shopItemCard:${newsResource.id}"))
+                    .fetchSemanticsNode()
+                    .apply {
+                        val newsResourceCardNode = onNodeWithTag("shopItemCard:${newsResource.id}")
+                            .fetchSemanticsNode()
+                        config[ScrollBy].action?.invoke(
+                            0f,
+                            // to ensure the bottom of the card is visible,
+                            // manually scroll the difference between the height of
+                            // the scrolling node and the height of the card
+                            (newsResourceCardNode.size.height - size.height).coerceAtLeast(0)
+                                .toFloat(),
+                        )
+                    }
+                true
+            }
             // Click the first topic tag
             /*   onAllNodesWithTag("topicTag:${topic.id}", useUnmergedTree = true)
                    .onFirst()
