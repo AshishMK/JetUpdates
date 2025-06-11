@@ -93,10 +93,10 @@ class NavigationTest {
     fun setup() = hiltRule.inject()
 
     @Test
-    fun firstScreen_isStore() {
+    fun firstScreen_isForYou() {
         composeTestRule.apply {
             // VERIFY for you is selected
-            onNodeWithText(store).assertIsSelected()
+            onNodeWithText(forYou).assertIsSelected()
         }
     }
 
