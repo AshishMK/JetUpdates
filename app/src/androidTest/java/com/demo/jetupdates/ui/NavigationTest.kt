@@ -34,7 +34,6 @@ import com.demo.jetupdates.MainActivity
 import com.demo.jetupdates.R
 import com.demo.jetupdates.core.data.repository.CategoriesRepository
 import com.demo.jetupdates.core.data.repository.ShopRepository
-import com.demo.jetupdates.core.model.data.Category
 import com.demo.jetupdates.core.rules.GrantPostNotificationsPermissionRule
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
