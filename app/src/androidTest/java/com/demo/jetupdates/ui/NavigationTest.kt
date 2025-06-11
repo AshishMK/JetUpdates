@@ -278,8 +278,8 @@ class NavigationTest {
             val topic = newsResource.categories.first()
             onNodeWithText(topic.name).performClick()
             composeTestRule.waitForIdle()
-            // composeTestRule.mainClock.autoAdvance = false // Default
-            composeTestRule.waitUntil(3000) {
+             composeTestRule.mainClock.autoAdvance = false // Default
+            composeTestRule.waitUntil(1000) {
                 // Get the news feed and scroll to the news resource
                 // Note: Possible flakiness. If the content of the news resource is long then the topic
                 // tag might not be visible meaning it cannot be clicked
