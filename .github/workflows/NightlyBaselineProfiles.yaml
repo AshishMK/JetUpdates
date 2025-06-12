@@ -61,3 +61,9 @@ jobs:
              -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=baselineprofile
              -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
              -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
+
+      - name: List Generated Files
+        run: |
+          echo "Checking for generated profile files..."
+          ls -la /home/runner/work/Baseline/Baseline/app/src/release/generated/baselineProfiles/ || echo "Directory not found"
+
