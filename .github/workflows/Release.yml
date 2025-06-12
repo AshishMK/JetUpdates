@@ -32,7 +32,7 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
-      - name: Setup Gradles
+      - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
@@ -67,7 +67,7 @@ jobs:
           draft: true
           prerelease: false
 
-      - name: Upload aspp
+      - name: Upload app
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
