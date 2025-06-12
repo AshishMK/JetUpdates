@@ -56,7 +56,6 @@ jobs:
              -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
              -Pandroid.experimental.androidTest.numManagedDeviceShards=1
              -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
-
       - name: Create Releasee
         id: create_release
         uses: actions/create-release@v1
