@@ -65,5 +65,5 @@ jobs:
       - name: List Generated Files
         run: |
           echo "Checking for generated profile files..."
-          ls -la /home/runner/work/Baseline/Baseline/app/src/release/generated/baselineProfiles/ || echo "Directory not found"
+          ls -la /home/runner/work/JetUpdates/JetUpdates/app/src/demoRelease/generated/baselineProfiles/ || echo "Directory not found"
 
