@@ -16,7 +16,7 @@
 
 @file:Suppress("ktlint:standard:max-line-length")
 
-package com.demo.jetupdates.core.data
+package com.demo.jetupdates.core.testing.data
 
 import com.demo.jetupdates.core.model.data.ShopItem
 import kotlinx.datetime.Instant

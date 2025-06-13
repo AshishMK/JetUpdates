@@ -277,7 +277,7 @@ class NavigationTest {
             // Get its first topic and follow it
             val topic = newsResource.categories.first()
             onNodeWithText(topic.name).performClick()
-            Thread.sleep(500)
+            // Thread.sleep(500)
             // composeTestRule.waitxxForIdle()
             //   composeTestRule.mainClock.autoAdvance = false // Default
             // Get the news feed and scroll to the news resource
