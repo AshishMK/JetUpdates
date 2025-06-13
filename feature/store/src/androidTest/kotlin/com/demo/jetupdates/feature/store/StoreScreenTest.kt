@@ -16,7 +16,6 @@
 
 package com.demo.jetupdates.feature.store
 
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.test.assertHasClickAction
@@ -29,9 +28,9 @@ import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performScrollToNode
-import com.demo.jetupdates.core.data.followableCategoryTestData
-import com.demo.jetupdates.core.data.userShopItemsTestData
 import com.demo.jetupdates.core.rules.GrantPostNotificationsPermissionRule
+import com.demo.jetupdates.core.testing.data.followableCategoryTestData
+import com.demo.jetupdates.core.testing.data.userShopItemsTestData
 import com.demo.jetupdates.core.ui.ItemFeedUiState
 import org.junit.Rule
 import org.junit.Test
@@ -185,7 +184,6 @@ class StoreScreenTest {
         }
 
         followableCategoryTestData.forEach { testCategory ->
-            Log.v("yuyy", "yuyy ${testCategory.category.name}")
             composeTestRule
                 .onNodeWithText(testCategory.category.name)
                 .assertExists()
