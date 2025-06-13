@@ -21,7 +21,7 @@ import androidx.compose.ui.test.assertIsToggleable
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
-import com.demo.jetupdates.core.data.userShopItemsTestData
+import com.demo.jetupdates.core.testing.data.userShopItemsTestData
 import org.junit.Rule
 import org.junit.Test
 
