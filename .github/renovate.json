@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>android/.github:renovate-config"
+    "local>AshishMK/.github:renovate-config"
   ],
   "baseBranches": [
     "main"
