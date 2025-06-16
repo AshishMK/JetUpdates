@@ -21,7 +21,6 @@ jobs:
           ls /dev/kvm
 
       - name: Checkout
-
         uses: actions/checkout@v4
 
       - name: Copy CI gradle.properties
