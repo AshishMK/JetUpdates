@@ -23,6 +23,7 @@ import android.os.StrictMode.ThreadPolicy.Builder
 import coil.ImageLoader
 import coil.ImageLoaderFactory
 import com.demo.jetupdates.sync.initializers.Sync
+import com.demo.jetupdates.util.ProfileVerifierLogger
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
@@ -34,12 +35,16 @@ class MyApplication : Application(), ImageLoaderFactory {
     @Inject
     lateinit var imageLoader: dagger.Lazy<ImageLoader>
 
+    @Inject
+    lateinit var profileVerifierLogger: ProfileVerifierLogger
+
     override fun onCreate() {
         super.onCreate()
 
         setStrictModePolicy()
         // Initialize Sync; the system responsible for keeping data in the app up to date.
         Sync.initialize(context = this)
+        profileVerifierLogger()
     }
 
     override fun newImageLoader(): ImageLoader = imageLoader.get()
