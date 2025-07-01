@@ -266,16 +266,16 @@ class AppNavigationSuiteScope internal constructor(
 @ThemePreviews
 @Composable
 fun AppNavigationBarPreview() {
-    val items = listOf("For you", "Saved", "Interests")
+    val items = listOf("Store", "Cart", "Trending")
     val icons = listOf(
         AppIcons.StoreBorder,
-        AppIcons.BookmarksBorder,
-        AppIcons.Grid3x3,
+        AppIcons.CartBorder,
+        AppIcons.FireBorder,
     )
     val selectedIcons = listOf(
         AppIcons.Store,
-        AppIcons.Bookmarks,
-        AppIcons.Grid3x3,
+        AppIcons.Cart,
+        AppIcons.Fire,
     )
 
     AppTheme {
@@ -306,16 +306,16 @@ fun AppNavigationBarPreview() {
 @ThemePreviews
 @Composable
 fun AppNavigationRailPreview() {
-    val items = listOf("For you", "Saved", "Interests")
+    val items = listOf("Store", "Cart", "Trending")
     val icons = listOf(
         AppIcons.StoreBorder,
-        AppIcons.BookmarksBorder,
-        AppIcons.Grid3x3,
+        AppIcons.CartBorder,
+        AppIcons.FireBorder,
     )
     val selectedIcons = listOf(
         AppIcons.Store,
-        AppIcons.Bookmarks,
-        AppIcons.Grid3x3,
+        AppIcons.Cart,
+        AppIcons.Fire,
     )
 
     AppTheme {

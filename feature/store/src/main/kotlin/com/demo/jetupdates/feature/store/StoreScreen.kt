@@ -393,12 +393,13 @@ private fun SingleItemButton(
     onClick: (Int, Boolean) -> Unit,
 ) {
     Surface(
-        modifier = Modifier
+        modifier = Modifier.testTag(name)
             // .widthIn(min = 100.dp)
             .heightIn(min = 40.dp),
         shape = RoundedCornerShape(corner = CornerSize(24.dp)),
         color = if (isSelected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surface,
         selected = isSelected,
+
         onClick = {
             onClick(categoryId, !isSelected)
         },

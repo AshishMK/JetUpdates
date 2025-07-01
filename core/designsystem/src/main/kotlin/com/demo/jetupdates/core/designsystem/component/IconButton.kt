@@ -16,7 +16,7 @@
 
 package com.demo.jetupdates.core.designsystem.component
 
-import androidx.compose.material3.FilledIconToggleButton
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
@@ -24,6 +24,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 
@@ -40,34 +41,29 @@ import com.demo.jetupdates.core.designsystem.theme.AppTheme
  * @param checkedIcon The icon content to show when checked.
  */
 @Composable
-fun AppIconToggleButton(
-    checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit,
+fun AppIconButton(
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
+    transparentBackground: Boolean = false,
     icon: @Composable () -> Unit,
-    checkedIcon: @Composable () -> Unit = icon,
 ) {
     // TODO: File bug
-    // Can't use regular IconToggleButton as it doesn't include a shape (appears square)
-    FilledIconToggleButton(
-        checked = checked,
-        onCheckedChange = onCheckedChange,
+    IconButton(
+        onClick = onClick,
         modifier = modifier,
         enabled = enabled,
-        colors = IconButtonDefaults.iconToggleButtonColors(
-            checkedContainerColor = MaterialTheme.colorScheme.primaryContainer,
-            checkedContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-            disabledContainerColor = if (checked) {
-                MaterialTheme.colorScheme.onBackground.copy(
-                    alpha = AppIconButtonDefaults.DISABLED_ICON_BUTTON_CONTAINER_ALPHA,
-                )
-            } else {
-                Color.Transparent
-            },
+
+        colors = IconButtonDefaults.filledIconButtonColors(
+            containerColor = if (transparentBackground) Color.Transparent else MaterialTheme.colorScheme.tertiaryContainer,
+            contentColor = if (transparentBackground) MaterialTheme.colorScheme.onTertiaryContainer else MaterialTheme.colorScheme.onTertiaryContainer,
+            disabledContainerColor =
+            MaterialTheme.colorScheme.onBackground.copy(
+                alpha = AppIconButtonDefaults.DISABLED_ICON_BUTTON_CONTAINER_ALPHA,
+            ),
         ),
     ) {
-        if (checked) checkedIcon() else icon()
+        icon()
     }
 }
 
@@ -75,18 +71,11 @@ fun AppIconToggleButton(
 @Composable
 fun IconButtonPreview() {
     AppTheme {
-        AppIconToggleButton(
-            checked = true,
-            onCheckedChange = { },
+        AppIconButton(
+            onClick = { },
             icon = {
                 Icon(
-                    imageVector = AppIcons.BookmarkBorder,
-                    contentDescription = null,
-                )
-            },
-            checkedIcon = {
-                Icon(
-                    imageVector = AppIcons.Bookmark,
+                    imageVector = AppIcons.Emoji,
                     contentDescription = null,
                 )
             },
@@ -96,32 +85,37 @@ fun IconButtonPreview() {
 
 @ThemePreviews
 @Composable
-fun IconButtonPreviewUnchecked() {
+fun IconButtonDisabledPreview() {
     AppTheme {
-        AppIconToggleButton(
-            checked = false,
-            onCheckedChange = { },
-            icon = {
-                Icon(
-                    imageVector = AppIcons.BookmarkBorder,
-                    contentDescription = null,
-                )
-            },
-            checkedIcon = {
-                Icon(
-                    imageVector = AppIcons.Bookmark,
-                    contentDescription = null,
-                )
-            },
-        )
+        AppBackground(Modifier.size(40.dp)) {
+            AppIconButton(
+                onClick = { },
+                icon = {
+                    Icon(
+                        imageVector = AppIcons.Emoji,
+                        contentDescription = null,
+                    )
+                },
+                enabled = false,
+            )
+        }
     }
 }
 
-/**
- * JU App icon button default values.
- */
-object AppIconButtonDefaults {
-    // TODO: File bug
-    // IconToggleButton disabled container alpha not exposed by IconButtonDefaults
-    const val DISABLED_ICON_BUTTON_CONTAINER_ALPHA = 0.12f
+@ThemePreviews
+@Composable
+fun IconButtonPreviewTransparentBackground() {
+    AppTheme {
+        AppIconButton(
+            onClick = { },
+            icon = {
+                Icon(
+                    imageVector = AppIcons.Emoji,
+                    contentDescription = null,
+
+                )
+            },
+            transparentBackground = true,
+        )
+    }
 }

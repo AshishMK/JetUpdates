@@ -54,6 +54,12 @@ include(":sync:work")
 include(":core:datastore-test")
 include(":sync:sync-test")
 include(":benchmarks")
+include(":feature:cart")
+include(":feature:trending")
+include(":feature:category")
+include(":feature:search")
+include(":feature:settings")
+include(":feature:chat")
 check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     """
     JU App requires JDK 17+ but it is currently using JDK ${JavaVersion.current()}.

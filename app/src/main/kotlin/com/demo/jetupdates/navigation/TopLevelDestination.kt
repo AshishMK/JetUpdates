@@ -20,9 +20,15 @@ import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.demo.jetupdates.R
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
+import com.demo.jetupdates.feature.cart.navigation.CartRoute
+import com.demo.jetupdates.feature.chat.navigation.ChatRoute
 import com.demo.jetupdates.feature.store.navigation.StoreBaseRoute
 import com.demo.jetupdates.feature.store.navigation.StoreRoute
+import com.demo.jetupdates.feature.trending.navigation.TrendingRoute
 import kotlin.reflect.KClass
+import com.demo.jetupdates.feature.cart.R as cartR
+import com.demo.jetupdates.feature.chat.R as chatR
+import com.demo.jetupdates.feature.search.R as searchR
 import com.demo.jetupdates.feature.store.R as forYouR
 
 /**
@@ -54,5 +60,26 @@ enum class TopLevelDestination(
         titleTextId = R.string.app_name,
         route = StoreRoute::class,
         baseRoute = StoreBaseRoute::class,
+    ),
+    CART(
+        selectedIcon = AppIcons.Cart,
+        unselectedIcon = AppIcons.CartBorder,
+        iconTextId = cartR.string.feature_cart_title,
+        titleTextId = cartR.string.feature_cart_title,
+        route = CartRoute::class,
+    ),
+    TRENDING(
+        selectedIcon = AppIcons.Fire,
+        unselectedIcon = AppIcons.FireBorder,
+        iconTextId = searchR.string.feature_search_trending,
+        titleTextId = searchR.string.feature_search_trending,
+        route = TrendingRoute::class,
+    ),
+    CHAT(
+        selectedIcon = AppIcons.Chat,
+        unselectedIcon = AppIcons.ChatBorder,
+        iconTextId = chatR.string.feature_chat_title,
+        titleTextId = chatR.string.feature_chat_title,
+        route = ChatRoute::class,
     ),
 }
