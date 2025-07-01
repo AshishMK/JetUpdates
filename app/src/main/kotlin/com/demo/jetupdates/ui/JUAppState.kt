@@ -31,11 +31,19 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import androidx.tracing.trace
 import com.demo.jetupdates.core.data.repository.UserDataRepository
+import com.demo.jetupdates.core.data.util.NetworkMonitor
 import com.demo.jetupdates.core.data.util.TimeZoneMonitor
 import com.demo.jetupdates.core.ui.TrackDisposableJank
+import com.demo.jetupdates.feature.cart.navigation.navigateToCart
+import com.demo.jetupdates.feature.chat.navigation.navigateToChat
+import com.demo.jetupdates.feature.search.navigation.navigateToSearch
 import com.demo.jetupdates.feature.store.navigation.navigateToStore
+import com.demo.jetupdates.feature.trending.navigation.navigateToTrending
 import com.demo.jetupdates.navigation.TopLevelDestination
+import com.demo.jetupdates.navigation.TopLevelDestination.CART
+import com.demo.jetupdates.navigation.TopLevelDestination.CHAT
 import com.demo.jetupdates.navigation.TopLevelDestination.STORE
+import com.demo.jetupdates.navigation.TopLevelDestination.TRENDING
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -44,6 +52,7 @@ import kotlinx.datetime.TimeZone
 
 @Composable
 fun rememberJUAppState(
+    networkMonitor: NetworkMonitor,
     userDataRepository: UserDataRepository,
     timeZoneMonitor: TimeZoneMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
@@ -54,13 +63,15 @@ fun rememberJUAppState(
     return remember(
         navController,
         coroutineScope,
+        networkMonitor,
+        timeZoneMonitor,
     ) {
         JUAppState(
             userDataRepository = userDataRepository,
             timeZoneMonitor = timeZoneMonitor,
             navController = navController,
             coroutineScope = coroutineScope,
-
+            networkMonitor = networkMonitor,
         )
     }
 }
@@ -69,6 +80,7 @@ fun rememberJUAppState(
 class JUAppState(
     userDataRepository: UserDataRepository,
     timeZoneMonitor: TimeZoneMonitor,
+    networkMonitor: NetworkMonitor,
     val navController: NavHostController,
     coroutineScope: CoroutineScope,
 
@@ -103,13 +115,13 @@ class JUAppState(
             }
         }
 
-    /*    val isOffline = networkMonitor.isOnline
-            .map(Boolean::not)
-            .stateIn(
-                scope = coroutineScope,
-                started = SharingStarted.WhileSubscribed(5_000),
-                initialValue = false,
-            )*/
+    val isOffline = networkMonitor.isOnline
+        .map(Boolean::not)
+        .stateIn(
+            scope = coroutineScope,
+            started = SharingStarted.WhileSubscribed(5_000),
+            initialValue = false,
+        )
 
     /**
      * Map of top level destinations to be used in the TopBar, BottomBar and NavRail. The key is the
@@ -166,11 +178,14 @@ class JUAppState(
 
             when (topLevelDestination) {
                 STORE -> navController.navigateToStore(topLevelNavOptions)
+                CART -> navController.navigateToCart(topLevelNavOptions)
+                TRENDING -> navController.navigateToTrending(null, topLevelNavOptions)
+                CHAT -> navController.navigateToChat(topLevelNavOptions)
             }
         }
     }
 
-    // fun navigateToSearch() = navController.navigateToSearch()
+    fun navigateToSearch() = navController.navigateToSearch()
 }
 
 /**

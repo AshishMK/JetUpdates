@@ -18,23 +18,31 @@ package com.demo.jetupdates.core.designsystem.icon
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.automirrored.rounded.Send
 import androidx.compose.material.icons.automirrored.rounded.ShortText
+import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.MoreVert
-import androidx.compose.material.icons.outlined.Bookmarks
+import androidx.compose.material.icons.outlined.BubbleChart
+import androidx.compose.material.icons.outlined.LocalFireDepartment
+import androidx.compose.material.icons.outlined.Mood
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material.icons.outlined.Store
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.AddShoppingCart
 import androidx.compose.material.icons.rounded.Bookmark
 import androidx.compose.material.icons.rounded.BookmarkBorder
-import androidx.compose.material.icons.rounded.Bookmarks
+import androidx.compose.material.icons.rounded.BubbleChart
 import androidx.compose.material.icons.rounded.Category
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Close
-import androidx.compose.material.icons.rounded.Grid3x3
+import androidx.compose.material.icons.rounded.Favorite
+import androidx.compose.material.icons.rounded.FavoriteBorder
+import androidx.compose.material.icons.rounded.LocalFireDepartment
 import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material.icons.rounded.RemoveShoppingCart
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material.icons.rounded.Store
 import androidx.compose.material.icons.rounded.ViewDay
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -44,14 +52,20 @@ import androidx.compose.ui.graphics.vector.ImageVector
  */
 object AppIcons {
     val Add = Icons.Rounded.Add
+    val FavoriteBorder = Icons.Rounded.FavoriteBorder
+    val Favorite = Icons.Rounded.Favorite
     val ArrowBack = Icons.AutoMirrored.Rounded.ArrowBack
     val Bookmark = Icons.Rounded.Bookmark
     val BookmarkBorder = Icons.Rounded.BookmarkBorder
-    val Bookmarks = Icons.Rounded.Bookmarks
-    val BookmarksBorder = Icons.Outlined.Bookmarks
+    val Cart = Icons.Rounded.ShoppingCart
+    val CartBorder = Icons.Outlined.ShoppingCart
     val Check = Icons.Rounded.Check
     val Close = Icons.Rounded.Close
-    val Grid3x3 = Icons.Rounded.Grid3x3
+    val Fire = Icons.Rounded.LocalFireDepartment
+    val FireBorder = Icons.Outlined.LocalFireDepartment
+
+    val Chat = Icons.Rounded.BubbleChart
+    val ChatBorder = Icons.Outlined.BubbleChart
     val MoreVert = Icons.Default.MoreVert
     val Person = Icons.Rounded.Person
     val Search = Icons.Rounded.Search
@@ -65,4 +79,9 @@ object AppIcons {
     val RemoveFromCart = Icons.Rounded.RemoveShoppingCart
 
     val Category = Icons.Rounded.Category
+
+    val Emoji = Icons.Outlined.Mood
+
+    val Send = Icons.AutoMirrored.Rounded.Send
+    val arrowDown = Icons.Filled.ArrowDownward
 }

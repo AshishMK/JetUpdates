@@ -46,11 +46,13 @@ fun AppTopAppBar(
     actionIconContentDescription: String,
     actionIconCategories: ImageVector,
     actionIconCategoriesContentDescription: String,
+    showCategoriesActionItem: Boolean,
     modifier: Modifier = Modifier,
     colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
     onNavigationClick: () -> Unit = {},
     onActionClick: () -> Unit = {},
     onCategoryActionClick: () -> Unit = {},
+
 ) {
     CenterAlignedTopAppBar(
         title = { Text(text = stringResource(id = titleRes)) },
@@ -71,12 +73,14 @@ fun AppTopAppBar(
                     tint = MaterialTheme.colorScheme.onSurface,
                 )
             }
-            IconButton(onClick = onCategoryActionClick) {
-                Icon(
-                    imageVector = actionIconCategories,
-                    contentDescription = actionIconCategoriesContentDescription,
-                    tint = MaterialTheme.colorScheme.onSurface,
-                )
+            if (showCategoriesActionItem) {
+                IconButton(onClick = onCategoryActionClick) {
+                    Icon(
+                        imageVector = actionIconCategories,
+                        contentDescription = actionIconCategoriesContentDescription,
+                        tint = MaterialTheme.colorScheme.onSurface,
+                    )
+                }
             }
         },
         colors = colors,
@@ -97,6 +101,7 @@ private fun AppTopAppBarPreview() {
             actionIconContentDescription = "Action icon",
             actionIconCategories = AppIcons.Category,
             actionIconCategoriesContentDescription = "Categories action icon",
+            showCategoriesActionItem = true,
         )
     }
 }

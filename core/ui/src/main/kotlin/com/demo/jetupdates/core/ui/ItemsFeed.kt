@@ -123,7 +123,7 @@ sealed interface ItemFeedUiState {
 @Composable
 private fun ItemFeedLoadingPreview() {
     AppTheme {
-        LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Adaptive(300.dp)) {
+        LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Adaptive(150.dp)) {
             itemFeed(
                 feedState = ItemFeedUiState.Loading,
                 onShopItemCheckedChanged = { _, _ -> },

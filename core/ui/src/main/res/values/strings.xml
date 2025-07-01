@@ -15,10 +15,9 @@
      limitations under the License.
 -->
 <resources>
-    <string name="core_ui_bookmark">Bookmark</string>
-    <string name="core_ui_unbookmark">Unbookmark</string>
-
-    <string name="core_ui_add_to_cart">Add To Bookmark</string>
+    <string name="core_ui_bookmark">Add To Cart</string>
+    <string name="core_ui_unbookmark">Remove From Cart</string>
+    <string name="core_ui_add_to_cart">Add To Cart</string>
     <string name="core_ui_remove_from_cart">Remove From Cart</string>
     <string name="core_ui_back">Back</string>
 
@@ -30,8 +29,28 @@
     <string name="core_ui_category_chip_content_description_when_followed">%1$s is followed</string>
     <string name="core_ui_category_chip_content_description_when_not_followed">%1$s is not followed</string>
 
-    <string name="core_ui_interests_card_follow_button_content_desc">Follow interest</string>
-    <string name="core_ui_interests_card_unfollow_button_content_desc">Unfollow interest</string>
+    <string name="core_ui_trending_card_follow_button_content_desc">Follow interest</string>
+    <string name="core_ui_trending_card_unfollow_button_content_desc">Unfollow interest</string>
     <string name="core_ui_feed_sharing">Feed sharing</string>
     <string name="core_ui_feed_sharing_data">%1$s: %2$s</string>
+
+
+
+    <string name="core_ui_jumpBottom">Jump to bottom</string>
+    <string name="core_ui_send">Send</string>
+    <string name="core_ui_author_me">me</string>
+    <string name="core_ui_now">8:30 PM</string>
+    <string name="core_ui_members">%d members</string>
+    <string name="core_ui_textfield_hint">Ask #Gemni</string>
+    <string name="core_ui_emojis_label">Emojis</string>
+    <string name="core_ui_stickers_label">Stickers</string>
+
+    <string name="core_ui_message">Message</string>
+
+    <!-- Accessibility descriptions -->
+
+    <string name="core_ui_emoji_selector_desc">Emoji selector</string>
+    <string name="core_ui_emoji_selector_bt_desc">Show Emoji selector</string>
+    <string name="core_ui_textfield_desc">Text input</string>
+    <string name="core_ui_not_available">Functionality currently not available</string>
 </resources>
