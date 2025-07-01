@@ -58,12 +58,11 @@ jobs:
 
       - name: Build all build type and flavor permutations including baseline profiles
         run: ./gradlew :app:generateReleaseBaselineProfile
-             -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=baselineprofile
-             -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
-             -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
+          -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=baselineprofile
+          -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
+          -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
 
       - name: List Generated Files
         run: |
           echo "Checking for generated profile files..."
           ls -la /home/runner/work/JetUpdates/JetUpdates/app/src/demoRelease/generated/baselineProfiles/ || echo "Directory not found"
-
