@@ -22,7 +22,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.demo.jetUpdates.core.testing.util.captureMultiTheme
-import com.demo.jetupdates.core.designsystem.component.AppIconToggleButton
+import com.demo.jetupdates.core.designsystem.component.AppIconCartToggleButton
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
@@ -44,14 +44,14 @@ class CartButtonScreenshotTests {
 
     @Test
     fun cartButton_multipleThemes() {
-        composeTestRule.captureMultiTheme("IconButton") {
+        composeTestRule.captureMultiTheme("CartButton") {
             appCartToggleExample(false)
         }
     }
 
     @Test
     fun cartButton_unchecked_multipleThemes() {
-        composeTestRule.captureMultiTheme("IconButton", "IconButtonUnchecked") {
+        composeTestRule.captureMultiTheme("CartButton", "CartButtonUnchecked") {
             Surface {
                 appCartToggleExample(true)
             }
@@ -60,18 +60,18 @@ class CartButtonScreenshotTests {
 
     @Composable
     private fun appCartToggleExample(checked: Boolean) {
-        AppIconToggleButton(
+        AppIconCartToggleButton(
             checked = checked,
             onCheckedChange = { },
             icon = {
                 Icon(
-                    imageVector = AppIcons.BookmarkBorder,
+                    imageVector = AppIcons.AddToCart,
                     contentDescription = null,
                 )
             },
             checkedIcon = {
                 Icon(
-                    imageVector = AppIcons.Bookmark,
+                    imageVector = AppIcons.RemoveFromCart,
                     contentDescription = null,
                 )
             },
