@@ -45,7 +45,6 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
@@ -136,36 +135,11 @@ internal fun ChatScreen(
             override fun onDrop(event: DragAndDropEvent): Boolean {
                 val clipData = event.toAndroidDragEvent().clipData
 
-                if (clipData.itemCount < 1) {
-                    return false
-                }
+                return clipData.itemCount >= 1
 
                 /* uiState.addMessage(
                     Message(authorMe, clipData.getItemAt(0).text.toString(), timeNow)
                 )*/
-
-                return true
-            }
-
-            override fun onStarted(event: DragAndDropEvent) {
-                super.onStarted(event)
-                // borderStroke = Color.Red
-            }
-
-            override fun onEntered(event: DragAndDropEvent) {
-                super.onEntered(event)
-                // background = Color.Red.copy(alpha = .3f)
-            }
-
-            override fun onExited(event: DragAndDropEvent) {
-                super.onExited(event)
-                //  background = Color.Transparent
-            }
-
-            override fun onEnded(event: DragAndDropEvent) {
-                super.onEnded(event)
-                //  background = Color.Transparent
-                // borderStroke = Color.Transparent
             }
         }
     }
@@ -521,7 +495,6 @@ fun ClickableMessage(
         modifier = Modifier
             .padding(8.dp)
             .clickable { },
-
     )
 }
 
