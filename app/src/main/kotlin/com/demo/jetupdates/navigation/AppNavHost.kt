@@ -19,9 +19,15 @@ package com.demo.jetupdates.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.demo.jetupdates.feature.cart.navigation.cartScreen
+import com.demo.jetupdates.feature.chat.navigation.chatScreen
+import com.demo.jetupdates.feature.search.navigation.searchScreen
 import com.demo.jetupdates.feature.store.navigation.StoreBaseRoute
 import com.demo.jetupdates.feature.store.navigation.storeSection
+import com.demo.jetupdates.feature.trending.navigation.navigateToTrending
+import com.demo.jetupdates.navigation.TopLevelDestination.TRENDING
 import com.demo.jetupdates.ui.JUAppState
+import com.demo.jetupdates.ui.trending2pane.trendingListDetailScreen
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -44,5 +50,19 @@ fun AppNavHost(
         modifier = modifier,
     ) {
         storeSection(onCategoryClick = {}, showCategoryList)
+        cartScreen(
+            onTopicClick = { _ -> },
+            onShowSnackbar = onShowSnackbar,
+        )
+        searchScreen(
+            onBackClick = navController::popBackStack,
+            onTrendingClick = { appState.navigateToTopLevelDestination(TRENDING) },
+            onCategoryClick = navController::navigateToTrending,
+        )
+        trendingListDetailScreen()
+
+        chatScreen(
+            onShowSnackbar = onShowSnackbar,
+        )
     }
 }

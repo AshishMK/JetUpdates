@@ -51,6 +51,11 @@ class ShopItemCardTest {
                 shopItemWithKnownResourceType.title,
             )
             .assertExists()
+
+        composeTestRule
+            .onNodeWithContentDescription(
+                composeTestRule.activity.getString(R.string.core_ui_add_to_cart),
+            ).assertIsToggleable().assertExists()
     }
 
     @Test

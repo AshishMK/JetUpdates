@@ -125,6 +125,7 @@ class JUAppScreenSizesScreenshotTests {
                             // userShopItemRepository = userShopItemRepository,
                             userDataRepository = userDataRepository,
                             timeZoneMonitor = timeZoneMonitor,
+                            networkMonitor = networkMonitor,
                         )
                         JUApp(
                             fakeAppState,
