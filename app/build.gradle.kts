@@ -86,6 +86,13 @@ dependencies {
     implementation(projects.sync.work)
     implementation(projects.core.data)
 
+    implementation(projects.feature.cart)
+    implementation(projects.feature.trending)
+    implementation(projects.feature.category)
+    implementation(projects.feature.search)
+    implementation(projects.feature.settings)
+    implementation(projects.feature.chat)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.splashscreen)

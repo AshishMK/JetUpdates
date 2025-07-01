@@ -16,7 +16,6 @@
 
 package com.demo.jetupdates.ui
 
-import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -31,6 +30,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration.Indefinite
 import androidx.compose.material3.SnackbarDuration.Short
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -66,6 +66,7 @@ import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.component.AppNavigationSuiteScaffold
 import com.demo.jetupdates.core.designsystem.component.AppTopAppBar
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
+import com.demo.jetupdates.feature.settings.SettingsDialog
 import com.demo.jetupdates.navigation.AppNavHost
 import com.demo.jetupdates.navigation.TopLevelDestination
 import kotlin.reflect.KClass
@@ -77,28 +78,27 @@ fun JUApp(
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
-    val shouldShowGradientBackground =
+    val shouldShowCategoriesActionItem =
         appState.currentTopLevelDestination == TopLevelDestination.STORE
     var showSettingsDialog by rememberSaveable { mutableStateOf(false) }
     var showCategoryList by rememberSaveable { mutableStateOf(true) }
     AppBackground(modifier = modifier) {
         val snackbarHostState = remember { SnackbarHostState() }
 
-        // val isOffline by appState.isOffline.collectAsStateWithLifecycle()
+        val isOffline by appState.isOffline.collectAsStateWithLifecycle()
 
         // If user is not connected to the internet show a snack bar to inform them.
-        // val notConnectedMessage = stringResource(R.string.not_connected)
-         /*   LaunchedEffect(isOffline) {
-                if (isOffline) {
-                    snackbarHostState.showSnackbar(
-                        message = notConnectedMessage,
-                        duration = Indefinite,
-                    )
-                }
-            }*/
+        val notConnectedMessage = stringResource(R.string.not_connected)
+        LaunchedEffect(isOffline) {
+            if (isOffline) {
+                snackbarHostState.showSnackbar(
+                    message = notConnectedMessage,
+                    duration = Indefinite,
+                )
+            }
+        }
         val shouldShowOnboarding by appState.shouldShowOnboarding.collectAsStateWithLifecycle()
         LaunchedEffect(shouldShowOnboarding) {
-            Log.v("ghjhh", "ghjhh $shouldShowOnboarding")
             if (shouldShowOnboarding == 0) {
                 showCategoryList = false
             }
@@ -112,6 +112,7 @@ fun JUApp(
             onSettingsDismissed = { showSettingsDialog = false },
             onTopAppBarActionClick = { showSettingsDialog = true },
             onTopAppBarCategoryActionClick = { showCategoryList = !showCategoryList },
+            shouldShowCategoriesActionItem = shouldShowCategoriesActionItem,
             windowAdaptiveInfo = windowAdaptiveInfo,
         )
     }
@@ -131,17 +132,18 @@ internal fun JUApp(
     onTopAppBarActionClick: () -> Unit,
     onTopAppBarCategoryActionClick: () -> Unit,
     modifier: Modifier = Modifier,
+    shouldShowCategoriesActionItem: Boolean,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
-   /* val unreadDestinations by appState.topLevelDestinationsWithUnreadResources
-        .collectAsStateWithLifecycle()*/
+    /* val unreadDestinations by appState.topLevelDestinationsWithUnreadResources
+         .collectAsStateWithLifecycle()*/
     val currentDestination = appState.currentDestination
 
-    /*if (showSettingsDialog) {
+    if (showSettingsDialog) {
         SettingsDialog(
             onDismiss = { onSettingsDismissed() },
         )
-    }*/
+    }
 
     AppNavigationSuiteScaffold(
         navigationSuiteItems = {
@@ -181,6 +183,9 @@ internal fun JUApp(
             containerColor = Color.Transparent,
             contentColor = MaterialTheme.colorScheme.onBackground,
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
+              /*  .exclude(WindowInsets.navigationBars)
+                .exclude(WindowInsets.ime),*/
+
             snackbarHost = {
                 SnackbarHost(
                     snackbarHostState,
@@ -219,12 +224,13 @@ internal fun JUApp(
                         actionIconCategoriesContentDescription = stringResource(
                             id = R.string.feature_categories_top_app_bar_navigation_icon_description,
                         ),
+                        showCategoriesActionItem = shouldShowCategoriesActionItem,
 
                         colors = TopAppBarDefaults.topAppBarColors(
                             containerColor = Color.Transparent,
                         ),
 
-                        onNavigationClick = { },
+                        onNavigationClick = { appState.navigateToSearch() },
                         onActionClick = { onTopAppBarActionClick() },
                         onCategoryActionClick = { onTopAppBarCategoryActionClick() },
                     )
