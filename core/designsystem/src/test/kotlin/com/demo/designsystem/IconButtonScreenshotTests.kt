@@ -22,7 +22,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.demo.jetUpdates.core.testing.util.captureMultiTheme
-import com.demo.jetupdates.core.designsystem.component.AppIconToggleButton
+import com.demo.jetupdates.core.designsystem.component.AppIconButton
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
@@ -45,36 +45,40 @@ class IconButtonScreenshotTests {
     @Test
     fun iconButton_multipleThemes() {
         composeTestRule.captureMultiTheme("IconButton") {
-            appIconToggleExample(false)
+            appIconButtonExample(enabled = true, transparentBackground = false)
         }
     }
 
     @Test
-    fun iconButton_unchecked_multipleThemes() {
+    fun iconButton_disabled_multipleThemes() {
         composeTestRule.captureMultiTheme("IconButton", "IconButtonUnchecked") {
             Surface {
-                appIconToggleExample(true)
+                appIconButtonExample(enabled = false, transparentBackground = false)
+            }
+        }
+    }
+
+    @Test
+    fun iconButton_transparent_background_multipleThemes() {
+        composeTestRule.captureMultiTheme("IconButton", "IconButtonTransparent") {
+            Surface {
+                appIconButtonExample(enabled = true, transparentBackground = true)
             }
         }
     }
 
     @Composable
-    private fun appIconToggleExample(checked: Boolean) {
-        AppIconToggleButton(
-            checked = checked,
-            onCheckedChange = { },
+    private fun appIconButtonExample(enabled: Boolean, transparentBackground: Boolean) {
+        AppIconButton(
+            enabled = enabled,
+            onClick = { },
             icon = {
                 Icon(
-                    imageVector = AppIcons.BookmarkBorder,
+                    imageVector = AppIcons.Emoji,
                     contentDescription = null,
                 )
             },
-            checkedIcon = {
-                Icon(
-                    imageVector = AppIcons.Bookmark,
-                    contentDescription = null,
-                )
-            },
+            transparentBackground = transparentBackground,
         )
     }
 }

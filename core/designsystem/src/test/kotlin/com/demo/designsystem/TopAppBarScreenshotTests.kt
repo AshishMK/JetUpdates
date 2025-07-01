@@ -54,7 +54,7 @@ class TopAppBarScreenshotTests {
     @Test
     fun topAppBar_multipleThemes() {
         composeTestRule.captureMultiTheme("TopAppBar") {
-            AppTopAppBarExample()
+            AppTopAppBarExample(showCategoriesActionItem = true)
         }
     }
 
@@ -68,11 +68,12 @@ class TopAppBarScreenshotTests {
                     DeviceConfigurationOverride.FontScale(2f),
                 ) {
                     AppTheme {
-                        AppTopAppBarExample()
+                        AppTopAppBarExample(showCategoriesActionItem = true)
                     }
                 }
             }
         }
+
         composeTestRule.onRoot()
             .captureRoboImage(
                 "src/test/screenshots/TopAppBar/TopAppBar_fontScale2.png",
@@ -80,8 +81,15 @@ class TopAppBarScreenshotTests {
             )
     }
 
+    @Test
+    fun topAppBar_hide_categoryIcon_multipleThemes() {
+        composeTestRule.captureMultiTheme("TopAppBa_No_Category") {
+            AppTopAppBarExample(showCategoriesActionItem = false)
+        }
+    }
+
     @Composable
-    private fun AppTopAppBarExample() {
+    private fun AppTopAppBarExample(showCategoriesActionItem: Boolean) {
         AppTopAppBar(
             titleRes = R.string.untitled,
             navigationIcon = AppIcons.Search,
@@ -90,6 +98,7 @@ class TopAppBarScreenshotTests {
             actionIconContentDescription = "Action icon",
             actionIconCategories = AppIcons.Category,
             actionIconCategoriesContentDescription = "Action Icon",
+            showCategoriesActionItem = showCategoriesActionItem,
         )
     }
 }

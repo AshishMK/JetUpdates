@@ -17,20 +17,25 @@
 package com.demo.jetupdates
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.util.trace
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.metrics.performance.JankStats
 import com.demo.jetupdates.MainActivityUiState.Loading
 import com.demo.jetupdates.core.data.repository.UserDataRepository
+import com.demo.jetupdates.core.data.util.NetworkMonitor
 import com.demo.jetupdates.core.data.util.TimeZoneMonitor
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.ui.LocalTimeZone
@@ -38,6 +43,11 @@ import com.demo.jetupdates.ui.JUApp
 import com.demo.jetupdates.ui.rememberJUAppState
 import com.demo.jetupdates.util.isSystemInDarkTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -52,6 +62,9 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var timeZoneMonitor: TimeZoneMonitor
 
+    @Inject
+    lateinit var networkMonitor: NetworkMonitor
+
     private val viewModel: MainActivityViewModel by viewModels()
 
     @Inject
@@ -60,6 +73,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+
         // We keep this as a mutable state, so that we can track changes inside the composition.
         // This allows us to react to dark/light mode changes.
         var themeSettings by mutableStateOf(
@@ -71,7 +85,7 @@ class MainActivity : ComponentActivity() {
         )
 
         // Update the uiState
-        /*lifecycleScope.launch {
+        lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 combine(
                     isSystemInDarkTheme(),
@@ -106,18 +120,15 @@ class MainActivity : ComponentActivity() {
                         }
                     }
             }
-        }*/
-
+        }
         // Keep the splash screen on-screen until the UI state is loaded. This condition is
         // evaluated each time the app needs to be redrawn so it should be fast to avoid blocking
         // the UI.
-        splashScreen.setKeepOnScreenCondition { true } // viewModel.uiState.value.shouldKeepSplashScreen() }
-        Handler(Looper.getMainLooper()).postDelayed(
-            { splashScreen.setKeepOnScreenCondition { false } },
-            1000,
-        )
+        splashScreen.setKeepOnScreenCondition { viewModel.uiState.value.shouldKeepSplashScreen() }
+
         setContent {
             val appState = rememberJUAppState(
+                networkMonitor = networkMonitor,
                 userDataRepository,
                 timeZoneMonitor,
             )
