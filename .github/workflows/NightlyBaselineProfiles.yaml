@@ -9,7 +9,7 @@ jobs:
   baseline_profiles:
     name: "Generate Baseline Profiles"
     if: github.repository == 'AshishMK/JetUpdates'
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     permissions:
       contents: write
