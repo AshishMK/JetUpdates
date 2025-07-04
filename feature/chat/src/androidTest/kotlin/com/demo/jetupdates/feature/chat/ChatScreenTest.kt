@@ -75,8 +75,12 @@ class ChatScreenTest {
             AppTheme(darkTheme = themeIsDark.collectAsStateWithLifecycle(false).value) {
                 AppBackground {
                     ChatScreen(
-                        feedState = initialMessages,
+                        feedState = ConversationUiState(
+                            initialMessages = initialMessages,
+                        ),
                         onShowSnackbar = { _, _ -> false },
+                        ask = {},
+                        geminiInProgress = false
                     )
                 }
             }

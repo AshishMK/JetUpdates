@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+#put your .properties file here
+keys.properties

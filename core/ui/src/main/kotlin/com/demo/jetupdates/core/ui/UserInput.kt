@@ -18,6 +18,9 @@ package com.demo.jetupdates.core.ui
 
 import android.content.res.Configuration
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -98,6 +101,7 @@ fun UserInput(
     onMessageSent: (String) -> Unit,
     modifier: Modifier = Modifier,
     resetScroll: () -> Unit = {},
+    geminiInProgress: Boolean,
 ) {
     var currentInputSelector by rememberSaveable { mutableStateOf(InputSelector.NONE) }
 
@@ -123,35 +127,83 @@ fun UserInput(
         contentColor = MaterialTheme.colorScheme.secondary,
 
     ) {
-        Column(modifier = modifier) {
-            UserInputText(
-                onSelectorChange = { currentInputSelector = it },
-                textFieldValue = textState,
-                onTextChanged = { textState = it },
-                // Only show the keyboard if there's no input selector and text field has focus
-                keyboardShown = currentInputSelector == InputSelector.NONE && textFieldFocusState,
-                // Close extended selector if text field receives focus
-                onTextFieldFocused = { focused ->
-                    if (focused) {
-                        currentInputSelector = InputSelector.NONE
-                        resetScroll()
-                    }
-                    textFieldFocusState = focused
-                },
-                onMessageSent = {
-                    onMessageSent(textState.text)
-                    // Reset text field and close keyboard
-                    textState = TextFieldValue()
-                    // Move scroll to bottom
-                    resetScroll()
-                },
-                focusState = textFieldFocusState,
-            )
+        Box {
+            androidx.compose.animation.AnimatedVisibility(
+                visible = geminiInProgress,
+                enter = slideInHorizontally(
+                    initialOffsetX = { -it },
+                    animationSpec = tween(durationMillis = 300),
+                ),
+                /*+ expandVertically(
+                            animationSpec = tween(delayMillis = 3000),
+                        )*/
+                exit = slideOutHorizontally(
+                    targetOffsetX = { it },
+                    animationSpec = tween(durationMillis = 300),
+                ),
+                /* + shrinkVertically(
+                            animationSpec = tween(delayMillis = 3000),
+                        )*/
+            ) {
+                Text(
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .padding(start = 16.dp)
+                        .height(72.dp)
+                        .fillMaxWidth()
+                        .wrapContentHeight(align = Alignment.CenterVertically),
+                    text = stringResource(com.demo.jetupdates.core.ui.R.string.core_ui_gemini_replying),
+                    style = MaterialTheme.typography.bodyLarge.copy(textAlign = TextAlign.Center),
+                )
+            }
+            androidx.compose.animation.AnimatedVisibility(
+                visible = !geminiInProgress,
+                enter = slideInHorizontally(
+                    initialOffsetX = { -it },
+                    animationSpec = tween(durationMillis = 300),
+                ), // +fadeIn
+                /*+ expandVertically(
+                            animationSpec = tween(delayMillis = 3000),
+                        )*/
+                exit = slideOutHorizontally(
+                    targetOffsetX = { it },
+                    animationSpec = tween(durationMillis = 300),
+                ),
+                /* + shrinkVertically(
+                            animationSpec = tween(delayMillis = 3000),
+                        )*/
+            ) {
+                Column(modifier = modifier) {
+                    UserInputText(
+                        onSelectorChange = { currentInputSelector = it },
+                        textFieldValue = textState,
+                        onTextChanged = { textState = it },
+                        // Only show the keyboard if there's no input selector and text field has focus
+                        keyboardShown = currentInputSelector == InputSelector.NONE && textFieldFocusState,
+                        // Close extended selector if text field receives focus
+                        onTextFieldFocused = { focused ->
+                            if (focused) {
+                                currentInputSelector = InputSelector.NONE
+                                resetScroll()
+                            }
+                            textFieldFocusState = focused
+                        },
+                        onMessageSent = {
+                            onMessageSent(textState.text)
+                            // Reset text field and close keyboard
+                            textState = TextFieldValue()
+                            // Move scroll to bottom
+                            resetScroll()
+                        },
+                        focusState = textFieldFocusState,
+                    )
 
-            SelectorExpanded(
-                onTextAdded = { textState = textState.addText(it) },
-                currentSelector = currentInputSelector,
-            )
+                    SelectorExpanded(
+                        onTextAdded = { textState = textState.addText(it) },
+                        currentSelector = currentInputSelector,
+                    )
+                }
+            }
         }
     }
 }
@@ -263,7 +315,7 @@ private fun UserInputText(
             )
         }
         AppIconButton(
-            onClick = {},
+            onClick = { if (textFieldValue.text.isNotBlank()) onMessageSent(textFieldValue.text) },
             icon = {
                 Icon(
                     imageVector = AppIcons.Send,
@@ -446,7 +498,12 @@ annotation class ThemePreviews
 fun UserInputPreview() {
     AppTheme {
         AppBackground(modifier = Modifier.size(300.dp, 56.dp)) {
-            UserInput(hideKeyBoard = false, backPressed = {}, onMessageSent = {})
+            UserInput(
+                hideKeyBoard = false,
+                backPressed = {},
+                onMessageSent = {},
+                geminiInProgress = false,
+            )
         }
     }
 }
