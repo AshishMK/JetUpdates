@@ -18,7 +18,6 @@ package com.demo.jetupdates.cart
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
-import androidx.test.uiautomator.Until
 import com.demo.jetupdates.waitForObjectOnTopAppBar
 import androidx.test.uiautomator.Until
 
@@ -35,3 +34,4 @@ fun MacrobenchmarkScope.goToCartScreen() {
 fun MacrobenchmarkScope.cartWaitForCategories() { // may need later
     device.wait(Until.hasObject(By.text("Random")), 5_000)
 }
+
