@@ -35,7 +35,7 @@ android {
 }
 
 secrets {
-    propertiesFileName = "apikeys.properties"
+    propertiesFileName = "keys.properties"
     defaultPropertiesFileName = "secrets.defaults.properties"
 }
 
