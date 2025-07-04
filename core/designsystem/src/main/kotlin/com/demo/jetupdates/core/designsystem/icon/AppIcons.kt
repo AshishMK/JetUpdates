@@ -21,6 +21,7 @@ import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.Send
 import androidx.compose.material.icons.automirrored.rounded.ShortText
 import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.outlined.BubbleChart
 import androidx.compose.material.icons.outlined.LocalFireDepartment
@@ -84,4 +85,5 @@ object AppIcons {
 
     val Send = Icons.AutoMirrored.Rounded.Send
     val arrowDown = Icons.Filled.ArrowDownward
+    val arrowUp = Icons.Filled.ArrowUpward
 }
