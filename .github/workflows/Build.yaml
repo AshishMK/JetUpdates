@@ -42,7 +42,7 @@ jobs:
 
       #see bookmarks https://medium.com/@vontonnie/secure-api-keys-in-android-projects-f8eb4839701d
       - name: Get keys.properties from secrets
-        run: echo "${{ secrets.API_KEY }}" > $GITHUB_WORKSPACE/keys.properties
+        run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
