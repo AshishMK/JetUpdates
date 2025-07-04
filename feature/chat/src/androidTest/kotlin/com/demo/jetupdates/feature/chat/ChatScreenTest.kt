@@ -80,7 +80,7 @@ class ChatScreenTest {
                         ),
                         onShowSnackbar = { _, _ -> false },
                         ask = {},
-                        geminiInProgress = false
+                        geminiInProgress = false,
                     )
                 }
             }
