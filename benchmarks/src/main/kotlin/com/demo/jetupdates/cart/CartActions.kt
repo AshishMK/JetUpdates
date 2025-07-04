@@ -18,13 +18,19 @@ package com.demo.jetupdates.cart
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
+import androidx.test.uiautomator.Until
 import com.demo.jetupdates.waitForObjectOnTopAppBar
 
 fun MacrobenchmarkScope.goToCartScreen() {
+// needed for baseline profile generation in ci/cd @[NightlyBaselineProfiles.yaml]
+    cartWaitForCategories()
     val savedSelector = By.text("Cart")
     val savedButton = device.findObject(savedSelector)
     savedButton.click()
     device.waitForIdle()
     // Wait until saved title are shown on screen
     waitForObjectOnTopAppBar(savedSelector)
+}
+fun MacrobenchmarkScope.cartWaitForCategories() { // may need later
+    device.wait(Until.hasObject(By.text("Random")), 5_000)
 }
