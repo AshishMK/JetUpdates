@@ -18,6 +18,7 @@
 
     <string name="feature_chat_send">Send</string>
     <string name="feature_chat_author_me">me</string>
+    <string name="feature_chat_now">8:30 PM</string>
     <string name="feature_chat_title">Chat</string>
     <string name="feature_chat_loading">Loading saved…</string>
     <string name="feature_chat_empty_error">No saved updates</string>
