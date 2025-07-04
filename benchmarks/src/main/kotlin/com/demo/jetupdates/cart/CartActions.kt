@@ -19,6 +19,7 @@ package com.demo.jetupdates.cart
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
 import com.demo.jetupdates.waitForObjectOnTopAppBar
+import androidx.test.uiautomator.Until
 
 fun MacrobenchmarkScope.goToCartScreen() {
     cartWaitForCategories()
