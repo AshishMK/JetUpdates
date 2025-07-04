@@ -21,6 +21,7 @@ import androidx.test.uiautomator.By
 import com.demo.jetupdates.waitForObjectOnTopAppBar
 
 fun MacrobenchmarkScope.goToCartScreen() {
+    cartWaitForCategories()
     val savedSelector = By.text("Cart")
     val savedButton = device.findObject(savedSelector)
     savedButton.click()
@@ -28,3 +29,7 @@ fun MacrobenchmarkScope.goToCartScreen() {
     // Wait until saved title are shown on screen
     waitForObjectOnTopAppBar(savedSelector)
 }
+fun MacrobenchmarkScope.cartWaitForCategories() { // may need later
+    device.wait(Until.hasObject(By.text("Random")), 20_000)
+}
+
