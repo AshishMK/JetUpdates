@@ -50,7 +50,6 @@ import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -88,7 +87,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.Message
-import com.demo.jetupdates.core.network.BuildConfig
 import com.demo.jetupdates.core.ui.ArrowAlignment
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.JumpToBottom
@@ -128,17 +126,10 @@ internal fun ChatScreen(
     modifier: Modifier = Modifier,
     geminiInProgress: Boolean,
 ) {
-    var showToast by remember { mutableStateOf(false) }
     val authorMe = stringResource(R.string.feature_chat_author_me)
     val timeNow = stringResource(R.string.feature_chat_now)
     var test by rememberSaveable { mutableStateOf(false) }
     var hideKeyBoard by rememberSaveable { mutableStateOf(false) }
-    if (showToast) {
-        LaunchedEffect(showToast) {
-            onShowSnackbar(BuildConfig.API_KEY, "ok")
-            showToast = false
-        }
-    }
 
     if (test) {
         BackHandler(
@@ -156,11 +147,20 @@ internal fun ChatScreen(
             override fun onDrop(event: DragAndDropEvent): Boolean {
                 val clipData = event.toAndroidDragEvent().clipData
 
-                return clipData.itemCount >= 1
+                if (clipData.itemCount < 1) {
+                    return false
+                }
 
-                /* uiState.addMessage(
-                    Message(authorMe, clipData.getItemAt(0).text.toString(), timeNow)
-                )*/
+                feedState.addMessage(
+                    Message(
+                        authorMe,
+                        clipData.getItemAt(0).text.toString(),
+                        timeNow,
+                        com.demo.jetupdates.core.designsystem.R.drawable.core_designsystem_avtar,
+                    ),
+                )
+                ask(clipData.getItemAt(0).text.toString())
+                return true
             }
         }
     }
@@ -190,8 +190,6 @@ internal fun ChatScreen(
                 test = true
             },
             onMessageSent = { content ->
-                showToast = true
-
                 feedState.addMessage(
                     Message(
                         authorMe,

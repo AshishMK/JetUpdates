@@ -60,7 +60,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
@@ -91,12 +94,14 @@ import com.demo.jetupdates.core.model.data.UserShopItem
 import com.demo.jetupdates.core.ui.CategoriesToDrawable.mapDrawables
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.ItemFeedUiState
+import com.demo.jetupdates.core.ui.JumpToBottom
 import com.demo.jetupdates.core.ui.TrackScrollJank
 import com.demo.jetupdates.core.ui.UserShopResourcePreviewParameterProvider
 import com.demo.jetupdates.core.ui.itemFeed
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus.Denied
 import com.google.accompanist.permissions.rememberPermissionState
+import kotlinx.coroutines.launch
 
 //
 @Composable
@@ -146,6 +151,7 @@ internal fun StoreScreen(
 ) {
     val isOnboardingLoading = onboardingUiState is OnboardingUiState.Loading
     val isFeedLoading = feedState is ItemFeedUiState.Loading
+    val scope = rememberCoroutineScope()
 
     // This code should be called when the UI is ready for use and relates to Time To Full Display.
     ReportDrawnWhen { !isSyncing && !isOnboardingLoading && !isFeedLoading }
@@ -246,6 +252,40 @@ internal fun StoreScreen(
                 itemsAvailable = itemsAvailable,
             ),
         )
+
+        // Jump to bottom button shows up when user scrolls past a threshold.
+        // Convert to pixels:
+        val jumpThreshold = with(LocalDensity.current) {
+            JumpToBottomThreshold.toPx()
+        }
+
+        // Show the button if the first visible item is not the first one or if the offset is
+        // greater than the threshold.
+        val jumpToBottomButtonEnabled by remember {
+            derivedStateOf {
+                state.firstVisibleItemIndex != 0 ||
+                    state.firstVisibleItemScrollOffset > jumpThreshold
+            }
+        }
+        if (showCategoryList && jumpToBottomButtonEnabled) {
+            LaunchedEffect(Unit) {
+                scope.launch {
+                    state.animateScrollToItem(0)
+                }
+            }
+        }
+
+        JumpToBottom(
+            // Only show if the scroller is not at the top
+            enabled = jumpToBottomButtonEnabled,
+            onClicked = {
+                scope.launch {
+                    state.animateScrollToItem(0)
+                }
+            },
+            modifier = Modifier.align(Alignment.BottomCenter),
+            useJmpToBottomTitle = false,
+        )
     }
 
     NotificationPermissionEffect()
@@ -311,7 +351,9 @@ private fun LazyStaggeredGridScope.onboarding(
                     if (onboardingUiState.shouldShowOnboarding) {
                         Row(
                             horizontalArrangement = Arrangement.Center,
-                            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 8.dp),
                         ) {
                             AppButton(
                                 onClick = saveFollowedCategories,
@@ -394,7 +436,8 @@ private fun SingleItemButton(
     onClick: (Int, Boolean) -> Unit,
 ) {
     Surface(
-        modifier = Modifier.testTag(name)
+        modifier = Modifier
+            .testTag(name)
             // .widthIn(min = 100.dp)
             .heightIn(min = 40.dp),
         shape = RoundedCornerShape(corner = CornerSize(24.dp)),
@@ -487,11 +530,11 @@ private fun DeepLinkEffect(
         if (shopItemResource == null) return@LaunchedEffect
         if (!shopItemResource.hasBeenViewed) onDeepLinkOpened(shopItemResource.id)
 
-     /*   launchCustomChromeTab(
-            context = context,
-            uri = Uri.parse(userShopItem.url),
-            toolbarColor = backgroundColor,
-        )*/
+        /*   launchCustomChromeTab(
+               context = context,
+               uri = Uri.parse(userShopItem.url),
+               toolbarColor = backgroundColor,
+           )*/
     }
 }
 
@@ -513,6 +556,8 @@ private fun feedItemsSize(
     }
     return feedSize + onboardingSize
 }
+
+private val JumpToBottomThreshold = 120.dp
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO, name = "Light theme")
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, name = "Dark theme")

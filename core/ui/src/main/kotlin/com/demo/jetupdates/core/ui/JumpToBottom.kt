@@ -47,6 +47,7 @@ fun JumpToBottom(
     enabled: Boolean,
     onClicked: () -> Unit,
     modifier: Modifier = Modifier,
+    useJmpToBottomTitle: Boolean = true,
 ) {
     // Show Jump to Bottom button
     val transition = updateTransition(
@@ -64,13 +65,13 @@ fun JumpToBottom(
         ExtendedFloatingActionButton(
             icon = {
                 Icon(
-                    imageVector = AppIcons.arrowDown,
+                    imageVector = if (useJmpToBottomTitle) AppIcons.arrowDown else AppIcons.arrowUp,
                     modifier = Modifier.height(18.dp),
                     contentDescription = null,
                 )
             },
             text = {
-                Text(text = stringResource(id = R.string.core_ui_jumpBottom))
+                Text(text = stringResource(id = if (useJmpToBottomTitle) R.string.core_ui_jumpBottom else R.string.core_ui_jumpTop))
             },
             onClick = onClicked,
             containerColor = MaterialTheme.colorScheme.surface,
