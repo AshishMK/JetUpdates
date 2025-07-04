@@ -18,7 +18,7 @@ follows Android design and development best practices and is intended to be a us
 for developers. As a running app, it's intended to help developers keep up-to-date with the world
 of Android development by providy ing regular news updates.
 
-The app is currently in development. The `prodRelease` variant is here [Download APK](https://github.com/AshishMK/JetUpdates/releases/download/V1.0.37/app-prod-release.apk).
+The app is currently in development. The `prodRelease` variant can be downloaded from Releases section [Download APK](https://github.com/AshishMK/JetUpdates/releases).
 
 # Features
 
