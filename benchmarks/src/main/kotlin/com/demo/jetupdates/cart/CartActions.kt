@@ -18,7 +18,6 @@ package com.demo.jetupdates.cart
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
-import androidx.test.uiautomator.Until
 import com.demo.jetupdates.waitForObjectOnTopAppBar
 import androidx.test.uiautomator.Until
 
