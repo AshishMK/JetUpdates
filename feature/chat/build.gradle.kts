@@ -26,6 +26,7 @@ android {
 
 dependencies {
     implementation(projects.core.data)
+    implementation(libs.generativeai)
 
     testImplementation(projects.core.testing)
 

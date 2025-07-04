@@ -17,7 +17,6 @@
 package com.demo.jetupdates.feature.chat
 
 import android.content.ClipDescription
-import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.Image
@@ -34,12 +33,12 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.ime
-import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFrom
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -82,6 +81,8 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.Message
@@ -92,18 +93,23 @@ import com.demo.jetupdates.core.ui.MessagePreviewParameterData.initialMessages
 import com.demo.jetupdates.core.ui.TrackScrollJank
 import com.demo.jetupdates.core.ui.UserInput
 import com.demo.jetupdates.core.ui.addRoundedBubbleRect
+import com.demo.jetupdates.feature.chat.ui.ChatFlexBoxLayout
 import kotlinx.coroutines.launch
 
 @Composable
 internal fun ChatRoute(
     onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
+    viewModel: ChatViewModel = hiltViewModel(),
 ) {
-    val feedState = initialMessages.plus(initialMessages).plus(initialMessages) // for benchmarking
+    val feedState =
+        viewModel.exampleUiState // initialMessages.plus(initialMessages).plus(initialMessages) // for benchmarking
     ChatScreen(
         feedState = feedState,
         onShowSnackbar = onShowSnackbar,
         modifier = modifier,
+        ask = { viewModel.summarize(it) },
+        geminiInProgress = viewModel.isGeminiReplying,
     )
 }
 
@@ -113,10 +119,14 @@ internal fun ChatRoute(
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 @Composable
 internal fun ChatScreen(
-    feedState: List<Message>,
+    feedState: ConversationUiState,
+    ask: (ask: String) -> Unit,
     onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
+    geminiInProgress: Boolean,
 ) {
+    val authorMe = stringResource(R.string.feature_chat_author_me)
+    val timeNow = stringResource(R.string.feature_chat_now)
     var test by rememberSaveable { mutableStateOf(false) }
     var hideKeyBoard by rememberSaveable { mutableStateOf(false) }
     if (test) {
@@ -159,7 +169,7 @@ internal fun ChatScreen(
             ),
     ) {
         Messages(
-            messages = feedState,
+            feedState = feedState,
             modifier = Modifier.weight(1f),
             scrollState = scrollState,
         )
@@ -169,15 +179,22 @@ internal fun ChatScreen(
                 test = true
             },
             onMessageSent = { content ->
-                /*  uiState.addMessage(
-                      Message(authorMe, content, timeNow),
-                  )*/
+                feedState.addMessage(
+                    Message(
+                        authorMe,
+                        content,
+                        timeNow,
+                        com.demo.jetupdates.core.designsystem.R.drawable.core_designsystem_avtar,
+                    ),
+                )
+                ask(content)
             },
             resetScroll = {
                 scope.launch {
                     scrollState.scrollToItem(0)
                 }
             },
+            geminiInProgress = geminiInProgress,
             // let this element handle the padding so that the elevation is shown behind the
             // navigation bar
             // modifier = Modifier.consumeWindowInsets(PaddingValues(bottom = 800.dp))
@@ -189,7 +206,7 @@ const val CONVERSATION_TEST_TAG = "chat:messages"
 
 @Composable
 fun Messages(
-    messages: List<Message>,
+    feedState: ConversationUiState,
     scrollState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
@@ -204,6 +221,7 @@ fun Messages(
                 .testTag(CONVERSATION_TEST_TAG)
                 .fillMaxSize(),
         ) {
+            val messages = feedState.messages
             for (index in messages.indices) {
                 val prevAuthor = messages.getOrNull(index - 1)?.author
                 val nextAuthor = messages.getOrNull(index + 1)?.author
@@ -359,7 +377,7 @@ fun AuthorAndTextMessage(
         horizontalAlignment = if (isUserMe) Alignment.End else Alignment.Start,
     ) {
         if (isLastMessageByAuthor) {
-            AuthorNameTimestamp(msg)
+            // AuthorNameTimestamp(msg)
         }
         ChatItemBubble(
             msg,
@@ -478,9 +496,10 @@ fun ChatItemBubble(
               color = backgroundBubbleColor,
               shape = ChatBubbleShape,
           ) {*/
-        ClickableMessage(
+        SentMessageRow(message = message, isLastMessageByAuthor)
+   /*     ClickableMessage(
             message = message,
-        )
+        )*/
         // }
     }
 }
@@ -504,8 +523,8 @@ fun Modifier.imeOffset(contentBottom: Int = 0) = composed {
     val density = LocalDensity.current
     val imeBottom = WindowInsets.ime.getBottom(density)
 
-    val navBarBottom = WindowInsets.navigationBars.getBottom(density)
-    Log.v("hawaii", "hawaii $navBarBottom $density")
+ /*   val navBarBottom = WindowInsets.navigationBars.getBottom(density)
+    Log.v("hawaii", "hawaii $navBarBottom $density")*/
     Modifier.offset {
         IntOffset(
             x = 0,
@@ -521,8 +540,10 @@ fun ChatScreenPreview() {
     AppTheme {
         AppBackground {
             ChatScreen(
-                feedState = initialMessages,
+                feedState = ConversationUiState(initialMessages),
                 onShowSnackbar = { _, _ -> true },
+                ask = {},
+                geminiInProgress = false,
             )
         }
     }
@@ -542,4 +563,86 @@ class TriangleEdgeShape(val offset: Int) : Shape {
         }
         return Outline.Generic(path = trianglePath)
     }
+}
+
+@Composable
+private fun SentMessageRow(
+    message: Message,
+    isLastMessageByAuthor: Boolean,
+) {
+    /* Column(
+         modifier = Modifier
+             .padding(start = 60.dp, end = 8.dp, top = if (drawArrow) 2.dp else 0.dp, bottom = 2.dp)
+             .fillMaxWidth()
+             .wrapContentHeight(),
+         horizontalAlignment = Alignment.End,
+     ) {*/
+
+    ChatFlexBoxLayout(
+        modifier = Modifier
+            .padding(start = 4.dp, top = 4.dp, end = 8.dp, bottom = 4.dp),
+        text = message.content,
+        author = message.author,
+        messageStat = {
+            MessageTimeText(
+                modifier = Modifier.wrapContentSize(),
+                messageTime = message.timestamp,
+            )
+        },
+        isLastMessageByAuthor = isLastMessageByAuthor,
+    )
+
+    // }
+}
+
+/*@Composable
+private fun ReceivedMessageRow(
+    drawArrow: Boolean = true,
+    text: String,
+    messageTime: String
+) {
+
+    Column(
+        modifier = Modifier
+            .padding(start = 8.dp, end = 60.dp, top = if (drawArrow) 2.dp else 0.dp, bottom = 2.dp)
+            .fillMaxWidth()
+            .wrapContentHeight(),
+        horizontalAlignment = Alignment.Start
+    ) {
+        BubbleLayout(
+            bubbleState = rememberBubbleState(
+                alignment = ArrowAlignment.LeftTop,
+                drawArrow = drawArrow,
+                cornerRadius = 8.dp,
+            ),
+            shadow = BubbleShadow(elevation = 1.dp)
+        ) {
+            ChatFlexBoxLayout(
+                modifier = Modifier
+                    .padding(start = 2.dp, top = 2.dp, end = 4.dp, bottom = 2.dp),
+                text = text,
+                messageStat = {
+                    CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+                        Text(
+                            modifier = Modifier.padding(top = 1.dp, bottom = 1.dp, end = 4.dp),
+                            text = messageTime,
+                            fontSize = 12.sp
+                        )
+                    }
+                }
+            )
+        }
+    }
+}*/
+
+@Composable
+fun MessageTimeText(
+    modifier: Modifier = Modifier,
+    messageTime: String,
+) {
+    Text(
+        modifier = modifier,
+        text = messageTime,
+        fontSize = 12.sp,
+    )
 }
