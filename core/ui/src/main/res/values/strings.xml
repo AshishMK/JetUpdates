@@ -42,6 +42,7 @@
     <string name="core_ui_now">8:30 PM</string>
     <string name="core_ui_members">%d members</string>
     <string name="core_ui_textfield_hint">Ask #Gemni</string>
+    <string name="core_ui_gemini_replying">Wait for Gemini to reply</string>
     <string name="core_ui_emojis_label">Emojis</string>
     <string name="core_ui_stickers_label">Stickers</string>
 

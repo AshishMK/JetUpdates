@@ -88,6 +88,7 @@ import com.demo.jetupdates.core.designsystem.component.scrollbar.rememberDraggab
 import com.demo.jetupdates.core.designsystem.component.scrollbar.scrollbarState
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.UserShopItem
+import com.demo.jetupdates.core.ui.CategoriesToDrawable.mapDrawables
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.ItemFeedUiState
 import com.demo.jetupdates.core.ui.TrackScrollJank
@@ -409,7 +410,9 @@ private fun SingleItemButton(
             modifier = Modifier.padding(start = 12.dp, end = 12.dp),
         ) {
             ItemIcon(
+                id = categoryId,
                 imageUrl = imageUrl,
+                isSelected = isSelected,
             )
             Text(
                 text = name,
@@ -425,8 +428,10 @@ private fun SingleItemButton(
 
 @Composable
 fun ItemIcon(
+    id: Int,
     imageUrl: String,
     modifier: Modifier = Modifier,
+    isSelected: Boolean,
 ) {
     /* Image(
          modifier = modifier
@@ -441,13 +446,14 @@ fun ItemIcon(
          colorFilter = null,
      )*/
     DynamicAsyncImage(
-        placeholder = painterResource(R.drawable.feature_store_ic_icon_placeholder),
-        imageUrl = imageUrl,
+        placeholder = painterResource(mapDrawables[id]!!),
+        imageUrl = "",
         // decorative
         contentDescription = null,
         modifier = modifier
             .padding(10.dp)
             .size(20.dp),
+        isSelected = isSelected,
     )
 }
 
