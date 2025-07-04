@@ -40,6 +40,10 @@ jobs:
       - name: Get keys.properties from secrets
         run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
 
+
+      - name: Get keys.properties from secrets
+        run: echo "${{ secrets.API_KEY }}" > $GITHUB_WORKSPACE/keys.properties
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -169,7 +173,7 @@ jobs:
     timeout-minutes: 55
     strategy:
       matrix:
-        api-level: [26, 34]
+        api-level: [ 26, 34 ]
 
     steps:
       - name: Delete unnecessary tools 🔧
