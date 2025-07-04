@@ -17,6 +17,7 @@
 package com.demo.jetupdates.feature.chat
 
 import android.content.ClipDescription
+import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.Image
@@ -49,6 +50,7 @@ import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -86,6 +88,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.Message
+import com.demo.jetupdates.core.network.BuildConfig
 import com.demo.jetupdates.core.ui.ArrowAlignment
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.JumpToBottom
@@ -125,10 +128,18 @@ internal fun ChatScreen(
     modifier: Modifier = Modifier,
     geminiInProgress: Boolean,
 ) {
+    var showToast by remember { mutableStateOf(false) }
     val authorMe = stringResource(R.string.feature_chat_author_me)
     val timeNow = stringResource(R.string.feature_chat_now)
     var test by rememberSaveable { mutableStateOf(false) }
     var hideKeyBoard by rememberSaveable { mutableStateOf(false) }
+    if (showToast) {
+        LaunchedEffect(showToast) {
+            onShowSnackbar(BuildConfig.API_KEY, "ok")
+            showToast = false
+        }
+    }
+
     if (test) {
         BackHandler(
             onBack = {
@@ -179,6 +190,8 @@ internal fun ChatScreen(
                 test = true
             },
             onMessageSent = { content ->
+                showToast = true
+
                 feedState.addMessage(
                     Message(
                         authorMe,
@@ -223,6 +236,7 @@ fun Messages(
         ) {
             val messages = feedState.messages
             for (index in messages.indices) {
+                Log.v("recomposing", "recomposing ccc $index")
                 val prevAuthor = messages.getOrNull(index - 1)?.author
                 val nextAuthor = messages.getOrNull(index + 1)?.author
                 val content = messages[index]
@@ -497,9 +511,9 @@ fun ChatItemBubble(
               shape = ChatBubbleShape,
           ) {*/
         SentMessageRow(message = message, isLastMessageByAuthor)
-   /*     ClickableMessage(
-            message = message,
-        )*/
+        /*     ClickableMessage(
+                 message = message,
+             )*/
         // }
     }
 }
@@ -523,8 +537,8 @@ fun Modifier.imeOffset(contentBottom: Int = 0) = composed {
     val density = LocalDensity.current
     val imeBottom = WindowInsets.ime.getBottom(density)
 
- /*   val navBarBottom = WindowInsets.navigationBars.getBottom(density)
-    Log.v("hawaii", "hawaii $navBarBottom $density")*/
+    /*   val navBarBottom = WindowInsets.navigationBars.getBottom(density)
+       Log.v("hawaii", "hawaii $navBarBottom $density")*/
     Modifier.offset {
         IntOffset(
             x = 0,
