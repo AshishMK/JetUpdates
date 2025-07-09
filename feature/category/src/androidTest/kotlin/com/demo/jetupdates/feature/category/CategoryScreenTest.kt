@@ -17,6 +17,10 @@
 package com.demo.jetupdates.feature.category
 
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.hasScrollToNodeAction
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -26,6 +30,8 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performScrollToNode
 import com.demo.jetupdates.core.testing.data.followableCategoryTestData
 import com.demo.jetupdates.core.testing.data.userShopItemsTestData
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
 import com.demo.jetupdates.feature.category.CategoryUiState.Loading
 import com.demo.jetupdates.feature.category.CategoryUiState.Success
 import org.junit.Before
@@ -37,6 +43,7 @@ import org.junit.Test
  * Verifies that, when a specific UiState is set, the corresponding
  * composables and details are shown
  */
+@OptIn(ExperimentalSharedTransitionApi::class)
 class CategoryScreenTest {
 
     @get:Rule
@@ -54,16 +61,25 @@ class CategoryScreenTest {
     @Test
     fun appLoadingWheel_whenScreenIsLoading_showLoading() {
         composeTestRule.setContent {
-            CategoryScreen(
-                categoryUiState = Loading,
-                shopItemUiState = ShopItemUiState.Loading,
-                showBackButton = true,
-                onBackClick = {},
-                onFollowClick = {},
-                onCategoryClick = {},
-                onBookmarkChanged = { _, _ -> },
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CategoryScreen(
+                            categoryUiState = Loading,
+                            shopItemUiState = ShopItemUiState.Loading,
+                            showBackButton = true,
+                            onBackClick = {},
+                            onFollowClick = {},
+                            onProductClick = {},
+                            onBookmarkChanged = { _, _ -> },
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
 
         composeTestRule
@@ -75,16 +91,25 @@ class CategoryScreenTest {
     fun topicTitle_whenCategoryIsSuccess_isShown() {
         val testCategory = followableCategoryTestData.first()
         composeTestRule.setContent {
-            CategoryScreen(
-                categoryUiState = Success(testCategory),
-                shopItemUiState = ShopItemUiState.Loading,
-                showBackButton = true,
-                onBackClick = {},
-                onFollowClick = {},
-                onCategoryClick = {},
-                onBookmarkChanged = { _, _ -> },
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CategoryScreen(
+                            categoryUiState = Success(testCategory),
+                            shopItemUiState = ShopItemUiState.Loading,
+                            showBackButton = true,
+                            onBackClick = {},
+                            onFollowClick = {},
+                            onProductClick = {},
+                            onBookmarkChanged = { _, _ -> },
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
 
         // Name is shown
@@ -101,16 +126,25 @@ class CategoryScreenTest {
     @Test
     fun news_whenCategoryIsLoading_isNotShown() {
         composeTestRule.setContent {
-            CategoryScreen(
-                categoryUiState = Loading,
-                shopItemUiState = ShopItemUiState.Success(userShopItemsTestData),
-                showBackButton = true,
-                onBackClick = {},
-                onFollowClick = {},
-                onCategoryClick = {},
-                onBookmarkChanged = { _, _ -> },
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CategoryScreen(
+                            categoryUiState = Loading,
+                            shopItemUiState = ShopItemUiState.Success(userShopItemsTestData),
+                            showBackButton = true,
+                            onBackClick = {},
+                            onFollowClick = {},
+                            onProductClick = {},
+                            onBookmarkChanged = { _, _ -> },
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
 
         // Loading indicator shown
@@ -123,18 +157,27 @@ class CategoryScreenTest {
     fun news_whenSuccessAndCategoryIsSuccess_isShown() {
         val testCategory = followableCategoryTestData.first()
         composeTestRule.setContent {
-            CategoryScreen(
-                categoryUiState = Success(testCategory),
-                shopItemUiState = ShopItemUiState.Success(
-                    userShopItemsTestData,
-                ),
-                showBackButton = true,
-                onBackClick = {},
-                onFollowClick = {},
-                onCategoryClick = {},
-                onBookmarkChanged = { _, _ -> },
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CategoryScreen(
+                            categoryUiState = Success(testCategory),
+                            shopItemUiState = ShopItemUiState.Success(
+                                userShopItemsTestData,
+                            ),
+                            showBackButton = true,
+                            onBackClick = {},
+                            onFollowClick = {},
+                            onProductClick = {},
+                            onBookmarkChanged = { _, _ -> },
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
 
         // Scroll to first news title if available

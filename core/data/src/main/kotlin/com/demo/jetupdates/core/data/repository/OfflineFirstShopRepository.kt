@@ -62,6 +62,9 @@ internal class OfflineFirstShopRepository @Inject constructor(
         )
             .map { it.map(PopulatedShopItem::asExternalModel) }
 
+    override fun getShopItem(id: Int): Flow<ShopItem> =
+        shopItemDao.getShopItem(id).map(PopulatedShopItem::asExternalModel)
+
     override suspend fun syncWith(synchronizer: Synchronizer): Boolean {
         var isFirstSync = false
         return synchronizer.changeListSync(
@@ -74,7 +77,8 @@ internal class OfflineFirstShopRepository @Inject constructor(
                 copy(shopItemVersion = latestVersion)
             },
             modelDeleter = shopItemDao::deleteShopItems,
-            modelUpdater = { changedIds ->
+            modelUpdater = {
+                    changedIds ->
                 val userData = appPreferencesDataSource.userData.first()
                 val hasOnboarded = userData.shouldHideOnboarding
                 val followedCategoryIds = userData.followedCategories

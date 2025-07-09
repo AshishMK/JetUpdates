@@ -16,7 +16,6 @@
 
 package com.demo.jetupdates.core.designsystem.theme
 import androidx.compose.ui.graphics.Color
-
 val primaryLight = Color(0xFF6D5E0F)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFF8E287)

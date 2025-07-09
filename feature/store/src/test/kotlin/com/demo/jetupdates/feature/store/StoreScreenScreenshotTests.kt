@@ -17,7 +17,11 @@
 package com.demo.jetupdates.feature.store
 
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.demo.jetUpdates.core.testing.util.DefaultTestDevices
 import com.demo.jetUpdates.core.testing.util.captureForDevice
@@ -26,6 +30,8 @@ import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.ui.ItemFeedUiState
 import com.demo.jetupdates.core.ui.ItemFeedUiState.Success
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
 import com.demo.jetupdates.core.ui.UserShopResourcePreviewParameterProvider
 import com.demo.jetupdates.feature.store.OnboardingUiState.Loading
 import com.demo.jetupdates.feature.store.OnboardingUiState.NotShown
@@ -49,6 +55,7 @@ import java.util.TimeZone
 /**
  * Screenshot tests for the [StoreScreen].
  */
+@OptIn(ExperimentalSharedTransitionApi::class)
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(application = HiltTestApplication::class)
@@ -73,22 +80,31 @@ class StoreScreenScreenshotTests {
     fun storeScreenPopulatedFeed() {
         composeTestRule.captureMultiDevice("StoreScreenPopulatedFeed") {
             AppTheme {
-                StoreScreen(
-                    isSyncing = false,
-                    onboardingUiState = NotShown,
-                    feedState = Success(
-                        feed = userShopItems,
-                    ),
-                    onCategoryCheckedChanged = { _, _ -> },
-                    saveFollowedCategories = {},
-                    onShopItemCheckedChanged = { _, _ -> },
-                    onShopItemViewed = {},
-                    onCategoryClick = {},
-                    deepLinkedUserShopItem = null,
-                    onDeepLinkOpened = {},
-                    categoryActionClicked = {},
-                    showCategoryList = false,
-                )
+                SharedTransitionLayout {
+                    AnimatedVisibility(visible = true) {
+                        CompositionLocalProvider(
+                            LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                            LocalNavAnimatedVisibilityScope provides this,
+                        ) {
+                            StoreScreen(
+                                isSyncing = false,
+                                onboardingUiState = NotShown,
+                                feedState = Success(
+                                    feed = userShopItems,
+                                ),
+                                onCategoryCheckedChanged = { _, _ -> },
+                                saveFollowedCategories = {},
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = {},
+                                onProductClick = {},
+                                deepLinkedUserShopItem = null,
+                                onDeepLinkOpened = {},
+                                categoryActionClicked = {},
+                                showCategoryList = false,
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -97,20 +113,29 @@ class StoreScreenScreenshotTests {
     fun storeScreenLoading() {
         composeTestRule.captureMultiDevice("StoreScreenLoading") {
             AppTheme {
-                StoreScreen(
-                    isSyncing = false,
-                    onboardingUiState = Loading,
-                    feedState = ItemFeedUiState.Loading,
-                    onCategoryCheckedChanged = { _, _ -> },
-                    saveFollowedCategories = {},
-                    onShopItemCheckedChanged = { _, _ -> },
-                    onShopItemViewed = {},
-                    onCategoryClick = {},
-                    deepLinkedUserShopItem = null,
-                    onDeepLinkOpened = {},
-                    categoryActionClicked = {},
-                    showCategoryList = false,
-                )
+                SharedTransitionLayout {
+                    AnimatedVisibility(visible = true) {
+                        CompositionLocalProvider(
+                            LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                            LocalNavAnimatedVisibilityScope provides this,
+                        ) {
+                            StoreScreen(
+                                isSyncing = false,
+                                onboardingUiState = Loading,
+                                feedState = ItemFeedUiState.Loading,
+                                onCategoryCheckedChanged = { _, _ -> },
+                                saveFollowedCategories = {},
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = {},
+                                onProductClick = {},
+                                deepLinkedUserShopItem = null,
+                                onDeepLinkOpened = {},
+                                categoryActionClicked = {},
+                                showCategoryList = false,
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -170,26 +195,35 @@ class StoreScreenScreenshotTests {
     private fun StoreScreenCategorySelection() {
         AppTheme {
             AppBackground {
-                StoreScreen(
-                    isSyncing = false,
-                    onboardingUiState = Shown(
-                        categories = userShopItems.flatMap { shopItem -> shopItem.followableCategories }
-                            .distinctBy { it.category.id },
-                        true,
-                    ),
-                    feedState = Success(
-                        feed = emptyList(),
-                    ),
-                    onCategoryCheckedChanged = { _, _ -> },
-                    saveFollowedCategories = {},
-                    onShopItemCheckedChanged = { _, _ -> },
-                    onShopItemViewed = {},
-                    onCategoryClick = {},
-                    deepLinkedUserShopItem = null,
-                    onDeepLinkOpened = {},
-                    showCategoryList = true,
-                    categoryActionClicked = {},
-                )
+                SharedTransitionLayout {
+                    AnimatedVisibility(visible = true) {
+                        CompositionLocalProvider(
+                            LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                            LocalNavAnimatedVisibilityScope provides this,
+                        ) {
+                            StoreScreen(
+                                isSyncing = false,
+                                onboardingUiState = Shown(
+                                    categories = userShopItems.flatMap { shopItem -> shopItem.followableCategories }
+                                        .distinctBy { it.category.id },
+                                    true,
+                                ),
+                                feedState = Success(
+                                    feed = emptyList(),
+                                ),
+                                onCategoryCheckedChanged = { _, _ -> },
+                                saveFollowedCategories = {},
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = {},
+                                onProductClick = {},
+                                deepLinkedUserShopItem = null,
+                                onDeepLinkOpened = {},
+                                showCategoryList = true,
+                                categoryActionClicked = {},
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -198,23 +232,30 @@ class StoreScreenScreenshotTests {
     private fun StoreScreenPopulatedAndLoading() {
         AppTheme {
             AppBackground {
-                AppTheme {
-                    StoreScreen(
-                        isSyncing = true,
-                        onboardingUiState = Loading,
-                        feedState = Success(
-                            feed = userShopItems,
-                        ),
-                        onCategoryCheckedChanged = { _, _ -> },
-                        saveFollowedCategories = {},
-                        onShopItemCheckedChanged = { _, _ -> },
-                        onShopItemViewed = {},
-                        onCategoryClick = {},
-                        deepLinkedUserShopItem = null,
-                        onDeepLinkOpened = {},
-                        showCategoryList = false,
-                        categoryActionClicked = {},
-                    )
+                SharedTransitionLayout {
+                    AnimatedVisibility(visible = true) {
+                        CompositionLocalProvider(
+                            LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                            LocalNavAnimatedVisibilityScope provides this,
+                        ) {
+                            StoreScreen(
+                                isSyncing = true,
+                                onboardingUiState = Loading,
+                                feedState = Success(
+                                    feed = userShopItems,
+                                ),
+                                onCategoryCheckedChanged = { _, _ -> },
+                                saveFollowedCategories = {},
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = {},
+                                onProductClick = {},
+                                deepLinkedUserShopItem = null,
+                                onDeepLinkOpened = {},
+                                showCategoryList = false,
+                                categoryActionClicked = {},
+                            )
+                        }
+                    }
                 }
             }
         }
