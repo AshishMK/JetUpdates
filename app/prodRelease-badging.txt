@@ -1,4 +1,4 @@
-package: name='com.demo.jetupdates' versionCode='1' versionName='1.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+package: name='com.demo.jetupdates' versionCode='2' versionName='2.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
 minSdkVersion:'21'
 targetSdkVersion:'35'
 uses-permission: name='android.permission.INTERNET'

@@ -50,7 +50,7 @@ fun LazyStaggeredGridScope.itemFeed(
     feedState: ItemFeedUiState,
     onShopItemCheckedChanged: (Int, Boolean) -> Unit,
     onShopItemViewed: (Int) -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     onExpandedCardClick: () -> Unit = {},
 ) {
     when (feedState) {
@@ -71,6 +71,7 @@ fun LazyStaggeredGridScope.itemFeed(
                         onExpandedCardClick()
                         // launchCustomChromeTab(context, Uri.parse(userShopItem.url), backgroundColor)
                         onShopItemViewed(userShopItem.id)
+                        onProductClick(userShopItem.id)
                     },
                     hasBeenViewed = userShopItem.hasBeenViewed,
                     onToggleBookmark = {
@@ -79,7 +80,6 @@ fun LazyStaggeredGridScope.itemFeed(
                             !userShopItem.isSaved,
                         )
                     },
-                    onCategoryClick = onCategoryClick,
                     modifier = Modifier
                         .padding(horizontal = 8.dp)
                         .animateItem(),
@@ -128,7 +128,7 @@ private fun ItemFeedLoadingPreview() {
                 feedState = ItemFeedUiState.Loading,
                 onShopItemCheckedChanged = { _, _ -> },
                 onShopItemViewed = {},
-                onCategoryClick = {},
+                onProductClick = {},
             )
         }
     }
@@ -141,7 +141,7 @@ private fun ItemFeedContentPreview(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopResources: List<UserShopItem>,
 ) {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         LazyVerticalStaggeredGrid(
             columns = Adaptive(150.dp),
             contentPadding = PaddingValues(0.dp),
@@ -152,7 +152,7 @@ private fun ItemFeedContentPreview(
                 feedState = ItemFeedUiState.Success(userShopResources),
                 onShopItemCheckedChanged = { _, _ -> },
                 onShopItemViewed = {},
-                onCategoryClick = {},
+                onProductClick = {},
             )
         }
     }

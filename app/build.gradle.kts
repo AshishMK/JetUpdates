@@ -32,8 +32,8 @@ android {
 
     defaultConfig {
         applicationId = "com.demo.jetupdates"
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "2.0"
 
         testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
@@ -86,12 +86,15 @@ dependencies {
     implementation(projects.sync.work)
     implementation(projects.core.data)
 
+
     implementation(projects.feature.cart)
     implementation(projects.feature.trending)
     implementation(projects.feature.category)
     implementation(projects.feature.search)
     implementation(projects.feature.settings)
     implementation(projects.feature.chat)
+    implementation(projects.feature.product)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

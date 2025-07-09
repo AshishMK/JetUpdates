@@ -16,10 +16,12 @@
 
 package com.demo.jetupdates.feature.search.navigation
 
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
 import com.demo.jetupdates.feature.search.SearchRoute
 import kotlinx.serialization.Serializable
 
@@ -31,15 +33,19 @@ fun NavController.navigateToSearch(navOptions: NavOptions? = null) =
 fun NavGraphBuilder.searchScreen(
     onBackClick: () -> Unit,
     onTrendingClick: () -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
 ) {
     // TODO: Handle back stack for each top-level destination. At the moment each top-level
     // destination may have own search screen's back stack.
     composable<SearchRoute> {
-        SearchRoute(
-            onBackClick = onBackClick,
-            onTrendingClick = onTrendingClick,
-            onCategoryClick = onCategoryClick,
-        )
+        CompositionLocalProvider(
+            LocalNavAnimatedVisibilityScope provides this@composable,
+        ) {
+            SearchRoute(
+                onBackClick = onBackClick,
+                onTrendingClick = onTrendingClick,
+                onProductClick = onProductClick,
+            )
+        }
     }
 }

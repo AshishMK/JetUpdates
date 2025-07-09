@@ -17,6 +17,10 @@
 package com.demo.jetupdates.core.ui
 
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertIsToggleable
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
@@ -25,6 +29,7 @@ import com.demo.jetupdates.core.testing.data.userShopItemsTestData
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(ExperimentalSharedTransitionApi::class)
 class ShopItemCardTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
@@ -34,14 +39,22 @@ class ShopItemCardTest {
         val shopItemWithKnownResourceType = userShopItemsTestData[0]
 
         composeTestRule.setContent {
-            ItemResourceCardForList2(
-                userShopItem = shopItemWithKnownResourceType,
-                isAddedToCart = false,
-                hasBeenViewed = false,
-                onToggleBookmark = {},
-                onClick = {},
-                onCategoryClick = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        ItemResourceCardForList2(
+                            userShopItem = shopItemWithKnownResourceType,
+                            isAddedToCart = false,
+                            hasBeenViewed = false,
+                            onToggleBookmark = {},
+                            onClick = {},
+                        )
+                    }
+                }
+            }
         }
 
         // assertEquals("1",1.toString())
@@ -62,14 +75,22 @@ class ShopItemCardTest {
     fun testAddedToCartCard_IconState() {
         val shopItemWithKnownResourceType = userShopItemsTestData[0]
         composeTestRule.setContent {
-            ItemResourceCardForList2(
-                userShopItem = shopItemWithKnownResourceType,
-                isAddedToCart = shopItemWithKnownResourceType.isSaved,
-                hasBeenViewed = false,
-                onToggleBookmark = {},
-                onClick = {},
-                onCategoryClick = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        ItemResourceCardForList2(
+                            userShopItem = shopItemWithKnownResourceType,
+                            isAddedToCart = shopItemWithKnownResourceType.isSaved,
+                            hasBeenViewed = false,
+                            onToggleBookmark = {},
+                            onClick = {},
+                        )
+                    }
+                }
+            }
         }
 
         composeTestRule

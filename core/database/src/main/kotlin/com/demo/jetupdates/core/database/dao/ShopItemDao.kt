@@ -116,4 +116,19 @@ interface ShopItemDao {
         """,
     )
     suspend fun deleteShopItems(ids: List<Int>)
+
+    /**
+     * Fetches shop items that match the query parameters
+     */
+    @Transaction
+    @Query(
+        value = """
+            SELECT * FROM shop_items
+            WHERE id = :filterItemId
+            ORDER BY publish_date DESC
+    """,
+    )
+    fun getShopItem(
+        filterItemId: Int,
+    ): Flow<PopulatedShopItem>
 }

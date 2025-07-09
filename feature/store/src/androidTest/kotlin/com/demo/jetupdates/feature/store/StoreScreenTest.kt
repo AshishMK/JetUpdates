@@ -17,7 +17,11 @@
 package com.demo.jetupdates.feature.store
 
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.foundation.layout.Box
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
@@ -32,6 +36,8 @@ import com.demo.jetupdates.core.rules.GrantPostNotificationsPermissionRule
 import com.demo.jetupdates.core.testing.data.followableCategoryTestData
 import com.demo.jetupdates.core.testing.data.userShopItemsTestData
 import com.demo.jetupdates.core.ui.ItemFeedUiState
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
 import org.junit.Rule
 import org.junit.Test
 
@@ -59,7 +65,7 @@ class StoreScreenTest {
                     feedState = ItemFeedUiState.Loading,
                     deepLinkedUserShopItem = null,
                     onCategoryCheckedChanged = { _, _ -> },
-                    onCategoryClick = {},
+                    onProductClick = {},
                     saveFollowedCategories = {},
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
@@ -87,7 +93,7 @@ class StoreScreenTest {
                     feedState = ItemFeedUiState.Success(emptyList()),
                     deepLinkedUserShopItem = null,
                     onCategoryCheckedChanged = { _, _ -> },
-                    onCategoryClick = {},
+                    onProductClick = {},
                     saveFollowedCategories = {},
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
@@ -122,7 +128,7 @@ class StoreScreenTest {
                     ),
                     deepLinkedUserShopItem = null,
                     onCategoryCheckedChanged = { _, _ -> },
-                    onCategoryClick = {},
+                    onProductClick = {},
                     saveFollowedCategories = {},
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
@@ -172,7 +178,7 @@ class StoreScreenTest {
                     ),
                     deepLinkedUserShopItem = null,
                     onCategoryCheckedChanged = { _, _ -> },
-                    onCategoryClick = {},
+                    onProductClick = {},
                     saveFollowedCategories = {},
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
@@ -217,7 +223,7 @@ class StoreScreenTest {
                     feedState = ItemFeedUiState.Loading,
                     deepLinkedUserShopItem = null,
                     onCategoryCheckedChanged = { _, _ -> },
-                    onCategoryClick = {},
+                    onProductClick = {},
                     saveFollowedCategories = {},
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
@@ -245,7 +251,7 @@ class StoreScreenTest {
                     feedState = ItemFeedUiState.Loading,
                     deepLinkedUserShopItem = null,
                     onCategoryCheckedChanged = { _, _ -> },
-                    onCategoryClick = {},
+                    onProductClick = {},
                     saveFollowedCategories = {},
                     onShopItemCheckedChanged = { _, _ -> },
                     onShopItemViewed = {},
@@ -263,25 +269,35 @@ class StoreScreenTest {
             .assertExists()
     }
 
+    @OptIn(ExperimentalSharedTransitionApi::class)
     @Test
     fun feed_whenNoInterestsSelectionAndLoaded_showsFeed() {
         composeTestRule.setContent {
-            StoreScreen(
-                isSyncing = false,
-                onboardingUiState = OnboardingUiState.NotShown,
-                feedState = ItemFeedUiState.Success(
-                    feed = userShopItemsTestData,
-                ),
-                deepLinkedUserShopItem = null,
-                onCategoryCheckedChanged = { _, _ -> },
-                onCategoryClick = {},
-                saveFollowedCategories = {},
-                onShopItemCheckedChanged = { _, _ -> },
-                onShopItemViewed = {},
-                onDeepLinkOpened = {},
-                showCategoryList = false,
-                categoryActionClicked = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        StoreScreen(
+                            isSyncing = false,
+                            onboardingUiState = OnboardingUiState.NotShown,
+                            feedState = ItemFeedUiState.Success(
+                                feed = userShopItemsTestData,
+                            ),
+                            deepLinkedUserShopItem = null,
+                            onCategoryCheckedChanged = { _, _ -> },
+                            onProductClick = {},
+                            saveFollowedCategories = {},
+                            onShopItemCheckedChanged = { _, _ -> },
+                            onShopItemViewed = {},
+                            onDeepLinkOpened = {},
+                            showCategoryList = false,
+                            categoryActionClicked = {},
+                        )
+                    }
+                }
+            }
         }
 
         composeTestRule

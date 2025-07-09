@@ -88,6 +88,7 @@ import com.demo.jetupdates.core.designsystem.icon.AppIcons
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.FollowableCategory2
 import com.demo.jetupdates.core.model.data.UserShopItem
+import com.demo.jetupdates.core.ui.AppThemeWithAnimationScopes
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.ItemFeedUiState
 import com.demo.jetupdates.core.ui.R.string
@@ -104,7 +105,7 @@ import com.demo.jetupdates.feature.search.R as searchR
 internal fun SearchRoute(
     onBackClick: () -> Unit,
     onTrendingClick: () -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     searchViewModel: SearchViewModel = hiltViewModel(),
 ) {
@@ -124,7 +125,7 @@ internal fun SearchRoute(
         onFollowButtonClick = searchViewModel::followCategory,
         onBackClick = onBackClick,
         onTrendingClick = onTrendingClick,
-        onCategoryClick = onCategoryClick,
+        onProductClick = onProductClick,
     )
 }
 
@@ -142,7 +143,7 @@ internal fun SearchScreen(
     onFollowButtonClick: (Int, Boolean) -> Unit = { _, _ -> },
     onBackClick: () -> Unit = {},
     onTrendingClick: () -> Unit = {},
-    onCategoryClick: (Int) -> Unit = {},
+    onProductClick: (Int) -> Unit = {},
 ) {
     // TrackScreenViewEvent(screenName = "Search")
     Column(modifier = modifier) {
@@ -195,7 +196,7 @@ internal fun SearchScreen(
                         categories = searchResultUiState.categories,
                         shopItems = searchResultUiState.shopItems,
                         onSearchTriggered = onSearchTriggered,
-                        onCategoryClick = onCategoryClick,
+                        onProductClick = onProductClick,
                         onShopItemsCheckedChanged = onShopItemsCheckedChanged,
                         onShopItemViewed = onShopItemViewed,
                         onFollowButtonClick = onFollowButtonClick,
@@ -293,7 +294,7 @@ private fun SearchResultBody(
     categories: List<FollowableCategory2>,
     shopItems: List<UserShopItem>,
     onSearchTriggered: (String) -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     onShopItemsCheckedChanged: (Int, Boolean) -> Unit,
     onShopItemViewed: (Int) -> Unit,
     onFollowButtonClick: (Int, Boolean) -> Unit,
@@ -342,7 +343,7 @@ private fun SearchResultBody(
                             onClick = {
                                 // Pass the current search query to ViewModel to save it as recent searches
                                 onSearchTriggered(searchQuery)
-                                onCategoryClick(categoryId)
+                                onProductClick(categoryId)
                             },
                             onFollowButtonClick = { onFollowButtonClick(categoryId, it) },
                         )
@@ -368,7 +369,7 @@ private fun SearchResultBody(
                     feedState = ItemFeedUiState.Success(feed = shopItems),
                     onShopItemCheckedChanged = onShopItemsCheckedChanged,
                     onShopItemViewed = onShopItemViewed,
-                    onCategoryClick = onCategoryClick,
+                    onProductClick = onProductClick,
                     onExpandedCardClick = {
                         onSearchTriggered(searchQuery)
                     },
@@ -610,9 +611,7 @@ private fun SearchScreenPreview(
     @PreviewParameter(SearchUiStatePreviewParameterProvider::class)
     searchResultUiState: SearchResultUiState,
 ) {
-    AppTheme {
-        AppBackground {
-            SearchScreen(searchResultUiState = searchResultUiState)
-        }
+    AppThemeWithAnimationScopes {
+        SearchScreen(searchResultUiState = searchResultUiState)
     }
 }

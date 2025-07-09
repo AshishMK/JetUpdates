@@ -25,6 +25,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
+import kotlin.collections.map
 
 val filteredInterestsIds = setOf(1)
 val nonPresentInterestsIds = setOf(2)
@@ -117,6 +118,18 @@ class TestShopItemDao : ShopItemDao {
             entities.filterNot { it.id in idSet }
         }
     }
+
+    override fun getShopItem(filterItemId: Int): Flow<PopulatedShopItem> = entitiesStateFlow
+        .map { shopItemEntities ->
+            shopItemEntities.map { entity ->
+                entity.asPopulatedShopItem(categoryCrossReferences)
+            }
+        }
+        .map { resources ->
+            var result = resources.first { it.entity.id == filterItemId }
+
+            result
+        }
 }
 
 private fun ShopItemEntity.asPopulatedShopItem(
