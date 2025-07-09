@@ -61,11 +61,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.window.core.layout.WindowWidthSizeClass
 import com.demo.jetupdates.R
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.component.AppNavigationSuiteScaffold
 import com.demo.jetupdates.core.designsystem.component.AppTopAppBar
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
+import com.demo.jetupdates.feature.product.navigation.ProductRoute
 import com.demo.jetupdates.feature.settings.SettingsDialog
 import com.demo.jetupdates.navigation.AppNavHost
 import com.demo.jetupdates.navigation.TopLevelDestination
@@ -82,6 +84,7 @@ fun JUApp(
         appState.currentTopLevelDestination == TopLevelDestination.STORE
     var showSettingsDialog by rememberSaveable { mutableStateOf(false) }
     var showCategoryList by rememberSaveable { mutableStateOf(true) }
+    var clickedByUser = false
     AppBackground(modifier = modifier) {
         val snackbarHostState = remember { SnackbarHostState() }
 
@@ -107,11 +110,15 @@ fun JUApp(
         JUApp(
             appState = appState,
             showCategoryList = showCategoryList,
+            clickedByUser = clickedByUser,
             snackbarHostState = snackbarHostState,
             showSettingsDialog = showSettingsDialog,
             onSettingsDismissed = { showSettingsDialog = false },
             onTopAppBarActionClick = { showSettingsDialog = true },
-            onTopAppBarCategoryActionClick = { showCategoryList = !showCategoryList },
+            onTopAppBarCategoryActionClick = {
+                showCategoryList = !showCategoryList
+                clickedByUser = true
+            },
             shouldShowCategoriesActionItem = shouldShowCategoriesActionItem,
             windowAdaptiveInfo = windowAdaptiveInfo,
         )
@@ -126,6 +133,7 @@ fun JUApp(
 internal fun JUApp(
     appState: JUAppState,
     showCategoryList: Boolean,
+    clickedByUser: Boolean,
     snackbarHostState: SnackbarHostState,
     showSettingsDialog: Boolean,
     onSettingsDismissed: () -> Unit,
@@ -145,7 +153,10 @@ internal fun JUApp(
         )
     }
 
+    val hideBottomBar = currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+
     AppNavigationSuiteScaffold(
+        hideBottomBar = hideBottomBar,
         navigationSuiteItems = {
             appState.topLevelDestinations.forEach { destination ->
                 //   val hasUnread = unreadDestinations.contains(destination)
@@ -256,6 +267,8 @@ internal fun JUApp(
                             ) == ActionPerformed
                         },
                         showCategoryList = showCategoryList,
+                        clickedByUser = clickedByUser,
+                        windowAdaptiveInfo = windowAdaptiveInfo,
                     )
                 }
 

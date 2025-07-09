@@ -17,6 +17,11 @@
 package com.demo.jetupdates.feature.search
 
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsFocused
@@ -35,6 +40,8 @@ import com.demo.jetupdates.core.model.data.UserData
 import com.demo.jetupdates.core.model.data.UserShopItem
 import com.demo.jetupdates.core.testing.data.followableCategoryTestData
 import com.demo.jetupdates.core.testing.data.shopItemsTestData
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
 import com.demo.jetupdates.core.ui.R.string
 import com.demo.jetupdates.feature.search.SearchResultUiState.EmptyQuery
 import com.demo.jetupdates.feature.search.SearchResultUiState.SearchNotReady
@@ -91,7 +98,7 @@ class SearchScreenTest {
 
     @Test
     fun searchTextField_isFocused() {
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen()
         }
 
@@ -102,7 +109,7 @@ class SearchScreenTest {
 
     @Test
     fun emptySearchResult_emptyScreenIsDisplayed() {
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen(
                 searchResultUiState = Success(),
             )
@@ -116,7 +123,7 @@ class SearchScreenTest {
     @Test
     fun emptySearchResult_nonEmptyRecentSearches_emptySearchScreenAndRecentSearchesAreDisplayed() {
         val recentSearches = listOf("kotlin")
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen(
                 searchResultUiState = Success(),
                 recentSearchesUiState = RecentSearchQueriesUiState.Success(
@@ -138,7 +145,7 @@ class SearchScreenTest {
 
     @Test
     fun searchResultWithTopics_allTopicsAreVisible_followButtonsVisibleForTheNumOfFollowedTopics() {
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen(
                 searchResultUiState = Success(categories = followableCategoryTestData),
             )
@@ -170,7 +177,7 @@ class SearchScreenTest {
 
     @Test
     fun searchResultWithNewsResources_firstNewsResourcesIsVisible() {
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen(
                 searchResultUiState = Success(
                     shopItems = shopItemsTestData.map {
@@ -194,7 +201,7 @@ class SearchScreenTest {
     @Test
     fun emptyQuery_notEmptyRecentSearches_verifyClearSearchesButton_displayed() {
         val recentSearches = listOf("kotlin", "testing")
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen(
                 searchResultUiState = EmptyQuery,
                 recentSearchesUiState = RecentSearchQueriesUiState.Success(
@@ -216,7 +223,7 @@ class SearchScreenTest {
 
     @Test
     fun searchNotReady_verifySearchNotReadyMessageIsVisible() {
-        composeTestRule.setContent {
+        appThemeWithAnimationScopes {
             SearchScreen(
                 searchResultUiState = SearchNotReady,
             )
@@ -225,5 +232,21 @@ class SearchScreenTest {
         composeTestRule
             .onNodeWithText(searchNotReadyString)
             .assertIsDisplayed()
+    }
+
+    @OptIn(ExperimentalSharedTransitionApi::class)
+    fun appThemeWithAnimationScopes(content: @Composable () -> Unit) {
+        composeTestRule.setContent {
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        content()
+                    }
+                }
+            }
+        }
     }
 }

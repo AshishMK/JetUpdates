@@ -131,6 +131,7 @@ class MainActivity : ComponentActivity() {
                 networkMonitor = networkMonitor,
                 userDataRepository,
                 timeZoneMonitor,
+
             )
 
             val currentTimeZone by appState.currentTimeZone.collectAsStateWithLifecycle()

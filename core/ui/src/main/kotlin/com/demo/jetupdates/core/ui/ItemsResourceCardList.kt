@@ -20,8 +20,17 @@ import android.content.ClipData
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.view.View
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterExitState
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.animation.SharedTransitionScope
+import androidx.compose.animation.core.animateDp
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.draganddrop.dragAndDropSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -79,7 +88,7 @@ fun ItemResourceCardForList(
     hasBeenViewed: Boolean,
     onToggleBookmark: () -> Unit,
     onClick: () -> Unit,
-    onCategoryClick: (String) -> Unit,
+    onProductClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val clickActionLabel = stringResource(R.string.core_ui_card_tap_action)
@@ -162,7 +171,7 @@ fun ItemResourceCardForList(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalSharedTransitionApi::class)
 @Composable
 fun ItemResourceCardForList2(
     userShopItem: UserShopItem,
@@ -170,7 +179,6 @@ fun ItemResourceCardForList2(
     hasBeenViewed: Boolean,
     onToggleBookmark: () -> Unit,
     onClick: () -> Unit,
-    onCategoryClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val clickActionLabel = stringResource(R.string.core_ui_card_tap_action)
@@ -186,42 +194,123 @@ fun ItemResourceCardForList2(
        } else {
            0
        }*/
-
-    Card(
-        onClick = onClick,
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        // Use custom label for accessibility services to communicate button's action to user.
-        // Pass null for action to only override the label and not the actual action.
-        modifier = modifier
-            .semantics {
-                onClick(label = clickActionLabel, action = null)
-            }
-            .testTag("shopItemCard:${userShopItem.id}"),
-    ) {
-        Column {
-            if (userShopItem.images.isNotEmpty() && !userShopItem.images[0].isNullOrEmpty()) {
-                Row {
-                    ItemResourceHeaderImageList(userShopItem.images[0])
+    val sharedTransitionScope = LocalSharedTransitionScope.current
+        ?: throw IllegalStateException("No Scope found")
+    val animatedVisibilityScope = LocalNavAnimatedVisibilityScope.current
+        ?: throw IllegalStateException("No Scope found")
+    with(sharedTransitionScope) {
+        val roundedCornerAnimation by animatedVisibilityScope.transition
+            .animateDp(label = "rounded corner") { enterExit: EnterExitState ->
+                when (enterExit) {
+                    EnterExitState.PreEnter -> 0.dp
+                    EnterExitState.Visible -> 16.dp
+                    EnterExitState.PostExit -> 16.dp
                 }
             }
-            Box(
-                modifier = Modifier.padding(16.dp),
+        Card(
+            onClick = onClick,
+            shape = RoundedCornerShape(roundedCornerAnimation),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+            // Use custom label for accessibility services to communicate button's action to user.
+            // Pass null for action to only override the label and not the actual action.
+            modifier = modifier
+                .padding(bottom = 16.dp)
+                .sharedBounds(
+                    sharedContentState = rememberSharedContentState(
+                        key = SnackSharedElementKey(
+                            snackId = userShopItem.id,
+                            origin = userShopItem.id.toString(),
+                            type = SnackSharedElementType.Bounds,
+                        ),
+                    ),
+                    animatedVisibilityScope = animatedVisibilityScope,
+                    boundsTransform = snackDetailBoundsTransform,
+                    clipInOverlayDuringTransition = OverlayClip(
+                        RoundedCornerShape(
+                            roundedCornerAnimation,
+                        ),
+                    ),
+                    enter = fadeIn(),
+                    exit = fadeOut(),
+                )
+                .border(
+                    1.dp,
+                    MaterialTheme.colorScheme.surface.copy(alpha = 0.12f),
+                    RoundedCornerShape(roundedCornerAnimation),
+                )
+                .semantics {
+                    onClick(label = clickActionLabel, action = null)
+                }
+                .testTag("shopItemCard:${userShopItem.id}"),
+        ) {
+            Column(
+                Modifier.sharedBounds(
+                    rememberSharedContentState(
+                        key = SnackSharedElementKey(
+                            snackId = userShopItem.id,
+                            origin = userShopItem.id.toString(),
+                            type = SnackSharedElementType.Background,
+                        ),
+                    ),
+                    animatedVisibilityScope = animatedVisibilityScope,
+                    boundsTransform = snackDetailBoundsTransform,
+                    enter = fadeIn(nonSpatialExpressiveSpring()),
+                    exit = fadeOut(nonSpatialExpressiveSpring()),
+                    resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds(),
+                ),
             ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    /*,  horizontalArrangement = Arrangement.spacedBy(
+                if (userShopItem.images.isNotEmpty() && !userShopItem.images[0].isNullOrEmpty()) {
+                    Row {
+                        ItemResourceHeaderImageList(
+                            modifier = Modifier.sharedBounds(
+                                rememberSharedContentState(
+                                    key = SnackSharedElementKey(
+                                        snackId = userShopItem.id,
+                                        origin = userShopItem.id.toString(),
+                                        type = SnackSharedElementType.Image,
+                                    ),
+                                ),
+                                animatedVisibilityScope = animatedVisibilityScope,
+                                exit = fadeOut(nonSpatialExpressiveSpring()),
+                                enter = fadeIn(nonSpatialExpressiveSpring()),
+                                boundsTransform = snackDetailBoundsTransform,
+                            ),
+                            headerImageUrl = userShopItem.images[0],
+                        )
+                    }
+                }
+                Box(
+                    modifier = Modifier.padding(16.dp),
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        /*,  horizontalArrangement = Arrangement.spacedBy(
                                         10.dp,
                                         alignment = Alignment.CenterHorizontally,
                                     )*/
-                ) {
-                    Column(modifier = Modifier.weight((1f))) {
-                        ItemResourceTitleList(
-                            userShopItem.title,
-                            modifier = Modifier.fillMaxWidth(),
-                            // .fillMaxWidth((.8f))
-                            /* .dragAndDropSource { _ ->
+                    ) {
+                        Column(modifier = Modifier.weight((1f))) {
+                            ItemResourceTitleList(
+                                userShopItem.title,
+                                modifier = Modifier
+                                    .sharedBounds(
+                                        rememberSharedContentState(
+                                            key = SnackSharedElementKey(
+                                                snackId = userShopItem.id,
+                                                origin = userShopItem.id.toString(),
+                                                type = SnackSharedElementType.Title,
+                                            ),
+                                        ),
+                                        animatedVisibilityScope = animatedVisibilityScope,
+                                        enter = fadeIn(nonSpatialExpressiveSpring()),
+                                        exit = fadeOut(nonSpatialExpressiveSpring()),
+                                        boundsTransform = snackDetailBoundsTransform,
+                                        resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds(),
+                                    )
+                                    .fillMaxWidth(),
+                                // .fillMaxWidth((.8f))
+                                /* .dragAndDropSource { _ ->
                                  DragAndDropTransferData(
                                      ClipData.newPlainText(
                                          sharingLabel,
@@ -230,22 +319,56 @@ fun ItemResourceCardForList2(
                                      flags = dragAndDropFlags,
                                  )
                              }*/
-                        )
+                            )
 
-                        Spacer(modifier = Modifier.height(0.dp))
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            /* if (!hasBeenViewed) {
+                            Spacer(modifier = Modifier.height(0.dp))
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                /* if (!hasBeenViewed) {
                                  NotificationDot(
                                      color = MaterialTheme.colorScheme.tertiary,
                                      modifier = Modifier.size(8.dp),
                                  )
                                  Spacer(modifier = Modifier.size(6.dp))
                              }*/
-                            ItemRateText("40$", userShopItem.type)
+                                ItemRateText(
+                                    modifier = Modifier.sharedBounds(
+                                        rememberSharedContentState(
+                                            key = SnackSharedElementKey(
+                                                snackId = userShopItem.id,
+                                                origin = userShopItem.id.toString(),
+                                                type = SnackSharedElementType.Tagline,
+                                            ),
+                                        ),
+                                        animatedVisibilityScope = animatedVisibilityScope,
+                                        enter = fadeIn(nonSpatialExpressiveSpring()),
+                                        exit = fadeOut(nonSpatialExpressiveSpring()),
+                                        boundsTransform = snackDetailBoundsTransform,
+                                        resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds(),
+                                    ),
+                                    publishDate = userShopItem.price.toInt().toString() + "$",
+                                    resourceType = userShopItem.type,
+                                )
+                            }
                         }
+                        Spacer(modifier = Modifier.width(8.dp))
+                        AddToCartButton(
+                            modifier = Modifier.sharedBounds(
+                                rememberSharedContentState(
+                                    key = SnackSharedElementKey(
+                                        snackId = userShopItem.id,
+                                        origin = userShopItem.id.toString(),
+                                        type = SnackSharedElementType.FAB,
+                                    ),
+                                ),
+                                animatedVisibilityScope = animatedVisibilityScope,
+                                exit = fadeOut(nonSpatialExpressiveSpring()),
+                                enter = fadeIn(nonSpatialExpressiveSpring()),
+                                boundsTransform = snackDetailBoundsTransform,
+                            ),
+                            isBookmarked = isAddedToCart,
+                            onClick = onToggleBookmark,
+                        )
                     }
-                    Spacer(modifier = Modifier.width(8.dp))
-                    AddToCartButton(isAddedToCart, onToggleBookmark)
                 }
             }
         }
@@ -255,6 +378,7 @@ fun ItemResourceCardForList2(
 @Composable
 fun ItemResourceHeaderImageList(
     headerImageUrl: String?,
+    modifier: Modifier = Modifier,
 ) {
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
@@ -283,7 +407,7 @@ fun ItemResourceHeaderImageList(
         }
 
         Image(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .height(180.dp),
             contentScale = ContentScale.Crop,
@@ -343,9 +467,11 @@ fun AddToCartButton(
 fun ItemRateText(
     publishDate: String,
     resourceType: String,
+    modifier: Modifier = Modifier,
 ) {
     Text(
-        publishDate,
+        modifier = modifier,
+        text = publishDate,
         style = MaterialTheme.typography.titleMedium,
     )
 }
@@ -370,6 +496,7 @@ private fun BookmarkButtonBookmarkedPreview() {
     }
 }
 
+@OptIn(ExperimentalSharedTransitionApi::class)
 @Preview("ItemResourceCardForList2")
 @Composable
 private fun ExpandedItemResourcePreview(
@@ -380,15 +507,23 @@ private fun ExpandedItemResourcePreview(
         LocalInspectionMode provides true,
     ) {
         AppTheme {
-            Surface {
-                ItemResourceCardForList2(
-                    userShopItem = userItemResources[0],
-                    isAddedToCart = true,
-                    hasBeenViewed = false,
-                    onToggleBookmark = {},
-                    onClick = {},
-                    onCategoryClick = {},
-                )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        Surface {
+                            ItemResourceCardForList2(
+                                userShopItem = userItemResources[0],
+                                isAddedToCart = true,
+                                hasBeenViewed = false,
+                                onToggleBookmark = {},
+                                onClick = {},
+                            )
+                        }
+                    }
+                }
             }
         }
     }

@@ -102,6 +102,39 @@ internal class ShopItemDaoTest : DatabaseTest() {
     }
 
     @Test
+    fun getShopItemById() = runTest {
+        val shopItemEntities = listOf(
+            testShopItem(
+                id = 0,
+                millisSinceEpoch = 0,
+            ),
+            testShopItem(
+                id = 1,
+                millisSinceEpoch = 3,
+            ),
+            testShopItem(
+                id = 2,
+                millisSinceEpoch = 1,
+            ),
+            testShopItem(
+                id = 3,
+                millisSinceEpoch = 2,
+            ),
+        )
+        shopItemDao.upsertShopItems(
+            shopItemEntities,
+        )
+
+        val savedShopItemEntity = shopItemDao.getShopItem(3)
+            .first()
+
+        assertEquals(
+            3,
+            savedShopItemEntity.entity.id,
+        )
+    }
+
+    @Test
     fun getShopItems_filteredByCategoryId_areOrderedByDescendingPublishDate() = runTest {
         val categoryEntities = listOf(
             testCategoryEntity(

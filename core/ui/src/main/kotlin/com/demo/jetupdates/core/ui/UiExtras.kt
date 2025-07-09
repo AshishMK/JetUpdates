@@ -16,11 +16,36 @@
 
 package com.demo.jetupdates.core.ui
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.component.AppTextButton
+import com.demo.jetupdates.core.designsystem.theme.AppTheme
+
+@OptIn(ExperimentalSharedTransitionApi::class)
+@Composable
+fun AppThemeWithAnimationScopes(content: @Composable () -> Unit) {
+    AppTheme {
+        AppBackground {
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        content()
+                    }
+                }
+            }
+        }
+    }
+}
 
 @Composable
 fun FunctionalityNotAvailablePopup(onDismiss: () -> Unit) {

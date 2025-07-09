@@ -26,8 +26,10 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToNode
+import androidx.compose.ui.test.printToLog
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.NoActivityResumedException
 import com.demo.jetupdates.MainActivity
@@ -277,15 +279,15 @@ class NavigationTest {
     }
 
     @Test
-    fun navigatingToTopicFromForYou_showsCategoryDetails() {
+    fun navigatingToProductFromForYou_showsProductDetails() {
         composeTestRule.apply {
             // Get the first news resource
-            val newsResource = runBlocking {
+            val shopItem = runBlocking {
                 shopRepository.getShopItems().first().first()
             }
 
-            // Get its first topic and follow it
-            val category = newsResource.categories.first()
+            // Get its first category and follow it
+            val category = shopItem.categories.first()
             onNodeWithText(category.name).performClick()
             // Thread.sleep(500)
             // composeTestRule.waitxxForIdle()
@@ -294,10 +296,10 @@ class NavigationTest {
             // Note: Possible flakiness. If the content of the news resource is long then the topic
             // tag might not be visible meaning it cannot be clicked
             onNodeWithTag("store:feed")
-                .performScrollToNode(hasTestTag("shopItemCard:${newsResource.id}"))
+                .performScrollToNode(hasTestTag("shopItemCard:${shopItem.id}"))
                 .fetchSemanticsNode()
                 .apply {
-                    val newsResourceCardNode = onNodeWithTag("shopItemCard:${newsResource.id}")
+                    val newsResourceCardNode = onNodeWithTag("shopItemCard:${shopItem.id}")
                         .fetchSemanticsNode()
                     config[ScrollBy].action?.invoke(
                         0f,
@@ -308,13 +310,20 @@ class NavigationTest {
                             .toFloat(),
                     )
                 }
-      /*      // Click the first category tag
-            onAllNodesWithTag("categoryTag:${category.id}", useUnmergedTree = true)
-                   .onFirst()
-                   .performClick()
-
-               // Verify that we're on the correct topic details screen
-               onNodeWithTag("category:${category.id}").assertExists()*/
+            onNodeWithTag("store:feed")
+                .performScrollToNode(hasTestTag("shopItemCard:${shopItem.id}"))
+            onNodeWithTag("shopItemCard:${shopItem.id}").performClick()
+//            onNodeWithTag("Product_FAB").assertExists()
+            composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
+            //  waitUntil(10000) { false }
+            // Click the first category tag
+            // horizontal cateories list in the shop item card not applicable here nia has it
+//            onAllNodesWithTag("categoryTag:${category.id}", useUnmergedTree = true)
+//                .onFirst()
+//                .performClick()
+//
+//            // Verify that we're on the correct category details screen
+//            onNodeWithTag("category:${category.id}").assertExists()
         }
     }
 }

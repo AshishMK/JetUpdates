@@ -66,4 +66,9 @@ class CompositeUserShopItemRepository @Inject constructor(
                     else -> observeAll(ShopItemQuery(filterItemIds = bookmarkedShopItems))
                 }
             }
+
+    override fun observeItem(id: Int): Flow<UserShopItem> = shopRepository.getShopItem(id)
+        .combine(userDataRepository.userData) { shopItem, userData ->
+            UserShopItem(shopItem, userData)
+        }
 }

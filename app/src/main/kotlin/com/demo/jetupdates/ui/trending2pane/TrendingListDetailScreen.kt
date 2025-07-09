@@ -39,6 +39,7 @@ import androidx.compose.material3.adaptive.navigation.ThreePaneScaffoldNavigator
 import androidx.compose.material3.adaptive.navigation.ThreePaneScaffoldPredictiveBackHandler
 import androidx.compose.material3.adaptive.navigation.rememberListDetailPaneScaffoldNavigator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -52,6 +53,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
 import com.demo.jetupdates.feature.category.CategoryDetailPlaceholder
 import com.demo.jetupdates.feature.category.CategoryScreen
 import com.demo.jetupdates.feature.category.CategoryViewModel
@@ -64,19 +66,25 @@ import kotlin.math.max
 
 @Serializable internal object CategoryPlaceholderRoute
 
-fun NavGraphBuilder.trendingListDetailScreen() {
+fun NavGraphBuilder.trendingListDetailScreen(onProductClick: (Int) -> Unit) {
     composable<TrendingRoute> {
-        TrendingListDetailScreen()
+        CompositionLocalProvider(
+            LocalNavAnimatedVisibilityScope provides this@composable,
+        ) {
+            TrendingListDetailScreen(onProductClick = onProductClick)
+        }
     }
 }
 
 @Composable
 internal fun TrendingListDetailScreen(
+    onProductClick: (Int) -> Unit,
     viewModel: Trending2PaneViewModel = hiltViewModel(),
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
     val selectedTopicId by viewModel.selectedTopicId.collectAsStateWithLifecycle()
     TrendingListDetailScreen(
+        onProductClick = onProductClick,
         selectedCategoryId = selectedTopicId,
         onCategoryClick = viewModel::onTopicClick,
         windowAdaptiveInfo = windowAdaptiveInfo,
@@ -86,6 +94,7 @@ internal fun TrendingListDetailScreen(
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 internal fun TrendingListDetailScreen(
+    onProductClick: (Int) -> Unit,
     selectedCategoryId: Int?,
     onCategoryClick: (Int) -> Unit,
     windowAdaptiveInfo: WindowAdaptiveInfo,
@@ -204,7 +213,7 @@ internal fun TrendingListDetailScreen(
                                             listDetailNavigator.navigateBack()
                                         }
                                     },
-                                    onCategoryClick = ::onCategoryClickShowDetailPane,
+                                    onProductClick = onProductClick, // ::onCategoryClickShowDetailPane,
                                     viewModel = hiltViewModel<CategoryViewModel, CategoryViewModel.Factory>(
                                         key = route.id.toString(),
                                     ) { factory ->

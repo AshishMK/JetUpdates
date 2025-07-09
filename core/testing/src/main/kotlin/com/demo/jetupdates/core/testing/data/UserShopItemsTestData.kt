@@ -42,9 +42,11 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
             shopItem = ShopItem(
                 id = 1,
                 title = "Android Basics with Compose",
-                description = "We released the first two units of Android Basics with Compose, our first free course that teaches Android Development with Jetpack Compose to anyone; you do not need any prior programming experience other than basic computer literacy to get started. You’ll learn the fundamentals of programming in Kotlin while building Android apps using Jetpack Compose, Android’s modern toolkit that simplifies and accelerates native UI development. These two units are just the beginning; more will be coming soon. Check out Android Basics with Compose to get started on your Android development journey",
+                description = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\n" +
+                    "\n" +
+                    "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.We released the first two units of Android Basics with Compose, our first free course that teaches Android Development with Jetpack Compose to anyone; you do not need any prior programming experience other than basic computer literacy to get started. You’ll learn the fundamentals of programming in Kotlin while building Android apps using Jetpack Compose, Android’s modern toolkit that simplifies and accelerates native UI development. These two units are just the beginning; more will be coming soon. Check out Android Basics with Compose to get started on your Android development journey",
                 price = 12f,
-                images = listOf("https://developer.android.com/images/hero-assets/android-basics-compose.svg"),
+                images = listOf("https://developer.android.com/images/hero-assets/android-basics-compose.svg", "https://i.ytimg.com/vi/ZARz0pjm5YM/maxresdefault.jpg"),
                 stock = 12,
                 publishDate = LocalDateTime(
                     year = 2022,
@@ -70,7 +72,7 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
                     "thank you all.",
                 price = 15f,
                 stock = 15,
-                images = listOf("https://i.ytimg.com/vi/-fJ6poHQrjM/maxresdefault.jpg"),
+                images = listOf("https://i.ytimg.com/vi/-fJ6poHQrjM/maxresdefault.jpg", "https://developer.android.com/images/hero-assets/android-basics-compose.svg"),
                 publishDate = Instant.parse("2021-11-09T00:00:00.000Z"),
                 type = "Video 📺",
                 categories = categoriesTestData.take(2),
@@ -87,7 +89,7 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
                     "PagingData.",
                 price = 18f,
                 stock = 18,
-                images = listOf("https://i.ytimg.com/vi/ZARz0pjm5YM/maxresdefault.jpg"),
+                images = listOf("https://i.ytimg.com/vi/ZARz0pjm5YM/maxresdefault.jpg", "https://i.ytimg.com/vi/-fJ6poHQrjM/maxresdefault.jpg"),
                 publishDate = Instant.parse("2021-11-01T00:00:00.000Z"),
                 type = "Video 📺",
                 categories = listOf(categoriesTestData[2]),
