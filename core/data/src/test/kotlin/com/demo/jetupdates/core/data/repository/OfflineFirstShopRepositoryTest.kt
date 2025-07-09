@@ -102,6 +102,18 @@ class OfflineFirstShopRepositoryTest {
         }
 
     @Test
+    fun offlineFirstShopRepository_shop_item_stream_is_backed_by_shop_item_dao() =
+        testScope.runTest {
+            subject.syncWith(synchronizer)
+            assertEquals(
+                shopItemDao.getShopItem(1)
+                    .first().asExternalModel(),
+                subject.getShopItem(1)
+                    .first(),
+            )
+        }
+
+    @Test
     fun offlineFirstShopRepository_shop_items_for_category_is_backed_by_shop_item_dao() =
         testScope.runTest {
             assertEquals(

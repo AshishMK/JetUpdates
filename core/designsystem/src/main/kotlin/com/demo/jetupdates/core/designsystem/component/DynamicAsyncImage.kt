@@ -18,6 +18,8 @@ package com.demo.jetupdates.core.designsystem.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -50,6 +52,7 @@ fun DynamicAsyncImage(
     contentDescription: String?,
     modifier: Modifier = Modifier,
     isSelected: Boolean = false,
+    contentScale: ContentScale = ContentScale.Crop,
     placeholder: Painter = painterResource(R.drawable.core_designsystem_ic_placeholder_default),
 ) {
     val iconTint = if (isSelected)MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.inverseSurface // LocalTintTheme.current.iconTint
@@ -77,7 +80,8 @@ fun DynamicAsyncImage(
             )
         }
         Image(
-            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+            contentScale = contentScale,
             painter = if (isError.not() && !isLocalInspection) imageLoader else placeholder,
             contentDescription = contentDescription,
             colorFilter = if (iconTint != Unspecified) ColorFilter.tint(iconTint) else null,

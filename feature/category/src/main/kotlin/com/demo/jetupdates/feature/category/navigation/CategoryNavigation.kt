@@ -48,7 +48,7 @@ fun NavGraphBuilder.categoryScreen(
         CategoryScreen(
             showBackButton = showBackButton,
             onBackClick = onBackClick,
-            onCategoryClick = onCategoryClick,
+            onProductClick = onCategoryClick,
             viewModel = hiltViewModel<CategoryViewModel, CategoryViewModel.Factory>(
                 key = id.toString(),
             ) { factory ->

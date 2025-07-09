@@ -55,8 +55,8 @@ fun LazyStaggeredGridScope.userShopItemCardItems(
                      newsResourceId = userShopItem.id,
                  )*/
                 onShopItemViewed(userShopItem.id)
+                onCategoryClick(userShopItem.id)
             },
-            onCategoryClick = onCategoryClick,
             modifier = itemModifier,
         )
     },

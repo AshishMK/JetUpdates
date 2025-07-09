@@ -64,9 +64,9 @@ import com.demo.jetupdates.core.designsystem.component.AppLoadingWheel
 import com.demo.jetupdates.core.designsystem.component.scrollbar.DraggableScrollbar
 import com.demo.jetupdates.core.designsystem.component.scrollbar.rememberDraggableScroller
 import com.demo.jetupdates.core.designsystem.component.scrollbar.scrollbarState
-import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.designsystem.theme.LocalTintTheme
 import com.demo.jetupdates.core.model.data.UserShopItem
+import com.demo.jetupdates.core.ui.AppThemeWithAnimationScopes
 import com.demo.jetupdates.core.ui.ItemFeedUiState
 import com.demo.jetupdates.core.ui.TrackScrollJank
 import com.demo.jetupdates.core.ui.UserShopResourcePreviewParameterProvider
@@ -74,7 +74,7 @@ import com.demo.jetupdates.core.ui.itemFeed
 
 @Composable
 internal fun CartRoute(
-    onTopicClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
     viewModel: CartViewModel = hiltViewModel(),
@@ -85,7 +85,7 @@ internal fun CartRoute(
         onShowSnackbar = onShowSnackbar,
         removeFromCart = viewModel::removeFromSavedResources,
         onShopItemViewed = { viewModel.setShopItemViewed(it, true) },
-        onTopicClick = onTopicClick,
+        onProductClick = onProductClick,
         modifier = modifier,
         shouldDisplayUndoItem = viewModel.shouldDisplayUndoItem,
         undoItemRemoval = viewModel::undoItemRemoval,
@@ -103,7 +103,7 @@ internal fun CartScreen(
     onShowSnackbar: suspend (String, String?) -> Boolean,
     removeFromCart: (Int) -> Unit,
     onShopItemViewed: (Int) -> Unit,
-    onTopicClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     shouldDisplayUndoItem: Boolean = false,
     undoItemRemoval: () -> Unit = {},
@@ -134,7 +134,7 @@ internal fun CartScreen(
                 feedState,
                 removeFromCart,
                 onShopItemViewed,
-                onTopicClick,
+                onProductClick,
                 modifier,
             )
         } else {
@@ -161,7 +161,7 @@ private fun BookmarksGrid(
     feedState: ItemFeedUiState,
     removeFromCart: (Int) -> Unit,
     onShopItemViewed: (Int) -> Unit,
-    onTopicClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val scrollableState = rememberLazyStaggeredGridState()
@@ -184,7 +184,7 @@ private fun BookmarksGrid(
                 feedState = feedState,
                 onShopItemCheckedChanged = { id, _ -> removeFromCart(id) },
                 onShopItemViewed = onShopItemViewed,
-                onCategoryClick = onTopicClick,
+                onProductClick = onProductClick,
             )
             item(span = StaggeredGridItemSpan.FullLine) {
                 Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.safeDrawing))
@@ -254,7 +254,7 @@ private fun EmptyState(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun LoadingStatePreview() {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         LoadingState()
     }
 }
@@ -265,12 +265,12 @@ private fun BookmarksGridPreview(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userNewsResources: List<UserShopItem>,
 ) {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         BookmarksGrid(
             feedState = ItemFeedUiState.Success(userNewsResources),
             removeFromCart = {},
             onShopItemViewed = {},
-            onTopicClick = {},
+            onProductClick = {},
         )
     }
 }
@@ -278,7 +278,7 @@ private fun BookmarksGridPreview(
 @Preview
 @Composable
 private fun EmptyStatePreview() {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         EmptyState()
     }
 }
