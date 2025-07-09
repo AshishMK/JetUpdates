@@ -60,6 +60,7 @@ include(":feature:category")
 include(":feature:search")
 include(":feature:settings")
 include(":feature:chat")
+include(":feature:product")
 check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     """
     JU App requires JDK 17+ but it is currently using JDK ${JavaVersion.current()}.

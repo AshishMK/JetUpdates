@@ -42,4 +42,9 @@ interface UserShopItemRepository {
      * Returns the user's bookmarked shop items as a stream.
      */
     fun observeAllBookmarked(): Flow<List<UserShopItem>>
+
+    /**
+     * Returns shop item by id
+     */
+    fun observeItem(id: Int): Flow<UserShopItem>
 }

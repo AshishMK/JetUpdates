@@ -17,6 +17,9 @@
 package com.demo.jetupdates.feature.cart
 
 import androidx.activity.ComponentActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertHasClickAction
@@ -36,6 +39,8 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.testing.TestLifecycleOwner
 import com.demo.jetupdates.core.testing.data.userShopItemsTestData
 import com.demo.jetupdates.core.ui.ItemFeedUiState
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
@@ -45,6 +50,7 @@ import kotlin.test.assertTrue
 /**
  * UI tests for [CartScreen] composable.
  */
+@OptIn(ExperimentalSharedTransitionApi::class)
 class CartScreenTest {
 
     @get:Rule
@@ -53,13 +59,22 @@ class CartScreenTest {
     @Test
     fun loading_showsLoadingSpinner() {
         composeTestRule.setContent {
-            CartScreen(
-                feedState = ItemFeedUiState.Loading,
-                onShowSnackbar = { _, _ -> false },
-                removeFromCart = {},
-                onTopicClick = {},
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CartScreen(
+                            feedState = ItemFeedUiState.Loading,
+                            onShowSnackbar = { _, _ -> false },
+                            removeFromCart = {},
+                            onProductClick = {},
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
 
         composeTestRule
@@ -72,17 +87,25 @@ class CartScreenTest {
     @Test
     fun feed_whenHasItems_showsItems() {
         composeTestRule.setContent {
-            CartScreen(
-                feedState = ItemFeedUiState.Success(
-                    userShopItemsTestData.take(2),
-                ),
-                onShowSnackbar = { _, _ -> false },
-                removeFromCart = {},
-                onTopicClick = {},
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CartScreen(
+                            feedState = ItemFeedUiState.Success(
+                                userShopItemsTestData.take(2),
+                            ),
+                            onShowSnackbar = { _, _ -> false },
+                            removeFromCart = {},
+                            onProductClick = {},
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
-
         composeTestRule
             .onNodeWithText(
                 userShopItemsTestData[0].title,
@@ -113,20 +136,28 @@ class CartScreenTest {
         var removeFromCartCalled = false
 
         composeTestRule.setContent {
-            CartScreen(
-                feedState = ItemFeedUiState.Success(
-                    userShopItemsTestData.take(2),
-                ),
-                onShowSnackbar = { _, _ -> false },
-                removeFromCart = { shopItemId ->
-                    assertEquals(userShopItemsTestData[0].id, shopItemId)
-                    removeFromCartCalled = true
-                },
-                onTopicClick = {},
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CartScreen(
+                            feedState = ItemFeedUiState.Success(
+                                userShopItemsTestData.take(2),
+                            ),
+                            onShowSnackbar = { _, _ -> false },
+                            removeFromCart = { shopItemId ->
+                                assertEquals(userShopItemsTestData[0].id, shopItemId)
+                                removeFromCartCalled = true
+                            },
+                            onProductClick = {},
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
-
         composeTestRule
             .onAllNodesWithContentDescription(
                 composeTestRule.activity.getString(
@@ -150,13 +181,22 @@ class CartScreenTest {
     @Test
     fun feed_whenHasNoItems_showsEmptyState() {
         composeTestRule.setContent {
-            CartScreen(
-                feedState = ItemFeedUiState.Success(emptyList()),
-                onShowSnackbar = { _, _ -> false },
-                removeFromCart = {},
-                onTopicClick = {},
-                onShopItemViewed = {},
-            )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                    ) {
+                        CartScreen(
+                            feedState = ItemFeedUiState.Success(emptyList()),
+                            onShowSnackbar = { _, _ -> false },
+                            removeFromCart = {},
+                            onProductClick = {},
+                            onShopItemViewed = {},
+                        )
+                    }
+                }
+            }
         }
 
         composeTestRule
@@ -178,17 +218,25 @@ class CartScreenTest {
         val testLifecycleOwner = TestLifecycleOwner(initialState = Lifecycle.State.STARTED)
 
         composeTestRule.setContent {
-            CompositionLocalProvider(LocalLifecycleOwner provides testLifecycleOwner) {
-                CartScreen(
-                    feedState = ItemFeedUiState.Success(emptyList()),
-                    onShowSnackbar = { _, _ -> false },
-                    removeFromCart = {},
-                    onTopicClick = {},
-                    onShopItemViewed = {},
-                    clearUndoState = {
-                        undoStateCleared = true
-                    },
-                )
+            SharedTransitionLayout {
+                AnimatedVisibility(visible = true) {
+                    CompositionLocalProvider(
+                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
+                        LocalNavAnimatedVisibilityScope provides this,
+                        LocalLifecycleOwner provides testLifecycleOwner,
+                    ) {
+                        CartScreen(
+                            feedState = ItemFeedUiState.Success(emptyList()),
+                            onShowSnackbar = { _, _ -> false },
+                            removeFromCart = {},
+                            onProductClick = {},
+                            onShopItemViewed = {},
+                            clearUndoState = {
+                                undoStateCleared = true
+                            },
+                        )
+                    }
+                }
             }
         }
 

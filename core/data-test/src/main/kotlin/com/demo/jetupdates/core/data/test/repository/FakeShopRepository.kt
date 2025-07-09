@@ -67,5 +67,20 @@ class FakeShopRepository @Inject constructor(
             )
         }.flowOn(ioDispatcher)
 
+    override fun getShopItem(id: Int): Flow<ShopItem> = flow {
+        val shopItems = datasource.getShopItems()
+        val categories = datasource.getCategories()
+
+        emit(
+            shopItems
+                .first { networkShopItem ->
+                    // Filter out any shop items which don't match the current query.
+                    // If no query parameters (filterCategoryIds or filterItemIds) are specified
+                    // then the shop item is returned.
+                    networkShopItem.id == id
+                }.asExternalModel(categories),
+        )
+    }.flowOn(ioDispatcher)
+
     override suspend fun syncWith(synchronizer: Synchronizer) = true
 }
