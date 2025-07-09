@@ -16,10 +16,12 @@
 
 package com.demo.jetupdates.feature.cart.navigation
 
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
 import com.demo.jetupdates.feature.cart.CartRoute
 import kotlinx.serialization.Serializable
 
@@ -29,10 +31,14 @@ fun NavController.navigateToCart(navOptions: NavOptions) =
     navigate(route = CartRoute, navOptions)
 
 fun NavGraphBuilder.cartScreen(
-    onTopicClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     onShowSnackbar: suspend (String, String?) -> Boolean,
 ) {
     composable<CartRoute> {
-        CartRoute(onTopicClick, onShowSnackbar)
+        CompositionLocalProvider(
+            LocalNavAnimatedVisibilityScope provides this@composable,
+        ) {
+            CartRoute(onProductClick, onShowSnackbar)
+        }
     }
 }

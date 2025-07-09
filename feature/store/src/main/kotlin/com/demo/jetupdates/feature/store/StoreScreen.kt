@@ -91,6 +91,7 @@ import com.demo.jetupdates.core.designsystem.component.scrollbar.rememberDraggab
 import com.demo.jetupdates.core.designsystem.component.scrollbar.scrollbarState
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.UserShopItem
+import com.demo.jetupdates.core.ui.AppThemeWithAnimationScopes
 import com.demo.jetupdates.core.ui.CategoriesToDrawable.mapDrawables
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.ItemFeedUiState
@@ -106,7 +107,8 @@ import kotlinx.coroutines.launch
 //
 @Composable
 internal fun StoreScreenRoute(
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
+    clickedByUser: Boolean,
     showCategoryList: Boolean,
     modifier: Modifier = Modifier,
     viewModel: StoreViewModel = hiltViewModel(),
@@ -124,11 +126,12 @@ internal fun StoreScreenRoute(
         deepLinkedUserShopItem = deepLinkedUserShopItem,
         onCategoryCheckedChanged = viewModel::updateCategorySelection,
         onDeepLinkOpened = viewModel::onDeepLinkOpened,
-        onCategoryClick = onCategoryClick,
+        onProductClick = onProductClick,
         saveFollowedCategories = viewModel::dismissOnboarding,
         categoryActionClicked = viewModel::categoryActionClicked,
         onShopItemCheckedChanged = viewModel::updateShopItemSaved,
         onShopItemViewed = { viewModel.setShopItemViewed(it, true) },
+        clickedByUser = clickedByUser,
         modifier = modifier,
     )
 }
@@ -141,12 +144,13 @@ internal fun StoreScreen(
     feedState: ItemFeedUiState,
     deepLinkedUserShopItem: UserShopItem?,
     onCategoryCheckedChanged: (Int, Boolean) -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     onDeepLinkOpened: (Int) -> Unit,
     saveFollowedCategories: () -> Unit,
     categoryActionClicked: (Boolean) -> Unit,
     onShopItemCheckedChanged: (Int, Boolean) -> Unit,
     onShopItemViewed: (Int) -> Unit,
+    clickedByUser: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
     val isOnboardingLoading = onboardingUiState is OnboardingUiState.Loading
@@ -203,7 +207,7 @@ internal fun StoreScreen(
                 feedState = feedState,
                 onShopItemCheckedChanged = onShopItemCheckedChanged,
                 onShopItemViewed = onShopItemViewed,
-                onCategoryClick = onCategoryClick,
+                onProductClick = onProductClick,
             )
 
             item(span = StaggeredGridItemSpan.FullLine, contentType = "bottomSpacing") {
@@ -267,13 +271,19 @@ internal fun StoreScreen(
                     state.firstVisibleItemScrollOffset > jumpThreshold
             }
         }
-        if (showCategoryList && jumpToBottomButtonEnabled) {
-            LaunchedEffect(Unit) {
-                scope.launch {
-                    state.animateScrollToItem(0)
+        /*    var calledScroll = rememberSaveable { false }
+            Log.v("clickedByUser", "clickedByUser $clickedByUser")
+            if (!calledScroll && clickedByUser && showCategoryList && jumpToBottomButtonEnabled) {
+                calledScroll = true
+                LaunchedEffect(showCategoryList) {
+                    scope.launch {
+                        state.animateScrollToItem(0)
+                    }
                 }
             }
-        }
+            else if(!showCategoryList && clickedByUser){
+                calledScroll = false
+            }*/
 
         JumpToBottom(
             // Only show if the scroller is not at the top
@@ -601,7 +611,7 @@ fun StoreScreenPopulatedFeed(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         StoreScreen(
             isSyncing = false,
             showCategoryList = false,
@@ -614,7 +624,7 @@ fun StoreScreenPopulatedFeed(
             saveFollowedCategories = {},
             onShopItemCheckedChanged = { _, _ -> },
             onShopItemViewed = {},
-            onCategoryClick = {},
+            onProductClick = {},
             onDeepLinkOpened = {},
             categoryActionClicked = {},
         )
@@ -627,7 +637,7 @@ fun StoreScreenOfflinePopulatedFeed(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         StoreScreen(
             isSyncing = false,
             showCategoryList = false,
@@ -640,7 +650,7 @@ fun StoreScreenOfflinePopulatedFeed(
             saveFollowedCategories = {},
             onShopItemCheckedChanged = { _, _ -> },
             onShopItemViewed = {},
-            onCategoryClick = {},
+            onProductClick = {},
             onDeepLinkOpened = {},
             categoryActionClicked = {},
         )
@@ -653,7 +663,7 @@ fun StoreScreenCategorySelection(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         StoreScreen(
             isSyncing = false,
             showCategoryList = true,
@@ -670,7 +680,7 @@ fun StoreScreenCategorySelection(
             saveFollowedCategories = {},
             onShopItemCheckedChanged = { _, _ -> },
             onShopItemViewed = {},
-            onCategoryClick = {},
+            onProductClick = {},
             onDeepLinkOpened = {},
             categoryActionClicked = {},
         )
@@ -680,7 +690,7 @@ fun StoreScreenCategorySelection(
 @DevicePreviews
 @Composable
 fun StoreScreenLoading() {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         StoreScreen(
             isSyncing = false,
             onboardingUiState = OnboardingUiState.Loading,
@@ -691,7 +701,7 @@ fun StoreScreenLoading() {
             saveFollowedCategories = {},
             onShopItemCheckedChanged = { _, _ -> },
             onShopItemViewed = {},
-            onCategoryClick = {},
+            onProductClick = {},
             onDeepLinkOpened = {},
             categoryActionClicked = {},
         )
@@ -704,7 +714,7 @@ fun StoreScreenPopulatedAndLoading(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
+    AppThemeWithAnimationScopes {
         StoreScreen(
             isSyncing = true,
             onboardingUiState = OnboardingUiState.Loading,
@@ -716,7 +726,7 @@ fun StoreScreenPopulatedAndLoading(
             saveFollowedCategories = {},
             onShopItemCheckedChanged = { _, _ -> },
             onShopItemViewed = {},
-            onCategoryClick = {},
+            onProductClick = {},
             onDeepLinkOpened = {},
             categoryActionClicked = {},
             showCategoryList = false,

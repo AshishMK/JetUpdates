@@ -47,4 +47,9 @@ interface ShopRepository : Syncable {
             filterItemIds = null,
         ),
     ): Flow<List<ShopItem>>
+
+    /**
+     * Returns available shop item that match the specified [item id].
+     */
+    fun getShopItem(id: Int): Flow<ShopItem>
 }

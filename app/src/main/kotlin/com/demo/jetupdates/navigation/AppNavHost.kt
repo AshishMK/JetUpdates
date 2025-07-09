@@ -16,11 +16,18 @@
 
 package com.demo.jetupdates.navigation
 
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.material3.adaptive.WindowAdaptiveInfo
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
 import com.demo.jetupdates.feature.cart.navigation.cartScreen
 import com.demo.jetupdates.feature.chat.navigation.chatScreen
+import com.demo.jetupdates.feature.product.navigation.navigateToProduct
+import com.demo.jetupdates.feature.product.navigation.productScreen
 import com.demo.jetupdates.feature.search.navigation.searchScreen
 import com.demo.jetupdates.feature.store.navigation.StoreBaseRoute
 import com.demo.jetupdates.feature.store.navigation.storeSection
@@ -36,33 +43,46 @@ import com.demo.jetupdates.ui.trending2pane.trendingListDetailScreen
  * The navigation graph defined in this file defines the different top level routes. Navigation
  * within each route is handled using state and Back Handlers.
  */
+@OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
 fun AppNavHost(
     appState: JUAppState,
     onShowSnackbar: suspend (String, String?) -> Boolean,
     showCategoryList: Boolean,
+    clickedByUser: Boolean,
     modifier: Modifier = Modifier,
+    windowAdaptiveInfo: WindowAdaptiveInfo,
 ) {
     val navController = appState.navController
-    NavHost(
-        navController = navController,
-        startDestination = StoreBaseRoute,
-        modifier = modifier,
-    ) {
-        storeSection(onCategoryClick = {}, showCategoryList)
-        cartScreen(
-            onTopicClick = { _ -> },
-            onShowSnackbar = onShowSnackbar,
-        )
-        searchScreen(
-            onBackClick = navController::popBackStack,
-            onTrendingClick = { appState.navigateToTopLevelDestination(TRENDING) },
-            onCategoryClick = navController::navigateToTrending,
-        )
-        trendingListDetailScreen()
+    SharedTransitionLayout {
+        CompositionLocalProvider(
+            LocalSharedTransitionScope provides this,
+        ) {
+            NavHost(
+                navController = navController,
+                startDestination = StoreBaseRoute,
+                modifier = modifier,
+            ) {
+                storeSection(onProductClick = { productId -> navController.navigateToProduct(productId) }, showCategoryList = showCategoryList, clickedByUser = clickedByUser)
+                cartScreen(
+                    onProductClick = { productId -> navController.navigateToProduct(productId) },
+                    onShowSnackbar = onShowSnackbar,
+                )
+                searchScreen(
+                    onBackClick = navController::popBackStack,
+                    onTrendingClick = { appState.navigateToTopLevelDestination(TRENDING) },
+                    onProductClick = navController::navigateToTrending,
+                )
+                productScreen(
+                    windowAdaptiveInfo = windowAdaptiveInfo,
+                    onBackClick = navController::popBackStack,
+                )
+                trendingListDetailScreen(onProductClick = { productId -> navController.navigateToProduct(productId) })
 
-        chatScreen(
-            onShowSnackbar = onShowSnackbar,
-        )
+                chatScreen(
+                    onShowSnackbar = onShowSnackbar,
+                )
+            }
+        }
     }
 }

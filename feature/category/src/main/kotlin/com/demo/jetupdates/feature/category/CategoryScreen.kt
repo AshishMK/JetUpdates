@@ -48,6 +48,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -78,9 +79,9 @@ import com.demo.jetupdates.feature.category.R.string
 
 @Composable
 fun CategoryScreen(
+    onProductClick: (Int) -> Unit,
     showBackButton: Boolean,
     onBackClick: () -> Unit,
-    onCategoryClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CategoryViewModel = hiltViewModel(),
 ) {
@@ -89,6 +90,7 @@ fun CategoryScreen(
 
     // TrackScreenViewEvent(screenName = "Category: ${viewModel.categoryId}")
     CategoryScreen(
+        onProductClick = onProductClick,
         categoryUiState = categoryUiState,
         shopItemUiState = shopItemUiState,
         modifier = modifier.testTag("category:${viewModel.categoryId}"),
@@ -97,19 +99,18 @@ fun CategoryScreen(
         onFollowClick = viewModel::followCategoryToggle,
         onBookmarkChanged = viewModel::bookmarkItem,
         onShopItemViewed = { viewModel.setShopItemViewed(it, true) },
-        onCategoryClick = onCategoryClick,
     )
 }
 
 @VisibleForTesting
 @Composable
 internal fun CategoryScreen(
+    onProductClick: (Int) -> Unit,
     categoryUiState: CategoryUiState,
     shopItemUiState: ShopItemUiState,
     showBackButton: Boolean,
     onBackClick: () -> Unit,
     onFollowClick: (Boolean) -> Unit,
-    onCategoryClick: (Int) -> Unit,
     onBookmarkChanged: (Int, Boolean) -> Unit,
     onShopItemViewed: (Int) -> Unit,
     modifier: Modifier = Modifier,
@@ -150,6 +151,7 @@ internal fun CategoryScreen(
                         )
                     }
                     categoryBody(
+                        onProductClick = onProductClick,
                         id = categoryUiState.followableCategory.category.id,
                         name = categoryUiState.followableCategory.category.name,
                         description = categoryUiState.followableCategory.category.longDescription,
@@ -157,7 +159,6 @@ internal fun CategoryScreen(
                         imageUrl = categoryUiState.followableCategory.category.imageUrl,
                         onBookmarkChanged = onBookmarkChanged,
                         onNewsResourceViewed = onShopItemViewed,
-                        onCategoryClick = onCategoryClick,
                     )
                 }
             }
@@ -198,6 +199,7 @@ private fun shopItemsSize(
 }
 
 private fun LazyStaggeredGridScope.categoryBody(
+    onProductClick: (Int) -> Unit,
     id: Int,
     name: String,
     description: String,
@@ -205,14 +207,13 @@ private fun LazyStaggeredGridScope.categoryBody(
     imageUrl: String,
     onBookmarkChanged: (Int, Boolean) -> Unit,
     onNewsResourceViewed: (Int) -> Unit,
-    onCategoryClick: (Int) -> Unit,
 ) {
     // TODO: Show icon if available
     item(span = StaggeredGridItemSpan.FullLine, contentType = "categoryHeader") {
         CategoryHeader(id, name, description, imageUrl)
     }
 
-    userShopItemCards(news, onBookmarkChanged, onNewsResourceViewed, onCategoryClick)
+    userShopItemCards(onProductClick, news, onBookmarkChanged, onNewsResourceViewed)
 }
 
 @Composable
@@ -222,6 +223,7 @@ private fun CategoryHeader(id: Int, name: String, description: String, imageUrl:
     ) {
         val placeHolder = mapDrawables[id]!!
         DynamicAsyncImage(
+            contentScale = ContentScale.Fit,
             imageUrl = "",
             placeholder = painterResource(placeHolder),
             contentDescription = null,
@@ -243,10 +245,10 @@ private fun CategoryHeader(id: Int, name: String, description: String, imageUrl:
 
 // TODO: Could/should this be replaced with [LazyGridScope.newsFeed]?
 private fun LazyStaggeredGridScope.userShopItemCards(
+    onProductClick: (Int) -> Unit,
     shopState: ShopItemUiState,
     onBookmarkChanged: (Int, Boolean) -> Unit,
     onShopItemViewed: (Int) -> Unit,
-    onCategoryClick: (Int) -> Unit,
 ) {
     when (shopState) {
         is ShopItemUiState.Success -> {
@@ -254,7 +256,7 @@ private fun LazyStaggeredGridScope.userShopItemCards(
                 items = shopState.items,
                 onToggleBookmark = { onBookmarkChanged(it.id, !it.isSaved) },
                 onShopItemViewed = onShopItemViewed,
-                onCategoryClick = onCategoryClick,
+                onCategoryClick = onProductClick,
                 itemModifier = Modifier.padding(0.dp),
             )
         }
@@ -282,7 +284,7 @@ private fun CategoryBodyPreview() {
                 imageUrl = "",
                 onBookmarkChanged = { _, _ -> },
                 onNewsResourceViewed = {},
-                onCategoryClick = {},
+                onProductClick = {},
             )
         }
     }
@@ -347,7 +349,7 @@ fun CategoryScreenPopulated(
                 onFollowClick = {},
                 onBookmarkChanged = { _, _ -> },
                 onShopItemViewed = {},
-                onCategoryClick = {},
+                onProductClick = {},
             )
         }
     }
@@ -366,7 +368,7 @@ fun CategoryScreenLoading() {
                 onFollowClick = {},
                 onBookmarkChanged = { _, _ -> },
                 onShopItemViewed = {},
-                onCategoryClick = {},
+                onProductClick = {},
             )
         }
     }

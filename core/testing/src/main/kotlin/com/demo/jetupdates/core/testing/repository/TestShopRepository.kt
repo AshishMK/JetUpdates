@@ -48,6 +48,13 @@ class TestShopRepository : ShopRepository {
             result
         }
 
+    override fun getShopItem(id: Int): Flow<ShopItem> =
+        shopItemsFlow.map { shopItems ->
+            val result = shopItems.first { it.id == id }
+
+            result
+        }
+
     /**
      * A test-only API to allow controlling the list of shop items from tests.
      */

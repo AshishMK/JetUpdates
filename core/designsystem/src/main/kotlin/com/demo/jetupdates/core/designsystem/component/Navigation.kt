@@ -35,7 +35,9 @@ import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteItemCo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScope
+import androidx.compose.material3.adaptive.navigationsuite.rememberNavigationSuiteScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -184,13 +186,19 @@ fun AppNavigationRail(
  */
 @Composable
 fun AppNavigationSuiteScaffold(
+    hideBottomBar: Boolean,
     navigationSuiteItems: AppNavigationSuiteScope.() -> Unit,
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
     content: @Composable () -> Unit,
 ) {
-    val layoutType = NavigationSuiteScaffoldDefaults
-        .calculateFromAdaptiveInfo(windowAdaptiveInfo)
+    val state = rememberNavigationSuiteScaffoldState()
+    LaunchedEffect(hideBottomBar) {
+        if (hideBottomBar) state.hide() else state.show()
+    }
+    val layoutType = NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(windowAdaptiveInfo)
+
+    // if(hideBottomBar) NavigationSuiteType.None else NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(windowAdaptiveInfo)
     val navigationSuiteItemColors = NavigationSuiteItemColors(
         navigationBarItemColors = NavigationBarItemDefaults.colors(
             selectedIconColor = AppNavigationDefaults.navigationSelectedItemColor(),
@@ -215,6 +223,7 @@ fun AppNavigationSuiteScaffold(
     )
 
     NavigationSuiteScaffold(
+        state = state,
         navigationSuiteItems = {
             AppNavigationSuiteScope(
                 navigationSuiteScope = this,

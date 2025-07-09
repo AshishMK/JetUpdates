@@ -16,11 +16,13 @@
 
 package com.demo.jetupdates.feature.store.navigation
 
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
 import com.demo.jetupdates.feature.store.StoreScreenRoute
 import kotlinx.serialization.Serializable
 
@@ -34,16 +36,21 @@ fun NavController.navigateToStore(navOptions: NavOptions) = navigate(route = Sto
  *  The Store section of the app. It can also display information about categories.
  *  This should be supplied from a separate module.
  *
- *  @param onCategoryClick - Called when a category is clicked, contains the ID of the category
+ *  @param onProductClick - Called when a category is clicked, contains the ID of the category
  *  @param categoryDestination - Destination for category content
  */
 fun NavGraphBuilder.storeSection(
-    onCategoryClick: (Int) -> Unit,
+    onProductClick: (Int) -> Unit,
     showCategoryList: Boolean,
+    clickedByUser: Boolean,
 ) {
     navigation<StoreBaseRoute>(startDestination = StoreRoute) {
         composable<StoreRoute> {
-            StoreScreenRoute(onCategoryClick = onCategoryClick, showCategoryList = showCategoryList)
+            CompositionLocalProvider(
+                LocalNavAnimatedVisibilityScope provides this@composable,
+            ) {
+                StoreScreenRoute(onProductClick = onProductClick, showCategoryList = showCategoryList, clickedByUser = clickedByUser)
+            }
         }
         // categoryDestination()
     }
