@@ -105,6 +105,7 @@ import com.demo.jetupdates.feature.search.R as searchR
 internal fun SearchRoute(
     onBackClick: () -> Unit,
     onTrendingClick: () -> Unit,
+    onCategoryClick: (Int) -> Unit,
     onProductClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
     searchViewModel: SearchViewModel = hiltViewModel(),
@@ -125,6 +126,7 @@ internal fun SearchRoute(
         onFollowButtonClick = searchViewModel::followCategory,
         onBackClick = onBackClick,
         onTrendingClick = onTrendingClick,
+        onCategoryClick = onCategoryClick,
         onProductClick = onProductClick,
     )
 }
@@ -143,6 +145,7 @@ internal fun SearchScreen(
     onFollowButtonClick: (Int, Boolean) -> Unit = { _, _ -> },
     onBackClick: () -> Unit = {},
     onTrendingClick: () -> Unit = {},
+    onCategoryClick: (Int) -> Unit = {},
     onProductClick: (Int) -> Unit = {},
 ) {
     // TrackScreenViewEvent(screenName = "Search")
@@ -157,11 +160,11 @@ internal fun SearchScreen(
         when (searchResultUiState) {
             SearchResultUiState.Loading,
             LoadFailed,
-            -> Unit
+                -> Unit
 
             SearchNotReady -> SearchNotReadyBody()
             EmptyQuery,
-            -> {
+                -> {
                 if (recentSearchesUiState is Success) {
                     RecentSearchesBody(
                         onClearRecentSearches = onClearRecentSearches,
@@ -199,6 +202,7 @@ internal fun SearchScreen(
                         onProductClick = onProductClick,
                         onShopItemsCheckedChanged = onShopItemsCheckedChanged,
                         onShopItemViewed = onShopItemViewed,
+                        onCategoryClick = onCategoryClick,
                         onFollowButtonClick = onFollowButtonClick,
                     )
                 }
@@ -294,6 +298,7 @@ private fun SearchResultBody(
     categories: List<FollowableCategory2>,
     shopItems: List<UserShopItem>,
     onSearchTriggered: (String) -> Unit,
+    onCategoryClick: (Int) -> Unit,
     onProductClick: (Int) -> Unit,
     onShopItemsCheckedChanged: (Int, Boolean) -> Unit,
     onShopItemViewed: (Int) -> Unit,
@@ -305,10 +310,10 @@ private fun SearchResultBody(
             .fillMaxSize(),
     ) {
         LazyVerticalStaggeredGrid(
-            columns = StaggeredGridCells.Adaptive(300.dp),
-            contentPadding = PaddingValues(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalItemSpacing = 24.dp,
+            columns = StaggeredGridCells.Adaptive(150.dp),
+            contentPadding = PaddingValues(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(0.dp),
+            verticalItemSpacing = 16.dp,
             modifier = Modifier
                 .fillMaxSize()
                 .testTag("search:shopItems"),
@@ -343,7 +348,7 @@ private fun SearchResultBody(
                             onClick = {
                                 // Pass the current search query to ViewModel to save it as recent searches
                                 onSearchTriggered(searchQuery)
-                                onProductClick(categoryId)
+                                onCategoryClick(categoryId)
                             },
                             onFollowButtonClick = { onFollowButtonClick(categoryId, it) },
                         )
