@@ -427,6 +427,7 @@ fun ProductImageLoader(
 
 @Composable
 internal fun ContentDescription(
+    modifier: Modifier = Modifier,
     isCompact: Boolean = true,
     userShopItem: UserShopItem,
     id: Int,
