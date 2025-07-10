@@ -160,11 +160,11 @@ internal fun SearchScreen(
         when (searchResultUiState) {
             SearchResultUiState.Loading,
             LoadFailed,
-                -> Unit
+            -> Unit
 
             SearchNotReady -> SearchNotReadyBody()
             EmptyQuery,
-                -> {
+            -> {
                 if (recentSearchesUiState is Success) {
                     RecentSearchesBody(
                         onClearRecentSearches = onClearRecentSearches,
