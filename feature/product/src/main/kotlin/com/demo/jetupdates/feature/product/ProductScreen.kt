@@ -427,7 +427,6 @@ fun ProductImageLoader(
 
 @Composable
 internal fun ContentDescription(
-    modifier: Modifier = Modifier,
     isCompact: Boolean = true,
     userShopItem: UserShopItem,
     id: Int,
@@ -603,7 +602,6 @@ fun CarouselExample_MultiBrowse(images: List<String>, modifier: Modifier) {
         itemSpacing = 0.dp,
         contentPadding = PaddingValues(horizontal = 0.dp),
     ) { i ->
-        // val item = items[i]
         if (i == 0) {
             ProductImageLoader(
                 headerImageUrl = images[0],
