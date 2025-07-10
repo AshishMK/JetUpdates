@@ -71,7 +71,8 @@ fun AppNavHost(
                 searchScreen(
                     onBackClick = navController::popBackStack,
                     onTrendingClick = { appState.navigateToTopLevelDestination(TRENDING) },
-                    onProductClick = navController::navigateToTrending,
+                    onCategoryClick = navController::navigateToTrending,
+                    onProductClick = { productId -> navController.navigateToProduct(productId) },
                 )
                 productScreen(
                     windowAdaptiveInfo = windowAdaptiveInfo,
