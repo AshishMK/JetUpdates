@@ -205,7 +205,7 @@ internal fun ProductScreen(
                     id = id,
                     Modifier.widthIn(max = 600.dp),
                 )
-                ContentDescription(isCompact, productUiState, id, Modifier.weight(1f))
+                ContentDescription(Modifier.weight(1f), isCompact, productUiState, id)
                 // ContentDescription(Modifier.weight(1.0f))
             }
             val animatedVisibilityScope = LocalNavAnimatedVisibilityScope.current
@@ -427,10 +427,10 @@ fun ProductImageLoader(
 
 @Composable
 internal fun ContentDescription(
+    modifier: Modifier = Modifier,
     isCompact: Boolean = true,
     userShopItem: UserShopItem,
     id: Int,
-    modifier: Modifier = Modifier,
 ) {
     val sharedTransitionScope = LocalSharedTransitionScope.current
         ?: throw IllegalArgumentException("No Scope found")
@@ -603,7 +603,7 @@ fun CarouselExample_MultiBrowse(images: List<String>, modifier: Modifier) {
         itemSpacing = 0.dp,
         contentPadding = PaddingValues(horizontal = 0.dp),
     ) { i ->
-        val item = items[i]
+        // val item = items[i]
         if (i == 0) {
             ProductImageLoader(
                 headerImageUrl = images[0],
