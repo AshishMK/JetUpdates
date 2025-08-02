@@ -21,7 +21,6 @@ import com.demo.jetupdates.core.data.model.asEntity
 import com.demo.jetupdates.core.data.testdoubles.CollectionType
 import com.demo.jetupdates.core.data.testdoubles.TestAppNetworkDataSource
 import com.demo.jetupdates.core.data.testdoubles.TestCategoryDao
-import com.demo.jetupdates.core.data.testdoubles.TestSynchronizer
 import com.demo.jetupdates.core.database.dao.CategoryDao
 import com.demo.jetupdates.core.database.model.CategoryEntity
 import com.demo.jetupdates.core.database.model.asExternalModel
