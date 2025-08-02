@@ -57,7 +57,8 @@ private interface RetrofitAppNetworkApi {
     ): List<NetworkChangeList>
 }
 
-private const val APP_BASE_URL = "http://example.com" // BuildConfig.BACKEND_URL
+private val APP_BASE_URL = "http://example.com"
+// BuildConfig.BACKEND_URL
 
 /**
  * Wrapper for data provided from the [APP_BASE_URL]
