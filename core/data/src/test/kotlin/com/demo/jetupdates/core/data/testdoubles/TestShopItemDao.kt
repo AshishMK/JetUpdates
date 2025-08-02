@@ -37,7 +37,7 @@ class TestShopItemDao : ShopItemDao {
 
     private val entitiesStateFlow = MutableStateFlow(emptyList<ShopItemEntity>())
 
-    internal var categoryCrossReferences: List<ShopItemCategoryCrossRef> = listOf()
+    internal var categoryCrossReferences: List<ShopItemCategoryCrossRef> = emptyList()
 
     override fun getShopItems(
         useFilterCategoryIds: Boolean,

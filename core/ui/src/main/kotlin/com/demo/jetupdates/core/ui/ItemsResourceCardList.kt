@@ -20,10 +20,8 @@ import android.content.ClipData
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.view.View
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterExitState
 import androidx.compose.animation.ExperimentalSharedTransitionApi
-import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.fadeIn
@@ -506,24 +504,15 @@ private fun ExpandedItemResourcePreview(
     CompositionLocalProvider(
         LocalInspectionMode provides true,
     ) {
-        AppTheme {
-            SharedTransitionLayout {
-                AnimatedVisibility(visible = true) {
-                    CompositionLocalProvider(
-                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
-                        LocalNavAnimatedVisibilityScope provides this,
-                    ) {
-                        Surface {
-                            ItemResourceCardForList2(
-                                userShopItem = userItemResources[0],
-                                isAddedToCart = true,
-                                hasBeenViewed = false,
-                                onToggleBookmark = {},
-                                onClick = {},
-                            )
-                        }
-                    }
-                }
+        AppThemeWithAnimationScopes {
+            Surface {
+                ItemResourceCardForList2(
+                    userShopItem = userItemResources[0],
+                    isAddedToCart = true,
+                    hasBeenViewed = false,
+                    onToggleBookmark = {},
+                    onClick = {},
+                )
             }
         }
     }

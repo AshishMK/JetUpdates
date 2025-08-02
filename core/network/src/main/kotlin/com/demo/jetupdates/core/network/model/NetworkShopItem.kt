@@ -16,12 +16,14 @@
 
 package com.demo.jetupdates.core.network.model
 
+import android.annotation.SuppressLint
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 
 /**
  * Network representation of [ShopItem] when fetched from /shopItems
  */
+@SuppressLint("UnsafeOptInUsageError")
 @Serializable
 data class NetworkShopItem(
     val id: Int,
