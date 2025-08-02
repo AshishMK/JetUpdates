@@ -25,7 +25,6 @@ import com.demo.jetupdates.core.data.testdoubles.CollectionType.ShopItems
 import com.demo.jetupdates.core.data.testdoubles.TestAppNetworkDataSource
 import com.demo.jetupdates.core.data.testdoubles.TestCategoryDao
 import com.demo.jetupdates.core.data.testdoubles.TestShopItemDao
-import com.demo.jetupdates.core.data.testdoubles.TestSynchronizer
 import com.demo.jetupdates.core.data.testdoubles.filteredInterestsIds
 import com.demo.jetupdates.core.data.testdoubles.nonPresentInterestsIds
 import com.demo.jetupdates.core.database.model.CategoryEntity
