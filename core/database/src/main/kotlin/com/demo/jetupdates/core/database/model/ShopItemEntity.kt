@@ -51,5 +51,5 @@ fun ShopItemEntity.asExternalModel() = ShopItem(
     images = images,
     publishDate = publishDate,
     type = type,
-    categories = listOf(),
+    categories = emptyList(),
 )

@@ -18,12 +18,10 @@
 
 package com.demo.jetupdates.feature.product
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.EnterExitState
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.ExperimentalSharedTransitionApi
-import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.tween
@@ -72,7 +70,6 @@ import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel
 import androidx.compose.material3.carousel.rememberCarouselState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -100,10 +97,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.window.core.layout.WindowWidthSizeClass
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
-import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
-import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.UserShopItem
+import com.demo.jetupdates.core.ui.AppThemeWithAnimationScopes
 import com.demo.jetupdates.core.ui.DevicePreviews
 import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
 import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
@@ -191,7 +187,8 @@ internal fun ProductScreen(
 
         ) {
             FlowRow(
-                modifier = Modifier.testTag("Scroll_Product_Details")
+                modifier = Modifier
+                    .testTag("Scroll_Product_Details")
                     .fillMaxSize()
                     .verticalScroll(state),
                 //  .windowInsetsPadding(insets),
@@ -551,9 +548,12 @@ fun BoxScope.CartButton(
                 }
             },
             onClick = { onCartChanged(!userShopItem.isSaved) },
-            modifier = Modifier.testTag("Product_FAB").semantics {
-                contentDescription = if (isExpanded) "Product_FAB_Expanded" else "Product_FAB_Collapsed"
-            }
+            modifier = Modifier
+                .testTag("Product_FAB")
+                .semantics {
+                    contentDescription =
+                        if (isExpanded) "Product_FAB_Expanded" else "Product_FAB_Collapsed"
+                }
                 .sharedBounds(
                     rememberSharedContentState(
                         key = SnackSharedElementKey(
@@ -675,21 +675,12 @@ fun ContentImagesLandscapePreview(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
-        SharedTransitionLayout {
-            AnimatedVisibility(visible = true) {
-                CompositionLocalProvider(
-                    LocalSharedTransitionScope provides this@SharedTransitionLayout,
-                    LocalNavAnimatedVisibilityScope provides this,
-                ) {
-                    ContentImages(
-                        isCompact = false,
-                        images = userShopItems[0].images,
-                        id = userShopItems[0].id,
-                    )
-                }
-            }
-        }
+    AppThemeWithAnimationScopes {
+        ContentImages(
+            isCompact = false,
+            images = userShopItems[0].images,
+            id = userShopItems[0].id,
+        )
     }
 }
 
@@ -699,21 +690,12 @@ fun ContentImagesCarouselPreview(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
-        SharedTransitionLayout {
-            AnimatedVisibility(visible = true) {
-                CompositionLocalProvider(
-                    LocalSharedTransitionScope provides this@SharedTransitionLayout,
-                    LocalNavAnimatedVisibilityScope provides this,
-                ) {
-                    ContentImages(
-                        isCompact = true,
-                        images = userShopItems[0].images,
-                        id = userShopItems[0].id,
-                    )
-                }
-            }
-        }
+    AppThemeWithAnimationScopes {
+        ContentImages(
+            isCompact = true,
+            images = userShopItems[0].images,
+            id = userShopItems[0].id,
+        )
     }
 }
 
@@ -723,24 +705,13 @@ fun ProductScreenLoaded(
     @PreviewParameter(UserShopResourcePreviewParameterProvider::class)
     userShopItems: List<UserShopItem>,
 ) {
-    AppTheme {
-        AppBackground {
-            SharedTransitionLayout {
-                AnimatedVisibility(visible = true) {
-                    CompositionLocalProvider(
-                        LocalSharedTransitionScope provides this@SharedTransitionLayout,
-                        LocalNavAnimatedVisibilityScope provides this,
-                    ) {
-                        ProductScreen(
-                            productUiState = userShopItems[0],
-                            id = userShopItems[0].id,
-                            onCartChanged = {},
-                            windowAdaptiveInfo = currentWindowAdaptiveInfo(),
-                            onBackClick = {},
-                        )
-                    }
-                }
-            }
-        }
+    AppThemeWithAnimationScopes {
+        ProductScreen(
+            productUiState = userShopItems[0],
+            id = userShopItems[0].id,
+            onCartChanged = {},
+            windowAdaptiveInfo = currentWindowAdaptiveInfo(),
+            onBackClick = {},
+        )
     }
 }

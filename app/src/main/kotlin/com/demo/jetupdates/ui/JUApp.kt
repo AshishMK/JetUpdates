@@ -21,7 +21,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.exclude
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
@@ -153,7 +155,8 @@ internal fun JUApp(
         )
     }
 
-    val hideBottomBar = currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+    val hideBottomBar =
+        currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
 
     AppNavigationSuiteScaffold(
         hideBottomBar = hideBottomBar,
@@ -178,8 +181,7 @@ internal fun JUApp(
                         )
                     },
                     label = { Text(stringResource(destination.iconTextId)) },
-                    modifier =
-                    Modifier
+                    modifier = Modifier
                         .testTag("AppNavItem"),
                     // .then(if (hasUnread) Modifier.notificationDot() else Modifier),
                 )
@@ -194,13 +196,17 @@ internal fun JUApp(
             containerColor = Color.Transparent,
             contentColor = MaterialTheme.colorScheme.onBackground,
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
-              /*  .exclude(WindowInsets.navigationBars)
-                .exclude(WindowInsets.ime),*/
+            /*  .exclude(WindowInsets.navigationBars)
+              .exclude(WindowInsets.ime),*/
 
             snackbarHost = {
                 SnackbarHost(
                     snackbarHostState,
-                    modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
+                    modifier = Modifier.windowInsetsPadding(
+                        WindowInsets.safeDrawing.exclude(
+                            WindowInsets.ime,
+                        ),
+                    ),
                 )
             },
         ) { padding ->
