@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 The Android Open Source Project
+ * Copyright 2025 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.demo.jetupdates.core.data.testdoubles
+package com.demo.jetupdates.core.data.repository
 
 import com.demo.jetupdates.core.data.Synchronizer
 import com.demo.jetupdates.core.datastore.AppPreferencesDataSource
 import com.demo.jetupdates.core.datastore.ChangeListVersions
 
 /**
- * Test synchronizer that delegates to [AppPreferencesDataSource]
+ * Test synchronizer that delegates to [com.demo.jetupdates.core.datastore.AppPreferencesDataSource]
  */
 class TestSynchronizer(
     private val appPreferences: AppPreferencesDataSource,
