@@ -18,7 +18,6 @@ package com.demo.jetupdates.core.network.retrofit
 
 import androidx.tracing.trace
 import com.demo.jetupdates.core.network.AppNetworkDataSource
-import com.demo.jetupdates.core.network.BuildConfig
 import com.demo.jetupdates.core.network.model.NetworkCategory
 import com.demo.jetupdates.core.network.model.NetworkChangeList
 import com.demo.jetupdates.core.network.model.NetworkShopItem
@@ -58,7 +57,7 @@ private interface RetrofitAppNetworkApi {
     ): List<NetworkChangeList>
 }
 
-private const val APP_BASE_URL = BuildConfig.BACKEND_URL
+private const val APP_BASE_URL = "http://example.com"//BuildConfig.BACKEND_URL
 
 /**
  * Wrapper for data provided from the [APP_BASE_URL]
