@@ -20,6 +20,7 @@ import com.demo.jetupdates.core.data.repository.CompositeUserShopItemRepository
 import com.demo.jetupdates.core.data.repository.ShopItemQuery
 import com.demo.jetupdates.core.model.data.Category
 import com.demo.jetupdates.core.model.data.ShopItem
+import com.demo.jetupdates.core.model.data.UserShopItem
 import com.demo.jetupdates.core.model.data.mapToUserShopItems
 import com.demo.jetupdates.core.testing.repository.TestShopRepository
 import com.demo.jetupdates.core.testing.repository.TestUserDataRepository
@@ -91,6 +92,25 @@ class CompositeUserShopItemRepositoryTest {
                 .filter { sampleCategory1 in it.categories }
                 .mapToUserShopItems(emptyUserData),
             userShopItems.first(),
+        )
+    }
+
+    @Test
+    fun whenGivenItemId_matchingShopItemIsReturned() = runTest {
+        // Obtain a stream of user shop item for the given category id.
+        val userShopItem =
+            userShopItemRepository.observeItem(
+                1,
+            )
+
+        // Send test data into the repositories.
+        shopRepository.sendShopItems(sampleShopItems)
+        userDataRepository.setUserData(emptyUserData)
+
+        // Check that only shop items with the given category id are returned.
+        assertEquals(
+            UserShopItem(sampleShopItems[0], emptyUserData).id,
+            userShopItem.first().id,
         )
     }
 

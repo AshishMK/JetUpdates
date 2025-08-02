@@ -26,10 +26,8 @@ import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToNode
-import androidx.compose.ui.test.printToLog
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.NoActivityResumedException
 import com.demo.jetupdates.MainActivity
@@ -313,8 +311,8 @@ class NavigationTest {
             onNodeWithTag("store:feed")
                 .performScrollToNode(hasTestTag("shopItemCard:${shopItem.id}"))
             onNodeWithTag("shopItemCard:${shopItem.id}").performClick()
-//            onNodeWithTag("Product_FAB").assertExists()
-            composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
+            onNodeWithTag("Product_FAB").assertExists()
+            //    composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
             //  waitUntil(10000) { false }
             // Click the first category tag
             // horizontal cateories list in the shop item card not applicable here nia has it

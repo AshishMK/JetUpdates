@@ -19,7 +19,7 @@ package com.demo.jetupdates.chat
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.Until
-import com.demo.jetupdates.flingElementDownUp
+import com.demo.jetupdates.flingElementUpDown
 import com.demo.jetupdates.waitForObjectOnTopAppBar
 
 fun MacrobenchmarkScope.goToChatScreen() {
@@ -38,5 +38,5 @@ fun MacrobenchmarkScope.chatWaitForCategories() { // may need later
 fun MacrobenchmarkScope.chatScrollCategoriesDownUp() {
     device.wait(Until.hasObject(By.res("chat:messages")), 5_000)
     val chatList = device.findObject(By.res("chat:messages"))
-    device.flingElementDownUp(chatList)
+    device.flingElementUpDown(chatList)
 }
