@@ -20,6 +20,7 @@ package com.demo.jetupdates.core.model.data
  * External data layer representation of a fully populated JU app Shop item
  */
 data class Message(
+    val id: String,
     val author: String,
     val content: String,
     val timestamp: String,

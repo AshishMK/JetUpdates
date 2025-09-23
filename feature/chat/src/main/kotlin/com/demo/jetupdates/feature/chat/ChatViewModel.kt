@@ -16,7 +16,6 @@
 
 package com.demo.jetupdates.feature.chat
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -46,7 +45,6 @@ class ChatViewModel @Inject constructor() : ViewModel() {
         val config = generationConfig {
             temperature = 0.7f
         }
-        Log.v("chatvv", "chatvv ${BuildConfig.API_KEY}")
         generativeModel = GenerativeModel(
             modelName = "gemini-1.5-flash-latest",
             apiKey = BuildConfig.API_KEY,
@@ -61,6 +59,7 @@ class ChatViewModel @Inject constructor() : ViewModel() {
             isGeminiReplying = false
             exampleUiState.addMessage(
                 Message(
+                    id = "${exampleUiState.messages.size}",
                     "Gemini",
                     message,
                     "9:00",

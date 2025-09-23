@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-import com.android.build.gradle.LibraryExtension
+import com.android.build.api.dsl.LibraryExtension
 import com.demo.jetupdates.configureGradleManagedDevices
 import com.demo.jetupdates.libs
 import org.gradle.api.Plugin

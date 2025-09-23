@@ -1,5 +1,5 @@
 package: name='com.demo.jetupdates' versionCode='2' versionName='2.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
-minSdkVersion:'21'
+minSdkVersion:'23'
 targetSdkVersion:'35'
 uses-permission: name='android.permission.INTERNET'
 uses-permission: name='android.permission.ACCESS_NETWORK_STATE'

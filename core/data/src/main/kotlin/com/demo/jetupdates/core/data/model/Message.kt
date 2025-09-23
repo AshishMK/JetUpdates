@@ -21,6 +21,7 @@ import com.demo.jetupdates.core.network.model.NetworkMessageItem
 
 fun NetworkMessageItem.asExternalModel() =
     Message(
+        id = id,
         author = author,
         content = content,
         timestamp = timestamp,

@@ -1,23 +1,4 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
-
-    }
-    dependencies {
-        classpath(libs.google.oss.licenses.plugin) {
-            exclude(group = "com.google.protobuf")
-        }
-    }
-
-}
 
 plugins {
     alias(libs.plugins.android.application) apply false
@@ -34,7 +15,7 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.roborazzi) apply false
-    alias(libs.plugins.secrets) apply false
+    alias(libs.plugins.google.osslicenses) apply false
     alias(libs.plugins.room) apply false
     alias(libs.plugins.module.graph) apply true
 }

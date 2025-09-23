@@ -126,7 +126,7 @@ fun UserInput(
         tonalElevation = 0.dp,
         contentColor = MaterialTheme.colorScheme.secondary,
 
-    ) {
+        ) {
         Box {
             androidx.compose.animation.AnimatedVisibility(
                 visible = geminiInProgress,
@@ -230,7 +230,7 @@ private fun SelectorExpanded(
     if (currentSelector == InputSelector.NONE) return
 
     // Request focus to force the TextField to lose it
-    val focusRequester = FocusRequester()
+    val focusRequester = remember { FocusRequester() }
     // If the selector is shown, always request focus to trigger a TextField.onFocusChange.
     SideEffect {
         if (currentSelector == InputSelector.EMOJI) {
@@ -270,7 +270,7 @@ private fun UserInputText(
         modifier = Modifier
             .padding(
                 horizontal =
-                16.dp,
+                    16.dp,
                 vertical = 8.dp,
             )
             .fillMaxWidth()
@@ -513,7 +513,7 @@ fun UserInputPreview() {
 fun EmojiTablePreview() {
     AppTheme {
         AppBackground(modifier = Modifier.size(900.dp, 264.dp)) {
-            EmojiSelector(onTextAdded = {}, focusRequester = FocusRequester())
+            EmojiSelector(onTextAdded = {}, focusRequester = remember {  FocusRequester()})
         }
     }
 }

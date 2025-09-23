@@ -18,14 +18,14 @@ package com.demo.jetupdates.baselineprofile
 
 import androidx.benchmark.macro.junit4.BaselineProfileRule
 import com.demo.jetupdates.PACKAGE_NAME
-import com.demo.jetupdates.chat.chatScrollCategoriesDownUp
+import com.demo.jetupdates.chat.chatScrollCategoriesUpDown
 import com.demo.jetupdates.chat.goToChatScreen
 import com.demo.jetupdates.startActivityAndAllowNotifications
 import org.junit.Rule
 import org.junit.Test
 
 /**
- * Baseline Profile of the "Interests" screen
+ * Baseline Profile of the "Chat" screen
  */
 class ChatBaselineProfile {
     @get:Rule val baselineProfileRule = BaselineProfileRule()
@@ -37,6 +37,6 @@ class ChatBaselineProfile {
 
             // Navigate to interests screen
             goToChatScreen()
-            chatScrollCategoriesDownUp()
+            chatScrollCategoriesUpDown()
         }
 }

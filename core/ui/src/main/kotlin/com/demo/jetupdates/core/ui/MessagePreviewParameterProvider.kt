@@ -38,6 +38,7 @@ object MessagePreviewParameterData {
     val initialMessages = listOf(
 
         Message(
+            "1",
             "me",
             "Thank you!$EMOJI_PINK_HEART«",
             "8:06 PM",
@@ -45,6 +46,7 @@ object MessagePreviewParameterData {
         ),
 
         Message(
+            "2",
             "me",
             "Maybe I will \uD83D\uDE04\n" +
                 "Only if you promise not to roast them \uD83D\uDE1C",
@@ -53,6 +55,7 @@ object MessagePreviewParameterData {
         ),
 
         Message(
+            "3",
             "Rahul Dev",
             "That’s so cool! \uD83D\uDE0D\n" +
                 "You’ve always been good at art!\n" +
@@ -62,6 +65,7 @@ object MessagePreviewParameterData {
         ),
 
         Message(
+            "4",
             "me",
             "Kinda! I started sketching again \uD83C\uDFA8✍\uFE0F\n" +
                 "Nothing fancy… just doodles and random stuff\n" +
@@ -71,6 +75,7 @@ object MessagePreviewParameterData {
         ),
 
         Message(
+            "5",
             "Rahul Dev",
             "Barely \uD83D\uDE15\n" +
                 "Tried to start reading again… but I just keep falling asleep on the first page \uD83D\uDE34\uD83D\uDCD6\n" +
@@ -80,6 +85,7 @@ object MessagePreviewParameterData {
         ),
 
         Message(
+            "6",
             "me",
             "LOL relatable \uD83D\uDE02\n" +
                 "But hey, at least we’re surviving!\n" +
@@ -88,6 +94,7 @@ object MessagePreviewParameterData {
             drawable.core_designsystem_avtar,
         ),
         Message(
+            "7",
             "Rahul Dev",
             "Haha exactly!! \uD83D\uDE02\n" +
                 "Sometimes I just want to throw my laptop out the window \uD83D\uDEAA\uD83D\uDCBB\n" +
@@ -96,6 +103,7 @@ object MessagePreviewParameterData {
             drawable.core_designsystem_someone_else,
         ),
         Message(
+            "8",
             "me",
             "Ugh I get that \uD83D\uDCAF\n" +
                 "Same here!\n" +
@@ -105,6 +113,7 @@ object MessagePreviewParameterData {
             drawable.core_designsystem_avtar,
         ),
         Message(
+            "9",
             "Rahul Dev",
             "Hey Priya! \uD83D\uDE04\n" +
                 "Tell me about it! Been crazy busy lately \uD83D\uDE48\n" +
@@ -113,6 +122,7 @@ object MessagePreviewParameterData {
             drawable.core_designsystem_someone_else,
         ),
         Message(
+            "10",
             "me",
             "Hey Rahul! \uD83D\uDE0A\n" +
                 "Long time no proper chat \uD83D\uDE05\n" +

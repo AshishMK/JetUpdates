@@ -45,11 +45,7 @@ android {
         buildConfig = true
     }
     namespace = "com.demo.jetupdates.core.network"
-    testOptions {
-        unitTests {
-            isIncludeAndroidResources = true
-        }
-    }
+    testOptions.unitTests.isIncludeAndroidResources = true
 }
 /*
 secrets {
@@ -80,9 +76,7 @@ val propertyTextProvider = providers.fileContents(
 val backendUrl =  propertyTextProvider.map { text ->
     val properties = Properties()
     properties.load(StringReader(text))
-    if (properties.containsKey("BACKEND_URL"))
-        (properties["BACKEND_URL"] as String)
-    else "http://example1.com"
+    properties["BACKEND_URL"]
     // Move to returning `properties["BACKEND_URL"] as String?` after upgrading to Gradle 9.0.0
 }.orElse("http://example2.com")
 
@@ -97,11 +91,11 @@ val apiKey =  propertyTextProvider.map { text ->
 
 androidComponents {
     onVariants {
-        it.buildConfigFields.put("BACKEND_URL", backendUrl.map { value ->
+        it.buildConfigFields!!.put("BACKEND_URL", backendUrl.map { value ->
             BuildConfigField(type = "String", value = """"$value"""", comment = null)
         })
 
-        it.buildConfigFields.put("API_KEY", apiKey.map { value ->
+        it.buildConfigFields!!.put("API_KEY", apiKey.map { value ->
             BuildConfigField(type = "String", value = """"$value"""", comment = null)
         })
     }

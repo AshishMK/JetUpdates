@@ -22,7 +22,7 @@ plugins {
 
 android {
     namespace = "com.demo.jetupdates.core.designsystem"
-
+    testOptions.unitTests.isIncludeAndroidResources = true
 
 }
 

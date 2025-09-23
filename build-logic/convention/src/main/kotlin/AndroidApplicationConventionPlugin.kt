@@ -16,7 +16,6 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.android.build.gradle.BaseExtension
 import com.demo.jetupdates.configureBadgingTasks
 import com.demo.jetupdates.configureGradleManagedDevices
 import com.demo.jetupdates.configureKotlinAndroid
@@ -44,7 +43,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
             extensions.configure<ApplicationAndroidComponentsExtension> {
                 configurePrintApksTask(this)
-                configureBadgingTasks(extensions.getByType<BaseExtension>(), this)
+                configureBadgingTasks(extensions.getByType<ApplicationExtension>(), this)
             }
         }
     }

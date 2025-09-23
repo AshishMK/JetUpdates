@@ -46,7 +46,7 @@ class ScrollChatBenchmark {
         packageName = PACKAGE_NAME,
         metrics = listOf(FrameTimingMetric()),
         compilationMode = compilationMode,
-        iterations = 4,
+        iterations = 10,
         startupMode = StartupMode.WARM,
         setupBlock = {
             // Start the app
@@ -60,7 +60,7 @@ class ScrollChatBenchmark {
     ) {
         // chatWaitForCategories()
         // repeat(3) {
-        chatScrollCategoriesDownUp()
+        chatScrollCategoriesUpDown()
         // }
     }
 }

@@ -42,12 +42,6 @@ internal fun Project.configureAndroidCompose(
             "debugImplementation"(libs.findLibrary("androidx-compose-ui-tooling").get())
         }
 
-        testOptions {
-            unitTests {
-                // For Robolectric
-                isIncludeAndroidResources = true
-            }
-        }
     }
 
     extensions.configure<ComposeCompilerGradlePluginExtension> {
