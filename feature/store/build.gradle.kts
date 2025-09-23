@@ -23,6 +23,7 @@ plugins {
 
 android {
     namespace = "com.demo.jetupdates.feature.store"
+    testOptions.unitTests.isIncludeAndroidResources = true
 }
 
 dependencies {

@@ -35,7 +35,7 @@ fun MacrobenchmarkScope.goToChatScreen() {
 fun MacrobenchmarkScope.chatWaitForCategories() { // may need later
     device.wait(Until.hasObject(By.text("Random")), 10_000)
 }
-fun MacrobenchmarkScope.chatScrollCategoriesDownUp() {
+fun MacrobenchmarkScope.chatScrollCategoriesUpDown() {
     device.wait(Until.hasObject(By.res("chat:messages")), 5_000)
     val chatList = device.findObject(By.res("chat:messages"))
     device.flingElementUpDown(chatList)

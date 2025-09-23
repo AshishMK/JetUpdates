@@ -75,7 +75,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Density
@@ -84,6 +83,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import coil.compose.rememberAsyncImagePainter
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
 import com.demo.jetupdates.core.model.data.Message
@@ -153,6 +153,7 @@ internal fun ChatScreen(
 
                 feedState.addMessage(
                     Message(
+                        id = "${feedState.messages.size}",
                         authorMe,
                         clipData.getItemAt(0).text.toString(),
                         timeNow,
@@ -192,6 +193,7 @@ internal fun ChatScreen(
             onMessageSent = { content ->
                 feedState.addMessage(
                     Message(
+                        id = "${feedState.messages.size}",
                         authorMe,
                         content,
                         timeNow,
@@ -305,6 +307,13 @@ fun Message(
         MaterialTheme.colorScheme.tertiary
     }
 
+    /***
+     * For Improving scroll performance
+     * by using Async Image Loader rather than using image in UI thread
+     * **/
+    val imageLoader = rememberAsyncImagePainter(
+        model = msg.authorImage,
+    )
     val spaceBetweenAuthors = if (isLastMessageByAuthor) Modifier.padding(top = 8.dp) else Modifier
     if (isUserMe) {
         Row(modifier = spaceBetweenAuthors, horizontalArrangement = Arrangement.End) {
@@ -330,7 +339,7 @@ fun Message(
                         .clip(CircleShape)
                         .align(Alignment.Top),
 
-                    painter = painterResource(id = msg.authorImage),
+                    painter = imageLoader, // painterResource(id = msg.authorImage),
                     contentScale = ContentScale.Crop,
                     contentDescription = msg.content,
                 )
@@ -353,7 +362,7 @@ fun Message(
                         .clip(CircleShape)
                         .align(Alignment.Top),
 
-                    painter = painterResource(id = msg.authorImage),
+                    painter = imageLoader, // painterResource(id = msg.authorImage),
                     contentScale = ContentScale.Crop,
                     contentDescription = msg.content,
                 )

@@ -21,7 +21,7 @@ plugins {
     alias(libs.plugins.jetupdates.android.application.flavors)
     alias(libs.plugins.jetupdates.android.application.jacoco)
     alias(libs.plugins.jetupdates.hilt)
-    id("com.google.android.gms.oss-licenses-plugin")
+    alias(libs.plugins.google.osslicenses)
     alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
     alias(libs.plugins.kotlin.serialization)
@@ -70,11 +70,7 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
-    testOptions {
-        unitTests {
-            isIncludeAndroidResources = true
-        }
-    }
+    testOptions.unitTests.isIncludeAndroidResources = true
 
 }
 

@@ -24,6 +24,7 @@ import com.demo.jetupdates.core.testing.util.MainDispatcherRule
 import com.demo.jetupdates.core.ui.ItemFeedUiState.Loading
 import com.demo.jetupdates.core.ui.ItemFeedUiState.Success
 import com.demo.jetupdates.feature.cart.CartViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
@@ -58,6 +59,29 @@ class CartViewModelTest {
             userDataRepository = userDataRepository,
             userNewsResourceRepository = userShopItemRepository,
         )
+    }
+
+    @Test
+    fun testDispatcher() {
+        runTest(UnconfinedTestDispatcher()) {
+            // Start a new coroutine
+            val j = launch {
+                // Do some work
+                delay(10000)
+                println("The first coroutine has completed")
+            }
+            // advanceTimeBy(100001)
+            // Start another coroutine
+            val j2 = launch {
+                // Do some other work
+                delay(100)
+                println("The second coroutine has completed")
+            }
+            //  j.join()
+            // j2.join()
+            //  advanceUntilIdle()
+            println("doneeee")
+        }
     }
 
     @Test

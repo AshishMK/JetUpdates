@@ -16,13 +16,16 @@
 
 package com.demo.jetupdates.core.network.model
 
+import android.annotation.SuppressLint
 import kotlinx.serialization.Serializable
 
 /**
  * Network representation of [Message] when fetched from /shopItems
  */
+@SuppressLint("UnsafeOptInUsageError")
 @Serializable
 data class NetworkMessageItem(
+    val id: String,
     val author: String,
     val content: String,
     val timestamp: String,
