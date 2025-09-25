@@ -10,16 +10,11 @@ jobs:
   build:
     if: github.repository == 'AshishMK/JetUpdates'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
     timeout-minutes: 120
 
     steps:
-      - name: Enable KVM group permsts
+      - name: Enable KVM group perms
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }}
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
@@ -28,9 +23,6 @@ jobs:
       - name: Checkout
 
         uses: actions/checkout@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
@@ -73,7 +65,7 @@ jobs:
           -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
           -Pandroid.experimental.androidTest.numManagedDeviceShards=1
           -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
-      - name: Create Releases
+      - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -84,12 +76,12 @@ jobs:
           draft: true
           prerelease: false
 
-      - name: Upload aspp
+      - name: Upload app
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: app/build/outputs/apk/demo/release/app-demo-release.apk
-          asset_name: app-demo-release.apk
-          asset_content_type: application/vnd.android.package-archive          
+          asset_path: app/build/outputs/apk/prod/release/app-prod-release.apk
+          asset_name: app-prod-release.apk
+          asset_content_type: application/vnd.android.package-archive
