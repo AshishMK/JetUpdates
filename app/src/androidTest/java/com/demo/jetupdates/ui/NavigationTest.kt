@@ -34,6 +34,7 @@ import com.demo.jetupdates.MainActivity
 import com.demo.jetupdates.R
 import com.demo.jetupdates.core.data.repository.CategoriesRepository
 import com.demo.jetupdates.core.data.repository.ShopRepository
+import com.demo.jetupdates.core.model.data.Category
 import com.demo.jetupdates.core.rules.GrantPostNotificationsPermissionRule
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -93,10 +94,10 @@ class NavigationTest {
     fun setup() = hiltRule.inject()
 
     @Test
-    fun firstScreen_isForYou() {
+    fun firstScreen_isStore() {
         composeTestRule.apply {
             // VERIFY for you is selected
-            onNodeWithText(forYou).assertIsSelected()
+            onNodeWithText(store).assertIsSelected()
         }
     }
 
@@ -218,7 +219,6 @@ class NavigationTest {
         }
     }
 
-     */
     /*
      * There should always be at most one instance of a top-level destination at the same time.
      */
