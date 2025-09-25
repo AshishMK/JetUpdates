@@ -126,7 +126,7 @@ fun UserInput(
         tonalElevation = 0.dp,
         contentColor = MaterialTheme.colorScheme.secondary,
 
-        ) {
+    ) {
         Box {
             androidx.compose.animation.AnimatedVisibility(
                 visible = geminiInProgress,
@@ -270,7 +270,7 @@ private fun UserInputText(
         modifier = Modifier
             .padding(
                 horizontal =
-                    16.dp,
+                16.dp,
                 vertical = 8.dp,
             )
             .fillMaxWidth()
@@ -513,7 +513,7 @@ fun UserInputPreview() {
 fun EmojiTablePreview() {
     AppTheme {
         AppBackground(modifier = Modifier.size(900.dp, 264.dp)) {
-            EmojiSelector(onTextAdded = {}, focusRequester = remember {  FocusRequester()})
+            EmojiSelector(onTextAdded = {}, focusRequester = remember { FocusRequester() })
         }
     }
 }
