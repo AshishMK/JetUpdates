@@ -13,7 +13,6 @@ config:
 graph TB
   subgraph :core
     direction TB
-    :core:analytics[analytics]:::android-library
     :core:common[common]:::jvm-library
     :core:data[data]:::android-library
     :core:database[database]:::android-library
@@ -25,7 +24,6 @@ graph TB
     :core:testing[testing]:::android-library
   end
 
-  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore
@@ -39,10 +37,7 @@ graph TB
   :core:network --> :core:model
   :core:notifications -.-> :core:common
   :core:notifications --> :core:model
-  :core:testing --> :core:analytics
-  :core:testing --> :core:common
   :core:testing --> :core:data
-  :core:testing --> :core:model
   :core:testing --> :core:notifications
 
 classDef android-application fill:#CAFFBF,stroke:#000,stroke-width:2px,color:#000;

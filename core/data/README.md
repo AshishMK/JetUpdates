@@ -13,7 +13,6 @@ config:
 graph TB
   subgraph :core
     direction TB
-    :core:analytics[analytics]:::android-library
     :core:common[common]:::jvm-library
     :core:data[data]:::android-library
     :core:database[database]:::android-library
@@ -24,7 +23,6 @@ graph TB
     :core:notifications[notifications]:::android-library
   end
 
-  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore

@@ -13,7 +13,6 @@ config:
 graph TB
   subgraph :core
     direction TB
-    :core:analytics[analytics]:::android-library
     :core:common[common]:::jvm-library
     :core:data[data]:::android-library
     :core:database[database]:::android-library
@@ -29,13 +28,13 @@ graph TB
   subgraph :feature
     direction TB
     :feature:cart[cart]:::android-feature
-    :feature:store[store]:::android-feature
-    :feature:trending[trending]:::android-feature
+    :feature:category[category]:::android-feature
+    :feature:chat[chat]:::android-feature
+    :feature:product[product]:::android-feature
     :feature:search[search]:::android-feature
     :feature:settings[settings]:::android-feature
-    :feature:category[category]:::android-feature
-    :feature:product[product]:::android-feature
-    :feature:chat[chat]:::android-feature
+    :feature:store[store]:::android-feature
+    :feature:trending[trending]:::android-feature
   end
   subgraph :sync
     direction TB
@@ -45,23 +44,19 @@ graph TB
   :app[app]:::android-application
 
   :app -.->|baselineProfile| :benchmarks
-  :app -.-> :core:analytics
   :app -.-> :core:common
   :app -.-> :core:data
-  :app -.-> :core:designsystem
-  :app -.-> :core:model
   :app -.-> :core:ui
   :app -.-> :feature:cart
-  :app -.-> :feature:store
-  :app -.-> :feature:trending
-  :app -.-> :feature:search
-  :app -.-> :feature:settings
   :app -.-> :feature:category
   :app -.-> :feature:chat
   :app -.-> :feature:product
+  :app -.-> :feature:search
+  :app -.-> :feature:settings
+  :app -.-> :feature:store
+  :app -.-> :feature:trending
   :app -.-> :sync:work
   :benchmarks -.->|testedApks| :app
-  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore
@@ -77,29 +72,21 @@ graph TB
   :core:network --> :core:model
   :core:notifications -.-> :core:common
   :core:notifications --> :core:model
-  :core:ui --> :core:analytics
   :core:ui --> :core:designsystem
   :core:ui --> :core:model
   :feature:cart -.-> :core:data
   :feature:cart -.-> :core:designsystem
   :feature:cart -.-> :core:ui
-  :feature:store -.-> :core:data
-  :feature:store -.-> :core:designsystem
-  :feature:store -.-> :core:domain
-  :feature:store -.-> :core:notifications
-  :feature:store -.-> :core:ui
-  :feature:chat -.-> :core:designsystem
+  :feature:category -.-> :core:data
+  :feature:category -.-> :core:designsystem
+  :feature:category --> :core:ui
+  :feature:category -.-> :core:ui
   :feature:chat -.-> :core:data
-  :feature:chat -.-> :core:notifications
+  :feature:chat -.-> :core:designsystem
   :feature:chat -.-> :core:ui
-  :feature:product -.-> :core:designsystem
   :feature:product -.-> :core:data
-  :feature:product -.-> :core:notifications
+  :feature:product -.-> :core:designsystem
   :feature:product -.-> :core:ui
-  :feature:trending -.-> :core:data
-  :feature:trending -.-> :core:designsystem
-  :feature:trending -.-> :core:domain
-  :feature:trending -.-> :core:ui
   :feature:search -.-> :core:data
   :feature:search -.-> :core:designsystem
   :feature:search -.-> :core:domain
@@ -107,10 +94,15 @@ graph TB
   :feature:settings -.-> :core:data
   :feature:settings -.-> :core:designsystem
   :feature:settings -.-> :core:ui
-  :feature:category -.-> :core:data
-  :feature:category -.-> :core:designsystem
-  :feature:category -.-> :core:ui
-  :sync:work -.-> :core:analytics
+  :feature:store -.-> :core:data
+  :feature:store -.-> :core:designsystem
+  :feature:store -.-> :core:domain
+  :feature:store -.-> :core:notifications
+  :feature:store -.-> :core:ui
+  :feature:trending -.-> :core:data
+  :feature:trending -.-> :core:designsystem
+  :feature:trending -.-> :core:domain
+  :feature:trending -.-> :core:ui
   :sync:work -.-> :core:data
   :sync:work -.-> :core:notifications
 
