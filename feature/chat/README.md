@@ -13,7 +13,6 @@ config:
 graph TB
   subgraph :core
     direction TB
-    :core:analytics[analytics]:::android-library
     :core:common[common]:::jvm-library
     :core:data[data]:::android-library
     :core:database[database]:::android-library
@@ -30,7 +29,6 @@ graph TB
     :feature:chat[chat]:::android-feature
   end
 
-  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore
@@ -44,7 +42,6 @@ graph TB
   :core:network --> :core:model
   :core:notifications -.-> :core:common
   :core:notifications --> :core:model
-  :core:ui --> :core:analytics
   :core:ui --> :core:designsystem
   :core:ui --> :core:model
   :feature:chat -.-> :core:data
