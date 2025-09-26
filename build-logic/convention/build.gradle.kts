@@ -115,5 +115,10 @@ gradlePlugin {
             id = libs.plugins.jetupdates.jvm.library.get().pluginId
             implementationClass = "JvmLibraryConventionPlugin"
         }
+
+        register("root") {
+            id = libs.plugins.jetupdates.root.get().pluginId
+            implementationClass = "RootPlugin"
+        }
     }
 }
