@@ -51,7 +51,8 @@ android {
             applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
         }
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = providers.gradleProperty("minifyWithR8")
+                .map(String::toBooleanStrict).getOrElse(true)
             applicationIdSuffix = AppBuildType.RELEASE.applicationIdSuffix
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro")

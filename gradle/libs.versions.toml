@@ -200,3 +200,4 @@ jetupdates-android-room = { id = "jetupdates.android.room" }
 jetupdates-android-test = { id = "jetupdates.android.test" }
 jetupdates-hilt = { id = "jetupdates.hilt" }
 jetupdates-jvm-library = { id = "jetupdates.jvm.library" }
+jetupdates-root = { id = "jetupdates.root" }
