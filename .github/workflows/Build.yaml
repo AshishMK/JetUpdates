@@ -90,7 +90,6 @@ jobs:
 
       - name: Check Graphs
         id: graphs_verify
-        continue-on-error: true
         run: git add -- '**/README.md' && git diff --cached --quiet --exit-code -- '**/README.md'
 
       - name: Prevent updating graphs if this is a fork
