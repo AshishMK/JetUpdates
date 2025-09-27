@@ -31,6 +31,7 @@ fun MacrobenchmarkScope.goToCartScreen() {
     // Wait until saved title are shown on screen
     waitForObjectOnTopAppBar(savedSelector)
 }
+
 fun MacrobenchmarkScope.cartWaitForCategories() { // may need later
     device.wait(Until.hasObject(By.text("Random")), 5_000)
 }
