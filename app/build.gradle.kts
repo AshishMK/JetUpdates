@@ -32,8 +32,8 @@ android {
 
     defaultConfig {
         applicationId = "com.demo.jetupdates"
-        versionCode = 2
-        versionName = "2.0"
+        versionCode = 3
+        versionName = "2.0.1"
 
         testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
@@ -78,22 +78,32 @@ android {
 dependencies {
 
     implementation(projects.core.ui)
-    implementation(projects.feature.store)
+
     implementation(projects.core.common)
     implementation(projects.core.data)
     implementation(projects.sync.work)
     implementation(projects.core.data)
 
 
-    implementation(projects.feature.cart)
-    implementation(projects.feature.trending)
-    implementation(projects.feature.category)
-    implementation(projects.feature.search)
-    implementation(projects.feature.settings)
-    implementation(projects.feature.chat)
-    implementation(projects.feature.product)
 
+    implementation(projects.feature.trending.api)
+    implementation(projects.feature.trending.impl)
+    implementation(projects.feature.store.api)
+    implementation(projects.feature.store.impl)
+    implementation(projects.feature.cart.api)
+    implementation(projects.feature.cart.impl)
+    implementation(projects.feature.category.api)
+    implementation(projects.feature.category.impl)
+    implementation(projects.feature.search.api)
+    implementation(projects.feature.search.impl)
+    implementation(projects.feature.settings.impl)
+    implementation(projects.feature.chat.api)
+    implementation(projects.feature.chat.impl)
+    implementation(projects.feature.product.api)
+    implementation(projects.feature.product.impl)
 
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.compose.material3.adaptive.navigation3)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.splashscreen)
@@ -105,9 +115,8 @@ dependencies {
     implementation(libs.androidx.compose.material3.windowSizeClass)
     implementation(libs.androidx.compose.runtime.tracing)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.viewModel.navigation3)
     implementation(libs.androidx.profileinstaller)
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.androidx.window.core)

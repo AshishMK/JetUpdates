@@ -18,50 +18,39 @@ package com.demo.jetupdates.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
-import androidx.navigation.NavDestination.Companion.hasRoute
-import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navOptions
-import androidx.tracing.trace
+import androidx.compose.runtime.setValue
 import com.demo.jetupdates.core.data.repository.UserDataRepository
 import com.demo.jetupdates.core.data.util.NetworkMonitor
 import com.demo.jetupdates.core.data.util.TimeZoneMonitor
+import com.demo.jetupdates.core.navigation.NavigationState
+import com.demo.jetupdates.core.navigation.rememberNavigationState
 import com.demo.jetupdates.core.ui.TrackDisposableJank
-import com.demo.jetupdates.feature.cart.navigation.navigateToCart
-import com.demo.jetupdates.feature.chat.navigation.navigateToChat
-import com.demo.jetupdates.feature.search.navigation.navigateToSearch
-import com.demo.jetupdates.feature.store.navigation.navigateToStore
-import com.demo.jetupdates.feature.trending.navigation.navigateToTrending
-import com.demo.jetupdates.navigation.TopLevelDestination
-import com.demo.jetupdates.navigation.TopLevelDestination.CART
-import com.demo.jetupdates.navigation.TopLevelDestination.CHAT
-import com.demo.jetupdates.navigation.TopLevelDestination.STORE
-import com.demo.jetupdates.navigation.TopLevelDestination.TRENDING
+import com.demo.jetupdates.feature.store.api.navigation.StoreNavKey
+import com.demo.jetupdates.navigation.TOP_LEVEL_NAV_ITEMS
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.datetime.TimeZone
-
 @Composable
 fun rememberJUAppState(
     networkMonitor: NetworkMonitor,
     userDataRepository: UserDataRepository,
     timeZoneMonitor: TimeZoneMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
-    navController: NavHostController = rememberNavController(),
 
 ): JUAppState {
-    NavigationTrackingSideEffect(navController)
+//    NavigationTrackingSideEffect(navController)
+
+    val navigationState = rememberNavigationState(StoreNavKey, TOP_LEVEL_NAV_ITEMS.keys)
+    NavigationTrackingSideEffect(navigationState)
+
     return remember(
-        navController,
+        navigationState,
         coroutineScope,
         networkMonitor,
         timeZoneMonitor,
@@ -69,7 +58,7 @@ fun rememberJUAppState(
         JUAppState(
             userDataRepository = userDataRepository,
             timeZoneMonitor = timeZoneMonitor,
-            navController = navController,
+            navigationState = navigationState,
             coroutineScope = coroutineScope,
             networkMonitor = networkMonitor,
         )
@@ -81,10 +70,20 @@ class JUAppState(
     userDataRepository: UserDataRepository,
     timeZoneMonitor: TimeZoneMonitor,
     networkMonitor: NetworkMonitor,
-    val navController: NavHostController,
+    val navigationState: NavigationState,
     coroutineScope: CoroutineScope,
 
 ) {
+    var showCategoryList by mutableStateOf(true)
+
+    // it works without being mutableStateOf because showCategoryList trigger recompose for same changes @see toggleCategoryList below
+    var clickedByUser by mutableStateOf(false)
+
+    fun toggleCategoryList() {
+        showCategoryList = !showCategoryList
+        clickedByUser = true
+    }
+
     val shouldShowOnboarding = userDataRepository.userData.map { if (it.shouldHideOnboarding) 0 else 1 }
         .stateIn(
             scope = coroutineScope,
@@ -92,7 +91,7 @@ class JUAppState(
             initialValue = -1,
         )
 
-    private val previousDestination = mutableStateOf<NavDestination?>(null)
+ /*   private val previousDestination = mutableStateOf<NavDestination?>(null)
 
     val currentDestination: NavDestination?
         @Composable get() {
@@ -113,7 +112,7 @@ class JUAppState(
             return TopLevelDestination.entries.firstOrNull { topLevelDestination ->
                 currentDestination?.hasRoute(route = topLevelDestination.route) == true
             }
-        }
+        }*/
 
     val isOffline = networkMonitor.isOnline
         .map(Boolean::not)
@@ -127,7 +126,7 @@ class JUAppState(
      * Map of top level destinations to be used in the TopBar, BottomBar and NavRail. The key is the
      * route.
      */
-    val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.entries
+    // val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.entries
 
     /**
      * The top level destinations that have unread Shop Items.
@@ -152,56 +151,15 @@ class JUAppState(
             SharingStarted.WhileSubscribed(5_000),
             TimeZone.currentSystemDefault(),
         )
-
-    /**
-     * UI logic for navigating to a top level destination in the app. Top level destinations have
-     * only one copy of the destination of the back stack, and save and restore state whenever you
-     * navigate to and from it.
-     *
-     * @param topLevelDestination: The destination the app needs to navigate to.
-     */
-    fun navigateToTopLevelDestination(topLevelDestination: TopLevelDestination) {
-        trace("Navigation: ${topLevelDestination.name}") {
-            val topLevelNavOptions = navOptions {
-                // Pop up to the start destination of the graph to
-                // avoid building up a large stack of destinations
-                // on the back stack as users select items
-                popUpTo(navController.graph.findStartDestination().id) {
-                    saveState = true
-                }
-                // Avoid multiple copies of the same destination when
-                // reselecting the same item
-                launchSingleTop = true
-                // Restore state when reselecting a previously selected item
-                restoreState = true
-            }
-
-            when (topLevelDestination) {
-                STORE -> navController.navigateToStore(topLevelNavOptions)
-                CART -> navController.navigateToCart(topLevelNavOptions)
-                TRENDING -> navController.navigateToTrending(null, topLevelNavOptions)
-                CHAT -> navController.navigateToChat(topLevelNavOptions)
-            }
-        }
-    }
-
-    fun navigateToSearch() = navController.navigateToSearch()
 }
 
 /**
  * Stores information about navigation events to be used with JankStats
  */
 @Composable
-private fun NavigationTrackingSideEffect(navController: NavHostController) {
-    TrackDisposableJank(navController) { metricsHolder ->
-        val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
-            metricsHolder.state?.putState("Navigation", destination.route.toString())
-        }
-
-        navController.addOnDestinationChangedListener(listener)
-
-        onDispose {
-            navController.removeOnDestinationChangedListener(listener)
-        }
+private fun NavigationTrackingSideEffect(navigationState: NavigationState) {
+    TrackDisposableJank(navigationState.currentKey) { metricsHolder ->
+        metricsHolder.state?.putState("Navigation", navigationState.currentKey.toString())
+        onDispose {}
     }
 }

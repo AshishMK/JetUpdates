@@ -21,9 +21,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import com.demo.jetUpdates.core.testing.util.captureMultiTheme
 import com.demo.jetupdates.core.designsystem.component.AppIconToggleButton
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
+import com.demo.jetupdates.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
 import org.junit.Test
