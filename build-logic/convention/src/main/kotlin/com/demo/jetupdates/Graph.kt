@@ -226,19 +226,46 @@ private abstract class GraphDumpTask : DefaultTask() {
         )
         // Graph declaration
         appendLine("graph TB")
-        // Nodes and subgraphs (limited to a single nested layer)
+        // not after Nav3=> "Nodes and subgraphs (limited to a single nested layer)"
+        // Nodes and subgraphs
         val (rootProjects, nestedProjects) = dependencies
             .map { listOf(it.project, it.dependency) }.flatten().toSet()
             .plus(projectPath.get()) // Special case when this specific module has no other dependency
             .groupBy { it.substringBeforeLast(":") }
             .entries.partition { it.key.isEmpty() }
-        nestedProjects.sortedByDescending { it.value.size }.forEach { (group, projects) ->
-            appendLine("  subgraph $group")
-            appendLine("    direction TB")
-            projects.sorted().forEach {
-                appendLine(it.alias(indent = 4, plugins.get().getValue(it)))
+
+
+        val orderedGroups = nestedProjects.groupBy {
+            if (it.key.count { char -> char == ':' } > 1) it.key.substringBeforeLast(":") else ""
+        }
+
+        orderedGroups.forEach { (outerGroup, innerGroups) ->
+            if (outerGroup.isNotEmpty()) {
+                appendLine("  subgraph $outerGroup")
+                appendLine("    direction TB")
             }
-            appendLine("  end")
+            innerGroups.sortedWith(
+                compareBy(
+                    { (group, _) ->
+                        dependencies.filter { dep ->
+                            val toGroup = dep.dependency.substringBeforeLast(":")
+                            toGroup == group && dep.project.substringBeforeLast(":") != group
+                        }.count()
+                    },
+                    { -it.value.size },
+                ),
+            ).forEach { (group, projects) ->
+                val indent = if (outerGroup.isNotEmpty()) 4 else 2
+                appendLine(" ".repeat(indent) + "subgraph $group")
+                appendLine(" ".repeat(indent) + "  direction TB")
+                projects.sorted().forEach {
+                    appendLine(it.alias(indent = indent + 2, plugins.get().getValue(it)))
+                }
+                appendLine(" ".repeat(indent) + "end")
+            }
+            if (outerGroup.isNotEmpty()) {
+                appendLine("  end")
+            }
         }
         rootProjects.flatMap { it.value }.sortedDescending().forEach {
             appendLine(it.alias(indent = 2, plugins.get().getValue(it)))

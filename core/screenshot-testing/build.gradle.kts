@@ -20,7 +20,7 @@ plugins {
 }
 
 android {
-    namespace = "com.demo.jetUpdates.core.screenshottesting"
+    namespace = "com.demo.jetupdates.core.screenshottesting"
 }
 
 dependencies {

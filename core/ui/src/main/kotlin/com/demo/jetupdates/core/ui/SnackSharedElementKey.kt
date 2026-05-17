@@ -21,6 +21,7 @@ import androidx.compose.animation.BoundsTransform
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.animation.core.spring
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.compositionLocalOf
 
 data class SnackSharedElementKey(
@@ -45,6 +46,10 @@ val LocalNavAnimatedVisibilityScope = compositionLocalOf<AnimatedVisibilityScope
 @OptIn(ExperimentalSharedTransitionApi::class)
 val LocalSharedTransitionScope =
     compositionLocalOf<SharedTransitionScope?> { null }
+
+val LocalSnackbarHostState = compositionLocalOf<SnackbarHostState> {
+    error("SnackbarHostState state should be initialized at runtime")
+}
 
 fun <T> spatialExpressiveSpring() = spring<T>(
     dampingRatio = 0.8f,
