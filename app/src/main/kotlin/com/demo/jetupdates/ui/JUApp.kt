@@ -16,6 +16,8 @@
 
 package com.demo.jetupdates.ui
 
+import android.util.Log
+import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -33,15 +35,16 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration.Indefinite
-import androidx.compose.material3.SnackbarDuration.Short
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.SnackbarResult.ActionPerformed
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.WindowAdaptiveInfo
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+import androidx.compose.material3.adaptive.navigation3.rememberListDetailSceneStrategy
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -60,20 +63,32 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavDestination
-import androidx.navigation.NavDestination.Companion.hasRoute
-import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.ui.NavDisplay
 import androidx.window.core.layout.WindowWidthSizeClass
 import com.demo.jetupdates.R
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.component.AppNavigationSuiteScaffold
 import com.demo.jetupdates.core.designsystem.component.AppTopAppBar
 import com.demo.jetupdates.core.designsystem.icon.AppIcons
-import com.demo.jetupdates.feature.product.navigation.ProductRoute
-import com.demo.jetupdates.feature.settings.SettingsDialog
-import com.demo.jetupdates.navigation.AppNavHost
-import com.demo.jetupdates.navigation.TopLevelDestination
-import kotlin.reflect.KClass
+import com.demo.jetupdates.core.navigation.Navigator
+import com.demo.jetupdates.core.navigation.toEntries
+import com.demo.jetupdates.core.ui.LocalSharedTransitionScope
+import com.demo.jetupdates.core.ui.LocalSnackbarHostState
+import com.demo.jetupdates.feature.cart.impl.navigation.cartEntry
+import com.demo.jetupdates.feature.category.impl.navigation.categoryEntry
+import com.demo.jetupdates.feature.chat.impl.navigation.chatEntry
+import com.demo.jetupdates.feature.product.api.navigation.ProductNavKey
+import com.demo.jetupdates.feature.product.impl.navigation.productEntry
+import com.demo.jetupdates.feature.search.impl.navigation.searchEntry
+import com.demo.jetupdates.feature.settings.impl.SettingsDialog
+import com.demo.jetupdates.feature.store.api.navigation.StoreNavKey
+import com.demo.jetupdates.feature.store.impl.navigation.storeEntry
+import com.demo.jetupdates.feature.trending.impl.navigation.trendingEntry
+import com.demo.jetupdates.navigation.TOP_LEVEL_NAV_ITEMS
+import com.google.samples.apps.nowinandroid.feature.search.api.navigation.SearchNavKey
+import com.demo.jetupdates.feature.settings.impl.R as settingsR
 
 @Composable
 fun JUApp(
@@ -82,11 +97,9 @@ fun JUApp(
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
-    val shouldShowCategoriesActionItem =
-        appState.currentTopLevelDestination == TopLevelDestination.STORE
+    val shouldShowCategoriesActionItem = appState.navigationState.currentTopLevelKey == StoreNavKey
+
     var showSettingsDialog by rememberSaveable { mutableStateOf(false) }
-    var showCategoryList by rememberSaveable { mutableStateOf(true) }
-    var clickedByUser = false
     AppBackground(modifier = modifier) {
         val snackbarHostState = remember { SnackbarHostState() }
 
@@ -105,25 +118,23 @@ fun JUApp(
         val shouldShowOnboarding by appState.shouldShowOnboarding.collectAsStateWithLifecycle()
         LaunchedEffect(shouldShowOnboarding) {
             if (shouldShowOnboarding == 0) {
-                showCategoryList = false
+                appState.showCategoryList = false
             }
         }
 
-        JUApp(
-            appState = appState,
-            showCategoryList = showCategoryList,
-            clickedByUser = clickedByUser,
-            snackbarHostState = snackbarHostState,
-            showSettingsDialog = showSettingsDialog,
-            onSettingsDismissed = { showSettingsDialog = false },
-            onTopAppBarActionClick = { showSettingsDialog = true },
-            onTopAppBarCategoryActionClick = {
-                showCategoryList = !showCategoryList
-                clickedByUser = true
-            },
-            shouldShowCategoriesActionItem = shouldShowCategoriesActionItem,
-            windowAdaptiveInfo = windowAdaptiveInfo,
-        )
+        CompositionLocalProvider(LocalSnackbarHostState provides snackbarHostState) {
+            JUApp(
+                appState = appState,
+                showSettingsDialog = showSettingsDialog,
+                onSettingsDismissed = { showSettingsDialog = false },
+                onTopAppBarActionClick = { showSettingsDialog = true },
+                onTopAppBarCategoryActionClick = {
+                    appState.toggleCategoryList()
+                },
+                shouldShowCategoriesActionItem = shouldShowCategoriesActionItem,
+                windowAdaptiveInfo = windowAdaptiveInfo,
+            )
+        }
     }
 }
 
@@ -131,12 +142,10 @@ fun JUApp(
 @OptIn(
     ExperimentalMaterial3Api::class,
     ExperimentalComposeUiApi::class,
+    ExperimentalMaterial3AdaptiveApi::class,
 )
 internal fun JUApp(
     appState: JUAppState,
-    showCategoryList: Boolean,
-    clickedByUser: Boolean,
-    snackbarHostState: SnackbarHostState,
     showSettingsDialog: Boolean,
     onSettingsDismissed: () -> Unit,
     onTopAppBarActionClick: () -> Unit,
@@ -147,7 +156,7 @@ internal fun JUApp(
 ) {
     /* val unreadDestinations by appState.topLevelDestinationsWithUnreadResources
          .collectAsStateWithLifecycle()*/
-    val currentDestination = appState.currentDestination
+    //  val currentDestination = appState.currentDestination
 
     if (showSettingsDialog) {
         SettingsDialog(
@@ -155,32 +164,36 @@ internal fun JUApp(
         )
     }
 
-    val hideBottomBar =
-        currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+    val snackbarHostState = LocalSnackbarHostState.current
+
+    val navigator = remember { Navigator(appState.navigationState) }
+
+    val hideBottomBar = appState.navigationState.currentSubStack.last() is ProductNavKey && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+    Log.v("hideBottomBar", "hideBottomBar $hideBottomBar ${appState.navigationState.currentSubStack.last()}")
+    // currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
 
     AppNavigationSuiteScaffold(
         hideBottomBar = hideBottomBar,
         navigationSuiteItems = {
-            appState.topLevelDestinations.forEach { destination ->
-                //   val hasUnread = unreadDestinations.contains(destination)
-                val selected = currentDestination
-                    .isRouteInHierarchy(destination.baseRoute)
+            TOP_LEVEL_NAV_ITEMS.forEach { (navKey, navItem) ->
+                val hasUnread = false // unreadNavKeys.contains(navKey)
+                val selected = navKey == appState.navigationState.currentTopLevelKey
                 item(
                     selected = selected,
-                    onClick = { appState.navigateToTopLevelDestination(destination) },
+                    onClick = { navigator.navigate(navKey) },
                     icon = {
                         Icon(
-                            imageVector = destination.unselectedIcon,
+                            imageVector = navItem.unselectedIcon,
                             contentDescription = null,
                         )
                     },
                     selectedIcon = {
                         Icon(
-                            imageVector = destination.selectedIcon,
+                            imageVector = navItem.selectedIcon,
                             contentDescription = null,
                         )
                     },
-                    label = { Text(stringResource(destination.iconTextId)) },
+                    label = { Text(stringResource(navItem.iconTextId)) },
                     modifier = Modifier
                         .testTag("AppNavItem"),
                     // .then(if (hasUnread) Modifier.notificationDot() else Modifier),
@@ -222,20 +235,25 @@ internal fun JUApp(
                     ),
             ) {
                 // Show the top app bar on top level destinations.
-                val destination = appState.currentTopLevelDestination
+                //   val destination = appState.currentTopLevelDestination
                 var shouldShowTopAppBar = false
 
-                if (destination != null) {
+                //  if (destination != null) {
+                if (appState.navigationState.currentKey in appState.navigationState.topLevelKeys) {
                     shouldShowTopAppBar = true
+
+                    val destination = TOP_LEVEL_NAV_ITEMS[appState.navigationState.currentTopLevelKey]
+                        ?: error("Top level nav item not found for ${appState.navigationState.currentTopLevelKey}")
+
                     AppTopAppBar(
                         titleRes = destination.titleTextId,
                         navigationIcon = AppIcons.Search,
                         navigationIconContentDescription = stringResource(
-                            id = R.string.feature_settings_top_app_bar_navigation_icon_description,
+                            id = settingsR.string.feature_settings_impl_top_app_bar_navigation_icon_description,
                         ),
                         actionIcon = AppIcons.Settings,
                         actionIconContentDescription = stringResource(
-                            id = R.string.feature_settings_top_app_bar_action_icon_description,
+                            id = settingsR.string.feature_settings_impl_top_app_bar_action_icon_description,
                         ),
                         actionIconCategories = AppIcons.Category,
                         actionIconCategoriesContentDescription = stringResource(
@@ -247,7 +265,7 @@ internal fun JUApp(
                             containerColor = Color.Transparent,
                         ),
 
-                        onNavigationClick = { appState.navigateToSearch() },
+                        onNavigationClick = { navigator.navigate(SearchNavKey) },
                         onActionClick = { onTopAppBarActionClick() },
                         onCategoryActionClick = { onTopAppBarCategoryActionClick() },
                     )
@@ -263,19 +281,45 @@ internal fun JUApp(
                         },
                     ),
                 ) {
-                    AppNavHost(
-                        appState = appState,
-                        onShowSnackbar = { message, action ->
-                            snackbarHostState.showSnackbar(
-                                message = message,
-                                actionLabel = action,
-                                duration = Short,
-                            ) == ActionPerformed
-                        },
-                        showCategoryList = showCategoryList,
-                        clickedByUser = clickedByUser,
-                        windowAdaptiveInfo = windowAdaptiveInfo,
-                    )
+                    /*  AppNavHost(
+                          appState = appState,
+                          onShowSnackbar = { message, action ->
+                              snackbarHostState.showSnackbar(
+                                  message = message,
+                                  actionLabel = action,
+                                  duration = Short,
+                              ) == ActionPerformed
+                          },
+                          showCategoryList = showCategoryList,
+                          clickedByUser = clickedByUser,
+                          windowAdaptiveInfo = windowAdaptiveInfo,
+                      )*/
+
+                    val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
+
+                    val entryProvider = entryProvider {
+                        storeEntry(
+                            navigator = navigator,
+                            showCategoryListProvider = { appState.showCategoryList },
+                            clickedByUserProvider = { appState.clickedByUser },
+                        )
+                        cartEntry(navigator)
+                        trendingEntry(navigator)
+                        categoryEntry(navigator)
+                        searchEntry(navigator)
+                        chatEntry(navigator)
+                        productEntry(navigator)
+                    }
+
+                    SharedTransitionLayout {
+                        CompositionLocalProvider(LocalSharedTransitionScope provides this) {
+                            NavDisplay(
+                                entries = appState.navigationState.toEntries(entryProvider),
+                                sceneStrategy = listDetailStrategy,
+                                onBack = { navigator.goBack() },
+                            )
+                        }
+                    }
                 }
 
                 // TODO: We may want to add padding or spacer when the snackbar is shown so that
@@ -303,8 +347,3 @@ private fun Modifier.notificationDot(): Modifier =
             )
         }
     }
-
-private fun NavDestination?.isRouteInHierarchy(route: KClass<*>) =
-    this?.hierarchy?.any {
-        it.hasRoute(route)
-    } ?: false

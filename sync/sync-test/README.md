@@ -11,23 +11,25 @@ config:
     nodePlacementStrategy: SIMPLE
 ---
 graph TB
-  subgraph :core
-    direction TB
-    :core:common[common]:::jvm-library
-    :core:data[data]:::android-library
-    :core:database[database]:::android-library
-    :core:datastore[datastore]:::android-library
-    :core:datastore-proto[datastore-proto]:::android-library
-    :core:model[model]:::jvm-library
-    :core:network[network]:::android-library
-    :core:notifications[notifications]:::android-library
-  end
   subgraph :sync
     direction TB
     :sync:sync-test[sync-test]:::android-library
     :sync:work[work]:::android-library
   end
+  subgraph :core
+    direction TB
+    :core:analytics[analytics]:::android-library
+    :core:common[common]:::jvm-library
+    :core:data[data]:::android-library
+    :core:database[database]:::android-library
+    :core:datastore[datastore]:::android-library
+    :core:datastore-proto[datastore-proto]:::jvm-library
+    :core:model[model]:::jvm-library
+    :core:network[network]:::android-library
+    :core:notifications[notifications]:::android-library
+  end
 
+  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore
@@ -43,6 +45,7 @@ graph TB
   :core:notifications --> :core:model
   :sync:sync-test -.-> :core:data
   :sync:sync-test -.-> :sync:work
+  :sync:work -.-> :core:analytics
   :sync:work -.-> :core:data
   :sync:work -.-> :core:notifications
 
