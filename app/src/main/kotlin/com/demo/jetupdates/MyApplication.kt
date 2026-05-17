@@ -32,6 +32,10 @@ import javax.inject.Inject
  */
 @HiltAndroidApp
 class MyApplication : Application(), ImageLoaderFactory {
+    override fun onTerminate() {
+        super.onTerminate()
+    }
+
     @Inject
     lateinit var imageLoader: dagger.Lazy<ImageLoader>
 

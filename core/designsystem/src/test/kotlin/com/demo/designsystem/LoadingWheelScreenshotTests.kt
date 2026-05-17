@@ -20,11 +20,11 @@ import androidx.activity.ComponentActivity
 import androidx.compose.material3.Surface
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onRoot
-import com.demo.jetUpdates.core.testing.util.DefaultRoborazziOptions
-import com.demo.jetUpdates.core.testing.util.captureMultiTheme
 import com.demo.jetupdates.core.designsystem.component.AppLoadingWheel
 import com.demo.jetupdates.core.designsystem.component.AppOverlayLoadingWheel
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
+import com.demo.jetupdates.core.testing.util.DefaultRoborazziOptions
+import com.demo.jetupdates.core.testing.util.captureMultiTheme
 import com.github.takahirom.roborazzi.captureRoboImage
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule

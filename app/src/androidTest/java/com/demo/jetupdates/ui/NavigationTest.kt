@@ -18,6 +18,7 @@ package com.demo.jetupdates.ui
 
 import androidx.compose.ui.semantics.SemanticsActions.ScrollBy
 import androidx.compose.ui.test.assertCountEquals
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
@@ -36,6 +37,7 @@ import com.demo.jetupdates.core.data.repository.CategoriesRepository
 import com.demo.jetupdates.core.data.repository.ShopRepository
 import com.demo.jetupdates.core.model.data.Category
 import com.demo.jetupdates.core.rules.GrantPostNotificationsPermissionRule
+import com.demo.jetupdates.feature.trending.impl.LIST_PANE_TEST_TAG
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.flow.first
@@ -44,11 +46,10 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import javax.inject.Inject
-import com.demo.jetupdates.feature.cart.R as CartR
-import com.demo.jetupdates.feature.search.R as FeatureSearchR
-import com.demo.jetupdates.feature.settings.R as SettingsR
-import com.demo.jetupdates.feature.store.R as FeatureStoreR
-
+import com.demo.jetupdates.feature.cart.api.R as CartR
+import com.demo.jetupdates.feature.search.api.R as FeatureSearchR
+import com.demo.jetupdates.feature.settings.impl.R as SettingsR
+import com.demo.jetupdates.feature.store.api.R as FeatureStoreR
 /**
  * Tests all the navigation flows that are handled by the navigation library.
  */
@@ -80,15 +81,17 @@ class NavigationTest {
     lateinit var shopRepository: ShopRepository
 
     // The strings used for matching in these tests
-    private val navigateUp by composeTestRule.stringResource(FeatureStoreR.string.feature_store_navigate_up)
-    private val store by composeTestRule.stringResource(FeatureStoreR.string.feature_store_title)
-    private val trending by composeTestRule.stringResource(FeatureSearchR.string.feature_search_trending)
+    private val navigateUp by composeTestRule.stringResource(FeatureStoreR.string.feature_store_api_navigate_up)
+    private val store by composeTestRule.stringResource(FeatureStoreR.string.feature_store_api_title)
+    private val trending by composeTestRule.stringResource(FeatureSearchR.string.feature_search_api_trending)
+
     private val sampleCategory = "Fashion & Apparel"
     private val appName by composeTestRule.stringResource(R.string.app_name)
-    private val saved by composeTestRule.stringResource(CartR.string.feature_cart_title)
-    private val settings by composeTestRule.stringResource(SettingsR.string.feature_settings_top_app_bar_action_icon_description)
-    private val brand by composeTestRule.stringResource(SettingsR.string.feature_settings_brand_android)
-    private val ok by composeTestRule.stringResource(SettingsR.string.feature_settings_dismiss_dialog_button_text)
+
+    private val saved by composeTestRule.stringResource(CartR.string.feature_cart_api_title)
+    private val settings by composeTestRule.stringResource(SettingsR.string.feature_settings_impl_top_app_bar_action_icon_description)
+    private val brand by composeTestRule.stringResource(SettingsR.string.feature_settings_impl_brand_android)
+    private val ok by composeTestRule.stringResource(SettingsR.string.feature_settings_impl_dismiss_dialog_button_text)
 
     @Before
     fun setup() = hiltRule.inject()
@@ -262,8 +265,13 @@ class NavigationTest {
             val category = runBlocking {
                 categoriesRepository.getCategories().first().sortedBy(Category::name).last()
             }
-            onNodeWithTag("trending:categories").performScrollToNode(hasText(category.name))
+            // onNodeWithTag("trending:categories").performScrollToNode(hasText(category.name))
+            // new TAG nav3
+            onNodeWithTag(LIST_PANE_TEST_TAG).performScrollToNode(hasText(category.name))
             onNodeWithText(category.name).performClick()
+
+            // Verify the category is still shown
+            onNodeWithTag("category:${category.id}").assertIsDisplayed()
 
             // Switch tab
             onNodeWithText(store).performClick()
