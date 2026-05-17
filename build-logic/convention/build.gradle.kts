@@ -78,10 +78,20 @@ gradlePlugin {
             id = libs.plugins.jetupdates.android.library.asProvider().get().pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        register("androidFeature") {
+      /*  register("androidFeature") {
             id = libs.plugins.jetupdates.android.feature.get().pluginId
             implementationClass = "AndroidFeatureConventionPlugin"
+        }*/
+
+        register("androidFeatureImpl") {
+            id = libs.plugins.jetupdates.android.feature.impl.get().pluginId
+            implementationClass = "AndroidFeatureImplConventionPlugin"
         }
+        register("androidFeatureApi") {
+            id = libs.plugins.jetupdates.android.feature.api.get().pluginId
+            implementationClass = "AndroidFeatureApiConventionPlugin"
+        }
+
         register("androidLibraryJacoco") {
             id = libs.plugins.jetupdates.android.library.jacoco.get().pluginId
             implementationClass = "AndroidLibraryJacocoConventionPlugin"

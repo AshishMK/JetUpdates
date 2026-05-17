@@ -35,4 +35,3 @@ fun MacrobenchmarkScope.goToCartScreen() {
 fun MacrobenchmarkScope.cartWaitForCategories() { // may need later
     device.wait(Until.hasObject(By.text("Random")), 5_000)
 }
-

@@ -254,7 +254,7 @@ fun ItemResourceCardForList2(
                     boundsTransform = snackDetailBoundsTransform,
                     enter = fadeIn(nonSpatialExpressiveSpring()),
                     exit = fadeOut(nonSpatialExpressiveSpring()),
-                    resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds(),
+                    resizeMode = SharedTransitionScope.ResizeMode.scaleToBounds(),
                 ),
             ) {
                 if (userShopItem.images.isNotEmpty() && !userShopItem.images[0].isNullOrEmpty()) {
@@ -304,7 +304,7 @@ fun ItemResourceCardForList2(
                                         enter = fadeIn(nonSpatialExpressiveSpring()),
                                         exit = fadeOut(nonSpatialExpressiveSpring()),
                                         boundsTransform = snackDetailBoundsTransform,
-                                        resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds(),
+                                        resizeMode = SharedTransitionScope.ResizeMode.scaleToBounds(),
                                     )
                                     .fillMaxWidth(),
                                 // .fillMaxWidth((.8f))
@@ -341,7 +341,7 @@ fun ItemResourceCardForList2(
                                         enter = fadeIn(nonSpatialExpressiveSpring()),
                                         exit = fadeOut(nonSpatialExpressiveSpring()),
                                         boundsTransform = snackDetailBoundsTransform,
-                                        resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds(),
+                                        resizeMode = SharedTransitionScope.ResizeMode.scaleToBounds(),
                                     ),
                                     publishDate = userShopItem.price.toInt().toString() + "$",
                                     resourceType = userShopItem.type,
