@@ -66,7 +66,7 @@ class DelegatingWorker(
         workerParams.inputData.getString(WORKER_CLASS_NAME) ?: ""
 
     private val delegateWorker =
-        EntryPointAccessors.fromApplication<HiltWorkerFactoryEntryPoint>(appContext)
+        EntryPointAccessors.fromApplication<HiltWorkerFactoryEntryPoint>(appContext) // hitl class  EntryPointAccessors
             .hiltWorkerFactory()
             .createWorker(appContext, workerClassName, workerParams)
             as? CoroutineWorker

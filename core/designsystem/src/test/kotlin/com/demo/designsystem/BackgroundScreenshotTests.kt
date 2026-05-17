@@ -22,8 +22,8 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.unit.dp
-import com.demo.jetUpdates.core.testing.util.captureMultiTheme
 import com.demo.jetupdates.core.designsystem.component.AppBackground
+import com.demo.jetupdates.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
 import org.junit.Test

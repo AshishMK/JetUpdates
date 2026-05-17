@@ -40,6 +40,10 @@ jobs:
       - name: Get keys.properties from secrets
         run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
 
+      #see bookmarks https://medium.com/@vontonnie/secure-api-keys-in-android-projects-f8eb4839701d
+      - name: Get keys.properties from secrets
+        run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -81,27 +85,28 @@ jobs:
           disable_globbing: true
           commit_message: "🤖 Updates baselines for Dependency Guard"
 
-      - name: Update Graphs
-        run: ./gradlew graphUpdate
-
-      - name: Check Graphs
-        id: graphs_verify
-        run: git add -- '**/README.md' && git diff --cached --quiet --exit-code -- '**/README.md'
-
-      - name: Prevent updating graphs if this is a fork
-        id: checkfork_graphs
-        continue-on-error: false
-        if: steps.graphs_verify.outcome == 'failure' && github.event.pull_request.head.repo.full_name != github.repository
-        run: |
-          echo "::error::Check Graphs failed, please update graphs with: ./gradlew graphUpdate" && exit 1
-
-      - name: Push new graphs if available
-        if: steps.graphs_verify.outcome == 'failure' && github.event_name == 'pull_request'
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: '**/README.md'
-          disable_globbing: true
-          commit_message: "🤖 Updates graphs"
+      # See https://github.com/android/nowinandroid/issues/2005
+      #      - name: Update Graphs
+      #        run: ./gradlew graphUpdate
+      #
+      #      - name: Check Graphs
+      #        id: graphs_verify
+      #        run: git add -- "**/README.md" && git diff --cached --quiet --exit-code -- "**/README.md"
+      #
+      #      - name: Prevent updating graphs if this is a fork
+      #        id: checkfork_graphs
+      #        continue-on-error: false
+      #        if: steps.graphs_verify.outcome == 'failure' && github.event.pull_request.head.repo.full_name != github.repository
+      #        run: |
+      #          echo "::error::Check Graphs failed, please update graphs with: ./gradlew graphUpdate" && exit 1
+      #
+      #      - name: Push new graphs if available
+      #        if: steps.graphs_verify.outcome == 'failure' && github.event_name == 'pull_request'
+      #        uses: stefanzweifel/git-auto-commit-action@v5
+      #        with:
+      #          file_pattern: '**/README.md'
+      #          disable_globbing: true
+      #          commit_message: "🤖 Updates graphs"
 
       - name: Run all local screenshot tests (Roborazzi)
         id: screenshotsverify
@@ -128,8 +133,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         if: steps.screenshotsrecord.outcome == 'success'
         with:
-          file_pattern: '*/*.png'
-          disable_globbing: true
+          file_pattern: '**/*.png' # Changed from '*/*.png' to '**/*.png' gemini
+          disable_globbing: false  # Changed to false to allow recursive matching by gemini
           commit_message: "🤖 Updates screenshots"
 
       # Run local tests after screenshot tests to avoid wrong UP-TO-DATE. TODO: Ignore screenshots.
@@ -191,7 +196,7 @@ jobs:
     timeout-minutes: 55
     strategy:
       matrix:
-        api-level: [26, 34]
+        api-level: [ 26, 34 ]
 
     steps:
       - name: Delete unnecessary tools 🔧

@@ -28,13 +28,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
-import com.demo.jetUpdates.core.testing.util.DefaultRoborazziOptions
 import com.demo.jetupdates.core.data.repository.CategoriesRepository
 import com.demo.jetupdates.core.data.repository.UserDataRepository
 import com.demo.jetupdates.core.data.repository.UserShopItemRepository
 import com.demo.jetupdates.core.data.util.NetworkMonitor
 import com.demo.jetupdates.core.data.util.TimeZoneMonitor
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
+import com.demo.jetupdates.core.testing.util.DefaultRoborazziOptions
 import com.demo.jetupdates.uitesthiltmanifest.HiltComponentActivity
 import com.github.takahirom.roborazzi.captureRoboImage
 import dagger.hilt.android.testing.HiltAndroidRule

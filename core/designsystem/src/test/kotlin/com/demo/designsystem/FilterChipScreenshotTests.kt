@@ -29,11 +29,11 @@ import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.then
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import com.demo.jetUpdates.core.testing.util.DefaultRoborazziOptions
-import com.demo.jetUpdates.core.testing.util.captureMultiTheme
 import com.demo.jetupdates.core.designsystem.component.AppBackground
 import com.demo.jetupdates.core.designsystem.component.AppFilterChip
 import com.demo.jetupdates.core.designsystem.theme.AppTheme
+import com.demo.jetupdates.core.testing.util.DefaultRoborazziOptions
+import com.demo.jetupdates.core.testing.util.captureMultiTheme
 import com.github.takahirom.roborazzi.captureRoboImage
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
