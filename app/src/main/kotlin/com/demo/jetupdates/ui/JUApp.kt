@@ -167,8 +167,8 @@ internal fun JUApp(
     val snackbarHostState = LocalSnackbarHostState.current
 
     val navigator = remember { Navigator(appState.navigationState) }
-
-    val hideBottomBar = appState.navigationState.currentSubStack.last() is ProductNavKey && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+    val hideBottomBar = appState.navigationState.currentKey !in appState.navigationState.topLevelKeys && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+    //val hideBottomBar = appState.navigationState.currentSubStack.last() is ProductNavKey && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
     Log.v("hideBottomBar", "hideBottomBar $hideBottomBar ${appState.navigationState.currentSubStack.last()}")
     // currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
 
