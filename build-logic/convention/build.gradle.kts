@@ -37,7 +37,7 @@ kotlin {
 }
 
 dependencies {
-    compileOnly(libs.android.gradleApiPlugin)
+    compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.android.tools.common)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.firebase.crashlytics.gradlePlugin)
@@ -46,6 +46,7 @@ dependencies {
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.room.gradlePlugin)
     implementation(libs.truth)
+    compileOnly(libs.spotless.gradlePlugin)
    // lintChecks(libs.androidx.lint.gradle)
 }
 

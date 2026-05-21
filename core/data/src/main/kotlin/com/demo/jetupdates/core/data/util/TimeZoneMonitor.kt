@@ -23,9 +23,9 @@ import android.content.IntentFilter
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import androidx.tracing.trace
-import com.demo.jetupdates.core.network.AppDispatchers.IO
-import com.demo.jetupdates.core.network.Dispatcher
-import com.demo.jetupdates.core.network.di.ApplicationScope
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
+import com.demo.jetupdates.core.common.network.di.ApplicationScope
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

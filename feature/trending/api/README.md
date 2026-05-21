@@ -13,9 +13,9 @@ config:
 graph TB
   subgraph :feature
     direction TB
-    subgraph :feature:interests
+    subgraph :feature:trending
       direction TB
-      :feature:interests:api[api]:::android-library
+      :feature:trending:api[api]:::android-library
     end
   end
   subgraph :core
@@ -23,7 +23,7 @@ graph TB
     :core:navigation[navigation]:::android-library
   end
 
-  :feature:interests:api --> :core:navigation
+  :feature:trending:api --> :core:navigation
 
 classDef android-application fill:#CAFFBF,stroke:#000,stroke-width:2px,color:#000;
 classDef android-feature fill:#FFD6A5,stroke:#000,stroke-width:2px,color:#000;
