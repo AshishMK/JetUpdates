@@ -110,7 +110,6 @@ jobs:
 
       - name: Check Graphs
         id: graphs_verify
-        continue-on-error: true
         run: git add -- "**/README.md" && git diff --cached --quiet --exit-code -- "**/README.md"
 
       - name: Prevent updating graphs if this is a fork
@@ -141,6 +140,7 @@ jobs:
           echo "::error::Screenshot tests failed, please create a PR in your fork first." 
           echo "Your fork's CI will take screenshots for your fork."
           exit 1
+
 
       # Runs if previous job failed
       - name: Generate new screenshots if verification failed and it's a PR
