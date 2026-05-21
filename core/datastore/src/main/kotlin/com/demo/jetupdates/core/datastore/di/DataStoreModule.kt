@@ -20,11 +20,11 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.dataStoreFile
-import com.demo.jetupdates.core.datastore.UserPreferences
-import com.demo.jetupdates.core.datastore.UserPreferencesSerializer
 import com.demo.jetupdates.core.common.network.AppDispatchers.IO
 import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.common.network.di.ApplicationScope
+import com.demo.jetupdates.core.datastore.UserPreferences
+import com.demo.jetupdates.core.datastore.UserPreferencesSerializer
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
