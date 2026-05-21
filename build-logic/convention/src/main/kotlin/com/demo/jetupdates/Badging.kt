@@ -1,24 +1,22 @@
 /*
  * Copyright 2023 The Android Open Source Project
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *       https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.demo.jetupdates
 
-import com.android.SdkConstants
 import com.android.build.api.artifact.SingleArtifact
-import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.Aapt2
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.google.common.truth.Truth.assertWithMessage
@@ -28,7 +26,6 @@ import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.CacheableTask
-import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputDirectory
@@ -121,30 +118,34 @@ fun Project.configureBadgingTasks(
         val generateBadging =
             tasks.register<GenerateBadgingTask>(generateBadgingTaskName) {
                 apk = variant.artifacts.get(SingleArtifact.APK_FROM_BUNDLE)
-              /*
-               in earlier versions pull 2017
-               aapt2Executable.set(
-                    // TODO: Replace with `sdkComponents.aapt2` when it's available in AGP
-                    //       https://issuetracker.google.com/issues/376815836
-                    componentsExtension.sdkComponents.sdkDirectory.map { directory ->
-                        directory.file(
-                            "${SdkConstants.FD_BUILD_TOOLS}/" +
-                                "${baseExtension.buildToolsVersion}/" +
-                                SdkConstants.FN_AAPT2,
-                        )
-                    }
-                )*/
+                /*
+             in earlier versions
+             aapt2Executable.set(
+                  // TODO: Replace with `sdkComponents.aapt2` when it's available in AGP
+                  //       https://issuetracker.google.com/issues/376815836
+                  componentsExtension.sdkComponents.sdkDirectory.map { directory ->
+                      directory.file(
+                          "${SdkConstants.FD_BUILD_TOOLS}/" +
+                              "${baseExtension.buildToolsVersion}/" +
+                              SdkConstants.FN_AAPT2,
+                      )
+                  }
+              )*/
                 aapt2Executable = componentsExtension.sdkComponents.aapt2.flatMap(Aapt2::executable)
                 badging = project.layout.buildDirectory.file(
                     "outputs/apk_from_bundle/${variant.name}/${variant.name}-badging.txt",
                 )
-
             }
 
         val updateBadgingTaskName = "update${capitalizedVariantName}Badging"
-        tasks.register<Copy>(updateBadgingTaskName) {
-            from(generateBadging.map(GenerateBadgingTask::badging))
-            into(project.layout.projectDirectory)
+        tasks.register(updateBadgingTaskName) {
+            val badgingFile = generateBadging.flatMap(GenerateBadgingTask::badging)
+            val output = project.layout.projectDirectory.file("${variant.name}-badging.txt")
+            inputs.file(badgingFile)
+            outputs.file(output)
+            doLast {
+                badgingFile.get().asFile.copyTo(output.asFile, overwrite = true)
+            }
         }
 
         val checkBadgingTaskName = "check${capitalizedVariantName}Badging"
@@ -156,7 +157,6 @@ fun Project.configureBadgingTasks(
             this.updateBadgingTaskName = updateBadgingTaskName
 
             output = project.layout.buildDirectory.dir("intermediates/$checkBadgingTaskName")
-
         }
     }
 }

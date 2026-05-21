@@ -79,7 +79,6 @@ import com.demo.jetupdates.core.ui.LocalSnackbarHostState
 import com.demo.jetupdates.feature.cart.impl.navigation.cartEntry
 import com.demo.jetupdates.feature.category.impl.navigation.categoryEntry
 import com.demo.jetupdates.feature.chat.impl.navigation.chatEntry
-import com.demo.jetupdates.feature.product.api.navigation.ProductNavKey
 import com.demo.jetupdates.feature.product.impl.navigation.productEntry
 import com.demo.jetupdates.feature.search.impl.navigation.searchEntry
 import com.demo.jetupdates.feature.settings.impl.SettingsDialog
@@ -168,7 +167,7 @@ internal fun JUApp(
 
     val navigator = remember { Navigator(appState.navigationState) }
     val hideBottomBar = appState.navigationState.currentKey !in appState.navigationState.topLevelKeys && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
-    //val hideBottomBar = appState.navigationState.currentSubStack.last() is ProductNavKey && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
+    // val hideBottomBar = appState.navigationState.currentSubStack.last() is ProductNavKey && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
     Log.v("hideBottomBar", "hideBottomBar $hideBottomBar ${appState.navigationState.currentSubStack.last()}")
     // currentDestination?.hasRoute(route = ProductRoute::class) ?: false && windowAdaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT
 

@@ -25,8 +25,8 @@ import android.net.NetworkRequest
 import android.net.NetworkRequest.Builder
 import androidx.core.content.getSystemService
 import androidx.tracing.trace
-import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.channels.awaitClose

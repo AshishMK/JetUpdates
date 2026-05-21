@@ -24,14 +24,14 @@ import androidx.work.ForegroundInfo
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.OutOfQuotaPolicy
 import androidx.work.WorkerParameters
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.data.Synchronizer
 import com.demo.jetupdates.core.data.repository.CategoriesRepository
 import com.demo.jetupdates.core.data.repository.SearchContentsRepository
 import com.demo.jetupdates.core.data.repository.ShopRepository
 import com.demo.jetupdates.core.datastore.AppPreferencesDataSource
 import com.demo.jetupdates.core.datastore.ChangeListVersions
-import com.demo.jetupdates.core.common.network.AppDispatchers.IO
-import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.sync.initializers.SyncConstraints
 import com.demo.jetupdates.sync.initializers.syncForegroundInfo
 import com.demo.jetupdates.sync.status.SyncSubscriber

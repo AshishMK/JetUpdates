@@ -16,11 +16,11 @@
 
 package com.demo.jetupdates.core.data.test.repository
 
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.data.Synchronizer
 import com.demo.jetupdates.core.data.repository.CategoriesRepository
 import com.demo.jetupdates.core.model.data.Category
-import com.demo.jetupdates.core.common.network.AppDispatchers.IO
-import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.network.demo.DemoAppNetworkDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow

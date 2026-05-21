@@ -83,7 +83,6 @@ internal fun Project.configureJacoco(
                 "create${variant.name.capitalize()}CombinedCoverageReport",
                 JacocoReport::class,
             ) {
-
                 classDirectories.setFrom(
                     allJars,
                     allDirectories.map { dirs ->
@@ -116,7 +115,6 @@ internal fun Project.configureJacoco(
                         .matching { include("**/*.ec") },
                 )
             }
-
 
         variant.artifacts.forScope(ScopedArtifacts.Scope.PROJECT)
             .use(reportTask)
