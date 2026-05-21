@@ -25,8 +25,8 @@ import com.demo.jetupdates.core.data.repository.UserShopItemRepository
 import com.demo.jetupdates.core.model.data.Category
 import com.demo.jetupdates.core.model.data.FollowableCategory2
 import com.demo.jetupdates.core.model.data.UserShopItem
-import com.demo.jetupdates.core.result.Result
-import com.demo.jetupdates.core.result.asResult
+import com.demo.jetupdates.core.common.result.Result
+import com.demo.jetupdates.core.common.result.asResult
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject

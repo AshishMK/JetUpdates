@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.demo.jetupdates.core.network.di
+package com.demo.jetupdates.core.common.network.di
 
-import com.demo.jetupdates.core.network.AppDispatchers.Default
-import com.demo.jetupdates.core.network.Dispatcher
+import com.demo.jetupdates.core.common.network.AppDispatchers.Default
+import com.demo.jetupdates.core.common.network.Dispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
