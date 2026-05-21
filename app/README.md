@@ -11,6 +11,25 @@ config:
     nodePlacementStrategy: SIMPLE
 ---
 graph TB
+  subgraph :sync
+    direction TB
+    :sync:work[work]:::android-library
+  end
+  subgraph :core
+    direction TB
+    :core:common[common]:::jvm-library
+    :core:data[data]:::android-library
+    :core:database[database]:::android-library
+    :core:datastore[datastore]:::android-library
+    :core:datastore-proto[datastore-proto]:::jvm-library
+    :core:designsystem[designsystem]:::android-library
+    :core:domain[domain]:::android-library
+    :core:model[model]:::jvm-library
+    :core:navigation[navigation]:::android-library
+    :core:network[network]:::android-library
+    :core:notifications[notifications]:::android-library
+    :core:ui[ui]:::android-library
+  end
   subgraph :feature
     direction TB
     subgraph :feature:settings
@@ -32,16 +51,6 @@ graph TB
       :feature:search:api[api]:::android-library
       :feature:search:impl[impl]:::android-library
     end
-    subgraph :feature:category
-      direction TB
-      :feature:category:api[api]:::android-library
-      :feature:category:impl[impl]:::android-library
-    end
-    subgraph :feature:product
-      direction TB
-      :feature:product:api[api]:::android-library
-      :feature:product:impl[impl]:::android-library
-    end
     subgraph :feature:chat
       direction TB
       :feature:chat:api[api]:::android-library
@@ -52,28 +61,16 @@ graph TB
       :feature:trending:api[api]:::android-library
       :feature:trending:impl[impl]:::android-library
     end
-  end
-  subgraph :sync
-    direction TB
-    :sync:work[work]:::android-library
-  end
-  subgraph :core
-    direction TB
-    :core:common[common]:::jvm-library
-    :core:data[data]:::android-library
-    :core:database[database]:::android-library
-    :core:datastore[datastore]:::android-library
-    :core:datastore-proto[datastore-proto]:::android-library
-    :core:designsystem[designsystem]:::android-library
-    :core:domain[domain]:::android-library
-    :core:model[model]:::jvm-library
-    :core:network[network]:::android-library
-    :core:notifications[notifications]:::android-library
-    :core:ui[ui]:::android-library
-  end
-  subgraph :sync
-    direction TB
-    :sync:work[work]:::android-library
+    subgraph :feature:category
+      direction TB
+      :feature:category:api[api]:::android-library
+      :feature:category:impl[impl]:::android-library
+    end
+    subgraph :feature:product
+      direction TB
+      :feature:product:api[api]:::android-library
+      :feature:product:impl[impl]:::android-library
+    end
   end
   :benchmarks[benchmarks]:::android-test
   :app[app]:::android-application
@@ -88,11 +85,11 @@ graph TB
   :app -.-> :feature:category:impl
   :app -.-> :feature:chat:api
   :app -.-> :feature:chat:impl
+  :app -.-> :feature:product:api
+  :app -.-> :feature:product:impl
   :app -.-> :feature:search:api
   :app -.-> :feature:search:impl
   :app -.-> :feature:settings:impl
-  :app -.-> :feature:product:api
-  :app -.-> :feature:product:impl
   :app -.-> :feature:store:api
   :app -.-> :feature:store:impl
   :app -.-> :feature:trending:api
@@ -121,38 +118,14 @@ graph TB
   :feature:cart:impl -.-> :core:designsystem
   :feature:cart:impl -.-> :core:ui
   :feature:cart:impl -.-> :feature:cart:api
-  :feature:cart:impl -.-> :feature:category:api
-  :feature:store:api --> :core:navigation
-  :feature:store:impl -.-> :core:designsystem
-  :feature:store:impl -.-> :core:domain
-  :feature:store:impl -.-> :core:notifications
-  :feature:store:impl -.-> :core:ui
-  :feature:store:impl -.-> :feature:store:api
-  :feature:store:impl -.-> :feature:category:api
-  :feature:trending:api --> :core:navigation
-  :feature:trending:impl -.-> :core:designsystem
-  :feature:trending:impl -.-> :core:domain
-  :feature:trending:impl -.-> :core:ui
-  :feature:trending:impl -.-> :feature:trending:api
-  :feature:trending:impl -.-> :feature:category:api
-  :feature:search:api -.-> :core:domain
-  :feature:search:api --> :core:navigation
-  :feature:search:impl -.-> :core:designsystem
-  :feature:search:impl -.-> :core:domain
-  :feature:search:impl -.-> :core:ui
-  :feature:search:impl -.-> :feature:trending:api
-  :feature:search:impl -.-> :feature:search:api
-  :feature:search:impl -.-> :feature:category:api
-  :feature:settings:impl -.-> :core:data
-  :feature:settings:impl -.-> :core:designsystem
-  :feature:settings:impl -.-> :core:ui
-  :feature:category:api -.-> :core:designsystem
+  :feature:cart:impl -.-> :feature:product:api
   :feature:category:api --> :core:navigation
-  :feature:category:api -.-> :core:ui
   :feature:category:impl -.-> :core:data
   :feature:category:impl -.-> :core:designsystem
+  :feature:category:impl --> :core:ui
   :feature:category:impl -.-> :core:ui
   :feature:category:impl -.-> :feature:category:api
+  :feature:category:impl -.-> :feature:product:api
   :feature:chat:api --> :core:navigation
   :feature:chat:impl -.-> :core:data
   :feature:chat:impl -.-> :core:designsystem
@@ -163,7 +136,34 @@ graph TB
   :feature:product:impl -.-> :core:designsystem
   :feature:product:impl -.-> :core:ui
   :feature:product:impl -.-> :feature:product:api
-  
+  :feature:search:api -.-> :core:domain
+  :feature:search:api --> :core:navigation
+  :feature:search:impl -.-> :core:data
+  :feature:search:impl -.-> :core:designsystem
+  :feature:search:impl -.-> :core:domain
+  :feature:search:impl -.-> :core:ui
+  :feature:search:impl -.-> :feature:category:api
+  :feature:search:impl -.-> :feature:product:api
+  :feature:search:impl -.-> :feature:search:api
+  :feature:search:impl -.-> :feature:trending:api
+  :feature:settings:impl -.-> :core:data
+  :feature:settings:impl -.-> :core:designsystem
+  :feature:settings:impl -.-> :core:ui
+  :feature:store:api --> :core:navigation
+  :feature:store:impl -.-> :core:data
+  :feature:store:impl -.-> :core:designsystem
+  :feature:store:impl -.-> :core:domain
+  :feature:store:impl -.-> :core:notifications
+  :feature:store:impl -.-> :core:ui
+  :feature:store:impl -.-> :feature:product:api
+  :feature:store:impl -.-> :feature:store:api
+  :feature:trending:api --> :core:navigation
+  :feature:trending:impl -.-> :core:data
+  :feature:trending:impl -.-> :core:designsystem
+  :feature:trending:impl -.-> :core:domain
+  :feature:trending:impl -.-> :core:ui
+  :feature:trending:impl -.-> :feature:category:api
+  :feature:trending:impl -.-> :feature:trending:api
   :sync:work -.-> :core:data
   :sync:work -.-> :core:notifications
 

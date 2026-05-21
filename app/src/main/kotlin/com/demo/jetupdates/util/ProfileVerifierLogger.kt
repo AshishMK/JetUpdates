@@ -18,7 +18,7 @@ package com.demo.jetupdates.util
 
 import android.util.Log
 import androidx.profileinstaller.ProfileVerifier
-import com.demo.jetupdates.core.network.di.ApplicationScope
+import com.demo.jetupdates.core.common.network.di.ApplicationScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.guava.await
 import kotlinx.coroutines.launch
@@ -49,7 +49,7 @@ import javax.inject.Inject
  * @see androidx.profileinstaller.ProfileVerifier.CompilationStatus.ResultCode
  */
 class ProfileVerifierLogger @Inject constructor(
-    @ApplicationScope private val scope: CoroutineScope,
+    @param:ApplicationScope private val scope: CoroutineScope,
 ) {
     companion object {
         private const val TAG = "ProfileInstaller"

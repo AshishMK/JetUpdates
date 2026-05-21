@@ -16,13 +16,13 @@
 
 package com.demo.jetupdates.core.data.test.repository
 
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.data.Synchronizer
 import com.demo.jetupdates.core.data.model.asExternalModel
 import com.demo.jetupdates.core.data.repository.ShopItemQuery
 import com.demo.jetupdates.core.data.repository.ShopRepository
 import com.demo.jetupdates.core.model.data.ShopItem
-import com.demo.jetupdates.core.network.AppDispatchers.IO
-import com.demo.jetupdates.core.network.Dispatcher
 import com.demo.jetupdates.core.network.demo.DemoAppNetworkDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
