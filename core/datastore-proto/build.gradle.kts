@@ -42,3 +42,4 @@ protobuf {
 dependencies {
     api(libs.protobuf.kotlin.lite)
 }
+
