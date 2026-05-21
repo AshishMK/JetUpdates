@@ -19,9 +19,9 @@ package com.demo.jetupdates.core.network.demo
 import JvmUnitTestDemoAssetManager
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.M
-import com.demo.jetupdates.core.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.network.AppNetworkDataSource
-import com.demo.jetupdates.core.network.Dispatcher
 import com.demo.jetupdates.core.network.model.NetworkCategory
 import com.demo.jetupdates.core.network.model.NetworkChangeList
 import com.demo.jetupdates.core.network.model.NetworkShopItem

@@ -55,7 +55,6 @@ import kotlin.collections.partition
 import kotlin.collections.plus
 import kotlin.collections.plusAssign
 import kotlin.collections.sorted
-import kotlin.collections.sortedByDescending
 import kotlin.collections.sortedDescending
 import kotlin.collections.sortedWith
 import kotlin.collections.toSet
@@ -233,7 +232,6 @@ private abstract class GraphDumpTask : DefaultTask() {
             .plus(projectPath.get()) // Special case when this specific module has no other dependency
             .groupBy { it.substringBeforeLast(":") }
             .entries.partition { it.key.isEmpty() }
-
 
         val orderedGroups = nestedProjects.groupBy {
             if (it.key.count { char -> char == ':' } > 1) it.key.substringBeforeLast(":") else ""

@@ -32,8 +32,8 @@ android {
 
     defaultConfig {
         applicationId = "com.demo.jetupdates"
-        versionCode = 3
-        versionName = "2.0.1"
+        versionCode = 4
+        versionName = "2.0.2"
 
         testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
