@@ -58,7 +58,6 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
-            signingConfig = signingConfigs.getByName("myKey")
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
