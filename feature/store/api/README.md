@@ -13,9 +13,9 @@ config:
 graph TB
   subgraph :feature
     direction TB
-    subgraph :feature:foryou
+    subgraph :feature:store
       direction TB
-      :feature:foryou:api[api]:::android-library
+      :feature:store:api[api]:::android-library
     end
   end
   subgraph :core
@@ -23,7 +23,7 @@ graph TB
     :core:navigation[navigation]:::android-library
   end
 
-  :feature:foryou:api --> :core:navigation
+  :feature:store:api --> :core:navigation
 
 classDef android-application fill:#CAFFBF,stroke:#000,stroke-width:2px,color:#000;
 classDef android-feature fill:#FFD6A5,stroke:#000,stroke-width:2px,color:#000;

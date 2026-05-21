@@ -17,8 +17,8 @@
 package com.demo.jetupdates.core.result
 
 import app.cash.turbine.test
-import com.demo.jetupdates.core.result.Result
-import com.demo.jetupdates.core.result.asResult
+import com.demo.jetupdates.core.common.result.Result
+import com.demo.jetupdates.core.common.result.asResult
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Test

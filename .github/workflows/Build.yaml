@@ -40,10 +40,6 @@ jobs:
       - name: Get keys.properties from secrets
         run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
 
-      #see bookmarks https://medium.com/@vontonnie/secure-api-keys-in-android-projects-f8eb4839701d
-      - name: Get keys.properties from secrets
-        run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -56,7 +52,7 @@ jobs:
         run: ./gradlew :build-logic:convention:check
 
       - name: Check spotless
-        run: ./gradlew spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache
+        run: ./gradlew spotlessCheck
 
       - name: Check Dependency Guard
         id: dependencyguard_verify
@@ -108,6 +104,29 @@ jobs:
       #          disable_globbing: true
       #          commit_message: "🤖 Updates graphs"
 
+      - name: Update Graphs
+        run: ./gradlew graphUpdate
+        continue-on-error: true
+
+      - name: Check Graphs
+        id: graphs_verify
+        run: git add -- "**/README.md" && git diff --cached --quiet --exit-code -- "**/README.md"
+
+      - name: Prevent updating graphs if this is a fork
+        id: checkfork_graphs
+        continue-on-error: false
+        if: steps.graphs_verify.outcome == 'failure' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          echo "::error::Check Graphs failed, please update graphs with: ./gradlew graphUpdate" && exit 1
+
+      - name: Push new graphs if available
+        if: steps.graphs_verify.outcome == 'failure' && github.event_name == 'pull_request'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: '**/README.md'
+          disable_globbing: true
+          commit_message: "🤖 Updates graphs"
+
       - name: Run all local screenshot tests (Roborazzi)
         id: screenshotsverify
         continue-on-error: true
@@ -121,6 +140,7 @@ jobs:
           echo "::error::Screenshot tests failed, please create a PR in your fork first." 
           echo "Your fork's CI will take screenshots for your fork."
           exit 1
+
 
       # Runs if previous job failed
       - name: Generate new screenshots if verification failed and it's a PR

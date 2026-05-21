@@ -21,7 +21,6 @@ graph TB
   end
   subgraph :core
     direction TB
-    :core:analytics[analytics]:::android-library
     :core:common[common]:::jvm-library
     :core:data[data]:::android-library
     :core:database[database]:::android-library
@@ -35,7 +34,6 @@ graph TB
     :core:ui[ui]:::android-library
   end
 
-  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore
@@ -49,15 +47,13 @@ graph TB
   :core:network --> :core:model
   :core:notifications -.-> :core:common
   :core:notifications --> :core:model
-  :core:ui --> :core:analytics
   :core:ui --> :core:designsystem
   :core:ui --> :core:model
-  :feature:chat:api -.-> :core:designsystem
   :feature:chat:api --> :core:navigation
-  :feature:chat:api -.-> :core:ui
   :feature:chat:impl -.-> :core:data
   :feature:chat:impl -.-> :core:designsystem
   :feature:chat:impl -.-> :core:ui
+  :feature:chat:impl -.-> :feature:chat:api
 
 classDef android-application fill:#CAFFBF,stroke:#000,stroke-width:2px,color:#000;
 classDef android-feature fill:#FFD6A5,stroke:#000,stroke-width:2px,color:#000;
