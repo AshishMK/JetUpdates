@@ -16,10 +16,10 @@
 
 package com.demo.jetupdates.core.testing.di
 
-import com.demo.jetupdates.core.network.AppDispatchers.Default
-import com.demo.jetupdates.core.network.AppDispatchers.IO
-import com.demo.jetupdates.core.network.Dispatcher
-import com.demo.jetupdates.core.network.di.DispatchersModule
+import com.demo.jetupdates.core.common.network.AppDispatchers.Default
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
+import com.demo.jetupdates.core.common.network.di.DispatchersModule
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.components.SingletonComponent

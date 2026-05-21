@@ -20,6 +20,7 @@ import com.demo.jetupdates.configureFlavors
 import com.demo.jetupdates.configureGradleManagedDevices
 import com.demo.jetupdates.configureKotlinAndroid
 import com.demo.jetupdates.configurePrintApksTask
+import com.demo.jetupdates.configureSpotlessForAndroid
 import com.demo.jetupdates.disableUnnecessaryAndroidTests
 import com.demo.jetupdates.libs
 import org.gradle.api.Plugin
@@ -27,19 +28,18 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import kotlin.text.get
 
-class AndroidLibraryConventionPlugin : Plugin<Project> {
+abstract class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "com.android.library")
-            apply(plugin = "org.jetbrains.kotlin.android")
             apply(plugin = "jetupdates.android.lint")
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
                 testOptions.targetSdk = 36
                 lint.targetSdk = 36
-                defaultConfig.targetSdk = 36
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testOptions.animationsDisabled = true
                 configureFlavors(this)
@@ -54,10 +54,11 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 configurePrintApksTask(this)
                 disableUnnecessaryAndroidTests(target)
             }
+            configureSpotlessForAndroid()
             dependencies {
                 "androidTestImplementation"(libs.findLibrary("kotlin.test").get())
                 "testImplementation"(libs.findLibrary("kotlin.test").get())
-
+                "testImplementation"(libs.findLibrary("junit").get())
                 "implementation"(libs.findLibrary("androidx.tracing.ktx").get())
             }
         }

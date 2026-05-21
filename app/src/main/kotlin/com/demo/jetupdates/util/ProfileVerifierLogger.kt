@@ -18,7 +18,7 @@ package com.demo.jetupdates.util
 
 import android.util.Log
 import androidx.profileinstaller.ProfileVerifier
-import com.demo.jetupdates.core.network.di.ApplicationScope
+import com.demo.jetupdates.core.common.network.di.ApplicationScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.guava.await
 import kotlinx.coroutines.launch

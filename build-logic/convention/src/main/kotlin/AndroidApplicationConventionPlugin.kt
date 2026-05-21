@@ -20,31 +20,31 @@ import com.demo.jetupdates.configureBadgingTasks
 import com.demo.jetupdates.configureGradleManagedDevices
 import com.demo.jetupdates.configureKotlinAndroid
 import com.demo.jetupdates.configurePrintApksTask
+import com.demo.jetupdates.configureSpotlessForAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.getByType
 
-class AndroidApplicationConventionPlugin : Plugin<Project> {
+abstract class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "com.android.application")
-            apply(plugin = "org.jetbrains.kotlin.android")
             apply(plugin = "jetupdates.android.lint")
             apply(plugin = "com.dropbox.dependency-guard")
 
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 36
-                @Suppress("UnstableApiUsage")
                 testOptions.animationsDisabled = true
                 configureGradleManagedDevices(this)
             }
             extensions.configure<ApplicationAndroidComponentsExtension> {
                 configurePrintApksTask(this)
-                configureBadgingTasks(extensions.getByType<ApplicationExtension>(), this)
+                configureBadgingTasks(this)
             }
+            configureSpotlessForAndroid()
         }
     }
 }

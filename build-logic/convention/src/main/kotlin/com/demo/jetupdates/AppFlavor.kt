@@ -5,10 +5,11 @@ import com.android.build.api.dsl.ApplicationProductFlavor
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.ProductFlavor
 import com.demo.jetupdates.FlavorDimension.contentType
+import org.gradle.kotlin.dsl.invoke
 
 @Suppress("EnumEntryName")
 enum class FlavorDimension {
-    contentType
+    contentType,
 }
 
 // The content for the app can either come from local static data which is useful for demo
@@ -21,20 +22,20 @@ enum class AppFlavor(val dimension: FlavorDimension, val applicationIdSuffix: St
 }
 
 fun configureFlavors(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
     flavorConfigurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {},
 ) {
     commonExtension.apply {
-        FlavorDimension.values().forEach { flavorDimension ->
+        FlavorDimension.entries.forEach { flavorDimension ->
             flavorDimensions += flavorDimension.name
         }
 
         productFlavors {
-            AppFlavor.values().forEach { appFlavor ->
+            AppFlavor.entries.forEach { appFlavor ->
                 register(appFlavor.name) {
                     dimension = appFlavor.dimension.name
                     flavorConfigurationBlock(this, appFlavor)
-                    if (this@apply is ApplicationExtension && this is ApplicationProductFlavor) {
+                    if (commonExtension is ApplicationExtension && this is ApplicationProductFlavor) {
                         if (appFlavor.applicationIdSuffix != null) {
                             applicationIdSuffix = appFlavor.applicationIdSuffix
                         }
