@@ -11,6 +11,18 @@ config:
     nodePlacementStrategy: SIMPLE
 ---
 graph TB
+  subgraph :feature
+    direction TB
+    subgraph :feature:category
+      direction TB
+      :feature:category:api[api]:::android-library
+      :feature:category:impl[impl]:::android-library
+    end
+    subgraph :feature:product
+      direction TB
+      :feature:product:api[api]:::android-library
+    end
+  end
   subgraph :core
     direction TB
     :core:common[common]:::jvm-library
@@ -20,13 +32,10 @@ graph TB
     :core:datastore-proto[datastore-proto]:::jvm-library
     :core:designsystem[designsystem]:::android-library
     :core:model[model]:::jvm-library
+    :core:navigation[navigation]:::android-library
     :core:network[network]:::android-library
     :core:notifications[notifications]:::android-library
     :core:ui[ui]:::android-library
-  end
-  subgraph :feature
-    direction TB
-    :feature:category[category]:::android-feature
   end
 
   :core:data --> :core:common
@@ -44,10 +53,14 @@ graph TB
   :core:notifications --> :core:model
   :core:ui --> :core:designsystem
   :core:ui --> :core:model
-  :feature:category -.-> :core:data
-  :feature:category -.-> :core:designsystem
-  :feature:category --> :core:ui
-  :feature:category -.-> :core:ui
+  :feature:category:api --> :core:navigation
+  :feature:category:impl -.-> :core:data
+  :feature:category:impl -.-> :core:designsystem
+  :feature:category:impl --> :core:ui
+  :feature:category:impl -.-> :core:ui
+  :feature:category:impl -.-> :feature:category:api
+  :feature:category:impl -.-> :feature:product:api
+  :feature:product:api --> :core:navigation
 
 classDef android-application fill:#CAFFBF,stroke:#000,stroke-width:2px,color:#000;
 classDef android-feature fill:#FFD6A5,stroke:#000,stroke-width:2px,color:#000;

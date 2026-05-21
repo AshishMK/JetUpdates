@@ -18,14 +18,13 @@ graph TB
       :feature:store:api[api]:::android-library
       :feature:store:impl[impl]:::android-library
     end
-    subgraph :feature:topic
+    subgraph :feature:product
       direction TB
-      :feature:topic:api[api]:::android-library
+      :feature:product:api[api]:::android-library
     end
   end
   subgraph :core
     direction TB
-    :core:analytics[analytics]:::android-library
     :core:common[common]:::jvm-library
     :core:data[data]:::android-library
     :core:database[database]:::android-library
@@ -40,7 +39,6 @@ graph TB
     :core:ui[ui]:::android-library
   end
 
-  :core:data -.-> :core:analytics
   :core:data --> :core:common
   :core:data --> :core:database
   :core:data --> :core:datastore
@@ -56,19 +54,17 @@ graph TB
   :core:network --> :core:model
   :core:notifications -.-> :core:common
   :core:notifications --> :core:model
-  :core:ui --> :core:analytics
   :core:ui --> :core:designsystem
   :core:ui --> :core:model
+  :feature:product:api --> :core:navigation
   :feature:store:api --> :core:navigation
+  :feature:store:impl -.-> :core:data
   :feature:store:impl -.-> :core:designsystem
   :feature:store:impl -.-> :core:domain
   :feature:store:impl -.-> :core:notifications
   :feature:store:impl -.-> :core:ui
+  :feature:store:impl -.-> :feature:product:api
   :feature:store:impl -.-> :feature:store:api
-  :feature:store:impl -.-> :feature:topic:api
-  :feature:category:api -.-> :core:designsystem
-  :feature:category:api --> :core:navigation
-  :feature:category:api -.-> :core:ui
 
 classDef android-application fill:#CAFFBF,stroke:#000,stroke-width:2px,color:#000;
 classDef android-feature fill:#FFD6A5,stroke:#000,stroke-width:2px,color:#000;
