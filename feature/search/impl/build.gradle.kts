@@ -41,4 +41,3 @@ dependencies {
     androidTestImplementation(projects.core.testing)
     androidTestImplementation(libs.androidx.test.espresso.core)
 }
-
