@@ -51,6 +51,16 @@ graph TB
       :feature:search:api[api]:::android-library
       :feature:search:impl[impl]:::android-library
     end
+    subgraph :feature:category
+      direction TB
+      :feature:category:api[api]:::android-library
+      :feature:category:impl[impl]:::android-library
+    end
+    subgraph :feature:product
+      direction TB
+      :feature:product:api[api]:::android-library
+      :feature:product:impl[impl]:::android-library
+    end
     subgraph :feature:chat
       direction TB
       :feature:chat:api[api]:::android-library
@@ -118,14 +128,38 @@ graph TB
   :feature:cart:impl -.-> :core:designsystem
   :feature:cart:impl -.-> :core:ui
   :feature:cart:impl -.-> :feature:cart:api
-  :feature:cart:impl -.-> :feature:product:api
+  :feature:cart:impl -.-> :feature:category:api
+  :feature:store:api --> :core:navigation
+  :feature:store:impl -.-> :core:designsystem
+  :feature:store:impl -.-> :core:domain
+  :feature:store:impl -.-> :core:notifications
+  :feature:store:impl -.-> :core:ui
+  :feature:store:impl -.-> :feature:store:api
+  :feature:store:impl -.-> :feature:category:api
+  :feature:trending:api --> :core:navigation
+  :feature:trending:impl -.-> :core:designsystem
+  :feature:trending:impl -.-> :core:domain
+  :feature:trending:impl -.-> :core:ui
+  :feature:trending:impl -.-> :feature:trending:api
+  :feature:trending:impl -.-> :feature:category:api
+  :feature:search:api -.-> :core:domain
+  :feature:search:api --> :core:navigation
+  :feature:search:impl -.-> :core:designsystem
+  :feature:search:impl -.-> :core:domain
+  :feature:search:impl -.-> :core:ui
+  :feature:search:impl -.-> :feature:trending:api
+  :feature:search:impl -.-> :feature:search:api
+  :feature:search:impl -.-> :feature:category:api
+  :feature:settings:impl -.-> :core:data
+  :feature:settings:impl -.-> :core:designsystem
+  :feature:settings:impl -.-> :core:ui
+  :feature:category:api -.-> :core:designsystem
   :feature:category:api --> :core:navigation
+  :feature:category:api -.-> :core:ui
   :feature:category:impl -.-> :core:data
   :feature:category:impl -.-> :core:designsystem
-  :feature:category:impl --> :core:ui
   :feature:category:impl -.-> :core:ui
   :feature:category:impl -.-> :feature:category:api
-  :feature:category:impl -.-> :feature:product:api
   :feature:chat:api --> :core:navigation
   :feature:chat:impl -.-> :core:data
   :feature:chat:impl -.-> :core:designsystem
