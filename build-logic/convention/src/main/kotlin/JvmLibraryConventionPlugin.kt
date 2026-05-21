@@ -15,6 +15,7 @@
  */
 
 import com.demo.jetupdates.configureKotlinJvm
+import com.demo.jetupdates.configureSpotlessForJvm
 import com.demo.jetupdates.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -28,6 +29,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
             apply(plugin = "jetupdates.android.lint")
 
             configureKotlinJvm()
+            configureSpotlessForJvm()
             dependencies {
                 "testImplementation"(libs.findLibrary("kotlin.test").get())
             }

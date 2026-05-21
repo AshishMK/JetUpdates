@@ -202,7 +202,7 @@ Then copy the resulting baseline profile from the emulator to [
 
 ## Compose compiler metrics
 
-Run the following command to get and analyse compose compiler metrics:
+Run the following command to get and analyze compose compiler metrics:
 
 ```bash
 ./gradlew assembleRelease -PenableComposeCompilerMetrics=true -PenableComposeCompilerReports=true

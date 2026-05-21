@@ -24,8 +24,8 @@ import com.demo.jetupdates.core.database.model.PopulatedShopItem
 import com.demo.jetupdates.core.database.model.asExternalModel
 import com.demo.jetupdates.core.database.model.asFtsEntity
 import com.demo.jetupdates.core.model.data.SearchResult
-import com.demo.jetupdates.core.network.AppDispatchers.IO
-import com.demo.jetupdates.core.network.Dispatcher
+import com.demo.jetupdates.core.common.network.AppDispatchers.IO
+import com.demo.jetupdates.core.common.network.Dispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
