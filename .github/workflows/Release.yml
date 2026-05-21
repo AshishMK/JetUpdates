@@ -11,6 +11,10 @@ jobs:
     if: github.repository == 'AshishMK/JetUpdates'
     runs-on: ubuntu-latest
     timeout-minutes: 120
+        
+    # ADD THIS BLOCK HERE 👇
+    permissions:
+      contents: write
 
     steps:
       - name: Enable KVM group perms
