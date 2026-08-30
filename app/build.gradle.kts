@@ -32,8 +32,8 @@ android {
 
     defaultConfig {
         applicationId = "com.demo.jetupdates"
-        versionCode = 5
-        versionName = "2.0.3"
+        versionCode = 4
+        versionName = "2.0.2"
 
         testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
@@ -46,19 +46,9 @@ android {
            }
        }*/
 
-    signingConfigs {
-        create("myKey") {
-            storeFile = file("/Users/ashish_nautiyal/Desktop/jetupdatedts/key.jks")
-            storePassword = "android"
-            keyAlias = "key0"
-            keyPassword = "android"
-        }
-    }
-
     buildTypes {
         debug {
             applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
-            signingConfig = signingConfigs.getByName("myKey")
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
@@ -70,8 +60,7 @@ android {
             // To publish on the Play store a private signing key is required, but to allow anyone
             // who clones the code to sign and run the release variant, use the debug signing key.
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
-          //  signingConfig = signingConfigs.named("debug").get()
-            signingConfig = signingConfigs.getByName("myKey")
+            signingConfig = signingConfigs.named("debug").get()
             // Ensure Baseline Profile is fresh for release builds.
             baselineProfile.automaticGenerationDuringBuild = true
         }
