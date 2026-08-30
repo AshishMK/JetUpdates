@@ -26,7 +26,7 @@ import kotlinx.serialization.Serializable
 @SuppressLint("UnsafeOptInUsageError")
 @Serializable
 data class NetworkShopItem(
-    val id: Int,
+    val id: String,
     val title: String,
     val price: Float,
     val description: String,
@@ -34,5 +34,5 @@ data class NetworkShopItem(
     val images: List<String>,
     val publishDate: Instant,
     val type: String,
-    val categories: List<Int> = listOf(),
+    val categories: List<String> = listOf(),
 )

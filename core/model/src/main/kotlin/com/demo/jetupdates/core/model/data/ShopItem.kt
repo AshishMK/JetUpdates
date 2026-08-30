@@ -22,7 +22,7 @@ import kotlinx.datetime.Instant
  * External data layer representation of a fully populated JU app Shop item
  */
 data class ShopItem(
-    val id: Int,
+    val id: String,
     val title: String,
     val price: Float,
     val description: String,

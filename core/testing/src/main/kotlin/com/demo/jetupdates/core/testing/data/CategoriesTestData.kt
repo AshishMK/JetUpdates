@@ -22,7 +22,7 @@ import com.demo.jetupdates.core.model.data.Category
 
 val categoriesTestData: List<Category> = listOf(
     Category(
-        id = 2,
+        id = "2",
         name = "Headlines",
         shortDescription = "News we want everyone to see",
         longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -30,7 +30,7 @@ val categoriesTestData: List<Category> = listOf(
         url = "",
     ),
     Category(
-        id = 3,
+        id = "3",
         name = "UI",
         shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
         longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -38,7 +38,7 @@ val categoriesTestData: List<Category> = listOf(
         url = "",
     ),
     Category(
-        id = 4,
+        id = "4",
         name = "Testing",
         shortDescription = "CI, Espresso, TestLab, etc",
         longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",

@@ -67,7 +67,7 @@ class FakeShopRepository @Inject constructor(
             )
         }.flowOn(ioDispatcher)
 
-    override fun getShopItem(id: Int): Flow<ShopItem> = flow {
+    override fun getShopItem(id: String): Flow<ShopItem> = flow {
         val shopItems = datasource.getShopItems()
         val categories = datasource.getCategories()
 

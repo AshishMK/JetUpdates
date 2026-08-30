@@ -21,10 +21,10 @@ import com.demo.jetupdates.core.navigation.Navigator
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CategoryNavKey(val id: Int) : NavKey
+data class CategoryNavKey(val id: String) : NavKey
 
 fun Navigator.navigateToCategory(
-    categoryId: Int,
+    categoryId: String,
 ) {
     navigate(CategoryNavKey(categoryId))
 }

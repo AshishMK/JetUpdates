@@ -56,7 +56,7 @@ class CartViewModelTest {
     fun setup() {
         viewModel = CartViewModel(
             userDataRepository = userDataRepository,
-            userNewsResourceRepository = userShopItemRepository,
+            userShopItemRepository = userShopItemRepository,
         )
     }
 

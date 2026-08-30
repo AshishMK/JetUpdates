@@ -65,8 +65,8 @@ class SearchScreenTest {
     private lateinit var searchNotReadyString: String
 
     private val userData: UserData = UserData(
-        bookmarkedShopItems = setOf(1, 3),
-        viewedShopItems = setOf(1, 2, 4),
+        bookmarkedShopItems = setOf("1", "3"),
+        viewedShopItems = setOf("1", "2", "4"),
         followedCategories = emptySet(),
         themeBrand = ThemeBrand.ANDROID,
         darkThemeConfig = DarkThemeConfig.DARK,

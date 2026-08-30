@@ -25,28 +25,28 @@ import com.demo.jetupdates.core.designsystem.R as DesignR
  */
 
 object CategoriesToDrawable {
-    public var mapDrawables = HashMap<Int, Int>().apply {
-        put(1, DesignR.drawable.core_designsystem_fashion)
-        put(2, DesignR.drawable.core_designsystem_electronics)
-        put(3, DesignR.drawable.core_designsystem_home)
-        put(4, DesignR.drawable.core_designsystem_beauty)
-        put(5, DesignR.drawable.core_designsystem_sports)
-        put(6, DesignR.drawable.core_designsystem_toys)
-        put(7, DesignR.drawable.core_designsystem_health)
-        put(8, DesignR.drawable.core_designsystem_automotive)
+    public var mapDrawables = HashMap<String, Int>().apply {
+        put("1", DesignR.drawable.core_designsystem_fashion)
+        put("2", DesignR.drawable.core_designsystem_electronics)
+        put("3", DesignR.drawable.core_designsystem_home)
+        put("4", DesignR.drawable.core_designsystem_beauty)
+        put("5", DesignR.drawable.core_designsystem_sports)
+        put("6", DesignR.drawable.core_designsystem_toys)
+        put("7", DesignR.drawable.core_designsystem_health)
+        put("8", DesignR.drawable.core_designsystem_automotive)
 
-        put(9, DesignR.drawable.core_designsystem_books)
-        put(10, DesignR.drawable.core_designsystem_grocery)
+        put("9", DesignR.drawable.core_designsystem_books)
+        put("10", DesignR.drawable.core_designsystem_grocery)
 
-        put(11, DesignR.drawable.core_designsystem_watches)
-        put(12, DesignR.drawable.core_designsystem_pets)
-        put(13, DesignR.drawable.core_designsystem_art)
-        put(14, DesignR.drawable.core_designsystem_diy)
-        put(15, DesignR.drawable.core_designsystem_music)
-        put(16, DesignR.drawable.core_designsystem_travel)
+        put("11", DesignR.drawable.core_designsystem_watches)
+        put("12", DesignR.drawable.core_designsystem_pets)
+        put("13", DesignR.drawable.core_designsystem_art)
+        put("14", DesignR.drawable.core_designsystem_diy)
+        put("15", DesignR.drawable.core_designsystem_music)
+        put("16", DesignR.drawable.core_designsystem_travel)
 
-        put(17, DesignR.drawable.core_designsystem_office)
-        put(18, DesignR.drawable.core_designsystem_media)
-        put(19, DesignR.drawable.core_designsystem_eco)
+        put("17", DesignR.drawable.core_designsystem_office)
+        put("18", DesignR.drawable.core_designsystem_media)
+        put("19", DesignR.drawable.core_designsystem_eco)
     }
 }

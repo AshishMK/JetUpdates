@@ -50,7 +50,7 @@ DemoAppNetworkDataSourceTest {
     fun testDeserializationOfCategories() = runTest(testDispatcher) {
         assertEquals(
             NetworkCategory(
-                id = 1,
+                id = "1",
                 name = "Fashion & Apparel",
                 shortDescription = "Stay Stylish, Every Day",
                 longDescription = "Discover the latest trends in clothing, footwear, and accessories for men, women, and kids. Shop timeless classics and fresh designs for every season.",
@@ -66,12 +66,12 @@ DemoAppNetworkDataSourceTest {
     fun testDeserializationOfShopItems() = runTest(testDispatcher) {
         assertEquals(
             NetworkShopItem(
-                id = 125,
+                id = "125",
                 title = "Advanced Children's Puzzle",
                 price = 218.42f,
                 description = "The advanced children's puzzle is engineered using cutting-edge materials to ensure lasting durability. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
                 stock = 199,
-                images = listOf("https://od.lk/d/NzlfNTQxMjE3NTJf/prod_19.jpg", "https://od.lk/d/NzlfNTQxMjE3NTNf/prod_20.jpg"),
+                images = listOf(IMAGE_HOST_URL + "prod_19.jpg", IMAGE_HOST_URL + "prod_20.jpg"),
                 publishDate = LocalDateTime(
                     year = 2021,
                     monthNumber = 10,
@@ -82,9 +82,10 @@ DemoAppNetworkDataSourceTest {
                     nanosecond = 0,
                 ).toInstant(TimeZone.UTC),
                 type = "2",
-                categories = listOf(16, 14),
+                categories = listOf("16", "14"),
             ),
-            subject.getShopItems().find { it.id == 125 },
+            subject.getShopItems().find { it.id == "125" },
         )
     }
 }
+const val IMAGE_HOST_URL = "https://raw.githubusercontent.com/AshishMK/jetupdates-android-demo-images/refs/heads/main/"

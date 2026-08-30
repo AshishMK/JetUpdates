@@ -32,8 +32,8 @@ android {
 
     defaultConfig {
         applicationId = "com.demo.jetupdates"
-        versionCode = 4
-        versionName = "2.0.2"
+        versionCode = 5
+        versionName = "2.0.3"
 
         testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
@@ -46,9 +46,19 @@ android {
            }
        }*/
 
+    signingConfigs {
+        create("myKey") {
+            storeFile = file("/Users/ashish_nautiyal/Desktop/jetupdatedts/key.jks")
+            storePassword = "android"
+            keyAlias = "key0"
+            keyPassword = "android"
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
+            signingConfig = signingConfigs.getByName("myKey")
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
@@ -61,6 +71,7 @@ android {
             // who clones the code to sign and run the release variant, use the debug signing key.
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
             signingConfig = signingConfigs.named("debug").get()
+            //signingConfig = signingConfigs.getByName("myKey")
             // Ensure Baseline Profile is fresh for release builds.
             baselineProfile.automaticGenerationDuringBuild = true
         }
@@ -82,7 +93,6 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.data)
     implementation(projects.sync.work)
-    implementation(projects.core.data)
 
 
 
@@ -114,7 +124,6 @@ dependencies {
     implementation(libs.androidx.compose.material3.adaptive.navigation)
     implementation(libs.androidx.compose.material3.windowSizeClass)
     implementation(libs.androidx.compose.runtime.tracing)
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.lifecycle.viewModel.navigation3)
     implementation(libs.androidx.profileinstaller)
@@ -168,7 +177,7 @@ baselineProfile {
     automaticGenerationDuringBuild = false
 
     // Make use of Dex Layout Optimizations via Startup Profiles
-    dexLayoutOptimization = true
+    dexLayoutOptimization = false
 }
 
 dependencyGuard {

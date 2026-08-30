@@ -48,7 +48,7 @@ class TestShopRepository : ShopRepository {
             result
         }
 
-    override fun getShopItem(id: Int): Flow<ShopItem> =
+    override fun getShopItem(id: String): Flow<ShopItem> =
         shopItemsFlow.map { shopItems ->
             val result = shopItems.first { it.id == id }
 

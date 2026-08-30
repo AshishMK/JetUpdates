@@ -111,19 +111,19 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    fun setShopItemBookmarked(shopItemId: Int, isChecked: Boolean) {
+    fun setShopItemBookmarked(shopItemId: String, isChecked: Boolean) {
         viewModelScope.launch {
             userDataRepository.setShopItemBookmarked(shopItemId, isChecked)
         }
     }
 
-    fun followCategory(followedCategory: Int, followed: Boolean) {
+    fun followCategory(followedCategory: String, followed: Boolean) {
         viewModelScope.launch {
             userDataRepository.setCategoryIdFollowed(followedCategory, followed)
         }
     }
 
-    fun setShopItemViewed(shopItemId: Int, viewed: Boolean) {
+    fun setShopItemViewed(shopItemId: String, viewed: Boolean) {
         viewModelScope.launch {
             userDataRepository.setShopItemViewed(shopItemId, viewed)
         }

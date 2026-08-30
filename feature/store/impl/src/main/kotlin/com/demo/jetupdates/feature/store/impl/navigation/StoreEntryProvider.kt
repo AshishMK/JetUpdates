@@ -43,3 +43,11 @@ fun EntryProviderScope<NavKey>.storeEntry(
         }
     }
 }
+
+fun <T> build(): (T) -> Tr<T> {
+    return { k ->
+        Tr(k)
+    }
+}
+
+class Tr<T>(val i: T)
