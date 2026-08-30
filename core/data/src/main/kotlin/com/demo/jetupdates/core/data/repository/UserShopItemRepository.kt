@@ -46,5 +46,5 @@ interface UserShopItemRepository {
     /**
      * Returns shop item by id
      */
-    fun observeItem(id: Int): Flow<UserShopItem>
+    fun observeItem(id: String): Flow<UserShopItem>
 }

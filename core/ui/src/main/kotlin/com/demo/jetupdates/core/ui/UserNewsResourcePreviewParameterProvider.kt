@@ -35,6 +35,7 @@ import kotlinx.datetime.toInstant
  * This [PreviewParameterProvider](https://developer.android.com/reference/kotlin/androidx/compose/ui/tooling/preview/PreviewParameterProvider)
  * provides list of [UserShopItem] for Composable previews.
  */
+const val IMAGE_HOST_URL = "https://raw.githubusercontent.com/AshishMK/jetupdates-android-demo-images/refs/heads/main/"
 class UserShopResourcePreviewParameterProvider : PreviewParameterProvider<List<UserShopItem>> {
 
     override val values: Sequence<List<UserShopItem>> = sequenceOf(shopItems)
@@ -43,8 +44,8 @@ class UserShopResourcePreviewParameterProvider : PreviewParameterProvider<List<U
 object PreviewParameterData {
 
     private val userData: UserData = UserData(
-        bookmarkedShopItems = setOf(1, 3),
-        viewedShopItems = setOf(1, 2, 4),
+        bookmarkedShopItems = setOf("1", "3"),
+        viewedShopItems = setOf("1", "2", "4"),
         followedCategories = emptySet(),
         themeBrand = ThemeBrand.ANDROID,
         darkThemeConfig = DarkThemeConfig.DARK,
@@ -54,7 +55,7 @@ object PreviewParameterData {
 
     val categories = listOf(
         Category(
-            id = 2,
+            id = "2",
             name = "Headlines",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -62,7 +63,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 3,
+            id = "3",
             name = "UI",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -70,7 +71,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 4,
+            id = "4",
             name = "Testing",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -78,7 +79,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 5,
+            id = "5",
             name = "COMPOSE",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -86,7 +87,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 6,
+            id = "6",
             name = "KOTLIN",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -94,7 +95,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 7,
+            id = "7",
             name = "ARCHITECTURE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -102,7 +103,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 8,
+            id = "8",
             name = "GAMES",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -110,7 +111,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 9,
+            id = "9",
             name = "PERFORMANCE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -119,7 +120,7 @@ object PreviewParameterData {
         ),
 
         Category(
-            id = 10,
+            id = "10",
             name = "Headlines",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -127,7 +128,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 11,
+            id = "11",
             name = "UI",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -135,7 +136,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 12,
+            id = "12",
             name = "Testing",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -143,7 +144,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 13,
+            id = "13",
             name = "COMPOSE",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -151,7 +152,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 14,
+            id = "14",
             name = "KOTLIN",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -159,7 +160,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 15,
+            id = "15",
             name = "ARCHITECTURE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -167,7 +168,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 16,
+            id = "16",
             name = "GAMES",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -175,7 +176,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 17,
+            id = "17",
             name = "PERFORMANCE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -184,7 +185,7 @@ object PreviewParameterData {
         ),
 
         Category(
-            id = 18,
+            id = "18",
             name = "Headlines",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -192,7 +193,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 19,
+            id = "19",
             name = "UI",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -200,7 +201,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 20,
+            id = "20",
             name = "Testing",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -208,7 +209,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 21,
+            id = "21",
             name = "COMPOSE",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -216,7 +217,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 22,
+            id = "22",
             name = "KOTLIN",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -224,7 +225,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 23,
+            id = "23",
             name = "ARCHITECTURE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -232,7 +233,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 24,
+            id = "24",
             name = "GAMES",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -240,7 +241,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 25,
+            id = "25",
             name = "PERFORMANCE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -249,7 +250,7 @@ object PreviewParameterData {
         ),
 
         Category(
-            id = 26,
+            id = "26",
             name = "Headlines",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -257,7 +258,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 27,
+            id = "27",
             name = "UI",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -265,7 +266,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 28,
+            id = "28",
             name = "Testing",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -273,7 +274,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 29,
+            id = "29",
             name = "COMPOSE",
             shortDescription = "News we want everyone to see",
             longDescription = "Stay up to date with the latest events and announcements from Android!",
@@ -281,7 +282,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 30,
+            id = "30",
             name = "KOTLIN",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -289,7 +290,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 31,
+            id = "31",
             name = "ARCHITECTURE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -297,7 +298,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 32,
+            id = "32",
             name = "GAMES",
             shortDescription = "Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets",
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
@@ -305,7 +306,7 @@ object PreviewParameterData {
             url = "",
         ),
         Category(
-            id = 33,
+            id = "33",
             name = "PERFORMANCE",
             shortDescription = "CI, Espresso, TestLab, etc",
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
@@ -317,12 +318,12 @@ object PreviewParameterData {
     val shopItems = listOf(
         UserShopItem(
             shopItem = ShopItem(
-                id = 1,
+                id = "1",
                 title = "Luxury Face Cream",
                 price = 212.35f,
                 description = "We released the first two units of Android Basics with Compose, our first free course that teaches Android Development with Jetpack Compose to anyone; you do not need any prior programming experience other than basic computer literacy to get started. You’ll learn the fundamentals of programming in Kotlin while building Android apps using Jetpack Compose, Android’s modern toolkit that simplifies and accelerates native UI development. These two units are just the beginning; more will be coming soon. Check out Android Basics with Compose to get started on your Android development journey",
                 stock = 123,
-                images = listOf("https://od.lk/d/NzlfNTQxMjE3ODZf/prod_50.jpg", "https://od.lk/d/NzlfNTQxMjE3ODVf/prod_49.jpg"),
+                images = listOf(IMAGE_HOST_URL + "prod_50.jpg", IMAGE_HOST_URL + "prod_49.jpg"),
                 publishDate = LocalDateTime(
                     year = 2022,
                     monthNumber = 5,
@@ -339,7 +340,7 @@ object PreviewParameterData {
         ),
         UserShopItem(
             shopItem = ShopItem(
-                id = 2,
+                id = "2",
                 title = "Stylish Travel Mug",
                 price = 349.16f,
                 description = "Thank you everyone for following the Now in Android series and everything the " +
@@ -348,8 +349,8 @@ object PreviewParameterData {
                     "thank you all.",
                 stock = 159,
                 images = listOf(
-                    "https://od.lk/d/NzlfNTQxMjE3ODRf/prod_48.jpg",
-                    "https://od.lk/d/NzlfNTQxMjE3ODNf/prod_47.jpg",
+                    IMAGE_HOST_URL + "prod_48.jpg",
+                    IMAGE_HOST_URL + "prod_47.jpg",
                 ),
                 publishDate = Instant.parse("2021-11-09T00:00:00.000Z"),
                 type = "Video 📺",
@@ -359,7 +360,7 @@ object PreviewParameterData {
         ),
         UserShopItem(
             shopItem = ShopItem(
-                id = 3,
+                id = "3",
                 title = "Handcrafted Sneakers",
                 price = 40.45f,
                 description = "A demonstration of different operations that can be performed " +
@@ -368,8 +369,8 @@ object PreviewParameterData {
                     "PagingData.",
                 stock = 84,
                 images = listOf(
-                    "https://od.lk/d/NzlfNTQxMjE3ODJf/prod_46.jpg",
-                    "https://od.lk/d/NzlfNTQxMjE3ODFf/prod_45.jpg",
+                    IMAGE_HOST_URL + "prod_46.jpg",
+                    IMAGE_HOST_URL + "prod_45.jpg",
                 ),
                 publishDate = Instant.parse("2021-11-01T00:00:00.000Z"),
                 type = "Video 📺",
@@ -379,14 +380,14 @@ object PreviewParameterData {
         ),
         UserShopItem(
             shopItem = ShopItem(
-                id = 4,
+                id = "4",
                 title = "Portable Scented Candle Set",
                 price = 111.6f,
                 description = "The portable scented candle set is provides superior comfort, efficiency, and reliability across all tasks. Featuring a thoughtfully designed structure, this product is ideal for those seeking quality and reliability. With attention to small details and a commitment to user satisfaction, it is sure to become a favorite in your daily essentials.",
                 stock = 26,
                 images = listOf(
-                    "https://od.lk/d/NzlfNTQxMjE3ODBf/prod_44.jpg",
-                    "https://od.lk/d/NzlfNTQxMjE3Nzlf/prod_43.jpg",
+                    IMAGE_HOST_URL + "prod_44.jpg",
+                    IMAGE_HOST_URL + "prod_43.jpg",
                 ),
                 publishDate = Instant.parse("2022-10-06T23:00:00.000Z"),
                 type = "Video 📺",

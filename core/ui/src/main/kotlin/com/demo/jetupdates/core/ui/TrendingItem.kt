@@ -42,7 +42,7 @@ import com.demo.jetupdates.core.ui.R.string
 
 @Composable
 fun TrendingItem(
-    id: Int,
+    id: String,
     name: String,
     following: Boolean,
     categoryImageUrl: String,
@@ -101,7 +101,7 @@ fun TrendingItem(
 }
 
 @Composable
-private fun TrendingIcon(id: Int, categoryImageUrl: String, modifier: Modifier = Modifier) {
+private fun TrendingIcon(id: String, categoryImageUrl: String, modifier: Modifier = Modifier) {
 // if (categoryImageUrl.isEmpty()) {
     Icon(
         modifier = modifier
@@ -127,7 +127,7 @@ private fun InterestsCardPreview() {
         Surface {
             TrendingItem(
                 name = "Compose",
-                id = 1,
+                id = "1",
                 description = "Description",
                 following = false,
                 categoryImageUrl = "",
@@ -144,7 +144,7 @@ private fun InterestsCardLongNamePreview() {
     AppTheme {
         Surface {
             TrendingItem(
-                id = 2,
+                id = "2",
                 name = "This is a very very very very long name",
                 description = "Description",
                 following = true,
@@ -162,7 +162,7 @@ private fun InterestsCardLongDescriptionPreview() {
     AppTheme {
         Surface {
             TrendingItem(
-                id = 1,
+                id = "1",
                 name = "Compose",
                 description = "This is a very very very very very very very " +
                     "very very very long description",
@@ -181,7 +181,7 @@ private fun InterestsCardWithEmptyDescriptionPreview() {
     AppTheme {
         Surface {
             TrendingItem(
-                id = 2,
+                id = "2",
                 name = "Compose",
                 description = "",
                 following = true,
@@ -199,7 +199,7 @@ private fun InterestsCardSelectedPreview() {
     AppTheme {
         Surface {
             TrendingItem(
-                id = 3,
+                id = "3",
                 name = "Compose",
                 description = "",
                 following = true,

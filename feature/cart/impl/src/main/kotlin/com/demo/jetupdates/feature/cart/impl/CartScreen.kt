@@ -75,7 +75,7 @@ import com.demo.jetupdates.feature.cart.api.R
 
 @Composable
 internal fun CartScreen(
-    onProductClick: (Int) -> Unit,
+    onProductClick: (String) -> Unit,
     onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
     viewModel: CartViewModel = hiltViewModel(),
@@ -102,9 +102,9 @@ internal fun CartScreen(
 internal fun CartScreen(
     feedState: ItemFeedUiState,
     onShowSnackbar: suspend (String, String?) -> Boolean,
-    removeFromCart: (Int) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
-    onProductClick: (Int) -> Unit,
+    removeFromCart: (String) -> Unit,
+    onShopItemViewed: (String) -> Unit,
+    onProductClick: (String) -> Unit,
     modifier: Modifier = Modifier,
     shouldDisplayUndoItem: Boolean = false,
     undoItemRemoval: () -> Unit = {},
@@ -160,9 +160,9 @@ private fun LoadingState(modifier: Modifier = Modifier) {
 @Composable
 private fun BookmarksGrid(
     feedState: ItemFeedUiState,
-    removeFromCart: (Int) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
-    onProductClick: (Int) -> Unit,
+    removeFromCart: (String) -> Unit,
+    onShopItemViewed: (String) -> Unit,
+    onProductClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val scrollableState = rememberLazyStaggeredGridState()

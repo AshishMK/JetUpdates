@@ -41,8 +41,7 @@ import com.demo.jetupdates.core.database.util.InstantConverter
         CategoryFtsEntity::class,
         RecentSearchQueryEntity::class,
     ],
-    version = 1,
-
+    version = 2,
     exportSchema = true,
 )
 @TypeConverters(

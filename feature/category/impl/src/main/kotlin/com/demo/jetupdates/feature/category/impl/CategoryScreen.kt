@@ -78,7 +78,7 @@ import com.demo.jetupdates.feature.category.api.R as CategoryR
 
 @Composable
 fun CategoryScreen(
-    onProductClick: (Int) -> Unit,
+    onProductClick: (String) -> Unit,
     showBackButton: Boolean,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -104,14 +104,14 @@ fun CategoryScreen(
 @VisibleForTesting
 @Composable
 internal fun CategoryScreen(
-    onProductClick: (Int) -> Unit,
+    onProductClick: (String) -> Unit,
     categoryUiState: CategoryUiState,
     shopItemUiState: ShopItemUiState,
     showBackButton: Boolean,
     onBackClick: () -> Unit,
     onFollowClick: (Boolean) -> Unit,
-    onBookmarkChanged: (Int, Boolean) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
+    onBookmarkChanged: (String, Boolean) -> Unit,
+    onShopItemViewed: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state = rememberLazyStaggeredGridState()
@@ -198,14 +198,14 @@ private fun shopItemsSize(
 }
 
 private fun LazyStaggeredGridScope.categoryBody(
-    onProductClick: (Int) -> Unit,
-    id: Int,
+    onProductClick: (String) -> Unit,
+    id: String,
     name: String,
     description: String,
     news: ShopItemUiState,
     imageUrl: String,
-    onBookmarkChanged: (Int, Boolean) -> Unit,
-    onNewsResourceViewed: (Int) -> Unit,
+    onBookmarkChanged: (String, Boolean) -> Unit,
+    onNewsResourceViewed: (String) -> Unit,
 ) {
     // TODO: Show icon if available
     item(span = StaggeredGridItemSpan.FullLine, contentType = "categoryHeader") {
@@ -216,7 +216,7 @@ private fun LazyStaggeredGridScope.categoryBody(
 }
 
 @Composable
-private fun CategoryHeader(id: Int, name: String, description: String, imageUrl: String) {
+private fun CategoryHeader(id: String, name: String, description: String, imageUrl: String) {
     Column(
         modifier = Modifier.padding(horizontal = 16.dp),
     ) {
@@ -244,10 +244,10 @@ private fun CategoryHeader(id: Int, name: String, description: String, imageUrl:
 
 // TODO: Could/should this be replaced with [LazyGridScope.newsFeed]?
 private fun LazyStaggeredGridScope.userShopItemCards(
-    onProductClick: (Int) -> Unit,
+    onProductClick: (String) -> Unit,
     shopState: ShopItemUiState,
-    onBookmarkChanged: (Int, Boolean) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
+    onBookmarkChanged: (String, Boolean) -> Unit,
+    onShopItemViewed: (String) -> Unit,
 ) {
     when (shopState) {
         is ShopItemUiState.Success -> {
@@ -276,7 +276,7 @@ private fun CategoryBodyPreview() {
     AppTheme {
         LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Adaptive(150.dp)) {
             categoryBody(
-                id = 1,
+                id = "1",
                 name = "Jetpack Compose",
                 description = "Lorem ipsum maximum",
                 news = ShopItemUiState.Success(emptyList()),

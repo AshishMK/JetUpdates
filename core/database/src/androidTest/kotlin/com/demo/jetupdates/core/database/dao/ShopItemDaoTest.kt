@@ -32,19 +32,19 @@ internal class ShopItemDaoTest : DatabaseTest() {
     fun getShopItems_allEntries_areOrderedByPublishDateDesc() = runTest {
         val shopItemEntities = listOf(
             testShopItem(
-                id = 0,
+                id = "0",
                 millisSinceEpoch = 0,
             ),
             testShopItem(
-                id = 1,
+                id = "1",
                 millisSinceEpoch = 3,
             ),
             testShopItem(
-                id = 2,
+                id = "2",
                 millisSinceEpoch = 1,
             ),
             testShopItem(
-                id = 3,
+                id = "3",
                 millisSinceEpoch = 2,
             ),
         )
@@ -67,19 +67,19 @@ internal class ShopItemDaoTest : DatabaseTest() {
     fun getShopItems_filteredById_areOrderedByDescendingPublishDate() = runTest {
         val shopItemEntities = listOf(
             testShopItem(
-                id = 0,
+                id = "0",
                 millisSinceEpoch = 0,
             ),
             testShopItem(
-                id = 1,
+                id = "1",
                 millisSinceEpoch = 3,
             ),
             testShopItem(
-                id = 2,
+                id = "2",
                 millisSinceEpoch = 1,
             ),
             testShopItem(
-                id = 3,
+                id = "3",
                 millisSinceEpoch = 2,
             ),
         )
@@ -89,12 +89,12 @@ internal class ShopItemDaoTest : DatabaseTest() {
 
         val savedShopItemEntities = shopItemDao.getShopItems(
             useFilterItemIds = true,
-            filterItemIds = setOf(3, 0),
+            filterItemIds = setOf("3", "0"),
         )
             .first()
 
         assertEquals(
-            listOf(3, 0),
+            listOf("3", "0"),
             savedShopItemEntities.map {
                 it.entity.id
             },
@@ -105,19 +105,19 @@ internal class ShopItemDaoTest : DatabaseTest() {
     fun getShopItemById() = runTest {
         val shopItemEntities = listOf(
             testShopItem(
-                id = 0,
+                id = "0",
                 millisSinceEpoch = 0,
             ),
             testShopItem(
-                id = 1,
+                id = "1",
                 millisSinceEpoch = 3,
             ),
             testShopItem(
-                id = 2,
+                id = "2",
                 millisSinceEpoch = 1,
             ),
             testShopItem(
-                id = 3,
+                id = "3",
                 millisSinceEpoch = 2,
             ),
         )
@@ -125,11 +125,11 @@ internal class ShopItemDaoTest : DatabaseTest() {
             shopItemEntities,
         )
 
-        val savedShopItemEntity = shopItemDao.getShopItem(3)
+        val savedShopItemEntity = shopItemDao.getShopItem("3")
             .first()
 
         assertEquals(
-            3,
+            "3",
             savedShopItemEntity.entity.id,
         )
     }
@@ -138,35 +138,35 @@ internal class ShopItemDaoTest : DatabaseTest() {
     fun getShopItems_filteredByCategoryId_areOrderedByDescendingPublishDate() = runTest {
         val categoryEntities = listOf(
             testCategoryEntity(
-                id = 1,
+                id = "1",
                 name = "1",
             ),
             testCategoryEntity(
-                id = 2,
+                id = "2",
                 name = "2",
             ),
         )
         val shopItemEntities = listOf(
             testShopItem(
-                id = 0,
+                id = "0",
                 millisSinceEpoch = 0,
             ),
             testShopItem(
-                id = 1,
+                id = "1",
                 millisSinceEpoch = 3,
             ),
             testShopItem(
-                id = 2,
+                id = "2",
                 millisSinceEpoch = 1,
             ),
             testShopItem(
-                id = 3,
+                id = "3",
                 millisSinceEpoch = 2,
             ),
         )
         val shopItemCategoryCrossRefEntities = categoryEntities.mapIndexed { index, categoryEntity ->
             ShopItemCategoryCrossRef(
-                shopItemId = index,
+                shopItemId = index.toString(),
                 categoryId = categoryEntity.id,
             )
         }
@@ -189,7 +189,7 @@ internal class ShopItemDaoTest : DatabaseTest() {
         ).first()
 
         assertEquals(
-            listOf(1, 0),
+            listOf("1", "0"),
             filteredShopItems.map { it.entity.id },
         )
     }
@@ -198,35 +198,35 @@ internal class ShopItemDaoTest : DatabaseTest() {
     fun getShopItems_filteredByIdAndCategoryId_areOrderedByDescendingPublishDate() = runTest {
         val categoryEntities = listOf(
             testCategoryEntity(
-                id = 1,
+                id = "1",
                 name = "1",
             ),
             testCategoryEntity(
-                id = 2,
+                id = "2",
                 name = "2",
             ),
         )
         val shopItemEntities = listOf(
             testShopItem(
-                id = 0,
+                id = "0",
                 millisSinceEpoch = 0,
             ),
             testShopItem(
-                id = 1,
+                id = "1",
                 millisSinceEpoch = 3,
             ),
             testShopItem(
-                id = 2,
+                id = "2",
                 millisSinceEpoch = 1,
             ),
             testShopItem(
-                id = 3,
+                id = "3",
                 millisSinceEpoch = 2,
             ),
         )
         val shopItemCategoryCrossRefEntities = categoryEntities.mapIndexed { index, categoryEntity ->
             ShopItemCategoryCrossRef(
-                shopItemId = index,
+                shopItemId = index.toString(),
                 categoryId = categoryEntity.id,
             )
         }
@@ -247,11 +247,11 @@ internal class ShopItemDaoTest : DatabaseTest() {
                 .map(CategoryEntity::id)
                 .toSet(),
             useFilterItemIds = true,
-            filterItemIds = setOf(1),
+            filterItemIds = setOf("1"),
         ).first()
 
         assertEquals(
-            listOf(1),
+            listOf("1"),
             filteredShopItems.map { it.entity.id },
         )
     }
@@ -261,19 +261,19 @@ internal class ShopItemDaoTest : DatabaseTest() {
         runTest {
             val shopItemEntities = listOf(
                 testShopItem(
-                    id = 0,
+                    id = "0",
                     millisSinceEpoch = 0,
                 ),
                 testShopItem(
-                    id = 1,
+                    id = "1",
                     millisSinceEpoch = 3,
                 ),
                 testShopItem(
-                    id = 2,
+                    id = "2",
                     millisSinceEpoch = 1,
                 ),
                 testShopItem(
-                    id = 3,
+                    id = "3",
                     millisSinceEpoch = 2,
                 ),
             )
@@ -296,7 +296,7 @@ internal class ShopItemDaoTest : DatabaseTest() {
 }
 
 private fun testCategoryEntity(
-    id: Int = 0,
+    id: String = "0",
     name: String,
 ) = CategoryEntity(
     id = id,
@@ -308,7 +308,7 @@ private fun testCategoryEntity(
 )
 
 private fun testShopItem(
-    id: Int = 0,
+    id: String = "0",
     millisSinceEpoch: Long = 0,
 ) = ShopItemEntity(
     id = id,

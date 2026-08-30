@@ -70,19 +70,19 @@ class OfflineFirstUserDataRepositoryTest {
     @Test
     fun offlineFirstUserDataRepository_toggle_followed_categories_logic_delegates_to_app_preferences() =
         testScope.runTest {
-            subject.setCategoryIdFollowed(followedCategoryId = 0, followed = true)
+            subject.setCategoryIdFollowed(followedCategoryId = "0", followed = true)
 
             assertEquals(
-                setOf(0),
+                setOf("0"),
                 subject.userData
                     .map { it.followedCategories }
                     .first(),
             )
 
-            subject.setCategoryIdFollowed(followedCategoryId = 1, followed = true)
+            subject.setCategoryIdFollowed(followedCategoryId = "1", followed = true)
 
             assertEquals(
-                setOf(0, 1),
+                setOf("0", "1"),
                 subject.userData
                     .map { it.followedCategories }
                     .first(),
@@ -101,10 +101,10 @@ class OfflineFirstUserDataRepositoryTest {
     @Test
     fun offlineFirstUserDataRepository_set_followed_categories_logic_delegates_to_app_preferences() =
         testScope.runTest {
-            subject.setFollowedCategoryIds(followedCategoryIds = setOf(1, 2))
+            subject.setFollowedCategoryIds(followedCategoryIds = setOf("1", "2"))
 
             assertEquals(
-                setOf(1, 2),
+                setOf("1", "2"),
                 subject.userData
                     .map { it.followedCategories }
                     .first(),
@@ -123,19 +123,19 @@ class OfflineFirstUserDataRepositoryTest {
     @Test
     fun offlineFirstUserDataRepository_bookmark_shop_item_logic_delegates_to_app_preferences() =
         testScope.runTest {
-            subject.setShopItemBookmarked(shopItemId = 0, bookmarked = true)
+            subject.setShopItemBookmarked(shopItemId = "0", bookmarked = true)
 
             assertEquals(
-                setOf(0),
+                setOf("0"),
                 subject.userData
                     .map { it.bookmarkedShopItems }
                     .first(),
             )
 
-            subject.setShopItemBookmarked(shopItemId = 1, bookmarked = true)
+            subject.setShopItemBookmarked(shopItemId = "1", bookmarked = true)
 
             assertEquals(
-                setOf(0, 1),
+                setOf("0", "1"),
                 subject.userData
                     .map { it.bookmarkedShopItems }
                     .first(),
@@ -154,19 +154,19 @@ class OfflineFirstUserDataRepositoryTest {
     @Test
     fun offlineFirstUserDataRepository_update_viewed_shop_items_delegates_to_app_preferences() =
         runTest {
-            subject.setShopItemViewed(shopItemId = 0, viewed = true)
+            subject.setShopItemViewed(shopItemId = "0", viewed = true)
 
             assertEquals(
-                setOf(0),
+                setOf("0"),
                 subject.userData
                     .map { it.viewedShopItems }
                     .first(),
             )
 
-            subject.setShopItemViewed(shopItemId = 1, viewed = true)
+            subject.setShopItemViewed(shopItemId = "1", viewed = true)
 
             assertEquals(
-                setOf(0, 1),
+                setOf("0", "1"),
                 subject.userData
                     .map { it.viewedShopItems }
                     .first(),
@@ -245,7 +245,7 @@ class OfflineFirstUserDataRepositoryTest {
     @Test
     fun whenUserCompletesOnboarding_thenRemovesAllInterests_shouldHideOnboardingIsFalse() =
         testScope.runTest {
-            subject.setFollowedCategoryIds(setOf(1))
+            subject.setFollowedCategoryIds(setOf("1"))
             subject.setShouldHideOnboarding(true)
             assertTrue(subject.userData.first().shouldHideOnboarding)
 

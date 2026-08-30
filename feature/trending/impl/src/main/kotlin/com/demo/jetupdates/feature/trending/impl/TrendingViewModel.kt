@@ -64,13 +64,13 @@ class TrendingViewModel @AssistedInject constructor(
         initialValue = TrendingUiState.Loading,
     )
 
-    fun followCategory(followedCategoryId: Int, followed: Boolean) {
+    fun followCategory(followedCategoryId: String, followed: Boolean) {
         viewModelScope.launch {
             userDataRepository.setCategoryIdFollowed(followedCategoryId, followed)
         }
     }
 
-    fun onCategoryClick(categoryId: Int?) {
+    fun onCategoryClick(categoryId: String?) {
         // TODO: This should modify the navigation state directly rather than just updating the
         //  savedStateHandle
         savedStateHandle[selectedCategoryIdKey] = categoryId
@@ -86,7 +86,7 @@ sealed interface TrendingUiState {
     data object Loading : TrendingUiState
 
     data class Trending(
-        val selectedCategoryId: Int?,
+        val selectedCategoryId: String?,
         val categories: List<FollowableCategory2>,
     ) : TrendingUiState
 

@@ -33,7 +33,7 @@ class TestCategoriesRepository : CategoriesRepository {
 
     override fun getCategories(): Flow<List<Category>> = categoriesFlow
 
-    override fun getCategory(id: Int): Flow<Category> =
+    override fun getCategory(id: String): Flow<Category> =
         categoriesFlow.map { categories -> categories.find { it.id == id }!! }
 
     /**

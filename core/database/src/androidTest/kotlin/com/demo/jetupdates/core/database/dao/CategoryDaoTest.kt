@@ -31,7 +31,7 @@ internal class CategoryDaoTest : DatabaseTest() {
         val savedCategories = categoryDao.getCategoryEntities().first()
 
         assertEquals(
-            listOf(1, 2, 3),
+            listOf("1", "2", "3"),
             savedCategories.map { it.id },
         )
     }
@@ -40,7 +40,7 @@ internal class CategoryDaoTest : DatabaseTest() {
     fun getCategory() = runTest {
         insertCategories()
 
-        val savedCategoryEntity = categoryDao.getCategoryEntity(2).first()
+        val savedCategoryEntity = categoryDao.getCategoryEntity("2").first()
 
         assertEquals("performance", savedCategoryEntity.name)
     }
@@ -52,7 +52,7 @@ internal class CategoryDaoTest : DatabaseTest() {
         val savedCategories = categoryDao.getOneOffCategoryEntities()
 
         assertEquals(
-            listOf(1, 2, 3),
+            listOf("1", "2", "3"),
             savedCategories.map { it.id },
         )
     }
@@ -61,7 +61,7 @@ internal class CategoryDaoTest : DatabaseTest() {
     fun getCategories_byId() = runTest {
         insertCategories()
 
-        val savedCategories = categoryDao.getCategoryEntities(setOf(1, 2))
+        val savedCategories = categoryDao.getCategoryEntities(setOf("1", "2"))
             .first()
 
         assertEquals(listOf("compose", "performance"), savedCategories.map { it.name })
@@ -71,7 +71,7 @@ internal class CategoryDaoTest : DatabaseTest() {
     fun insertCategory_newEntryIsIgnoredIfAlreadyExists() = runTest {
         insertCategories()
         categoryDao.insertOrIgnoreCategories(
-            listOf(testCategoryEntity(1, "compose")),
+            listOf(testCategoryEntity("1", "compose")),
         )
 
         val savedCategories = categoryDao.getOneOffCategoryEntities()
@@ -83,7 +83,7 @@ internal class CategoryDaoTest : DatabaseTest() {
     fun upsertCategory_existingEntryIsUpdated() = runTest {
         insertCategories()
         categoryDao.upsertCategories(
-            listOf(testCategoryEntity(1, "newName")),
+            listOf(testCategoryEntity("1", "newName")),
         )
 
         val savedCategories = categoryDao.getOneOffCategoryEntities()
@@ -95,26 +95,26 @@ internal class CategoryDaoTest : DatabaseTest() {
     @Test
     fun deleteCategories_byId_existingEntriesAreDeleted() = runTest {
         insertCategories()
-        categoryDao.deleteCategories(listOf(1, 2))
+        categoryDao.deleteCategories(listOf("1", "2"))
 
         val savedCategories = categoryDao.getOneOffCategoryEntities()
 
         assertEquals(1, savedCategories.size)
-        assertEquals(3, savedCategories.first().id)
+        assertEquals("3", savedCategories.first().id)
     }
 
     private suspend fun insertCategories() {
         val categoryEntities = listOf(
-            testCategoryEntity(1, "compose"),
-            testCategoryEntity(2, "performance"),
-            testCategoryEntity(3, "headline"),
+            testCategoryEntity("1", "compose"),
+            testCategoryEntity("2", "performance"),
+            testCategoryEntity("3", "headline"),
         )
         categoryDao.insertOrIgnoreCategories(categoryEntities)
     }
 }
 
 private fun testCategoryEntity(
-    id: Int = 0,
+    id: String = "0",
     name: String,
 ) = CategoryEntity(
     id = id,

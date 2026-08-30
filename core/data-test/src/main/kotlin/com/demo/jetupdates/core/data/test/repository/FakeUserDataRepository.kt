@@ -37,17 +37,17 @@ class FakeUserDataRepository @Inject constructor(
     override val userData: Flow<UserData> =
         appPreferencesDataSource.userData
 
-    override suspend fun setFollowedCategoryIds(followedCategoryIds: Set<Int>) =
+    override suspend fun setFollowedCategoryIds(followedCategoryIds: Set<String>) =
         appPreferencesDataSource.setFollowedCategoryIds(followedCategoryIds)
 
-    override suspend fun setCategoryIdFollowed(followedCategoryId: Int, followed: Boolean) =
+    override suspend fun setCategoryIdFollowed(followedCategoryId: String, followed: Boolean) =
         appPreferencesDataSource.setCategoryIdFollowed(followedCategoryId, followed)
 
-    override suspend fun setShopItemBookmarked(shopItemId: Int, bookmarked: Boolean) {
+    override suspend fun setShopItemBookmarked(shopItemId: String, bookmarked: Boolean) {
         appPreferencesDataSource.setShopItemBookmarked(shopItemId, bookmarked)
     }
 
-    override suspend fun setShopItemViewed(shopItemId: Int, viewed: Boolean) =
+    override suspend fun setShopItemViewed(shopItemId: String, viewed: Boolean) =
         appPreferencesDataSource.setShopItemViewed(shopItemId, viewed)
 
     override suspend fun setThemeBrand(themeBrand: ThemeBrand) {

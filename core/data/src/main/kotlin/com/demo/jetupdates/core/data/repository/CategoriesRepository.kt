@@ -29,5 +29,5 @@ interface CategoriesRepository : Syncable {
     /**
      * Gets data for a specific category
      */
-    fun getCategory(id: Int): Flow<Category>
+    fun getCategory(id: String): Flow<Category>
 }

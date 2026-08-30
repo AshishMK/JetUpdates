@@ -23,7 +23,7 @@ import kotlinx.datetime.Instant
  * shop item's categories and whether they have saved (bookmarked) this shop item.
  */
 data class UserShopItem internal constructor(
-    val id: Int,
+    val id: String,
     val title: String,
     val price: Float,
     val description: String,

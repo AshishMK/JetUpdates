@@ -59,7 +59,7 @@ class StoreViewModel @Inject constructor(
             shouldShowOnboardingFromUserData || useCategoryClicked
         }
 
-    val deepLinkedShopItem = savedStateHandle.getStateFlow<Int?>(
+    val deepLinkedShopItem = savedStateHandle.getStateFlow<String?>(
         key = DEEP_LINK_SHOP_ITEM_ID_KEY,
         null,
     )
@@ -114,25 +114,25 @@ class StoreViewModel @Inject constructor(
                 initialValue = OnboardingUiState.Loading,
             )
 
-    fun updateCategorySelection(categoryId: Int, isChecked: Boolean) {
+    fun updateCategorySelection(categoryId: String, isChecked: Boolean) {
         viewModelScope.launch {
             userDataRepository.setCategoryIdFollowed(categoryId, isChecked)
         }
     }
 
-    fun updateShopItemSaved(shopItemId: Int, isChecked: Boolean) {
+    fun updateShopItemSaved(shopItemId: String, isChecked: Boolean) {
         viewModelScope.launch {
             userDataRepository.setShopItemBookmarked(shopItemId, isChecked)
         }
     }
 
-    fun setShopItemViewed(shopItemId: Int, viewed: Boolean) {
+    fun setShopItemViewed(shopItemId: String, viewed: Boolean) {
         viewModelScope.launch {
             userDataRepository.setShopItemViewed(shopItemId, viewed)
         }
     }
 
-    fun onDeepLinkOpened(shopItemId: Int) {
+    fun onDeepLinkOpened(shopItemId: String) {
         if (shopItemId == deepLinkedShopItem.value?.id) {
             savedStateHandle[DEEP_LINK_SHOP_ITEM_ID_KEY] = null
         }

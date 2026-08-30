@@ -29,8 +29,8 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toInstant
 
 val userShopItemsTestData: List<UserShopItem> = UserData(
-    bookmarkedShopItems = setOf(1, 4),
-    viewedShopItems = setOf(1, 2, 4),
+    bookmarkedShopItems = setOf("1", "4"),
+    viewedShopItems = setOf("1", "2", "4"),
     followedCategories = emptySet(),
     themeBrand = ThemeBrand.ANDROID,
     darkThemeConfig = DarkThemeConfig.DARK,
@@ -40,7 +40,7 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
     listOf(
         UserShopItem(
             shopItem = ShopItem(
-                id = 1,
+                id = "1",
                 title = "Android Basics with Compose",
                 description = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\n" +
                     "\n" +
@@ -64,7 +64,7 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
         ),
         UserShopItem(
             shopItem = ShopItem(
-                id = 2,
+                id = "2",
                 title = "Thanks for helping us reach 1M YouTube Subscribers",
                 description = "Thank you everyone for following the Now in Android series and everything the " +
                     "Android Developers YouTube channel has to offer. During the Android Developer " +
@@ -81,7 +81,7 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
         ),
         UserShopItem(
             shopItem = ShopItem(
-                id = 3,
+                id = "3",
                 title = "Transformations and customisations in the Paging Library",
                 description = "A demonstration of different operations that can be performed " +
                     "with Paging. Transformations like inserting separators, when to " +
@@ -98,7 +98,7 @@ val userShopItemsTestData: List<UserShopItem> = UserData(
         ),
         UserShopItem(
             shopItem = ShopItem(
-                id = 4,
+                id = "4",
                 title = "New Jetpack Release",
                 description = "New Jetpack release includes updates to libraries such as CameraX, Benchmark, and" +
                     "more!",

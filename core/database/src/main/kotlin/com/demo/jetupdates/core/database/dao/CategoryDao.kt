@@ -35,7 +35,7 @@ interface CategoryDao {
         WHERE id = :categoryId
     """,
     )
-    fun getCategoryEntity(categoryId: Int): Flow<CategoryEntity>
+    fun getCategoryEntity(categoryId: String): Flow<CategoryEntity>
 
     @Query(value = "SELECT * FROM categories")
     fun getCategoryEntities(): Flow<List<CategoryEntity>>
@@ -49,7 +49,7 @@ interface CategoryDao {
         WHERE id IN (:ids)
     """,
     )
-    fun getCategoryEntities(ids: Set<Int>): Flow<List<CategoryEntity>>
+    fun getCategoryEntities(ids: Set<String>): Flow<List<CategoryEntity>>
 
     /**
      * Inserts [categoryEntities] into the db if they don't exist, and ignores those that do
@@ -72,5 +72,5 @@ interface CategoryDao {
             WHERE id in (:ids)
         """,
     )
-    suspend fun deleteCategories(ids: List<Int>)
+    suspend fun deleteCategories(ids: List<String>)
 }

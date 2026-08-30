@@ -159,7 +159,7 @@ class StoreViewModelTest {
                 categories = listOf(
                     FollowableCategory2(
                         category = Category(
-                            id = 0,
+                            id = "0",
                             name = "Headlines",
                             shortDescription = "",
                             longDescription = "long description",
@@ -170,7 +170,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 1,
+                            id = "1",
                             name = "UI",
                             shortDescription = "",
                             longDescription = "long description",
@@ -181,7 +181,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 2,
+                            id = "2",
                             name = "Tools",
                             shortDescription = "",
                             longDescription = "long description",
@@ -217,7 +217,7 @@ class StoreViewModelTest {
                 categories = listOf(
                     FollowableCategory2(
                         category = Category(
-                            id = 0,
+                            id = "0",
                             name = "Headlines",
                             shortDescription = "",
                             longDescription = "long description",
@@ -228,7 +228,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 1,
+                            id = "1",
                             name = "UI",
                             shortDescription = "",
                             longDescription = "long description",
@@ -239,7 +239,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 2,
+                            id = "2",
                             name = "Tools",
                             shortDescription = "",
                             longDescription = "long description",
@@ -268,7 +268,7 @@ class StoreViewModelTest {
 
         categoriesRepository.sendCategories(sampleCategories)
 
-        val followedCategoryIds = setOf(0, 1)
+        val followedCategoryIds = setOf("0", "1")
         val userData =
             emptyUserData.copy(
                 followedCategories = followedCategoryIds,
@@ -372,8 +372,8 @@ class StoreViewModelTest {
         categoriesRepository.sendCategories(sampleCategories)
         userDataRepository.setFollowedCategoryIds(emptySet())
         shopRepository.sendShopItems(sampleShopItems)
-        viewModel.updateCategorySelection(1, isChecked = true)
-        viewModel.updateCategorySelection(1, isChecked = false)
+        viewModel.updateCategorySelection("1", isChecked = true)
+        viewModel.updateCategorySelection("1", isChecked = false)
 
         advanceUntilIdle()
         assertEquals(
@@ -381,7 +381,7 @@ class StoreViewModelTest {
                 categories = listOf(
                     FollowableCategory2(
                         category = Category(
-                            id = 0,
+                            id = "0",
                             name = "Headlines",
                             shortDescription = "",
                             longDescription = "long description",
@@ -392,7 +392,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 1,
+                            id = "1",
                             name = "UI",
                             shortDescription = "",
                             longDescription = "long description",
@@ -403,7 +403,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 2,
+                            id = "2",
                             name = "Tools",
                             shortDescription = "",
                             longDescription = "long description",
@@ -430,7 +430,7 @@ class StoreViewModelTest {
         backgroundScope.launch(UnconfinedTestDispatcher()) { viewModel.onboardingUiState.collect() }
         backgroundScope.launch(UnconfinedTestDispatcher()) { viewModel.feedState.collect() }
 
-        val followedCategoryIds = setOf(1)
+        val followedCategoryIds = setOf("1")
         val userData =
             emptyUserData.copy(
                 followedCategories = followedCategoryIds,
@@ -441,7 +441,7 @@ class StoreViewModelTest {
         userDataRepository.setUserData(userData)
         shopRepository.sendShopItems(sampleShopItems)
 
-        val bookmarkedShopItemId = 2
+        val bookmarkedShopItemId = "2"
         viewModel.updateShopItemSaved(
             shopItemId = bookmarkedShopItemId,
             isChecked = true,
@@ -500,7 +500,7 @@ class StoreViewModelTest {
 
     @Test
     fun whenUpdateShopItemSavedIsCalled_bookmarkStateIsUpdated() = runTest {
-        val shopItemId = 123
+        val shopItemId = "123"
         viewModel.updateShopItemSaved(shopItemId, true)
 
         assertEquals(
@@ -521,7 +521,7 @@ class StoreViewModelTest {
         backgroundScope.launch(UnconfinedTestDispatcher()) { viewModel.onboardingUiState.collect() }
         backgroundScope.launch(UnconfinedTestDispatcher()) { viewModel.feedState.collect() }
 
-        val followedCategoryIds = setOf(1)
+        val followedCategoryIds = setOf("1")
         val userData = emptyUserData.copy(
             followedCategories = followedCategoryIds,
             shouldHideOnboarding = true,
@@ -538,7 +538,7 @@ class StoreViewModelTest {
                 categories = listOf(
                     FollowableCategory2(
                         category = Category(
-                            id = 0,
+                            id = "0",
                             name = "Headlines",
                             shortDescription = "",
                             longDescription = "long description",
@@ -549,7 +549,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 1,
+                            id = "1",
                             name = "UI",
                             shortDescription = "",
                             longDescription = "long description",
@@ -560,7 +560,7 @@ class StoreViewModelTest {
                     ),
                     FollowableCategory2(
                         category = Category(
-                            id = 2,
+                            id = "2",
                             name = "Tools",
                             shortDescription = "",
                             longDescription = "long description",
@@ -589,7 +589,7 @@ class StoreViewModelTest {
 
 private val sampleCategories = listOf(
     Category(
-        id = 0,
+        id = "0",
         name = "Headlines",
         shortDescription = "",
         longDescription = "long description",
@@ -597,7 +597,7 @@ private val sampleCategories = listOf(
         imageUrl = "image URL",
     ),
     Category(
-        id = 1,
+        id = "1",
         name = "UI",
         shortDescription = "",
         longDescription = "long description",
@@ -605,7 +605,7 @@ private val sampleCategories = listOf(
         imageUrl = "image URL",
     ),
     Category(
-        id = 2,
+        id = "2",
         name = "Tools",
         shortDescription = "",
         longDescription = "long description",
@@ -616,7 +616,7 @@ private val sampleCategories = listOf(
 
 private val sampleShopItems = listOf(
     ShopItem(
-        id = 1,
+        id = "1",
         title = "Thanks for helping us reach 1M YouTube Subscribers",
         price = 11.45f,
         description = "Thank you everyone for following the JU App series and everything the " +
@@ -632,7 +632,7 @@ private val sampleShopItems = listOf(
         type = "Video 📺",
         categories = listOf(
             Category(
-                id = 0,
+                id = "0",
                 name = "Headlines",
                 shortDescription = "",
                 longDescription = "long description",
@@ -642,7 +642,7 @@ private val sampleShopItems = listOf(
         ),
     ),
     ShopItem(
-        id = 2,
+        id = "2",
         title = "Transformations and customisations in the Paging Library",
         price = 123.00f,
         description = "A demonstration of different operations that can be performed with Paging. " +
@@ -657,7 +657,7 @@ private val sampleShopItems = listOf(
         type = "Video 📺",
         categories = listOf(
             Category(
-                id = 1,
+                id = "1",
                 name = "UI",
                 shortDescription = "",
                 longDescription = "long description",
@@ -667,7 +667,7 @@ private val sampleShopItems = listOf(
         ),
     ),
     ShopItem(
-        id = 3,
+        id = "3",
         title = "Community tip on Paging",
         price = 180f,
         description = "Tips for using the Paging library from the developer community",
@@ -680,7 +680,7 @@ private val sampleShopItems = listOf(
         type = "Video 📺",
         categories = listOf(
             Category(
-                id = 1,
+                id = "1",
                 name = "UI",
                 shortDescription = "",
                 longDescription = "long description",
