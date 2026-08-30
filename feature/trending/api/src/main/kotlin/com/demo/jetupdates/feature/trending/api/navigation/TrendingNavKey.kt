@@ -22,5 +22,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class TrendingNavKey(
     // The ID of the category which will be initially selected at this destination
-    val initialCategoryId: Int? = null,
+    val initialCategoryId: String? = null,
 ) : NavKey

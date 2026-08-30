@@ -139,7 +139,7 @@ internal fun ProductScreen(
 @Composable
 internal fun ProductScreen(
     productUiState: UserShopItem,
-    id: Int,
+    id: String,
     onCartChanged: (Boolean) -> Unit,
     windowAdaptiveInfo: WindowAdaptiveInfo,
     modifier: Modifier = Modifier,
@@ -193,7 +193,7 @@ internal fun ProductScreen(
                     .verticalScroll(state),
                 //  .windowInsetsPadding(insets),
                 horizontalArrangement = Arrangement.Center,
-                verticalArrangement = Arrangement.Center,
+                verticalArrangement = if (isCompact) Arrangement.Top else Arrangement.Center,
                 maxItemsInEachRow = 2,
             ) {
                 ContentImages(
@@ -256,7 +256,7 @@ private val roundShapeCompat = RoundedCornerShape(0.dp, 0.dp, 40.dp, 40.dp)
 internal fun ContentImages(
     isCompact: Boolean,
     images: List<String>,
-    id: Int,
+    id: String,
     modifier: Modifier = Modifier,
 ) {
     val sharedTransitionScope = LocalSharedTransitionScope.current
@@ -273,7 +273,7 @@ internal fun ContentImages(
                         rememberSharedContentState(
                             key = SnackSharedElementKey(
                                 snackId = id,
-                                origin = id.toString(),
+                                origin = id,
                                 type = SnackSharedElementType.Image,
                             ),
                         ),
@@ -427,7 +427,7 @@ internal fun ContentDescription(
     modifier: Modifier = Modifier,
     isCompact: Boolean = true,
     userShopItem: UserShopItem,
-    id: Int,
+    id: String,
 ) {
     val sharedTransitionScope = LocalSharedTransitionScope.current
         ?: throw IllegalArgumentException("No Scope found")

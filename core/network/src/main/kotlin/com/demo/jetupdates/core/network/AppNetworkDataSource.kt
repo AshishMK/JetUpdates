@@ -24,9 +24,9 @@ import com.demo.jetupdates.core.network.model.NetworkShopItem
  * Interface representing network calls to the JU App backend
  */
 interface AppNetworkDataSource {
-    suspend fun getCategories(ids: List<Int>? = null): List<NetworkCategory>
+    suspend fun getCategories(ids: List<String>? = null): List<NetworkCategory>
 
-    suspend fun getShopItems(ids: List<Int>? = null): List<NetworkShopItem>
+    suspend fun getShopItems(ids: List<String>? = null): List<NetworkShopItem>
 
     suspend fun getCategoryChangeList(after: Int? = null): List<NetworkChangeList>
 

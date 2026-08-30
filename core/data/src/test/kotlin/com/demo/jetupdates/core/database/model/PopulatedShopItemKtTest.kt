@@ -27,7 +27,7 @@ class PopulatedShopItemKtTest {
     fun populated_Shop_item_can_be_mapped_to_Shop_item() {
         val populatedShopItem = PopulatedShopItem(
             entity = ShopItemEntity(
-                id = 1,
+                id = "1",
                 title = "news",
                 price = 10f,
                 description = "Hilt",
@@ -38,7 +38,7 @@ class PopulatedShopItemKtTest {
             ),
             categories = listOf(
                 CategoryEntity(
-                    id = 3,
+                    id = "3",
                     name = "name",
                     shortDescription = "short description",
                     longDescription = "long description",
@@ -51,7 +51,7 @@ class PopulatedShopItemKtTest {
 
         assertEquals(
             ShopItem(
-                id = 1,
+                id = "1",
                 title = "news",
                 price = 10f,
                 description = "Hilt",
@@ -61,7 +61,7 @@ class PopulatedShopItemKtTest {
                 publishDate = Instant.fromEpochMilliseconds(1),
                 categories = listOf(
                     Category(
-                        id = 3,
+                        id = "3",
                         name = "name",
                         shortDescription = "short description",
                         longDescription = "long description",

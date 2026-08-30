@@ -30,12 +30,12 @@ class TestCategoryDao : CategoryDao {
 
     private val entitiesStateFlow = MutableStateFlow(emptyList<CategoryEntity>())
 
-    override fun getCategoryEntity(categoryId: Int): Flow<CategoryEntity> =
+    override fun getCategoryEntity(categoryId: String): Flow<CategoryEntity> =
         throw NotImplementedError("Unused in tests")
 
     override fun getCategoryEntities(): Flow<List<CategoryEntity>> = entitiesStateFlow
 
-    override fun getCategoryEntities(ids: Set<Int>): Flow<List<CategoryEntity>> =
+    override fun getCategoryEntities(ids: Set<String>): Flow<List<CategoryEntity>> =
         getCategoryEntities().map { categories -> categories.filter { it.id in ids } }
 
     override suspend fun getOneOffCategoryEntities(): List<CategoryEntity> = emptyList()
@@ -53,7 +53,7 @@ class TestCategoryDao : CategoryDao {
         entitiesStateFlow.update { oldValues -> (entities + oldValues).distinctBy(CategoryEntity::id) }
     }
 
-    override suspend fun deleteCategories(ids: List<Int>) {
+    override suspend fun deleteCategories(ids: List<String>) {
         val idSet = ids.toSet()
         entitiesStateFlow.update { entities -> entities.filterNot { it.id in idSet } }
     }

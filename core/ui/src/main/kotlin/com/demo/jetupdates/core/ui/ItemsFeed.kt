@@ -48,9 +48,9 @@ import com.demo.jetupdates.core.model.data.UserShopItem
  */
 fun LazyStaggeredGridScope.itemFeed(
     feedState: ItemFeedUiState,
-    onShopItemCheckedChanged: (Int, Boolean) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
-    onProductClick: (Int) -> Unit,
+    onShopItemCheckedChanged: (String, Boolean) -> Unit,
+    onShopItemViewed: (String) -> Unit,
+    onProductClick: (String) -> Unit,
     onExpandedCardClick: () -> Unit = {},
 ) {
     when (feedState) {

@@ -24,9 +24,9 @@ import com.demo.jetupdates.core.navigation.Navigator
 import com.demo.jetupdates.core.ui.LocalNavAnimatedVisibilityScope
 import com.demo.jetupdates.feature.category.api.navigation.navigateToCategory
 import com.demo.jetupdates.feature.product.api.navigation.navigateToProduct
+import com.demo.jetupdates.feature.search.api.navigation.SearchNavKey
 import com.demo.jetupdates.feature.search.impl.SearchScreen
 import com.demo.jetupdates.feature.trending.api.navigation.TrendingNavKey
-import com.google.samples.apps.nowinandroid.feature.search.api.navigation.SearchNavKey
 
 fun EntryProviderScope<NavKey>.searchEntry(navigator: Navigator) {
     entry<SearchNavKey> {

@@ -54,7 +54,7 @@ internal class SyncWorker @AssistedInject constructor(
     private val categoryRepository: CategoriesRepository,
     private val shopRepository: ShopRepository,
     private val searchContentsRepository: SearchContentsRepository,
-    @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
+    @param:Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
     private val syncSubscriber: SyncSubscriber,
 ) : CoroutineWorker(appContext, workerParams), Synchronizer {
 

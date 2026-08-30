@@ -40,8 +40,8 @@ class UserPreferencesSerializerTest {
     @Test
     fun writingAndReadingUserPreferences_outputsCorrectValue() = runTest {
         val expectedUserPreferences = userPreferences {
-            followedCategoryIds.put(0, true)
-            followedCategoryIds.put(1, true)
+            followedCategoryIds.put("0", true)
+            followedCategoryIds.put("1", true)
         }
 
         val outputStream = ByteArrayOutputStream()

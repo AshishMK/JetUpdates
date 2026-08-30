@@ -27,11 +27,11 @@ data class ShopItemQuery(
     /**
      * Category ids to filter for. Null means any category id will match.
      */
-    val filterCategoryIds: Set<Int>? = null,
+    val filterCategoryIds: Set<String>? = null,
     /**
      * Shop Item ids to filter for. Null means any shop Item id will match.
      */
-    val filterItemIds: Set<Int>? = null,
+    val filterItemIds: Set<String>? = null,
 )
 
 /**
@@ -51,5 +51,5 @@ interface ShopRepository : Syncable {
     /**
      * Returns available shop item that match the specified [item id].
      */
-    fun getShopItem(id: Int): Flow<ShopItem>
+    fun getShopItem(id: String): Flow<ShopItem>
 }

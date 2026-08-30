@@ -52,11 +52,11 @@ class AppPreferencesDataSourceTest {
     fun userShouldHideOnboarding_unfollowsLastCategory_shouldHideOnboardingIsFalse() =
         testScope.runTest {
             // Given: user completes onboarding by selecting a single category.
-            subject.setCategoryIdFollowed(1, true)
+            subject.setCategoryIdFollowed("1", true)
             subject.setShouldHideOnboarding(true)
 
             // When: they unfollow that category.
-            subject.setCategoryIdFollowed(1, false)
+            subject.setCategoryIdFollowed("1", false)
 
             // Then: onboarding should be shown again
             assertFalse(subject.userData.first().shouldHideOnboarding)
@@ -66,7 +66,7 @@ class AppPreferencesDataSourceTest {
     fun userShouldHideOnboarding_unfollowsAllCategories_shouldHideOnboardingIsFalse() =
         testScope.runTest {
             // Given: user completes onboarding by selecting several categories.
-            subject.setFollowedCategoryIds(setOf(1, 2))
+            subject.setFollowedCategoryIds(setOf("1", "2"))
             subject.setShouldHideOnboarding(true)
 
             // When: they unfollow those categories.

@@ -38,7 +38,7 @@ class UserShopItemTest {
     @Test
     fun userNewsResourcesAreConstructedFromNewsResourcesAndUserData() {
         val newsResource1 = ShopItem(
-            id = 1,
+            id = "1",
             title = "Test news title",
             price = 34.50f,
             description = "Test news content",
@@ -48,7 +48,7 @@ class UserShopItemTest {
             type = "Article 📚",
             categories = listOf(
                 Category(
-                    id = 1,
+                    id = "1",
                     name = "Topic 1",
                     shortDescription = "Topic 1 short description",
                     longDescription = "Topic 1 long description",
@@ -56,7 +56,7 @@ class UserShopItemTest {
                     imageUrl = "Topic 1 image URL",
                 ),
                 Category(
-                    id = 2,
+                    id = "2",
                     name = "Topic 2",
                     shortDescription = "Topic 2 short description",
                     longDescription = "Topic 2 long description",
@@ -67,9 +67,9 @@ class UserShopItemTest {
         )
 
         val userData = UserData(
-            bookmarkedShopItems = setOf(1),
-            viewedShopItems = setOf(1),
-            followedCategories = setOf(1),
+            bookmarkedShopItems = setOf("1"),
+            viewedShopItems = setOf("1"),
+            followedCategories = setOf("1"),
             themeBrand = ThemeBrand.DEFAULT,
             darkThemeConfig = DarkThemeConfig.FOLLOW_SYSTEM,
             useDynamicColor = false,

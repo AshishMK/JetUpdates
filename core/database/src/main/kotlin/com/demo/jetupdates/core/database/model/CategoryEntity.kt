@@ -30,7 +30,7 @@ import com.demo.jetupdates.core.model.data.Category
 )
 data class CategoryEntity(
     @PrimaryKey
-    val id: Int,
+    val id: String,
     val name: String,
     val shortDescription: String,
     @ColumnInfo(defaultValue = "")

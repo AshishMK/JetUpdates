@@ -59,9 +59,9 @@ interface ShopItemDao {
     )
     fun getShopItems(
         useFilterCategoryIds: Boolean = false,
-        filterCategoryIds: Set<Int> = emptySet(),
+        filterCategoryIds: Set<String> = emptySet(),
         useFilterItemIds: Boolean = false,
-        filterItemIds: Set<Int> = emptySet(),
+        filterItemIds: Set<String> = emptySet(),
     ): Flow<List<PopulatedShopItem>>
 
     /**
@@ -90,10 +90,10 @@ interface ShopItemDao {
     )
     fun getShopItemIds(
         useFilterCategoryIds: Boolean = false,
-        filterCategoryIds: Set<Int> = emptySet(),
+        filterCategoryIds: Set<String> = emptySet(),
         useFilterItemIds: Boolean = false,
-        filterItemIds: Set<Int> = emptySet(),
-    ): Flow<List<Int>>
+        filterItemIds: Set<String> = emptySet(),
+    ): Flow<List<String>>
 
     /**
      * Inserts or updates [shopItemEntities] in the db under the specified primary keys
@@ -115,7 +115,7 @@ interface ShopItemDao {
             WHERE id in (:ids)
         """,
     )
-    suspend fun deleteShopItems(ids: List<Int>)
+    suspend fun deleteShopItems(ids: List<String>)
 
     /**
      * Fetches shop items that match the query parameters
@@ -129,6 +129,6 @@ interface ShopItemDao {
     """,
     )
     fun getShopItem(
-        filterItemId: Int,
+        filterItemId: String,
     ): Flow<PopulatedShopItem>
 }

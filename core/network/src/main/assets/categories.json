@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Fashion & Apparel",
     "shortDescription": "Stay Stylish, Every Day",
     "longDescription": "Discover the latest trends in clothing, footwear, and accessories for men, women, and kids. Shop timeless classics and fresh designs for every season.",
@@ -8,7 +8,7 @@
     "url": ""
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Electronics & Gadgets",
     "shortDescription": "Smart Tech for a Smarter Life",
     "longDescription": "From smartphones to smart homes, explore top-of-the-line electronics and must-have gadgets designed to simplify your life and keep you connected.",
@@ -16,7 +16,7 @@
     "url": ""
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Home & Living",
     "shortDescription": "Create Your Perfect Space",
     "longDescription": "Find everything you need to turn your house into a home — furniture, decor, kitchenware, and more — blending comfort, functionality, and style.",
@@ -24,7 +24,7 @@
     "url": ""
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Beauty & Personal Care",
     "shortDescription": "Glow Inside and Out",
     "longDescription": "Shop premium skincare, makeup, haircare, and wellness essentials. Feel your best with curated products designed for every beauty journey.",
@@ -32,7 +32,7 @@
     "url": ""
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Sports & Outdoors",
     "shortDescription": "Gear Up for Adventure",
     "longDescription": "Whether you're hitting the gym or the great outdoors, find top-quality activewear, equipment, and accessories to fuel your passion and performance.",
@@ -40,7 +40,7 @@
     "url": ""
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "Toys, Kids & Babies",
     "shortDescription": "Smiles Start Here",
     "longDescription": "Discover toys that inspire creativity, clothes that fit just right, and essentials that make parenting easier — everything for your little ones in one place.",
@@ -48,7 +48,7 @@
     "url": ""
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "Health & Wellness",
     "shortDescription": "Your Journey to Better Living",
     "longDescription": "Shop vitamins, fitness equipment, supplements, and health devices that support your goals for a stronger, healthier you.",
@@ -56,7 +56,7 @@
     "url": ""
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "Automotive & Accessories",
     "shortDescription": "Drive in Style",
     "longDescription": "Upgrade your ride with car accessories, care products, and tech enhancements designed for comfort, safety, and performance.",
@@ -64,7 +64,7 @@
     "url": ""
   },
   {
-    "id": 9,
+    "id": "9",
     "name": "Books & Stationery",
     "shortDescription": "Fuel Your Mind and Creativity",
     "longDescription": "From bestsellers to indie favorites, plus stylish stationery and work essentials — find what you need to learn, plan, and grow.",
@@ -72,7 +72,7 @@
     "url": ""
   },
   {
-    "id": 10,
+    "id": "10",
     "name": "Grocery & Gourmet Food",
     "shortDescription": "Freshness Delivered to Your Door",
     "longDescription": "Shop pantry staples, specialty treats, and fresh produce — everything you need for everyday meals and special occasions.",
@@ -80,7 +80,7 @@
     "url": ""
   },
   {
-    "id": 11,
+    "id": "11",
     "name": "Jewelry & Watches",
     "shortDescription": "Timeless Pieces for Every Moment",
     "longDescription": "Explore elegant jewelry and luxury watches crafted to celebrate life's special occasions and everyday style.",
@@ -88,7 +88,7 @@
     "url": ""
   },
   {
-    "id": 12,
+    "id": "12",
     "name": "Pet Supplies",
     "shortDescription": "Happy Pets, Happy Homes",
     "longDescription": "Find everything your furry, feathered, or finned friend needs — from nutritious food to fun toys and comfy beds.",
@@ -96,7 +96,7 @@
     "url": ""
   },
   {
-    "id": 13,
+    "id": "13",
     "name": "Art & Collectibles",
     "shortDescription": "Inspire, Collect, and Admire",
     "longDescription": "Shop unique artwork, limited-edition prints, and collectibles that add a personal touch to your home or office",
@@ -104,7 +104,7 @@
     "url": ""
   },
   {
-    "id": 14,
+    "id": "14",
     "name": "DIY & Tools",
     "shortDescription": "Build It Your Way",
     "longDescription": "From home improvement to crafting projects, stock up on the tools, hardware, and materials you need to make it happen.",
@@ -112,7 +112,7 @@
     "url": ""
   },
   {
-    "id": 15,
+    "id": "15",
     "name": "Musical Instruments & Gear",
     "shortDescription": "Your Sound Starts Here",
     "longDescription": "Discover guitars, keyboards, professional audio gear, and everything else musicians need to create, record, and perform",
@@ -120,7 +120,7 @@
     "url": ""
   },
   {
-    "id": 16,
+    "id": "16",
     "name": "Travel & Luggage",
     "shortDescription": "Adventure Awaits",
     "longDescription": "Find durable luggage, travel accessories, and essentials that make every journey smoother, safer, and more stylish.",
@@ -128,7 +128,7 @@
     "url": ""
   },
   {
-    "id": 17,
+    "id": "17",
     "name": "Office & Business Supplies",
     "shortDescription": "Work Smarter, Not Harder",
     "longDescription": "Equip your workspace with top-quality office furniture, tech accessories, and supplies to boost productivity and efficiency.",
@@ -136,7 +136,7 @@
     "url": ""
   },
   {
-    "id": 18,
+    "id": "18",
     "name": "Camera & Media",
     "shortDescription": "Where Every Pixel Tells a Story",
     "longDescription": "The latest news on capturing and playing media on Android, including the Camera and Media APIs. ",
@@ -144,7 +144,7 @@
     "url": ""
   },
   {
-    "id": 19,
+    "id": "19",
     "name": "Eco-Friendly Products",
     "shortDescription": "Shop with Purpose",
     "longDescription": "Support a greener future with eco-conscious brands offering sustainable fashion, home goods, beauty products, and more.",

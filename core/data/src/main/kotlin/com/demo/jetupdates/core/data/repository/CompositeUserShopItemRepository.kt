@@ -67,7 +67,7 @@ class CompositeUserShopItemRepository @Inject constructor(
                 }
             }
 
-    override fun observeItem(id: Int): Flow<UserShopItem> = shopRepository.getShopItem(id)
+    override fun observeItem(id: String): Flow<UserShopItem> = shopRepository.getShopItem(id)
         .combine(userDataRepository.userData) { shopItem, userData ->
             UserShopItem(shopItem, userData)
         }

@@ -159,7 +159,7 @@ private const val CATEGORY_IMAGE_URL = "Image URL"
 private val testInputCategories = listOf(
     FollowableCategory2(
         Category(
-            id = 0,
+            id = "0",
             name = CATEGORY_1_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -170,7 +170,7 @@ private val testInputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 1,
+            id = "1",
             name = CATEGORY_2_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -181,7 +181,7 @@ private val testInputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 2,
+            id = "2",
             name = CATEGORY_3_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -195,7 +195,7 @@ private val testInputCategories = listOf(
 private val testOutputCategories = listOf(
     FollowableCategory2(
         Category(
-            id = 0,
+            id = "0",
             name = CATEGORY_1_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -206,7 +206,7 @@ private val testOutputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 1,
+            id = "1",
             name = CATEGORY_2_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -217,7 +217,7 @@ private val testOutputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 2,
+            id = "2",
             name = CATEGORY_3_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,

@@ -40,19 +40,20 @@ import com.demo.jetupdates.core.model.data.ShopItem
 import com.demo.jetupdates.core.network.model.NetworkChangeList
 import com.demo.jetupdates.core.network.model.NetworkShopItem
 import com.demo.jetupdates.core.testing.notifications.TestNotifier
+import com.demo.jetupdates.core.testing.util.MainDispatcherRule
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class OfflineFirstShopRepositoryTest {
 
-    private val testScope = TestScope(UnconfinedTestDispatcher())
-
+    // private val testScope = TestScope(UnconfinedTestDispatcher())
+    @get:Rule
+    val dispatcherRule = MainDispatcherRule()
     private lateinit var subject: OfflineFirstShopRepository
 
     private lateinit var appPreferencesDataSource: AppPreferencesDataSource
@@ -89,7 +90,8 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_shop_items_stream_is_backed_by_shop_item_dao() =
-        testScope.runTest {
+        runTest {
+            // list item assert eg. subject.getShopItems()
             subject.syncWith(synchronizer)
             assertEquals(
                 shopItemDao.getShopItems()
@@ -102,48 +104,48 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_shop_item_stream_is_backed_by_shop_item_dao() =
-        testScope.runTest {
+        runTest {
             subject.syncWith(synchronizer)
+            // Single item assert eg. subject.getShopItem()
             assertEquals(
-                shopItemDao.getShopItem(1)
+                shopItemDao.getShopItem("1")
                     .first().asExternalModel(),
-                subject.getShopItem(1)
+                subject.getShopItem("1")
                     .first(),
             )
         }
 
     @Test
-    fun offlineFirstShopRepository_shop_items_for_category_is_backed_by_shop_item_dao() =
-        testScope.runTest {
-            assertEquals(
-                expected = shopItemDao.getShopItems(
+    fun offlineFirstShopRepository_shop_items_for_category_is_backed_by_shop_item_dao() = runTest {
+        assertEquals(
+            expected = shopItemDao.getShopItems(
+                filterCategoryIds = filteredInterestsIds,
+                useFilterCategoryIds = true,
+            )
+                .first()
+                .map(PopulatedShopItem::asExternalModel),
+            actual = subject.getShopItems(
+                query = ShopItemQuery(
                     filterCategoryIds = filteredInterestsIds,
-                    useFilterCategoryIds = true,
-                )
-                    .first()
-                    .map(PopulatedShopItem::asExternalModel),
-                actual = subject.getShopItems(
-                    query = ShopItemQuery(
-                        filterCategoryIds = filteredInterestsIds,
-                    ),
-                )
-                    .first(),
+                ),
             )
+                .first(),
+        )
 
-            assertEquals(
-                expected = emptyList(),
-                actual = subject.getShopItems(
-                    query = ShopItemQuery(
-                        filterCategoryIds = nonPresentInterestsIds,
-                    ),
-                )
-                    .first(),
+        assertEquals(
+            expected = emptyList(),
+            actual = subject.getShopItems(
+                query = ShopItemQuery(
+                    filterCategoryIds = nonPresentInterestsIds,
+                ),
             )
-        }
+                .first(),
+        )
+    }
 
     @Test
     fun offlineFirstShopRepository_sync_pulls_from_network() =
-        testScope.runTest {
+        runTest {
             // User has not onboarded
             appPreferencesDataSource.setShouldHideOnboarding(false)
             subject.syncWith(synchronizer)
@@ -173,7 +175,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_sync_deletes_items_marked_deleted_on_network() =
-        testScope.runTest {
+        runTest {
             // User has not onboarded
             appPreferencesDataSource.setShouldHideOnboarding(false)
 
@@ -220,7 +222,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_incremental_sync_pulls_from_network() =
-        testScope.runTest {
+        runTest {
             // User has not onboarded
             appPreferencesDataSource.setShouldHideOnboarding(false)
 
@@ -265,7 +267,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_sync_saves_shell_category_entities() =
-        testScope.runTest {
+        runTest {
             subject.syncWith(synchronizer)
 
             assertEquals(
@@ -282,7 +284,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_sync_saves_category_cross_references() =
-        testScope.runTest {
+        runTest {
             subject.syncWith(synchronizer)
 
             assertEquals(
@@ -298,7 +300,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_sync_marks_as_read_on_first_run() =
-        testScope.runTest {
+        runTest {
             subject.syncWith(synchronizer)
 
             assertEquals(
@@ -309,7 +311,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_sync_does_not_mark_as_read_on_subsequent_run() =
-        testScope.runTest {
+        runTest {
             // Pretend that we already have up to change list 7
             synchronizer.updateChangeListVersions {
                 copy(shopItemVersion = 7)
@@ -325,7 +327,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_sends_notifications_for_newly_synced_shop_item_that_is_followed() =
-        testScope.runTest {
+        runTest {
             // User has onboarded
             appPreferencesDataSource.setShouldHideOnboarding(true)
 
@@ -362,7 +364,7 @@ class OfflineFirstShopRepositoryTest {
 
     @Test
     fun offlineFirstShopRepository_does_not_send_notifications_for_existing_shop_items() =
-        testScope.runTest {
+        runTest {
             // User has onboarded
             appPreferencesDataSource.setShouldHideOnboarding(true)
 

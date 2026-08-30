@@ -37,14 +37,14 @@ import javax.inject.Inject
 @HiltViewModel
 class CartViewModel @Inject constructor(
     private val userDataRepository: UserDataRepository,
-    userNewsResourceRepository: UserShopItemRepository,
+    userShopItemRepository: UserShopItemRepository,
 ) : ViewModel() {
 
     var shouldDisplayUndoItem by mutableStateOf(false)
-    private var lastRemovedBookmarkId: Int? = null
+    private var lastRemovedBookmarkId: String? = null
 
     val feedUiState: StateFlow<ItemFeedUiState> =
-        userNewsResourceRepository.observeAllBookmarked()
+        userShopItemRepository.observeAllBookmarked()
             .map<List<UserShopItem>, ItemFeedUiState>(ItemFeedUiState::Success)
             .onStart { emit(ItemFeedUiState.Loading) }
             .stateIn(
@@ -53,17 +53,17 @@ class CartViewModel @Inject constructor(
                 initialValue = ItemFeedUiState.Loading,
             )
 
-    fun removeFromSavedResources(newsResourceId: Int) {
+    fun removeFromSavedResources(shopItemId: String) {
         viewModelScope.launch {
             shouldDisplayUndoItem = true
-            lastRemovedBookmarkId = newsResourceId
-            userDataRepository.setShopItemBookmarked(newsResourceId, false)
+            lastRemovedBookmarkId = shopItemId
+            userDataRepository.setShopItemBookmarked(shopItemId, false)
         }
     }
 
-    fun setShopItemViewed(newsResourceId: Int, viewed: Boolean) {
+    fun setShopItemViewed(shopItemId: String, viewed: Boolean) {
         viewModelScope.launch {
-            userDataRepository.setShopItemViewed(newsResourceId, viewed)
+            userDataRepository.setShopItemViewed(shopItemId, viewed)
         }
     }
 

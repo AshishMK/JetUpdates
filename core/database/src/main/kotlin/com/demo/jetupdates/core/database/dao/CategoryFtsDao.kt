@@ -32,7 +32,7 @@ interface CategoryFtsDao {
     suspend fun insertAll(categories: List<CategoryFtsEntity>)
 
     @Query("SELECT categoryId FROM categoriesFts WHERE categoriesFts MATCH :query")
-    fun searchAllCategories(query: String): Flow<List<Int>>
+    fun searchAllCategories(query: String): Flow<List<String>>
 
     @Query("SELECT count(*) FROM categoriesFts")
     fun getCount(): Flow<Int>

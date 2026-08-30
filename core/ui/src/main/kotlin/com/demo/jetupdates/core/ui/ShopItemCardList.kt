@@ -34,8 +34,8 @@ import com.demo.jetupdates.core.model.data.UserShopItem
 fun LazyStaggeredGridScope.userShopItemCardItems(
     items: List<UserShopItem>,
     onToggleBookmark: (item: UserShopItem) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onShopItemViewed: (String) -> Unit,
+    onCategoryClick: (String) -> Unit,
     itemModifier: Modifier = Modifier,
 ) = items(
     items = items,

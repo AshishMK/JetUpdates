@@ -43,13 +43,14 @@ internal class OfflineFirstCategoriesRepository @Inject constructor(
         categoryDao.getCategoryEntities()
             .map { it.map(CategoryEntity::asExternalModel) }
 
-    override fun getCategory(id: Int): Flow<Category> =
+    override fun getCategory(id: String): Flow<Category> =
         categoryDao.getCategoryEntity(id).map { it.asExternalModel() }
 
-    override suspend fun syncWith(synchronizer: Synchronizer): Boolean =
-        synchronizer.changeListSync(
+    override suspend fun syncWith(synchronizer: Synchronizer): Boolean {
+        return synchronizer.changeListSync(
             versionReader = ChangeListVersions::categoryVersion,
             changeListFetcher = { currentVersion ->
+
                 network.getCategoryChangeList(after = currentVersion)
             },
             versionUpdater = { latestVersion ->
@@ -63,4 +64,5 @@ internal class OfflineFirstCategoriesRepository @Inject constructor(
                 )
             },
         )
+    }
 }

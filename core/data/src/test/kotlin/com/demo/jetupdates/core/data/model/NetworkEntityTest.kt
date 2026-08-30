@@ -30,7 +30,7 @@ class NetworkEntityTest {
     @Test
     fun networkCategoryMapsToDatabaseModel() {
         val networkModel = NetworkCategory(
-            id = 0,
+            id = "0",
             name = "Test",
             shortDescription = "short description",
             longDescription = "long description",
@@ -39,7 +39,7 @@ class NetworkEntityTest {
         )
         val entity = networkModel.asEntity()
 
-        assertEquals(0, entity.id)
+        assertEquals("0", entity.id)
         assertEquals("Test", entity.name)
         assertEquals("short description", entity.shortDescription)
         assertEquals("long description", entity.longDescription)
@@ -51,7 +51,7 @@ class NetworkEntityTest {
     fun networkShopItemMapsToDatabaseModel() {
         val networkModel =
             NetworkShopItem(
-                id = 0,
+                id = "0",
                 title = "title",
                 price = 10.02f,
                 description = "description",
@@ -62,7 +62,7 @@ class NetworkEntityTest {
             )
         val entity = networkModel.asEntity()
 
-        assertEquals(0, entity.id)
+        assertEquals("0", entity.id)
         assertEquals("title", entity.title)
         assertEquals(10.02f, entity.price)
         assertEquals("description", entity.description)
@@ -75,7 +75,7 @@ class NetworkEntityTest {
     @Test
     fun networkCategoryMapsToExternalModel() {
         val networkCategory = NetworkCategory(
-            id = 0,
+            id = "0",
             name = "Test",
             shortDescription = "short description",
             longDescription = "long description",
@@ -84,7 +84,7 @@ class NetworkEntityTest {
         )
 
         val expected = Category(
-            id = 0,
+            id = "0",
             name = "Test",
             shortDescription = "short description",
             longDescription = "long description",
@@ -98,7 +98,7 @@ class NetworkEntityTest {
     @Test
     fun networkShopItemMapsToExternalModel() {
         val networkShopItem = NetworkShopItem(
-            id = 0,
+            id = "0",
             title = "title",
             price = 12f,
             description = "description",
@@ -106,12 +106,12 @@ class NetworkEntityTest {
             images = listOf("headerImageUrl", "image2"),
             publishDate = Instant.fromEpochMilliseconds(1),
             type = "Article 📚",
-            categories = listOf(1, 2),
+            categories = listOf("1", "2"),
         )
 
         val networkCategories = listOf(
             NetworkCategory(
-                id = 1,
+                id = "1",
                 name = "Test 1",
                 shortDescription = "short description 1",
                 longDescription = "long description 1",
@@ -119,7 +119,7 @@ class NetworkEntityTest {
                 imageUrl = "imageUrl 1",
             ),
             NetworkCategory(
-                id = 2,
+                id = "2",
                 name = "Test 2",
                 shortDescription = "short description 2",
                 longDescription = "long description 2",
@@ -129,7 +129,7 @@ class NetworkEntityTest {
         )
 
         val expected = ShopItem(
-            id = 0,
+            id = "0",
             title = "title",
             price = 12f,
             description = "description",
