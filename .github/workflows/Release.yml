@@ -16,8 +16,7 @@ jobs:
     permissions:
       contents: write
 
-    permissions:
-      contents: write
+
 
     steps:
       - name: Enable KVM group perms
