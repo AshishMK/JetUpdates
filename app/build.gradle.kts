@@ -51,23 +51,25 @@ android {
     val propertyTextProvider = providers.fileContents(
         isolated.rootProject.projectDirectory.file("mykeys.properties")
     ).asText
-
-
-    val  prop =  propertyTextProvider.get()
+    val  prop =  propertyTextProvider.getOrElse("")
     val properties = Properties()
     properties.load(StringReader(prop))
 
-    val my_keystore_password = properties["MY_KEYSTORE_PASSWORD"] as String
-        // Move to returning `properties["BACKEND_URL"] as String?` after upgrading to Gradle 9.0.0
+    /**
+     * CI/CD wont have mykeys.properties
+     * **/
+    val hasKey = properties.containsKey("MY_KEYSTORE_PASSWORD")
 
+    val my_keystore_password = if (properties.containsKey("MY_KEYSTORE_PASSWORD")) properties["MY_KEYSTORE_PASSWORD"] as? String ?: "test" else "test"
 
     val my_key_password = if (properties.containsKey("MY_KEY_PASSWORD"))
-            (properties["MY_KEY_PASSWORD"] as String)
+            (properties["MY_KEY_PASSWORD"] as? String) ?: "test"
         else "test"
         // Move to returning
     val my_key_alias =  if (properties.containsKey("MY_KEY_ALIAS"))
-            (properties["MY_KEY_ALIAS"] as String)
+            (properties["MY_KEY_ALIAS"] as? String) ?: "test"
         else "test"
+
 
 
     signingConfigs {
@@ -82,7 +84,7 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
-            signingConfig = signingConfigs.getByName("myKey")
+            signingConfig = if(hasKey) signingConfigs.getByName("myKey") else signingConfigs.named("debug").get()
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
@@ -95,7 +97,7 @@ android {
             // who clones the code to sign and run the release variant, use the debug signing key.
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
           //  signingConfig = signingConfigs.named("debug").get()
-            signingConfig = signingConfigs.getByName("myKey")
+            signingConfig = if(hasKey) signingConfigs.getByName("myKey") else signingConfigs.named("debug").get()
             // Ensure Baseline Profile is fresh for release builds.
             baselineProfile.automaticGenerationDuringBuild = true
         }
