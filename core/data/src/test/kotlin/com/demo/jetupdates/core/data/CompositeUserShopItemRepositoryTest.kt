@@ -100,7 +100,7 @@ class CompositeUserShopItemRepositoryTest {
         // Obtain a stream of user shop item for the given category id.
         val userShopItem =
             userShopItemRepository.observeItem(
-                1,
+                "1",
             )
 
         // Send test data into the repositories.
@@ -167,7 +167,7 @@ class CompositeUserShopItemRepositoryTest {
 }
 
 private val sampleCategory1 = Category(
-    id = 1,
+    id = "1",
     name = "Headlines",
     shortDescription = "",
     longDescription = "long description",
@@ -176,7 +176,7 @@ private val sampleCategory1 = Category(
 )
 
 private val sampleCategory2 = Category(
-    id = 2,
+    id = "2",
     name = "UI",
     shortDescription = "",
     longDescription = "long description",
@@ -186,7 +186,7 @@ private val sampleCategory2 = Category(
 
 private val sampleShopItems = listOf(
     ShopItem(
-        id = 1,
+        id = "1",
         title = "Thanks for helping us reach 1M YouTube Subscribers",
         price = 34.50f,
         description = "Thank you everyone for following the Now in Android series and everything the " +
@@ -200,7 +200,7 @@ private val sampleShopItems = listOf(
         categories = listOf(sampleCategory1),
     ),
     ShopItem(
-        id = 2,
+        id = "2",
         title = "Transformations and customisations in the Paging Library",
         price = 329f,
         description = "A demonstration of different operations that can be performed with Paging. " +
@@ -213,7 +213,7 @@ private val sampleShopItems = listOf(
         categories = listOf(sampleCategory1, sampleCategory2),
     ),
     ShopItem(
-        id = 3,
+        id = "3",
         title = "Community tip on Paging",
         price = 123f,
         description = "Tips for using the Paging library from the developer community",

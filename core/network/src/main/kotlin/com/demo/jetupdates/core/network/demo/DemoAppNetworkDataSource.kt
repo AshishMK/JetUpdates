@@ -42,10 +42,11 @@ class DemoAppNetworkDataSource @Inject constructor(
     private val assets: DemoAssetManager = JvmUnitTestDemoAssetManager,
 ) : AppNetworkDataSource {
 
-    override suspend fun getCategories(ids: List<Int>?): List<NetworkCategory> =
-        getDataFromJsonFile(CATEGORIES_ASSET)
+    override suspend fun getCategories(ids: List<String>?): List<NetworkCategory> {
+        return getDataFromJsonFile(CATEGORIES_ASSET)
+    }
 
-    override suspend fun getShopItems(ids: List<Int>?): List<NetworkShopItem> =
+    override suspend fun getShopItems(ids: List<String>?): List<NetworkShopItem> =
         getDataFromJsonFile(ITEMS_ASSET)
 
     override suspend fun getCategoryChangeList(after: Int?): List<NetworkChangeList> =
@@ -60,21 +61,25 @@ class DemoAppNetworkDataSource @Inject constructor(
     @OptIn(ExperimentalSerializationApi::class)
     private suspend inline fun <reified T> getDataFromJsonFile(fileName: String): List<T> =
         withContext(ioDispatcher) {
-            assets.open(fileName).use { inputStream ->
+            try {
+                assets.open(fileName).use { inputStream ->
 
-                if (SDK_INT <= M) {
-                    /**
-                     * On API 23 (M) and below we must use a workaround to avoid an exception being
-                     * thrown during deserialization. See:
-                     * https://github.com/Kotlin/kotlinx.serialization/issues/2457#issuecomment-1786923342
-                     */
-                    inputStream.bufferedReader().use(BufferedReader::readText)
-                        .let(networkJson::decodeFromString)
-                } else {
+                    if (SDK_INT <= M) {
+                        /**
+                         * On API 23 (M) and below we must use a workaround to avoid an exception being
+                         * thrown during deserialization. See:
+                         * https://github.com/Kotlin/kotlinx.serialization/issues/2457#issuecomment-1786923342
+                         */
+                        inputStream.bufferedReader().use(BufferedReader::readText)
+                            .let(networkJson::decodeFromString)
+                    } else {
 // you can put it under try catch block if there is an error
-
-                    networkJson.decodeFromStream(inputStream) as List<T>
+                        var l = networkJson.decodeFromStream(inputStream) as List<T>
+                        l
+                    }
                 }
+            } catch (e: Exception) {
+                emptyList()
             }
         }
 
@@ -89,7 +94,7 @@ class DemoAppNetworkDataSource @Inject constructor(
  * [NetworkChangeList.id]
  */
 private fun <T> List<T>.mapToChangeList(
-    idGetter: (T) -> Int,
+    idGetter: (T) -> String,
 ) = mapIndexed { index, item ->
     NetworkChangeList(
         id = idGetter(item),

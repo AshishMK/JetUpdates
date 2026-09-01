@@ -27,8 +27,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlin.collections.map
 
-val filteredInterestsIds = setOf(1)
-val nonPresentInterestsIds = setOf(2)
+val filteredInterestsIds = setOf("1")
+val nonPresentInterestsIds = setOf("2")
 
 /**
  * Test double for [ShopItemeDao]
@@ -41,9 +41,9 @@ class TestShopItemDao : ShopItemDao {
 
     override fun getShopItems(
         useFilterCategoryIds: Boolean,
-        filterCategoryIds: Set<Int>,
+        filterCategoryIds: Set<String>,
         useFilterItemIds: Boolean,
-        filterItemIds: Set<Int>,
+        filterItemIds: Set<String>,
     ): Flow<List<PopulatedShopItem>> =
         entitiesStateFlow
             .map { shopItemEntities ->
@@ -68,10 +68,10 @@ class TestShopItemDao : ShopItemDao {
 
     override fun getShopItemIds(
         useFilterCategoryIds: Boolean,
-        filterCategoryIds: Set<Int>,
+        filterCategoryIds: Set<String>,
         useFilterItemIds: Boolean,
-        filterItemIds: Set<Int>,
-    ): Flow<List<Int>> =
+        filterItemIds: Set<String>,
+    ): Flow<List<String>> =
         entitiesStateFlow
             .map { shopItemEntities ->
                 shopItemEntities.map { entity ->
@@ -112,14 +112,14 @@ class TestShopItemDao : ShopItemDao {
             .distinctBy { it.shopItemId to it.categoryId }
     }
 
-    override suspend fun deleteShopItems(ids: List<Int>) {
+    override suspend fun deleteShopItems(ids: List<String>) {
         val idSet = ids.toSet()
         entitiesStateFlow.update { entities ->
             entities.filterNot { it.id in idSet }
         }
     }
 
-    override fun getShopItem(filterItemId: Int): Flow<PopulatedShopItem> = entitiesStateFlow
+    override fun getShopItem(filterItemId: String): Flow<PopulatedShopItem> = entitiesStateFlow
         .map { shopItemEntities ->
             shopItemEntities.map { entity ->
                 entity.asPopulatedShopItem(categoryCrossReferences)

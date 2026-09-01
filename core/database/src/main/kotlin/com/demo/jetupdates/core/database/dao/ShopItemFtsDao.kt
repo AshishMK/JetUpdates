@@ -32,7 +32,7 @@ interface ShopItemFtsDao {
     suspend fun insertAll(shopItems: List<ShopItemFtsEntity>)
 
     @Query("SELECT shopItemId FROM shopItemsFts WHERE shopItemsFts MATCH :query")
-    fun searchAllShopItems(query: String): Flow<List<Int>>
+    fun searchAllShopItems(query: String): Flow<List<String>>
 
     @Query("SELECT count(*) FROM shopItemsFts")
     fun getCount(): Flow<Int>

@@ -38,7 +38,7 @@ import com.demo.jetupdates.feature.trending.impl.TrendingUiState.Trending
 
 @Composable
 fun TrendingScreen(
-    onCategoryClick: (Int) -> Unit,
+    onCategoryClick: (String) -> Unit,
     modifier: Modifier = Modifier,
     shouldHighlightSelectedCategory: Boolean = false,
     viewModel: TrendingViewModel,
@@ -61,8 +61,8 @@ fun TrendingScreen(
 @Composable
 internal fun TrendingScreen(
     uiState: TrendingUiState,
-    followCategory: (Int, Boolean) -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    followCategory: (String, Boolean) -> Unit,
+    onCategoryClick: (String) -> Unit,
     modifier: Modifier = Modifier,
     shouldHighlightSelectedCategory: Boolean = false,
 ) {

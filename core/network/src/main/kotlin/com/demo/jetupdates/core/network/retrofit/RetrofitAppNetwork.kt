@@ -39,12 +39,12 @@ import javax.inject.Singleton
 private interface RetrofitAppNetworkApi {
     @GET(value = "categories")
     suspend fun getCategories(
-        @Query("id") ids: List<Int>?,
+        @Query("id") ids: List<String>?,
     ): NetworkResponse<List<NetworkCategory>>
 
     @GET(value = "shopitems")
     suspend fun getShopItems(
-        @Query("id") ids: List<Int>?,
+        @Query("id") ids: List<String>?,
     ): NetworkResponse<List<NetworkShopItem>>
 
     @GET(value = "changelists/categories")
@@ -90,10 +90,10 @@ internal class RetrofitAppNetwork @Inject constructor(
             .create(RetrofitAppNetworkApi::class.java)
     }
 
-    override suspend fun getCategories(ids: List<Int>?): List<NetworkCategory> =
+    override suspend fun getCategories(ids: List<String>?): List<NetworkCategory> =
         networkApi.getCategories(ids = ids).data
 
-    override suspend fun getShopItems(ids: List<Int>?): List<NetworkShopItem> =
+    override suspend fun getShopItems(ids: List<String>?): List<NetworkShopItem> =
         networkApi.getShopItems(ids = ids).data
 
     override suspend fun getCategoryChangeList(after: Int?): List<NetworkChangeList> =

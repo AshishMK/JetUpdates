@@ -99,7 +99,7 @@ class GetFollowableCategoriesUseCaseTest {
 }
 
 private val testCategories = listOf(
-    Category(1, "Headlines", "", "", "", ""),
-    Category(2, "Android Studio", "", "", "", ""),
-    Category(3, "Compose", "", "", "", ""),
+    Category("1", "Headlines", "", "", "", ""),
+    Category("2", "Android Studio", "", "", "", ""),
+    Category("3", "Compose", "", "", "", ""),
 )

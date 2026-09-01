@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 import com.demo.jetupdates.AppBuildType
+import java.io.StringReader
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.jetupdates.android.application)
@@ -32,8 +34,8 @@ android {
 
     defaultConfig {
         applicationId = "com.demo.jetupdates"
-        versionCode = 4
-        versionName = "2.0.2"
+        versionCode = 5
+        versionName = "2.0.3"
 
         testInstrumentationRunner = "com.demo.jetupdates.core.testing.AppTestRunner"
 
@@ -46,9 +48,43 @@ android {
            }
        }*/
 
+    val propertyTextProvider = providers.fileContents(
+        isolated.rootProject.projectDirectory.file("mykeys.properties")
+    ).asText
+    val  prop =  propertyTextProvider.getOrElse("")
+    val properties = Properties()
+    properties.load(StringReader(prop))
+
+    /**
+     * CI/CD wont have mykeys.properties
+     * **/
+    val hasKey = properties.containsKey("MY_KEYSTORE_PASSWORD")
+
+    val my_keystore_password = if (properties.containsKey("MY_KEYSTORE_PASSWORD")) properties["MY_KEYSTORE_PASSWORD"] as? String ?: "test" else "test"
+
+    val my_key_password = if (properties.containsKey("MY_KEY_PASSWORD"))
+            (properties["MY_KEY_PASSWORD"] as? String) ?: "test"
+        else "test"
+        // Move to returning
+    val my_key_alias =  if (properties.containsKey("MY_KEY_ALIAS"))
+            (properties["MY_KEY_ALIAS"] as? String) ?: "test"
+        else "test"
+
+
+
+    signingConfigs {
+        create("myKey") {
+            storeFile = file("/Users/ashish_nautiyal/Desktop/jetupdatedts/key.jks")
+            storePassword = my_keystore_password
+            keyAlias = my_key_alias
+            keyPassword = my_key_password
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
+            signingConfig = if(hasKey) signingConfigs.getByName("myKey") else signingConfigs.named("debug").get()
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
@@ -60,7 +96,8 @@ android {
             // To publish on the Play store a private signing key is required, but to allow anyone
             // who clones the code to sign and run the release variant, use the debug signing key.
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
-            signingConfig = signingConfigs.named("debug").get()
+          //  signingConfig = signingConfigs.named("debug").get()
+            signingConfig = if(hasKey) signingConfigs.getByName("myKey") else signingConfigs.named("debug").get()
             // Ensure Baseline Profile is fresh for release builds.
             baselineProfile.automaticGenerationDuringBuild = true
         }

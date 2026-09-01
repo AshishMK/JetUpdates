@@ -62,7 +62,7 @@ internal class OfflineFirstShopRepository @Inject constructor(
         )
             .map { it.map(PopulatedShopItem::asExternalModel) }
 
-    override fun getShopItem(id: Int): Flow<ShopItem> =
+    override fun getShopItem(id: String): Flow<ShopItem> =
         shopItemDao.getShopItem(id).map(PopulatedShopItem::asExternalModel)
 
     override suspend fun syncWith(synchronizer: Synchronizer): Boolean {

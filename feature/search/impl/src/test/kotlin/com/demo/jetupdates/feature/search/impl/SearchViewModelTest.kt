@@ -158,7 +158,7 @@ class SearchViewModelTest {
 
     @Test
     fun whenToggleShopItemSavedIsCalled_bookmarkStateIsUpdated() = runTest {
-        val shopItemId = 123
+        val shopItemId = "123"
         viewModel.setShopItemBookmarked(shopItemId, true)
 
         assertEquals(

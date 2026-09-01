@@ -20,7 +20,7 @@ package com.demo.jetupdates.core.model.data
  * External data layer representation of a APP Category
  */
 data class Category(
-    val id: Int,
+    val id: String,
     val name: String,
     val shortDescription: String,
     val longDescription: String,

@@ -20,9 +20,9 @@ package com.demo.jetupdates.core.model.data
  * Class summarizing user interest data
  */
 data class UserData(
-    val bookmarkedShopItems: Set<Int>,
-    val viewedShopItems: Set<Int>,
-    val followedCategories: Set<Int>,
+    val bookmarkedShopItems: Set<String>,
+    val viewedShopItems: Set<String>,
+    val followedCategories: Set<String>,
     val themeBrand: ThemeBrand,
     val darkThemeConfig: DarkThemeConfig,
     val useDynamicColor: Boolean,

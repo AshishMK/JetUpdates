@@ -25,7 +25,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.compositionLocalOf
 
 data class SnackSharedElementKey(
-    val snackId: Int,
+    val snackId: String,
     val origin: String,
     val type: SnackSharedElementType,
 )

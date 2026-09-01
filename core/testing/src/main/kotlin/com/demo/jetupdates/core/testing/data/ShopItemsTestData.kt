@@ -23,7 +23,7 @@ import kotlinx.datetime.Instant
 
 val shopItemsTestData: List<ShopItem> = listOf(
     ShopItem(
-        id = 1,
+        id = "1",
         title = "Android Basics with Compose",
         price = 12f,
         description = "We released the first two units of Android Basics with Compose, our first free course that teaches Android Development with Jetpack Compose to anyone; you do not need any prior programming experience other than basic computer literacy to get started. You’ll learn the fundamentals of programming in Kotlin while building Android apps using Jetpack Compose, Android’s modern toolkit that simplifies and accelerates native UI development. These two units are just the beginning; more will be coming soon. Check out Android Basics with Compose to get started on your Android development journey",
@@ -34,7 +34,7 @@ val shopItemsTestData: List<ShopItem> = listOf(
         categories = listOf(categoriesTestData[1]),
     ),
     ShopItem(
-        id = 2,
+        id = "2",
         title = "Thanks for helping us reach 1M YouTube Subscribers",
         description = "Thank you everyone for following the Now in Android series and everything the " +
             "Android Developers YouTube channel has to offer. During the Android Developer " +
@@ -48,7 +48,7 @@ val shopItemsTestData: List<ShopItem> = listOf(
         categories = listOf(categoriesTestData[0], categoriesTestData[1]),
     ),
     ShopItem(
-        id = 3,
+        id = "3",
         title = "Transformations and customisations in the Paging Library",
         description = "A demonstration of different operations that can be performed " +
             "with Paging. Transformations like inserting separators, when to " +
@@ -62,7 +62,7 @@ val shopItemsTestData: List<ShopItem> = listOf(
         categories = listOf(categoriesTestData[2]),
     ),
     ShopItem(
-        id = 4,
+        id = "4",
         title = "New Jetpack Release",
         description = "New Jetpack release includes updates to libraries such as CameraX, Benchmark, and" +
             "more!",

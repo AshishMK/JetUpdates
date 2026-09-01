@@ -88,7 +88,6 @@ fun NavigationState.toEntries(
     entryProvider: (NavKey) -> NavEntry<NavKey>,
 ): SnapshotStateList<NavEntry<NavKey>> {
     val decoratedEntries = subStacks.mapValues { (k, stack) ->
-        Log.v("try", "try ${stack.size} = $k")
         val decorators = listOf(
             rememberSaveableStateHolderNavEntryDecorator<NavKey>(),
             rememberViewModelStoreNavEntryDecorator<NavKey>(),
@@ -100,7 +99,7 @@ fun NavigationState.toEntries(
         )
     }
     Log.v("try", "try ${topLevelStack.size}")
-    return topLevelStack
+    return topLevelStack // if we are at 2nd tab than will have  topLevelStack = 2
         .flatMap { decoratedEntries[it] ?: emptyList() }
         .toMutableStateList()
 }

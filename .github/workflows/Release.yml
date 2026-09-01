@@ -11,7 +11,7 @@ jobs:
     if: github.repository == 'AshishMK/JetUpdates'
     runs-on: ubuntu-latest
     timeout-minutes: 120
-        
+
     # ADD THIS BLOCK HERE 👇
     permissions:
       contents: write
@@ -25,7 +25,6 @@ jobs:
           ls /dev/kvm
 
       - name: Checkout
-
         uses: actions/checkout@v4
 
       - name: Copy CI gradle.properties
@@ -40,7 +39,6 @@ jobs:
       #see bookmarks https://medium.com/@vontonnie/secure-api-keys-in-android-projects-f8eb4839701d
       - name: Get keys.properties from secrets
         run: echo "${{ secrets.MYKEYS_PROPERTIES }}" > $GITHUB_WORKSPACE/mykeys.properties
-
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -57,35 +55,25 @@ jobs:
         run: yes | sdkmanager --licenses || true
 
       - name: Setup GMD
-        run: ./gradlew :benchmarks:pixel6Api33Setup
-          --info
-          -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
+        run: ./gradlew :benchmarks:pixel6Api33Setup \
+          --info \
+          -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true \
           -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
 
       - name: Build release variant including baseline profile generation
-        run: ./gradlew :app:assembleProdRelease
-          -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile
-          -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
-          -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
-          -Pandroid.experimental.androidTest.numManagedDeviceShards=1
+        run: ./gradlew :app:assembleProdRelease \
+          -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile \
+          -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" \
+          -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true \
+          -Pandroid.experimental.androidTest.numManagedDeviceShards=1 \
           -Pandroid.experimental.testOptions.managedDevices.maxConcurrentDevices=1
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Combined modern step to create release and upload the APK
+      - name: Create Release and Upload APK
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          name: ${{ github.ref }}
           draft: true
           prerelease: false
-
-      - name: Upload app
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: app/build/outputs/apk/prod/release/app-prod-release.apk
-          asset_name: app-prod-release.apk
-          asset_content_type: application/vnd.android.package-archive
+          files: app/build/outputs/apk/prod/release/app-prod-release.apk

@@ -30,7 +30,7 @@ import kotlinx.datetime.Instant
 )
 data class ShopItemEntity(
     @PrimaryKey
-    val id: Int,
+    val id: String,
     @ColumnInfo(name = "name")
     val title: String,
     val price: Float,
