@@ -80,13 +80,13 @@ import com.demo.jetupdates.feature.cart.impl.navigation.cartEntry
 import com.demo.jetupdates.feature.category.impl.navigation.categoryEntry
 import com.demo.jetupdates.feature.chat.impl.navigation.chatEntry
 import com.demo.jetupdates.feature.product.impl.navigation.productEntry
+import com.demo.jetupdates.feature.search.api.navigation.SearchNavKey
 import com.demo.jetupdates.feature.search.impl.navigation.searchEntry
 import com.demo.jetupdates.feature.settings.impl.SettingsDialog
 import com.demo.jetupdates.feature.store.api.navigation.StoreNavKey
 import com.demo.jetupdates.feature.store.impl.navigation.storeEntry
 import com.demo.jetupdates.feature.trending.impl.navigation.trendingEntry
 import com.demo.jetupdates.navigation.TOP_LEVEL_NAV_ITEMS
-import com.google.samples.apps.nowinandroid.feature.search.api.navigation.SearchNavKey
 import com.demo.jetupdates.feature.settings.impl.R as settingsR
 
 @Composable
@@ -293,7 +293,6 @@ internal fun JUApp(
                           clickedByUser = clickedByUser,
                           windowAdaptiveInfo = windowAdaptiveInfo,
                       )*/
-
                     val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
 
                     val entryProvider = entryProvider {

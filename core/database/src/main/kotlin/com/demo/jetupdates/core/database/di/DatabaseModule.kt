@@ -19,6 +19,7 @@ package com.demo.jetupdates.core.database.di
 import android.content.Context
 import androidx.room.Room
 import com.demo.jetupdates.core.database.AppDatabase
+import com.demo.jetupdates.core.database.DatabaseMigrations
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,5 +38,5 @@ internal object DatabaseModule {
         context,
         AppDatabase::class.java,
         "app-database",
-    ).build()
+    ).addMigrations(DatabaseMigrations.MIGRATION_1_2).build()
 }

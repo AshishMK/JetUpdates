@@ -31,10 +31,19 @@ message UserPreferences {
 
     // Each map is used to store a set of string IDs. The bool has no meaning, but proto3 doesn't
     // have a Set type so this is the closest we can get to a Set.
-    map<int32, bool> followed_category_ids = 1;
-    map<int32, bool> followed_author_ids = 2;
-    map<int32, bool> bookmarked_shop_item_ids = 3;
-    map<int32, bool> viewed_shop_item_ids = 4;
+    map<int32, bool> DEPRECATED_followed_category_ids = 1 [deprecated = true];;
+    map<int32, bool> DEPRECATED_followed_author_ids = 2 [deprecated = true];;
+    map<int32, bool> DEPRECATED_bookmarked_shop_item_ids = 3 [deprecated = true];;
+    map<int32, bool> DEPRECATED_viewed_shop_item_ids = 4 [deprecated = true];;
+
+    // NEW: String-based maps (tag numbers 13-16)
+     // NEW FIELDS STARTING FROM ID 12:
+         bool has_done_int_to_string_id_migration = 12;
+
+         map<string, bool> followed_category_ids = 13;
+         map<string, bool> followed_author_ids = 14;
+         map<string, bool> bookmarked_shop_item_ids = 15;
+         map<string, bool> viewed_shop_item_ids = 16;
 
     ThemeBrandProto theme_brand = 8;
     DarkThemeConfigProto dark_theme_config = 9;

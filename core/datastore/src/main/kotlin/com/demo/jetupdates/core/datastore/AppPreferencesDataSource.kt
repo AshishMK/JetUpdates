@@ -64,7 +64,7 @@ class AppPreferencesDataSource @Inject constructor(
             )
         }
 
-    suspend fun setFollowedCategoryIds(categoryIds: Set<Int>) {
+    suspend fun setFollowedCategoryIds(categoryIds: Set<String>) {
         try {
             userPreferences.updateData {
                 it.copy {
@@ -78,7 +78,7 @@ class AppPreferencesDataSource @Inject constructor(
         }
     }
 
-    suspend fun setCategoryIdFollowed(categoryId: Int, followed: Boolean) {
+    suspend fun setCategoryIdFollowed(categoryId: String, followed: Boolean) {
         try {
             userPreferences.updateData {
                 it.copy {
@@ -125,7 +125,7 @@ class AppPreferencesDataSource @Inject constructor(
         }
     }
 
-    suspend fun setShopItemBookmarked(shopItemId: Int, bookmarked: Boolean) {
+    suspend fun setShopItemBookmarked(shopItemId: String, bookmarked: Boolean) {
         try {
             userPreferences.updateData {
                 it.copy {
@@ -141,11 +141,11 @@ class AppPreferencesDataSource @Inject constructor(
         }
     }
 
-    suspend fun setShopItemViewed(shopItemIds: Int, viewed: Boolean) {
+    suspend fun setShopItemViewed(shopItemIds: String, viewed: Boolean) {
         setShopItemsViewed(listOf(shopItemIds), viewed)
     }
 
-    suspend fun setShopItemsViewed(shopItemIds: List<Int>, viewed: Boolean) {
+    suspend fun setShopItemsViewed(shopItemIds: List<String>, viewed: Boolean) {
         userPreferences.updateData { prefs ->
             prefs.copy {
                 shopItemIds.forEach { id ->

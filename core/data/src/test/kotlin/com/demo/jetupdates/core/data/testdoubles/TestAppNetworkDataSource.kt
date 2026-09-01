@@ -51,13 +51,13 @@ class TestAppNetworkDataSource : AppNetworkDataSource {
             .mapToChangeList(idGetter = NetworkShopItem::id),
     )
 
-    override suspend fun getCategories(ids: List<Int>?): List<NetworkCategory> =
+    override suspend fun getCategories(ids: List<String>?): List<NetworkCategory> =
         allCategories.matchIds(
             ids = ids,
             idGetter = NetworkCategory::id,
         )
 
-    override suspend fun getShopItems(ids: List<Int>?): List<NetworkShopItem> =
+    override suspend fun getShopItems(ids: List<String>?): List<NetworkShopItem> =
         allShopItems.matchIds(
             ids = ids,
             idGetter = NetworkShopItem::id,
@@ -79,7 +79,7 @@ class TestAppNetworkDataSource : AppNetworkDataSource {
      * Edits the change list for the backing [collectionType] for the given [id] mimicking
      * the server's change list registry
      */
-    fun editCollection(collectionType: CollectionType, id: Int, isDelete: Boolean) {
+    fun editCollection(collectionType: CollectionType, id: String, isDelete: Boolean) {
         val changeList = changeLists.getValue(collectionType)
         val latestVersion = changeList.lastOrNull()?.changeListVersion ?: 0
         val change = NetworkChangeList(
@@ -100,8 +100,8 @@ fun List<NetworkChangeList>.after(version: Int?): List<NetworkChangeList> = when
  * Return items from [this] whose id defined by [idGetter] is in [ids] if [ids] is not null
  */
 private fun <T> List<T>.matchIds(
-    ids: List<Int>?,
-    idGetter: (T) -> Int,
+    ids: List<String>?,
+    idGetter: (T) -> String,
 ) = when (ids) {
     null -> this
     else -> ids.toSet().let { idSet -> filter { idGetter(it) in idSet } }
@@ -112,7 +112,7 @@ private fun <T> List<T>.matchIds(
  * [after] simulates which models have changed by excluding items before it
  */
 private fun <T> List<T>.mapToChangeList(
-    idGetter: (T) -> Int,
+    idGetter: (T) -> String,
 ) = mapIndexed { index, item ->
     NetworkChangeList(
         id = idGetter(item),

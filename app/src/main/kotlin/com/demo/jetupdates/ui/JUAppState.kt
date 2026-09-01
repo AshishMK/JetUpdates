@@ -48,7 +48,6 @@ fun rememberJUAppState(
 
     val navigationState = rememberNavigationState(StoreNavKey, TOP_LEVEL_NAV_ITEMS.keys)
     NavigationTrackingSideEffect(navigationState)
-
     return remember(
         navigationState,
         coroutineScope,

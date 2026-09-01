@@ -31,22 +31,22 @@ interface UserDataRepository {
     /**
      * Sets the user's currently followed categories
      */
-    suspend fun setFollowedCategoryIds(followedCategoryIds: Set<Int>)
+    suspend fun setFollowedCategoryIds(followedCategoryIds: Set<String>)
 
     /**
      * Sets the user's newly followed/unfollowed category
      */
-    suspend fun setCategoryIdFollowed(followedCategoryId: Int, followed: Boolean)
+    suspend fun setCategoryIdFollowed(followedCategoryId: String, followed: Boolean)
 
     /**
      * Updates the bookmarked status for a shop item
      */
-    suspend fun setShopItemBookmarked(shopItemId: Int, bookmarked: Boolean)
+    suspend fun setShopItemBookmarked(shopItemId: String, bookmarked: Boolean)
 
     /**
      * Updates the viewed status for a shop item
      */
-    suspend fun setShopItemViewed(shopItemId: Int, viewed: Boolean)
+    suspend fun setShopItemViewed(shopItemId: String, viewed: Boolean)
 
     /**
      * Sets the desired theme brand.

@@ -44,11 +44,11 @@ import com.demo.jetupdates.core.ui.TrendingItem
 @Composable
 fun CategoriesTabContent(
     categories: List<FollowableCategory2>,
-    onCategoryClick: (Int) -> Unit,
-    onFollowButtonClick: (Int, Boolean) -> Unit,
+    onCategoryClick: (String) -> Unit,
+    onFollowButtonClick: (String, Boolean) -> Unit,
     modifier: Modifier = Modifier,
     withBottomSpacer: Boolean = true,
-    selectedCategoryId: Int? = null,
+    selectedCategoryId: String? = null,
     shouldHighlightSelectedCategory: Boolean = false,
 ) {
     Box(
@@ -106,4 +106,4 @@ fun CategoriesTabContent(
     }
 }
 
-val LIST_PANE_TEST_TAG = "trending:categories"
+const val LIST_PANE_TEST_TAG = "trending:categories"

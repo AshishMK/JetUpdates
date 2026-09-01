@@ -44,7 +44,7 @@ class CategoryViewModel @AssistedInject constructor(
     private val userDataRepository: UserDataRepository,
     categoriesRepository: CategoriesRepository,
     userShopItemRepository: UserShopItemRepository,
-    @Assisted val categoryId: Int,
+    @Assisted val categoryId: String,
 ) : ViewModel() {
     val categoryUiState: StateFlow<CategoryUiState> = categoryUiState(
         categoryId = categoryId,
@@ -74,13 +74,13 @@ class CategoryViewModel @AssistedInject constructor(
         }
     }
 
-    fun bookmarkItem(shopItemId: Int, bookmarked: Boolean) {
+    fun bookmarkItem(shopItemId: String, bookmarked: Boolean) {
         viewModelScope.launch {
             userDataRepository.setShopItemBookmarked(shopItemId, bookmarked)
         }
     }
 
-    fun setShopItemViewed(shopItemId: Int, viewed: Boolean) {
+    fun setShopItemViewed(shopItemId: String, viewed: Boolean) {
         viewModelScope.launch {
             userDataRepository.setShopItemViewed(shopItemId, viewed)
         }
@@ -89,18 +89,18 @@ class CategoryViewModel @AssistedInject constructor(
     @AssistedFactory
     interface Factory {
         fun create(
-            categoryId: Int,
+            categoryId: String,
         ): CategoryViewModel
     }
 }
 
 private fun categoryUiState(
-    categoryId: Int,
+    categoryId: String,
     userDataRepository: UserDataRepository,
     categoriesRepository: CategoriesRepository,
 ): Flow<CategoryUiState> {
     // Observe the followed categories, as they could change over time.
-    val followedCategoryIds: Flow<Set<Int>> =
+    val followedCategoryIds: Flow<Set<String>> =
         userDataRepository.userData
             .map { it.followedCategories }
 
@@ -134,7 +134,7 @@ private fun categoryUiState(
 }
 
 private fun shopItemUiState(
-    categoryId: Int,
+    categoryId: String,
     userNewsResourceRepository: UserShopItemRepository,
     userDataRepository: UserDataRepository,
 ): Flow<ShopItemUiState> {
@@ -144,7 +144,7 @@ private fun shopItemUiState(
     )
 
     // Observe bookmarks
-    val bookmark: Flow<Set<Int>> = userDataRepository.userData
+    val bookmark: Flow<Set<String>> = userDataRepository.userData
         .map { it.bookmarkedShopItems }
 
     return combine(shopStream, bookmark, ::Pair)

@@ -37,7 +37,7 @@ import kotlinx.coroutines.supervisorScope
 class ProductViewModel @AssistedInject constructor(
     userShopItemRepository: UserShopItemRepository,
     private val userDataRepository: UserDataRepository,
-    @Assisted val productId: Int,
+    @Assisted val productId: String,
 ) : ViewModel() {
 
     // val route = savedStateHandle.toRoute<ProductRoute>()
@@ -65,7 +65,7 @@ class ProductViewModel @AssistedInject constructor(
     @AssistedFactory
     interface Factory {
         fun create(
-            productId: Int,
+            productId: String,
         ): ProductViewModel
     }
 }

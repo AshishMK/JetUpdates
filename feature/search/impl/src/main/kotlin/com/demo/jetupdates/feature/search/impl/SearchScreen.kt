@@ -100,8 +100,8 @@ import com.demo.jetupdates.feature.search.api.R as searchR
 internal fun SearchScreen(
     onBackClick: () -> Unit,
     onTrendingClick: () -> Unit,
-    onCategoryClick: (Int) -> Unit,
-    onProductClick: (Int) -> Unit,
+    onCategoryClick: (String) -> Unit,
+    onProductClick: (String) -> Unit,
     modifier: Modifier = Modifier,
     searchViewModel: SearchViewModel = hiltViewModel(),
 ) {
@@ -136,13 +136,13 @@ internal fun SearchScreen(
     onSearchQueryChanged: (String) -> Unit = {},
     onSearchTriggered: (String) -> Unit = {},
     onClearRecentSearches: () -> Unit = {},
-    onShopItemsCheckedChanged: (Int, Boolean) -> Unit = { _, _ -> },
-    onShopItemViewed: (Int) -> Unit = {},
-    onFollowButtonClick: (Int, Boolean) -> Unit = { _, _ -> },
+    onShopItemsCheckedChanged: (String, Boolean) -> Unit = { _, _ -> },
+    onShopItemViewed: (String) -> Unit = {},
+    onFollowButtonClick: (String, Boolean) -> Unit = { _, _ -> },
     onBackClick: () -> Unit = {},
     onTrendingClick: () -> Unit = {},
-    onCategoryClick: (Int) -> Unit = {},
-    onProductClick: (Int) -> Unit = {},
+    onCategoryClick: (String) -> Unit = {},
+    onProductClick: (String) -> Unit = {},
 ) {
     // TrackScreenViewEvent(screenName = "Search")
     Column(modifier = modifier) {
@@ -294,11 +294,11 @@ private fun SearchResultBody(
     categories: List<FollowableCategory2>,
     shopItems: List<UserShopItem>,
     onSearchTriggered: (String) -> Unit,
-    onCategoryClick: (Int) -> Unit,
-    onProductClick: (Int) -> Unit,
-    onShopItemsCheckedChanged: (Int, Boolean) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
-    onFollowButtonClick: (Int, Boolean) -> Unit,
+    onCategoryClick: (String) -> Unit,
+    onProductClick: (String) -> Unit,
+    onShopItemsCheckedChanged: (String, Boolean) -> Unit,
+    onShopItemViewed: (String) -> Unit,
+    onFollowButtonClick: (String, Boolean) -> Unit,
 ) {
     val state = rememberLazyStaggeredGridState()
     Box(

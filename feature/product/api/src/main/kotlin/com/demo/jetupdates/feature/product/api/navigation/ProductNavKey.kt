@@ -21,9 +21,9 @@ import com.demo.jetupdates.core.navigation.Navigator
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ProductNavKey(val id: Int) : NavKey
+data class ProductNavKey(val id: String) : NavKey
 fun Navigator.navigateToProduct(
-    productId: Int,
+    productId: String,
 ) {
     navigate(ProductNavKey(productId))
 }

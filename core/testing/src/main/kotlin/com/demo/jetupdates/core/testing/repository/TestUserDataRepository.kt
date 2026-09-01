@@ -45,11 +45,11 @@ class TestUserDataRepository : UserDataRepository {
 
     override val userData: Flow<UserData> = _userData.filterNotNull()
 
-    override suspend fun setFollowedCategoryIds(followedCategoryIds: Set<Int>) {
+    override suspend fun setFollowedCategoryIds(followedCategoryIds: Set<String>) {
         _userData.tryEmit(currentUserData.copy(followedCategories = followedCategoryIds))
     }
 
-    override suspend fun setCategoryIdFollowed(followedCategoryId: Int, followed: Boolean) {
+    override suspend fun setCategoryIdFollowed(followedCategoryId: String, followed: Boolean) {
         currentUserData.let { current ->
             val followedCategories = if (followed) {
                 current.followedCategories + followedCategoryId
@@ -61,7 +61,7 @@ class TestUserDataRepository : UserDataRepository {
         }
     }
 
-    override suspend fun setShopItemBookmarked(shopItemId: Int, bookmarked: Boolean) {
+    override suspend fun setShopItemBookmarked(shopItemId: String, bookmarked: Boolean) {
         currentUserData.let { current ->
             val bookmarkedItems = if (bookmarked) {
                 current.bookmarkedShopItems + shopItemId
@@ -73,7 +73,7 @@ class TestUserDataRepository : UserDataRepository {
         }
     }
 
-    override suspend fun setShopItemViewed(shopItemId: Int, viewed: Boolean) {
+    override suspend fun setShopItemViewed(shopItemId: String, viewed: Boolean) {
         currentUserData.let { current ->
             _userData.tryEmit(
                 current.copy(

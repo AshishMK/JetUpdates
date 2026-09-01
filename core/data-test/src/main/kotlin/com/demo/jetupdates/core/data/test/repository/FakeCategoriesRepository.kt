@@ -55,7 +55,7 @@ internal class FakeCategoriesRepository @Inject constructor(
         )
     }.flowOn(ioDispatcher)
 
-    override fun getCategory(id: Int): Flow<Category> = getCategories()
+    override fun getCategory(id: String): Flow<Category> = getCategories()
         .map { it.first { category -> category.id == id } }
 
     override suspend fun syncWith(synchronizer: Synchronizer) = true

@@ -48,7 +48,7 @@ import androidx.room.Index
 )
 data class ShopItemCategoryCrossRef(
     @ColumnInfo(name = "shop_item_id")
-    val shopItemId: Int,
+    val shopItemId: String,
     @ColumnInfo(name = "category_id")
-    val categoryId: Int,
+    val categoryId: String,
 )

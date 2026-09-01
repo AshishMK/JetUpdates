@@ -85,7 +85,7 @@ fun ShopItemCardExpanded(
     hasBeenViewed: Boolean,
     onToggleBookmark: () -> Unit,
     onClick: () -> Unit,
-    onCategoryClick: (Int) -> Unit,
+    onCategoryClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val clickActionLabel = stringResource(R.string.core_ui_card_tap_action)
@@ -290,7 +290,7 @@ fun ShopItemShortDescription(
 @Composable
 fun NewsResourceTopics(
     categories: List<FollowableCategory2>,
-    onCategoryClick: (Int) -> Unit,
+    onCategoryClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(

@@ -28,7 +28,7 @@ import androidx.room.Fts4
 data class CategoryFtsEntity(
 
     @ColumnInfo(name = "categoryId")
-    val categoryId: Int,
+    val categoryId: String,
 
     @ColumnInfo(name = "name")
     val name: String,

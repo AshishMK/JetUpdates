@@ -165,7 +165,7 @@ private const val CATEGORY_IMAGE_URL = "Image URL"
 private val testInputCategories = listOf(
     FollowableCategory2(
         Category(
-            id = 0,
+            id = "0",
             name = CATEGORY_1_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -176,7 +176,7 @@ private val testInputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 1,
+            id = "1",
             name = CATEGORY_2_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -187,7 +187,7 @@ private val testInputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 2,
+            id = "2",
             name = CATEGORY_3_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -201,7 +201,7 @@ private val testInputCategories = listOf(
 private val testOutputCategories = listOf(
     FollowableCategory2(
         Category(
-            id = 0,
+            id = "0",
             name = CATEGORY_1_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -212,7 +212,7 @@ private val testOutputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 1,
+            id = "1",
             name = CATEGORY_2_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -223,7 +223,7 @@ private val testOutputCategories = listOf(
     ),
     FollowableCategory2(
         Category(
-            id = 2,
+            id = "2",
             name = CATEGORY_3_NAME,
             shortDescription = CATEGORY_SHORT_DESC,
             longDescription = CATEGORY_LONG_DESC,
@@ -236,7 +236,7 @@ private val testOutputCategories = listOf(
 
 private val sampleShopItems = listOf(
     ShopItem(
-        id = 1,
+        id = "1",
         title = "Thanks for helping us reach 1M YouTube Subscribers",
         price = 329f,
         description = "Thank you everyone for following the Now in Android series and everything the " +
@@ -249,7 +249,7 @@ private val sampleShopItems = listOf(
         type = "Video 📺",
         categories = listOf(
             Category(
-                id = 0,
+                id = "0",
                 name = "Headlines",
                 shortDescription = "",
                 longDescription = "long description",

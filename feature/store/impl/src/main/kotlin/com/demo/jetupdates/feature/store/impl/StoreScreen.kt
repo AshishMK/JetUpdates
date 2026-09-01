@@ -108,7 +108,7 @@ import kotlinx.coroutines.launch
 //
 @Composable
 internal fun StoreScreen(
-    onProductClick: (Int) -> Unit,
+    onProductClick: (String) -> Unit,
     clickedByUser: Boolean,
     showCategoryList: Boolean,
     modifier: Modifier = Modifier,
@@ -144,13 +144,13 @@ internal fun StoreScreen(
     onboardingUiState: OnboardingUiState,
     feedState: ItemFeedUiState,
     deepLinkedUserShopItem: UserShopItem?,
-    onCategoryCheckedChanged: (Int, Boolean) -> Unit,
-    onProductClick: (Int) -> Unit,
-    onDeepLinkOpened: (Int) -> Unit,
+    onCategoryCheckedChanged: (String, Boolean) -> Unit,
+    onProductClick: (String) -> Unit,
+    onDeepLinkOpened: (String) -> Unit,
     saveFollowedCategories: () -> Unit,
     categoryActionClicked: (Boolean) -> Unit,
-    onShopItemCheckedChanged: (Int, Boolean) -> Unit,
-    onShopItemViewed: (Int) -> Unit,
+    onShopItemCheckedChanged: (String, Boolean) -> Unit,
+    onShopItemViewed: (String) -> Unit,
     clickedByUser: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
@@ -314,7 +314,7 @@ internal fun StoreScreen(
 private fun LazyStaggeredGridScope.onboarding(
     showCategoryList: Boolean,
     onboardingUiState: OnboardingUiState,
-    onCategoryCheckedChanged: (Int, Boolean) -> Unit,
+    onCategoryCheckedChanged: (String, Boolean) -> Unit,
     saveFollowedCategories: () -> Unit,
     categoryActionClicked: (Boolean) -> Unit,
     interestsItemModifier: Modifier = Modifier,
@@ -389,7 +389,7 @@ private fun LazyStaggeredGridScope.onboarding(
 @Composable
 private fun ItemSelection(
     onboardingUiState: OnboardingUiState.Shown,
-    onCategoryCheckedChanged: (Int, Boolean) -> Unit,
+    onCategoryCheckedChanged: (String, Boolean) -> Unit,
     modifier: Modifier = Modifier,
 
 ) {
@@ -441,10 +441,10 @@ private fun ItemSelection(
 @Composable
 private fun SingleItemButton(
     name: String,
-    categoryId: Int,
+    categoryId: String,
     imageUrl: String,
     isSelected: Boolean,
-    onClick: (Int, Boolean) -> Unit,
+    onClick: (String, Boolean) -> Unit,
 ) {
     Surface(
         modifier = Modifier
@@ -482,7 +482,7 @@ private fun SingleItemButton(
 
 @Composable
 fun ItemIcon(
-    id: Int,
+    id: String,
     imageUrl: String,
     modifier: Modifier = Modifier,
     isSelected: Boolean,
@@ -532,7 +532,7 @@ private fun NotificationPermissionEffect() {
 @Composable
 private fun DeepLinkEffect(
     shopItemResource: UserShopItem?,
-    onDeepLinkOpened: (Int) -> Unit,
+    onDeepLinkOpened: (String) -> Unit,
 ) {
     val context = LocalContext.current
     val backgroundColor = MaterialTheme.colorScheme.background.toArgb()
@@ -581,7 +581,7 @@ fun SingleItemButtonPreview() {
         AppBackground(modifier = Modifier.size(150.dp, 50.dp)) {
             SingleItemButton(
                 name = "Headlines",
-                categoryId = 1,
+                categoryId = "1",
                 imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
                 isSelected = false,
                 onClick = { _, _ -> },
@@ -597,7 +597,7 @@ fun SingleItemButtonSelectedPreview() {
         AppBackground(modifier = Modifier.size(150.dp, 50.dp)) {
             SingleItemButton(
                 name = "Headlines",
-                categoryId = 1,
+                categoryId = "1",
                 imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
                 isSelected = true,
                 onClick = { _, _ -> },

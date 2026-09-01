@@ -34,7 +34,7 @@ import javax.inject.Inject
  * [SyncManager] backed by [WorkInfo] from [WorkManager]
  */
 internal class WorkManagerSyncManager @Inject constructor(
-    @ApplicationContext private val context: Context,
+    @param:ApplicationContext private val context: Context,
 ) : SyncManager {
     override val isSyncing: Flow<Boolean> =
         WorkManager.getInstance(context).getWorkInfosForUniqueWorkFlow(SYNC_WORK_NAME)
