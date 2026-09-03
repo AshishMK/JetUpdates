@@ -37,7 +37,8 @@ plugins {
     alias(libs.plugins.jetupdates.android.library)
     alias(libs.plugins.jetupdates.android.library.jacoco)
     alias(libs.plugins.jetupdates.hilt)
-    id("kotlinx-serialization")
+    alias(libs.plugins.apollo) // Apply Apollo plugin
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -46,6 +47,18 @@ android {
     }
     namespace = "com.demo.jetupdates.core.network"
     testOptions.unitTests.isIncludeAndroidResources = true
+}
+
+// Configure package name for generated Apollo Kotlin classes
+apollo {
+    service("service") {
+        packageName.set("com.demo.jetupdates.core.network")
+        introspection {
+            endpointUrl.set("https://ap-south-1.cdn.hygraph.com/content/cmsbg4y1q01ek07uuncinbazq/master")
+            schemaFile.set(file("src/main/graphql/com/demo/jetupdates/core/network/schema.graphqls"))
+            headers.put("Authorization", "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE3ODgxNzQ1NjIsImF1ZCI6WyJodHRwczovL2FwaS1hcC1zb3V0aC0xLmh5Z3JhcGguY29tL3YyL2Ntc2JnNHkxcTAxZWswN3V1bmNpbmJhenEvbWFzdGVyIiwibWFuYWdlbWVudC1uZXh0LmdyYXBoY21zLmNvbSJdLCJpc3MiOiJodHRwczovL21hbmFnZW1lbnQtYXAtc291dGgtMS5oeWdyYXBoLmNvbS8iLCJzdWIiOiI2NTkxNDg2OS1kMDE4LTQ4OTQtODUxZS1kZTg5MTUwMGViNjciLCJqdGkiOiJjbXRoNHlyNmMxNm84MDdvNTQwN2dkbGx5In0.rp1oQnTkz6tn37WcCBCQTH5eGGUDF4s8jqLsYzmvU2Feaf_fipHjdYjD4vxte5OKRAS5md0ZerwwSCj3UWjJSB1QQrYxn9CNXxphDo2NU53N9qpET7xq74EbXALbL2OY31_VG3suFV0S-ORy4x8F0NDx-YEdpBbJgjOzMBxDOnxiePkqbDB4TH3OCH4VWiIDaHiTnWRJNW7XCrj3g8yt8mm5YIkIsOA2i1f11ondFv4UuPmn_e_JeNh9rsqW8uu1XFgPRtYDnAcosW4WLHWQ80MnxKor1vD8G3z36ofD_0-5N-c3HS5I1aphK1JuAoccHZPbeCb827sWs1pNWgf_rRONKQa76QEoyeA-2w7d79c4sSq1-VF4akxeIVbDF6yuT3hgMD5xwX6pVBsXhVUUd5l-_OJreKyh6Z66M5U9WfsYgCnNZdYgES2kmkU8hCShSxHXpJSb9Kuxi4axCizwfs1wkQuVdr7YhJj1e6dUAnqAkdylidvO8g7R38nIhS5j6Rmccj5osxZ5Wg3L-JQS44EoCkFqITr8J0uj_8c2nBdA5hYqeHVHxkaTkkckOI-iOpRGZ0Vrws9wbBGgO3hwwSrI1UiIDr4J7hor6jYKdphS9EAG2HGMqOatsPWFOLjv2yzAueNXo1XX7YEU5YYRerN8WYLwYK4JxpfkkHfYe94")
+        }
+    }
 }
 /*
 secrets {
@@ -64,8 +77,11 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
+    // Apollo Runtime
+    implementation(libs.apollo.runtime)
 
     testImplementation(libs.kotlinx.coroutines.test)
+
 }
 
 
