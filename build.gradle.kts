@@ -20,4 +20,6 @@ plugins {
     alias(libs.plugins.spotless) apply false
     alias(libs.plugins.module.graph) apply true
     alias(libs.plugins.jetupdates.root)
+    // Apollo Kotlin Plugin
+    alias(libs.plugins.apollo) apply false
 }
