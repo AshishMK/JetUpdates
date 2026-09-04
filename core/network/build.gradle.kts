@@ -37,7 +37,8 @@ plugins {
     alias(libs.plugins.jetupdates.android.library)
     alias(libs.plugins.jetupdates.android.library.jacoco)
     alias(libs.plugins.jetupdates.hilt)
-    id("kotlinx-serialization")
+    alias(libs.plugins.apollo) // Apply Apollo plugin
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -46,6 +47,27 @@ android {
     }
     namespace = "com.demo.jetupdates.core.network"
     testOptions.unitTests.isIncludeAndroidResources = true
+}
+
+// Configure package name for generated Apollo Kotlin classes
+apollo {
+    service("service") {
+        packageName.set("com.demo.jetupdates.core.network")
+        introspection {
+
+            val propertyTextProvider = providers.fileContents(
+                isolated.rootProject.projectDirectory.file("mykeys.properties")
+            ).asText
+            val  prop =  propertyTextProvider.getOrElse("")
+            val properties = Properties()
+            properties.load(StringReader(prop))
+            val hygraphEndpoint = if (properties.containsKey("HYGRAPH_ENDPOINT")) properties["HYGRAPH_ENDPOINT"] as? String ?: "test" else "test"
+            endpointUrl.set(hygraphEndpoint)
+            schemaFile.set(file("src/main/graphql/com/demo/jetupdates/core/network/schema.graphqls"))
+            val hygraphToken= if (properties.containsKey("HYGRAPH_TOKEN")) properties["HYGRAPH_TOKEN"] as? String ?: "test" else "test"
+            headers.put("Authorization",hygraphToken )
+        }
+    }
 }
 /*
 secrets {
@@ -64,8 +86,11 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
+    // Apollo Runtime
+    implementation(libs.apollo.runtime)
 
     testImplementation(libs.kotlinx.coroutines.test)
+
 }
 
 

@@ -70,6 +70,9 @@ junit = "4.13.2"
 junitVersion = "1.1.5"
 material = "1.10.0"
 
+# Apollo Kotlin 5.x
+apollo = "5.0.1"
+
 
 uiTestJunit4 = "1.9.0-rc01"
 
@@ -187,6 +190,8 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "uiTestJunit4" }
 spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+# Core Apollo runtime
+apollo-runtime = { group = "com.apollographql.apollo", name = "apollo-runtime", version.ref = "apollo" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -209,6 +214,9 @@ protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 room = { id = "androidx.room", version.ref = "room" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+# Apollo Gradle Plugin
+apollo = { id = "com.apollographql.apollo", version.ref = "apollo" }
+
 
 # Plugins defined by this project
 jetupdates-android-application = { id = "jetupdates.android.application" }
