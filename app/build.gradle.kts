@@ -74,7 +74,7 @@ android {
 
     signingConfigs {
         create("myKey") {
-            storeFile = file("/Users/ashish_nautiyal/Desktop/jetupdatedts/key.jks")
+            storeFile = file("${rootProject.projectDir}/key.jks")
             storePassword = my_keystore_password
             keyAlias = my_key_alias
             keyPassword = my_key_password
