@@ -1,0 +1,40 @@
+# Query to fetch all shop categories
+query GetCategories {
+  categories {
+    id
+    name
+    imageUrl
+  }
+}
+
+# Query to fetch shop items with category details
+query GetShopItems($first: Int = 10, $skip: Int = 0) {
+  shopItems(first: $first, skip: $skip) {
+    id
+    title
+    description
+    price
+    images
+    categoriesRef {
+      id
+      name
+      imageUrl
+    }
+  }
+}
+
+# Query to fetch a single shop item by ID
+query GetShopItemById($id: ID!) {
+  shopItem(where: { id: $id }) {
+    id
+    title
+    description
+    price
+    images
+    categoriesRef {
+      id
+      name
+      imageUrl
+    }
+  }
+}
