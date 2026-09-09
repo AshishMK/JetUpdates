@@ -77,9 +77,9 @@ private suspend fun <T> suspendRunCatching(block: suspend () -> T): Result<T> = 
  * implementation must guarantee this.
  */
 suspend fun Synchronizer.changeListSync(
-    versionReader: (ChangeListVersions) -> Int,
-    changeListFetcher: suspend (Int) -> List<NetworkChangeList>,
-    versionUpdater: ChangeListVersions.(Int) -> ChangeListVersions,
+    versionReader: (ChangeListVersions) -> String,
+    changeListFetcher: suspend (String) -> List<NetworkChangeList>,
+    versionUpdater: ChangeListVersions.(String) -> ChangeListVersions,
     modelDeleter: suspend (List<String>) -> Unit,
     modelUpdater: suspend (List<String>) -> Unit,
 ) = suspendRunCatching {

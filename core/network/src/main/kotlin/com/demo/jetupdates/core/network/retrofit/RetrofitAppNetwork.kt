@@ -49,12 +49,12 @@ private interface RetrofitAppNetworkApi {
 
     @GET(value = "changelists/categories")
     suspend fun getCategoryChangeList(
-        @Query("after") after: Int?,
+        @Query("after") after: String?,
     ): List<NetworkChangeList>
 
     @GET(value = "changelists/shopitems")
     suspend fun getShopItemsChangeList(
-        @Query("after") after: Int?,
+        @Query("after") after: String?,
     ): List<NetworkChangeList>
 }
 
@@ -96,9 +96,9 @@ internal class RetrofitAppNetwork @Inject constructor(
     override suspend fun getShopItems(ids: List<String>?): List<NetworkShopItem> =
         networkApi.getShopItems(ids = ids).data
 
-    override suspend fun getCategoryChangeList(after: Int?): List<NetworkChangeList> =
+    override suspend fun getCategoryChangeList(after: String?): List<NetworkChangeList> =
         networkApi.getCategoryChangeList(after = after)
 
-    override suspend fun getShopItemChangeList(after: Int?): List<NetworkChangeList> =
+    override suspend fun getShopItemChangeList(after: String?): List<NetworkChangeList> =
         networkApi.getShopItemsChangeList(after = after)
 }

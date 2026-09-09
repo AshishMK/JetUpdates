@@ -28,7 +28,7 @@ interface AppNetworkDataSource {
 
     suspend fun getShopItems(ids: List<String>? = null): List<NetworkShopItem>
 
-    suspend fun getCategoryChangeList(after: Int? = null): List<NetworkChangeList>
+    suspend fun getCategoryChangeList(after: String? = null): List<NetworkChangeList>
 
-    suspend fun getShopItemChangeList(after: Int? = null): List<NetworkChangeList>
+    suspend fun getShopItemChangeList(after: String? = null): List<NetworkChangeList>
 }

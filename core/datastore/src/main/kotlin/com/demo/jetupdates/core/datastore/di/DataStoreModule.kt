@@ -23,6 +23,8 @@ import androidx.datastore.dataStoreFile
 import com.demo.jetupdates.core.common.network.AppDispatchers.IO
 import com.demo.jetupdates.core.common.network.Dispatcher
 import com.demo.jetupdates.core.common.network.di.ApplicationScope
+import com.demo.jetupdates.core.datastore.IntToStringMapIdsMigration
+import com.demo.jetupdates.core.datastore.ProtoChangeListVersionMigration
 import com.demo.jetupdates.core.datastore.UserPreferences
 import com.demo.jetupdates.core.datastore.UserPreferencesSerializer
 import dagger.Module
@@ -49,6 +51,10 @@ object DataStoreModule {
         DataStoreFactory.create(
             serializer = userPreferencesSerializer,
             scope = CoroutineScope(scope.coroutineContext + ioDispatcher),
+            migrations = listOf(
+                IntToStringMapIdsMigration,
+                ProtoChangeListVersionMigration
+            ),
 
         ) {
             context.dataStoreFile("user_preferences.pb")

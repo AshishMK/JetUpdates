@@ -16,6 +16,7 @@
 
 package com.demo.jetupdates.core.database
 
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
@@ -41,7 +42,10 @@ import com.demo.jetupdates.core.database.util.InstantConverter
         CategoryFtsEntity::class,
         RecentSearchQueryEntity::class,
     ],
-    version = 2,
+    version = 3,
+    autoMigrations = [
+        AutoMigration(from = 2, to = 3) // That's it!
+    ],
     exportSchema = true,
 )
 @TypeConverters(

@@ -20,6 +20,6 @@ package com.demo.jetupdates.core.datastore
  * Class summarizing the local version of each model for sync
  */
 data class ChangeListVersions(
-    val categoryVersion: Int = -1,
-    val shopItemVersion: Int = -1,
+    val categoryVersion: String = "-1",
+    val shopItemVersion: String = "-1",
 )

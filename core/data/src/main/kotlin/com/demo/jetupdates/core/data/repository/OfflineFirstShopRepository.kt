@@ -70,7 +70,7 @@ internal class OfflineFirstShopRepository @Inject constructor(
         return synchronizer.changeListSync(
             versionReader = ChangeListVersions::shopItemVersion,
             changeListFetcher = { currentVersion ->
-                isFirstSync = currentVersion <= 0
+                isFirstSync = currentVersion <= "0"
                 network.getShopItemChangeList(after = currentVersion)
             },
             versionUpdater = { latestVersion ->

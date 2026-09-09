@@ -49,10 +49,10 @@ class DemoAppNetworkDataSource @Inject constructor(
     override suspend fun getShopItems(ids: List<String>?): List<NetworkShopItem> =
         getDataFromJsonFile(ITEMS_ASSET)
 
-    override suspend fun getCategoryChangeList(after: Int?): List<NetworkChangeList> =
+    override suspend fun getCategoryChangeList(after: String?): List<NetworkChangeList> =
         getCategories().mapToChangeList(NetworkCategory::id)
 
-    override suspend fun getShopItemChangeList(after: Int?): List<NetworkChangeList> =
+    override suspend fun getShopItemChangeList(after: String?): List<NetworkChangeList> =
         getShopItems().mapToChangeList(NetworkShopItem::id)
 
     /**
@@ -98,7 +98,7 @@ private fun <T> List<T>.mapToChangeList(
 ) = mapIndexed { index, item ->
     NetworkChangeList(
         id = idGetter(item),
-        changeListVersion = index,
+        changeListVersion = ""+index,
         isDelete = false,
     )
 }
