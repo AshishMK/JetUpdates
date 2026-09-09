@@ -29,6 +29,11 @@ internal interface FlavoredNetworkModule {
 
     /*@Binds
     fun binds(impl: RetrofitAppNetwork): AppNetworkDataSource*/
+    @Binds
+    fun bindsAppNetworkDataSource(
+        apolloAppNetwork: ApolloAppNetwork,
+    ): AppNetworkDataSource
+
 
     @Binds
     fun binds(impl: DemoAppNetworkDataSource): AppNetworkDataSource
