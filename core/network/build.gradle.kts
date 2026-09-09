@@ -41,12 +41,39 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+val keysProperties = Properties().apply {
+    val keysFile = rootProject.file("mykeys.properties")
+    if (keysFile.exists()) {
+        keysFile.inputStream().use { load(it) }
+    }
+}
+
+/** OR both are same
+val propertyTextProvider = providers.fileContents(
+                isolated.rootProject.projectDirectory.file("mykeys.properties")
+            ).asText
+            val  prop =  propertyTextProvider.getOrElse("")
+            val properties = Properties()
+            properties.load(StringReader(prop))
+ */
+val hygraphEndpoint: String = keysProperties["HYGRAPH_ENDPOINT"] as? String  ?:  ""
+
+val hygraphToken: String = keysProperties.getProperty("HYGRAPH_TOKEN") ?: ""
+
 android {
     buildFeatures {
         buildConfig = true
     }
     namespace = "com.demo.jetupdates.core.network"
     testOptions.unitTests.isIncludeAndroidResources = true
+
+    defaultConfig {
+    // Load secrets from mykeys.properties or CI environment variables
+
+    buildConfigField("String", "HYGRAPH_ENDPOINT", "\"$hygraphEndpoint\"")
+    buildConfigField("String", "HYGRAPH_TOKEN", "\"$hygraphToken\"")
+
+    }
 }
 
 // Configure package name for generated Apollo Kotlin classes
@@ -55,16 +82,10 @@ apollo {
         packageName.set("com.demo.jetupdates.core.network")
         introspection {
 
-            val propertyTextProvider = providers.fileContents(
-                isolated.rootProject.projectDirectory.file("mykeys.properties")
-            ).asText
-            val  prop =  propertyTextProvider.getOrElse("")
-            val properties = Properties()
-            properties.load(StringReader(prop))
-            val hygraphEndpoint = if (properties.containsKey("HYGRAPH_ENDPOINT")) properties["HYGRAPH_ENDPOINT"] as? String ?: "test" else "test"
+           // val hygraphEndpoint = if (keysProperties.containsKey("HYGRAPH_ENDPOINT")) keysProperties["HYGRAPH_ENDPOINT"] as? String ?: "test" else "test"
             endpointUrl.set(hygraphEndpoint)
             schemaFile.set(file("src/main/graphql/com/demo/jetupdates/core/network/schema.graphqls"))
-            val hygraphToken= if (properties.containsKey("HYGRAPH_TOKEN")) properties["HYGRAPH_TOKEN"] as? String ?: "test" else "test"
+           // val hygraphToken= if (keysProperties.containsKey("HYGRAPH_TOKEN")) keysProperties["HYGRAPH_TOKEN"] as? String ?: "test" else "test"
             headers.put("Authorization",hygraphToken )
         }
     }

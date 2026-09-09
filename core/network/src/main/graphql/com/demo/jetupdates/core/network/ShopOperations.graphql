@@ -38,3 +38,29 @@ query GetShopItemById($id: ID!) {
     }
   }
 }
+
+
+# Sync Categories updated after a specific timestamp
+query SyncCategories($lastSyncTime: DateTime) {
+  categories(where: { updatedAt_gt: $lastSyncTime }) {
+    id
+    name
+    imageUrl
+    updatedAt
+  }
+}
+
+# Sync ShopItems updated after a specific timestamp
+query SyncShopItems($lastSyncTime: DateTime) {
+  shopItems(where: { updatedAt_gt: $lastSyncTime }) {
+    id
+    title
+    description
+    price
+    images
+    updatedAt
+    categoriesRef {
+      id
+    }
+  }
+}
