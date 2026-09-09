@@ -23,9 +23,7 @@ option java_package = "com.demo.jetupdates.core.datastore";
 option java_multiple_files = true;
 
 message UserPreferences {
-    int32 categoryChangeListVersion = 5;
-    int32 authorChangeListVersion = 6;
-    int32 shopItemChangeListVersion = 7;
+
     //bool has_done_int_to_string_id_migration = 8;
     //bool has_done_list_to_map_migration = 12;
 
@@ -36,14 +34,7 @@ message UserPreferences {
     map<int32, bool> DEPRECATED_bookmarked_shop_item_ids = 3 [deprecated = true];;
     map<int32, bool> DEPRECATED_viewed_shop_item_ids = 4 [deprecated = true];;
 
-    // NEW: String-based maps (tag numbers 13-16)
-     // NEW FIELDS STARTING FROM ID 12:
-         bool has_done_int_to_string_id_migration = 12;
 
-         map<string, bool> followed_category_ids = 13;
-         map<string, bool> followed_author_ids = 14;
-         map<string, bool> bookmarked_shop_item_ids = 15;
-         map<string, bool> viewed_shop_item_ids = 16;
 
     ThemeBrandProto theme_brand = 8;
     DarkThemeConfigProto dark_theme_config = 9;
@@ -52,5 +43,25 @@ message UserPreferences {
 
     bool use_dynamic_color = 11;
 
-    // NEXT AVAILABLE ID: 12
+       // NEW: String-based maps (tag numbers 13-16)
+         // NEW FIELDS STARTING FROM ID 12:
+             bool has_done_int_to_string_id_migration = 12;
+
+             map<string, bool> followed_category_ids = 13;
+             map<string, bool> followed_author_ids = 14;
+             map<string, bool> bookmarked_shop_item_ids = 15;
+             map<string, bool> viewed_shop_item_ids = 16;
+
+// Deprecated Int fields (retained so Protobuf can read legacy disk data)
+  int32 DEPRECATED_categoryChangeListVersion = 5 [deprecated = true];;
+  int32 DEPRECATED_authorChangeListVersion = 6 [deprecated = true];;
+  int32 DEPRECATED_shopItemChangeListVersion = 7 [deprecated = true];;
+
+  // New String fields
+  string categoryChangeListVersion = 17;
+  string authorChangeListVersion = 18;
+  string shopItemChangeListVersion = 19;
+
+
+    // NEXT AVAILABLE ID: 20
 }
