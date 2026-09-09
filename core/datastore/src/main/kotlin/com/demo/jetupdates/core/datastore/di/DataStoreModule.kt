@@ -52,7 +52,7 @@ object DataStoreModule {
             serializer = userPreferencesSerializer,
             scope = CoroutineScope(scope.coroutineContext + ioDispatcher),
             migrations = listOf(
-                IntToStringMapIdsMigration,
+
                 ProtoChangeListVersionMigration
             ),
 
