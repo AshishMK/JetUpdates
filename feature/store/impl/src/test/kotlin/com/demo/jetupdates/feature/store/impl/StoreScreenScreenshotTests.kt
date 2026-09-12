@@ -86,20 +86,21 @@ class StoreScreenScreenshotTests {
                             LocalNavAnimatedVisibilityScope provides this,
                         ) {
                             StoreScreen(
+                                showCategoryList = false,
                                 isSyncing = false,
                                 onboardingUiState = NotShown,
                                 feedState = Success(
                                     feed = userShopItems,
                                 ),
-                                onCategoryCheckedChanged = { _, _ -> },
-                                saveFollowedCategories = {},
-                                onShopItemCheckedChanged = { _, _ -> },
-                                onShopItemViewed = {},
-                                onProductClick = {},
                                 deepLinkedUserShopItem = null,
-                                onDeepLinkOpened = {},
-                                categoryActionClicked = {},
-                                showCategoryList = false,
+                                onCategoryCheckedChanged = { _, _ -> },
+                                onProductClick = { _ -> },
+                                onDeepLinkOpened = { _ -> },
+                                saveFollowedCategories = {},
+                                categoryActionClicked = { _ -> },
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = { _ -> },
+                                clickedByUser = false,
                             )
                         }
                     }
@@ -119,18 +120,19 @@ class StoreScreenScreenshotTests {
                             LocalNavAnimatedVisibilityScope provides this,
                         ) {
                             StoreScreen(
+                                showCategoryList = false,
                                 isSyncing = false,
                                 onboardingUiState = OnboardingUiState.Loading,
                                 feedState = ItemFeedUiState.Loading,
-                                onCategoryCheckedChanged = { _, _ -> },
-                                saveFollowedCategories = {},
-                                onShopItemCheckedChanged = { _, _ -> },
-                                onShopItemViewed = {},
-                                onProductClick = {},
                                 deepLinkedUserShopItem = null,
-                                onDeepLinkOpened = {},
-                                categoryActionClicked = {},
-                                showCategoryList = false,
+                                onCategoryCheckedChanged = { _, _ -> },
+                                onProductClick = { _ -> },
+                                onDeepLinkOpened = { _ -> },
+                                saveFollowedCategories = {},
+                                categoryActionClicked = { _ -> },
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = { _ -> },
+                                clickedByUser = false,
                             )
                         }
                     }
@@ -201,6 +203,7 @@ class StoreScreenScreenshotTests {
                             LocalNavAnimatedVisibilityScope provides this,
                         ) {
                             StoreScreen(
+                                showCategoryList = true,
                                 isSyncing = false,
                                 onboardingUiState = Shown(
                                     categories = userShopItems.flatMap { shopItem -> shopItem.followableCategories }
@@ -210,15 +213,15 @@ class StoreScreenScreenshotTests {
                                 feedState = Success(
                                     feed = emptyList(),
                                 ),
-                                onCategoryCheckedChanged = { _, _ -> },
-                                saveFollowedCategories = {},
-                                onShopItemCheckedChanged = { _, _ -> },
-                                onShopItemViewed = {},
-                                onProductClick = {},
                                 deepLinkedUserShopItem = null,
-                                onDeepLinkOpened = {},
-                                showCategoryList = true,
-                                categoryActionClicked = {},
+                                onCategoryCheckedChanged = { _, _ -> },
+                                onProductClick = { _ -> },
+                                onDeepLinkOpened = { _ -> },
+                                saveFollowedCategories = {},
+                                categoryActionClicked = { _ -> },
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = { _ -> },
+                                clickedByUser = false,
                             )
                         }
                     }
@@ -238,20 +241,21 @@ class StoreScreenScreenshotTests {
                             LocalNavAnimatedVisibilityScope provides this,
                         ) {
                             StoreScreen(
+                                showCategoryList = false,
                                 isSyncing = true,
                                 onboardingUiState = OnboardingUiState.Loading,
                                 feedState = Success(
                                     feed = userShopItems,
                                 ),
-                                onCategoryCheckedChanged = { _, _ -> },
-                                saveFollowedCategories = {},
-                                onShopItemCheckedChanged = { _, _ -> },
-                                onShopItemViewed = {},
-                                onProductClick = {},
                                 deepLinkedUserShopItem = null,
-                                onDeepLinkOpened = {},
-                                showCategoryList = false,
-                                categoryActionClicked = {},
+                                onCategoryCheckedChanged = { _, _ -> },
+                                onProductClick = { _ -> },
+                                onDeepLinkOpened = { _ -> },
+                                saveFollowedCategories = {},
+                                categoryActionClicked = { _ -> },
+                                onShopItemCheckedChanged = { _, _ -> },
+                                onShopItemViewed = { _ -> },
+                                clickedByUser = false,
                             )
                         }
                     }

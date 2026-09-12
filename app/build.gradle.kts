@@ -119,7 +119,6 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.data)
     implementation(projects.sync.work)
-    implementation(projects.core.data)
 
 
 
@@ -210,4 +209,29 @@ baselineProfile {
 
 dependencyGuard {
     configuration("prodReleaseRuntimeClasspath")
+}
+// app/build.gradle.kts
+
+afterEvaluate {
+    // 1. Skip dependency analysis for non-production release builds
+    tasks.matching { it.name.contains("OssDependencyTask") }.configureEach {
+        onlyIf {
+            val taskName = name.lowercase()
+            taskName.contains("prodrelease") && !taskName.contains("benchmark") && !taskName.contains("nonminified")
+        }
+    }
+
+    // 2. Fix Gradle 9 implicit dependency error for OSS licenses plugin
+    tasks.matching { it.name.endsWith("OssLicensesCleanUp") }.configureEach {
+        val variant = name.removeSuffix("OssLicensesCleanUp")
+        dependsOn("${variant}OssDependencyTask")
+    }
+
+    // 3. Skip licensing asset generation and suppress missing file checks
+    tasks.withType<com.google.android.gms.oss.licenses.plugin.LicensesTask>().configureEach {
+        onlyIf {
+            val taskName = name.lowercase()
+            taskName.contains("prodrelease") && !taskName.contains("benchmark") && !taskName.contains("nonminified")
+        }
+    }
 }

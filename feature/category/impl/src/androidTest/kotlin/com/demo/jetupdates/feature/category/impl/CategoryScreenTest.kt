@@ -67,6 +67,7 @@ class CategoryScreenTest {
                         LocalNavAnimatedVisibilityScope provides this,
                     ) {
                         CategoryScreen(
+                            index = "1",
                             categoryUiState = CategoryUiState.Loading,
                             shopItemUiState = ShopItemUiState.Loading,
                             showBackButton = true,
@@ -97,6 +98,7 @@ class CategoryScreenTest {
                         LocalNavAnimatedVisibilityScope provides this,
                     ) {
                         CategoryScreen(
+                            index = "1",
                             categoryUiState = CategoryUiState.Success(testCategory),
                             shopItemUiState = ShopItemUiState.Loading,
                             showBackButton = true,
@@ -132,6 +134,7 @@ class CategoryScreenTest {
                         LocalNavAnimatedVisibilityScope provides this,
                     ) {
                         CategoryScreen(
+                            index = "1",
                             categoryUiState = CategoryUiState.Loading,
                             shopItemUiState = ShopItemUiState.Success(userShopItemsTestData),
                             showBackButton = true,
@@ -163,6 +166,7 @@ class CategoryScreenTest {
                         LocalNavAnimatedVisibilityScope provides this,
                     ) {
                         CategoryScreen(
+                            index = "1",
                             categoryUiState = CategoryUiState.Success(testCategory),
                             shopItemUiState = ShopItemUiState.Success(
                                 userShopItemsTestData,

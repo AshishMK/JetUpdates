@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import com.android.build.gradle.LibraryExtension
 import com.android.build.api.variant.BuildConfigField
+import org.gradle.language.nativeplatform.internal.Dimensions.libraryVariants
 import java.io.StringReader
 import java.util.Properties
 
@@ -61,6 +63,7 @@ val hygraphEndpoint: String = keysProperties["HYGRAPH_ENDPOINT"] as? String  ?: 
 val hygraphToken: String = keysProperties.getProperty("HYGRAPH_TOKEN") ?: ""
 
 android {
+
     buildFeatures {
         buildConfig = true
     }
@@ -74,12 +77,18 @@ android {
     buildConfigField("String", "HYGRAPH_TOKEN", "\"$hygraphToken\"")
 
     }
+
 }
+
 
 // Configure package name for generated Apollo Kotlin classes
 apollo {
     service("service") {
         packageName.set("com.demo.jetupdates.core.network")
+        // Maps the GraphQL DateTime scalar to Kotlin String using Apollo's built-in adapter
+        //mapScalar("DateTime", "String", "com.apollographql.apollo.api.StringAdapter")
+        // Built-in shorthand for mapping scalars to String
+        mapScalarToKotlinString("DateTime")
         introspection {
 
            // val hygraphEndpoint = if (keysProperties.containsKey("HYGRAPH_ENDPOINT")) keysProperties["HYGRAPH_ENDPOINT"] as? String ?: "test" else "test"
@@ -88,6 +97,7 @@ apollo {
            // val hygraphToken= if (keysProperties.containsKey("HYGRAPH_TOKEN")) keysProperties["HYGRAPH_TOKEN"] as? String ?: "test" else "test"
             headers.put("Authorization",hygraphToken )
         }
+
     }
 }
 /*
@@ -134,6 +144,19 @@ val apiKey =  propertyTextProvider.map { text ->
     else "test"
     // Move to returning `properties["BACKEND_URL"] as String?` after upgrading to Gradle 9.0.0
 }.orElse("test3")
+
+tasks.configureEach {
+    if (name.startsWith("ksp") && name.endsWith("Kotlin")) {
+        val variantOrBuildType = name.removePrefix("ksp").removeSuffix("Kotlin")
+        val apolloTaskName = "generate${variantOrBuildType}ApolloSources"
+
+        // Safely add the dependency if the Apollo task exists for this variant
+        val apolloTask = tasks.findByName(apolloTaskName)
+        if (apolloTask != null) {
+            dependsOn(apolloTask)
+        }
+    }
+}
 
 androidComponents {
     onVariants {

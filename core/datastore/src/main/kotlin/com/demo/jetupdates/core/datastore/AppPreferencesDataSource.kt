@@ -162,8 +162,8 @@ class AppPreferencesDataSource @Inject constructor(
     suspend fun getChangeListVersions() = userPreferences.data
         .map {
             ChangeListVersions(
-                categoryVersion = it.categoryChangeListVersion,
-                shopItemVersion = it.shopItemChangeListVersion,
+                categoryVersion = it.categoryChangeListVersion.takeIf { str -> str.isNotBlank() } ?: "-1",
+                shopItemVersion = it.shopItemChangeListVersion.takeIf { str -> str.isNotBlank() } ?: "-1",
             )
         }
         .firstOrNull() ?: ChangeListVersions()

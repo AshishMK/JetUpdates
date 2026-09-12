@@ -62,6 +62,7 @@ class CategoryViewModelTest {
             categoriesRepository = categoriesRepository,
             userShopItemRepository = userShopItemRepository,
             categoryId = testInputCategories[0].category.id,
+            categoryIndex = "0",
         )
     }
 

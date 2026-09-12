@@ -89,6 +89,7 @@ fun CategoryScreen(
 
     // TrackScreenViewEvent(screenName = "Category: ${viewModel.categoryId}")
     CategoryScreen(
+        index = viewModel.categoryIndex,
         onProductClick = onProductClick,
         categoryUiState = categoryUiState,
         shopItemUiState = shopItemUiState,
@@ -104,6 +105,7 @@ fun CategoryScreen(
 @VisibleForTesting
 @Composable
 internal fun CategoryScreen(
+    index: String,
     onProductClick: (String) -> Unit,
     categoryUiState: CategoryUiState,
     shopItemUiState: ShopItemUiState,
@@ -151,7 +153,7 @@ internal fun CategoryScreen(
                     }
                     categoryBody(
                         onProductClick = onProductClick,
-                        id = categoryUiState.followableCategory.category.id,
+                        index = index, // categoryUiState.followableCategory.category.id,
                         name = categoryUiState.followableCategory.category.name,
                         description = categoryUiState.followableCategory.category.longDescription,
                         news = shopItemUiState,
@@ -199,7 +201,7 @@ private fun shopItemsSize(
 
 private fun LazyStaggeredGridScope.categoryBody(
     onProductClick: (String) -> Unit,
-    id: String,
+    index: String,
     name: String,
     description: String,
     news: ShopItemUiState,
@@ -209,18 +211,18 @@ private fun LazyStaggeredGridScope.categoryBody(
 ) {
     // TODO: Show icon if available
     item(span = StaggeredGridItemSpan.FullLine, contentType = "categoryHeader") {
-        CategoryHeader(id, name, description, imageUrl)
+        CategoryHeader(index, name, description, imageUrl)
     }
 
     userShopItemCards(onProductClick, news, onBookmarkChanged, onNewsResourceViewed)
 }
 
 @Composable
-private fun CategoryHeader(id: String, name: String, description: String, imageUrl: String) {
+private fun CategoryHeader(index: String, name: String, description: String, imageUrl: String) {
     Column(
         modifier = Modifier.padding(horizontal = 16.dp),
     ) {
-        val placeHolder = mapDrawables[id]!!
+        val placeHolder = mapDrawables[index]!!
         DynamicAsyncImage(
             contentScale = ContentScale.Fit,
             imageUrl = "",
@@ -276,7 +278,7 @@ private fun CategoryBodyPreview() {
     AppTheme {
         LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Adaptive(150.dp)) {
             categoryBody(
-                id = "1",
+                index = "1",
                 name = "Jetpack Compose",
                 description = "Lorem ipsum maximum",
                 news = ShopItemUiState.Success(emptyList()),
@@ -341,6 +343,7 @@ fun CategoryScreenPopulated(
     AppTheme {
         AppBackground {
             CategoryScreen(
+                index = "1",
                 categoryUiState = CategoryUiState.Success(userShopItems[0].followableCategories[0]),
                 shopItemUiState = ShopItemUiState.Success(userShopItems),
                 showBackButton = true,
@@ -360,6 +363,7 @@ fun CategoryScreenLoading() {
     AppTheme {
         AppBackground {
             CategoryScreen(
+                index = "1",
                 categoryUiState = CategoryUiState.Loading,
                 shopItemUiState = ShopItemUiState.Loading,
                 showBackButton = true,

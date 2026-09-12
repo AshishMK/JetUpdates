@@ -64,3 +64,54 @@ query SyncShopItems($lastSyncTime: DateTime) {
     }
   }
 }
+
+
+# 1. Fetch lightweight category change list (ID, timestamp, and delete status)
+query GetCategoryChangeList($after: DateTime, $first: Int = 100) {
+  categories(where: { updatedAt_gt: $after }, first: $first) {
+    id
+    updatedAt
+    isDeleted
+  }
+}
+
+# 2. Fetch lightweight shop item change list (ID, timestamp, and delete status)
+query GetShopItemChangeList($after: DateTime, $first: Int = 100) {
+  shopItems(where: { updatedAt_gt: $after }, first: $first) {
+    id
+    updatedAt
+    isDeleted
+  }
+}
+
+# 3. Fetch full category payloads by a batch of IDs
+query GetCategoriesByIds($ids: [ID!]) {
+  categories(where: { id_in: $ids }) {
+    id
+    name
+    shortDescription
+    longDescription
+    imageUrl
+    url
+    updatedAt
+    isDeleted
+  }
+}
+
+# 4. Fetch full shop item payloads by a batch of IDs
+query GetShopItemsByIds($ids: [ID!]) {
+  shopItems(where: { id_in: $ids }) {
+    id
+    title
+    description
+    price
+    stock
+    images
+    updatedAt
+    isDeleted
+    type
+    publishDate
+    categories
+
+  }
+}

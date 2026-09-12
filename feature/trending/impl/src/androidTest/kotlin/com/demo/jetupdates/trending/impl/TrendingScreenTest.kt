@@ -113,7 +113,7 @@ class TrendingScreenTest {
         TrendingScreen(
             uiState = uiState,
             followCategory = { _, _ -> },
-            onCategoryClick = {},
+            onCategoryClick = { _, _ -> },
         )
     }
 }

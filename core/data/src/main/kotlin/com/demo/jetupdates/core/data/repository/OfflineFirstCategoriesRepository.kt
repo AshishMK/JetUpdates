@@ -50,7 +50,6 @@ internal class OfflineFirstCategoriesRepository @Inject constructor(
         return synchronizer.changeListSync(
             versionReader = ChangeListVersions::categoryVersion,
             changeListFetcher = { currentVersion ->
-
                 network.getCategoryChangeList(after = currentVersion)
             },
             versionUpdater = { latestVersion ->

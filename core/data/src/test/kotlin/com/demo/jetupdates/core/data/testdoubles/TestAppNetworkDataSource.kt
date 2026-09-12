@@ -63,16 +63,19 @@ class TestAppNetworkDataSource : AppNetworkDataSource {
             idGetter = NetworkShopItem::id,
         )
 
-    override suspend fun getCategoryChangeList(after: Int?): List<NetworkChangeList> =
-        changeLists.getValue(CollectionType.Categories).after(after)
+    override suspend fun getCategoryChangeList(after: String?): List<NetworkChangeList> {
+        val t = changeLists.getValue(CollectionType.Categories).after(after)
+        println("lass $after ${t.map { it.id }}")
+        return t
+    }
 
-    override suspend fun getShopItemChangeList(after: Int?): List<NetworkChangeList> =
+    override suspend fun getShopItemChangeList(after: String?): List<NetworkChangeList> =
         changeLists.getValue(CollectionType.ShopItems).after(after)
 
     fun latestChangeListVersion(collectionType: CollectionType) =
         changeLists.getValue(collectionType).last().changeListVersion
 
-    fun changeListsAfter(collectionType: CollectionType, version: Int) =
+    fun changeListsAfter(collectionType: CollectionType, version: String) =
         changeLists.getValue(collectionType).after(version)
 
     /**
@@ -81,19 +84,19 @@ class TestAppNetworkDataSource : AppNetworkDataSource {
      */
     fun editCollection(collectionType: CollectionType, id: String, isDelete: Boolean) {
         val changeList = changeLists.getValue(collectionType)
-        val latestVersion = changeList.lastOrNull()?.changeListVersion ?: 0
+        val latestVersion = changeList.lastOrNull()?.changeListVersion ?: "0"
         val change = NetworkChangeList(
             id = id,
             isDelete = isDelete,
-            changeListVersion = latestVersion + 1,
+            changeListVersion = "${latestVersion.toInt() + 1}",
         )
         changeLists[collectionType] = changeList.filterNot { it.id == id } + change
     }
 }
 
-fun List<NetworkChangeList>.after(version: Int?): List<NetworkChangeList> = when (version) {
+fun List<NetworkChangeList>.after(version: String?): List<NetworkChangeList> = when (version) {
     null -> this
-    else -> filter { it.changeListVersion > version }
+    else -> filter { it.changeListVersion.toInt() > version.toInt() }
 }
 
 /**
@@ -116,7 +119,7 @@ private fun <T> List<T>.mapToChangeList(
 ) = mapIndexed { index, item ->
     NetworkChangeList(
         id = idGetter(item),
-        changeListVersion = index + 1,
+        changeListVersion = "${index + 1}",
         isDelete = false,
     )
 }

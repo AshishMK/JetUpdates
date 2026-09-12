@@ -98,7 +98,7 @@ private fun <T> List<T>.mapToChangeList(
 ) = mapIndexed { index, item ->
     NetworkChangeList(
         id = idGetter(item),
-        changeListVersion = ""+index,
+        changeListVersion = "" + index,
         isDelete = false,
     )
 }

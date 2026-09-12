@@ -38,7 +38,7 @@ import com.demo.jetupdates.feature.trending.impl.TrendingUiState.Trending
 
 @Composable
 fun TrendingScreen(
-    onCategoryClick: (String) -> Unit,
+    onCategoryClick: (String, String) -> Unit,
     modifier: Modifier = Modifier,
     shouldHighlightSelectedCategory: Boolean = false,
     viewModel: TrendingViewModel,
@@ -48,10 +48,10 @@ fun TrendingScreen(
     TrendingScreen(
         uiState = uiState,
         followCategory = viewModel::followCategory,
-        onCategoryClick = {
+        onCategoryClick = { item, index ->
             // TODO: this violates SSOT, events should go through the ViewModel see onCategoryClick in viewmodel
-            viewModel.onCategoryClick(it)
-            onCategoryClick(it)
+            viewModel.onCategoryClick(item)
+            onCategoryClick(item, index)
         },
         shouldHighlightSelectedCategory = shouldHighlightSelectedCategory,
         modifier = modifier,
@@ -62,7 +62,7 @@ fun TrendingScreen(
 internal fun TrendingScreen(
     uiState: TrendingUiState,
     followCategory: (String, Boolean) -> Unit,
-    onCategoryClick: (String) -> Unit,
+    onCategoryClick: (String, String) -> Unit,
     modifier: Modifier = Modifier,
     shouldHighlightSelectedCategory: Boolean = false,
 ) {
@@ -110,7 +110,7 @@ fun InterestsScreenPopulated(
                     categories = followableTopics,
                 ),
                 followCategory = { _, _ -> },
-                onCategoryClick = {},
+                onCategoryClick = { _, _ -> },
             )
         }
     }
@@ -124,7 +124,7 @@ fun InterestsScreenLoading() {
             TrendingScreen(
                 uiState = TrendingUiState.Loading,
                 followCategory = { _, _ -> },
-                onCategoryClick = {},
+                onCategoryClick = { _, _ -> },
             )
         }
     }
@@ -138,7 +138,7 @@ fun InterestsScreenEmpty() {
             TrendingScreen(
                 uiState = TrendingUiState.Empty,
                 followCategory = { _, _ -> },
-                onCategoryClick = {},
+                onCategoryClick = { _, _ -> },
             )
         }
     }

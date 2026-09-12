@@ -30,12 +30,15 @@ import com.demo.jetupdates.core.datastore.AppPreferencesDataSource
 import com.demo.jetupdates.core.datastore.ChangeListVersions
 import com.demo.jetupdates.core.model.data.ShopItem
 import com.demo.jetupdates.core.network.AppNetworkDataSource
+import com.demo.jetupdates.core.network.demo.DemoAppNetworkDataSource
+import com.demo.jetupdates.core.network.model.NetworkChangeList
 import com.demo.jetupdates.core.network.model.NetworkShopItem
 import com.demo.jetupdates.core.notifications.Notifier
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import kotlin.compareTo
 
 // Heuristic value to optimize for serialization and deserialization cost on client and server
 // for each shop item batch.
@@ -69,16 +72,40 @@ internal class OfflineFirstShopRepository @Inject constructor(
         var isFirstSync = false
         return synchronizer.changeListSync(
             versionReader = ChangeListVersions::shopItemVersion,
+            /*changeListFetcher = { currentVersion ->
+                isFirstSync = currentVersion <= 0
+                network.getNewsResourceChangeList(after = currentVersion)
+            },*/
             changeListFetcher = { currentVersion ->
-                isFirstSync = currentVersion <= "0"
-                network.getShopItemChangeList(after = currentVersion)
+                isFirstSync = currentVersion == "-1"
+
+                // Fetch next batch of 100
+                if (network is DemoAppNetworkDataSource) {
+                    // isFirstSync = currentVersion <= "0"
+                    network.getShopItemChangeList(after = currentVersion)
+                } else {
+                    val changeList = mutableListOf<NetworkChangeList>()
+                    var versionChange = currentVersion
+                    while (true) {
+                        val batch = network.getShopItemChangeList(after = versionChange)
+                        if (batch.isEmpty()) break
+
+                        changeList.addAll(batch)
+
+                        // If batch is smaller than maximum page size, we've reached the end
+                        if (batch.size < 100) break
+
+                        // Advance cursor to the timestamp of the last item in this batch
+                        versionChange = batch.last().changeListVersion
+                    }
+                    changeList
+                }
             },
             versionUpdater = { latestVersion ->
                 copy(shopItemVersion = latestVersion)
             },
             modelDeleter = shopItemDao::deleteShopItems,
-            modelUpdater = {
-                    changedIds ->
+            modelUpdater = { changedIds ->
                 val userData = appPreferencesDataSource.userData.first()
                 val hasOnboarded = userData.shouldHideOnboarding
                 val followedCategoryIds = userData.followedCategories
@@ -107,7 +134,6 @@ internal class OfflineFirstShopRepository @Inject constructor(
                     val networkShopItems = network.getShopItems(ids = chunkedIds)
 
                     // Order of invocation matters to satisfy id and foreign key constraints!
-
                     categoryDao.insertOrIgnoreCategories(
                         categoryEntities = networkShopItems
                             .map(NetworkShopItem::categoryEntityShells)

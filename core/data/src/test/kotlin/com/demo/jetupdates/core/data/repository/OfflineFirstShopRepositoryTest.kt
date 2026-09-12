@@ -228,14 +228,14 @@ class OfflineFirstShopRepositoryTest {
 
             // Set shop item version to 7
             synchronizer.updateChangeListVersions {
-                copy(shopItemVersion = 7)
+                copy(shopItemVersion = "7")
             }
 
             subject.syncWith(synchronizer)
 
             val changeList = network.changeListsAfter(
                 CollectionType.ShopItems,
-                version = 7,
+                version = "7",
             )
             val changeListIds = changeList
                 .map(NetworkChangeList::id)
@@ -314,7 +314,7 @@ class OfflineFirstShopRepositoryTest {
         runTest {
             // Pretend that we already have up to change list 7
             synchronizer.updateChangeListVersions {
-                copy(shopItemVersion = 7)
+                copy(shopItemVersion = "7")
             }
 
             subject.syncWith(synchronizer)
