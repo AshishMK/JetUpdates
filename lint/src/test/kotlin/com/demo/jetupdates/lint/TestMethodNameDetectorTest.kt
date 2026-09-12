@@ -27,7 +27,7 @@ class TestMethodNameDetectorTest {
 
     @Test
     fun `detect prefix`() {
-        lint().issues(PREFIX)
+        lint().issues(PREFIX).allowMissingSdk()
             .files(
                 JUNIT_TEST_STUB,
                 kotlin(
@@ -72,7 +72,7 @@ class TestMethodNameDetectorTest {
 
     @Test
     fun `detect format`() {
-        lint().issues(FORMAT)
+        lint().issues(FORMAT).allowMissingSdk()
             .files(
                 JUNIT_TEST_STUB,
                 kotlin(

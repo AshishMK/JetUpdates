@@ -17,7 +17,7 @@
 package com.demo.jetupdates.core.network.di
 
 import com.demo.jetupdates.core.network.AppNetworkDataSource
-import com.demo.jetupdates.core.network.demo.DemoAppNetworkDataSource
+import com.demo.jetupdates.core.network.apollo.ApolloAppNetwork
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -29,7 +29,11 @@ internal interface FlavoredNetworkModule {
 
     /*@Binds
     fun binds(impl: RetrofitAppNetwork): AppNetworkDataSource*/
-
     @Binds
-    fun binds(impl: DemoAppNetworkDataSource): AppNetworkDataSource
+    fun bindsAppNetworkDataSource(
+        apolloAppNetwork: ApolloAppNetwork,
+    ): AppNetworkDataSource
+
+    /*@Binds
+    fun binds(impl: DemoAppNetworkDataSource): AppNetworkDataSource*/
 }

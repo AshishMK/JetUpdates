@@ -44,7 +44,8 @@ class CategoryViewModel @AssistedInject constructor(
     private val userDataRepository: UserDataRepository,
     categoriesRepository: CategoriesRepository,
     userShopItemRepository: UserShopItemRepository,
-    @Assisted val categoryId: String,
+    @Assisted("categoryId") val categoryId: String,
+    @Assisted("categoryIndex") val categoryIndex: String,
 ) : ViewModel() {
     val categoryUiState: StateFlow<CategoryUiState> = categoryUiState(
         categoryId = categoryId,
@@ -89,7 +90,8 @@ class CategoryViewModel @AssistedInject constructor(
     @AssistedFactory
     interface Factory {
         fun create(
-            categoryId: String,
+            @Assisted("categoryId") categoryId: String,
+            @Assisted("categoryIndex") categoryIndex: String,
         ): CategoryViewModel
     }
 }

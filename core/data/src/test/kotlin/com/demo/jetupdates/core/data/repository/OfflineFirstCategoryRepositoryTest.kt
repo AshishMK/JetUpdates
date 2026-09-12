@@ -107,7 +107,7 @@ class OfflineFirstCategoryRepositoryTest {
         testScope.runTest {
             // Set categories version to 10
             synchronizer.updateChangeListVersions {
-                copy(categoryVersion = 10)
+                copy(categoryVersion = "10")
             }
 
             subject.syncWith(synchronizer)
@@ -142,7 +142,7 @@ class OfflineFirstCategoryRepositoryTest {
             // Delete half of the items on the network
             val deletedItems = networkCategories
                 .map(Category::id)
-                .partition { it.toString().chars().sum() % 2 == 0 }
+                .partition { it.chars().sum() % 2 == 0 }
                 .first
                 .toSet()
 
@@ -165,7 +165,6 @@ class OfflineFirstCategoryRepositoryTest {
                 networkCategories.map(Category::id) - deletedItems,
                 dbCategories.map(Category::id),
             )
-
             // After sync version should be updated
             assertEquals(
                 network.latestChangeListVersion(CollectionType.Categories),

@@ -44,7 +44,7 @@ import com.demo.jetupdates.core.ui.TrendingItem
 @Composable
 fun CategoriesTabContent(
     categories: List<FollowableCategory2>,
-    onCategoryClick: (String) -> Unit,
+    onCategoryClick: (String, String) -> Unit,
     onFollowButtonClick: (String, Boolean) -> Unit,
     modifier: Modifier = Modifier,
     withBottomSpacer: Boolean = true,
@@ -63,21 +63,21 @@ fun CategoriesTabContent(
             contentPadding = PaddingValues(vertical = 16.dp),
             state = scrollableState,
         ) {
-            categories.forEach { followableCategory ->
+            categories.forEachIndexed { index, followableCategory ->
                 val categoryId = followableCategory.category.id
                 item(key = categoryId) {
                     val isSelected =
                         shouldHighlightSelectedCategory && categoryId == selectedCategoryId
                     TrendingItem(
-                        id = categoryId,
                         name = followableCategory.category.name,
                         following = followableCategory.isFollowed,
                         description = followableCategory.category.shortDescription,
                         categoryImageUrl = followableCategory.category.imageUrl,
-                        onClick = { onCategoryClick(categoryId) },
+                        onClick = { onCategoryClick(categoryId, "${index + 1}") },
                         onFollowButtonClick = { onFollowButtonClick(categoryId, it) },
                         isSelected = isSelected,
                         modifier = Modifier.fillMaxWidth(),
+                        index = "${index + 1}",
                     )
                 }
             }

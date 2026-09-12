@@ -53,6 +53,7 @@ import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
 import androidx.compose.foundation.lazy.staggeredgrid.items
+import androidx.compose.foundation.lazy.staggeredgrid.itemsIndexed
 import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -422,13 +423,16 @@ private fun ItemSelection(
                 .fillMaxWidth()
                 .testTag(categorySelectionTestTag),
         ) {
-            items(
+            itemsIndexed(
                 items = onboardingUiState.categories,
-                key = { it.category.id },
-            ) {
+                key = { index, it -> it.category.id },
+            ) { index, it ->
+                // Your composable item content here using index and item
+
                 SingleItemButton(
                     name = it.category.name,
                     categoryId = it.category.id,
+                    categoryIndex = "${index + 1}",
                     imageUrl = it.category.imageUrl,
                     isSelected = it.isFollowed,
                     onClick = onCategoryCheckedChanged,
@@ -442,6 +446,7 @@ private fun ItemSelection(
 private fun SingleItemButton(
     name: String,
     categoryId: String,
+    categoryIndex: String,
     imageUrl: String,
     isSelected: Boolean,
     onClick: (String, Boolean) -> Unit,
@@ -464,7 +469,7 @@ private fun SingleItemButton(
             modifier = Modifier.padding(start = 12.dp, end = 12.dp),
         ) {
             ItemIcon(
-                id = categoryId,
+                id = categoryIndex,
                 imageUrl = imageUrl,
                 isSelected = isSelected,
             )
@@ -582,6 +587,7 @@ fun SingleItemButtonPreview() {
             SingleItemButton(
                 name = "Headlines",
                 categoryId = "1",
+                categoryIndex = "1",
                 imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
                 isSelected = false,
                 onClick = { _, _ -> },
@@ -598,6 +604,7 @@ fun SingleItemButtonSelectedPreview() {
             SingleItemButton(
                 name = "Headlines",
                 categoryId = "1",
+                categoryIndex = "1",
                 imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
                 isSelected = true,
                 onClick = { _, _ -> },

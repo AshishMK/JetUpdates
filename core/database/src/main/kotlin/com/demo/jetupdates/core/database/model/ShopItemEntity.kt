@@ -40,9 +40,8 @@ data class ShopItemEntity(
     @ColumnInfo(name = "publish_date")
     val publishDate: Instant,
     val type: String,
-    val updatedAt: String? = null // Room sees this new column, null as previous entity has not it
-    //@ColumnInfo(defaultValue = "1970-01-01T00:00:00Z") // SQLite fills legacy rows with this default string
-    //val updatedAt: String
+    // Room sees this new column, null as previous entity has not it
+    val updatedAt: String? = null,
 )
 
 fun ShopItemEntity.asExternalModel() = ShopItem(

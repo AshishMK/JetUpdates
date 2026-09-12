@@ -39,6 +39,7 @@ fun EntryProviderScope<NavKey>.categoryEntry(navigator: Navigator) {
             LocalNavAnimatedVisibilityScope provides LocalNavAnimatedContentScope.current,
         ) {
             val id = key.id
+            val index = key.index
             CategoryScreen(
                 showBackButton = true,
                 onBackClick = { navigator.goBack() },
@@ -46,7 +47,7 @@ fun EntryProviderScope<NavKey>.categoryEntry(navigator: Navigator) {
                 viewModel = hiltViewModel<CategoryViewModel, CategoryViewModel.Factory>(
                     key = id.toString(),
                 ) { factory ->
-                    factory.create(id)
+                    factory.create(id, index)
                 },
             )
         }

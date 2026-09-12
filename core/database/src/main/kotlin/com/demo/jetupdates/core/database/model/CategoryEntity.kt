@@ -39,9 +39,8 @@ data class CategoryEntity(
     val url: String,
     @ColumnInfo(defaultValue = "")
     val imageUrl: String,
-    val updatedAt: String? = null // Room sees this new column, null as previous entity has not it
-    //@ColumnInfo(defaultValue = "1970-01-01T00:00:00Z") // SQLite fills legacy rows with this default string
-    //val updatedAt: String
+    // Room sees this new column, null as previous entity has not it
+    val updatedAt: String? = null,
 )
 
 fun CategoryEntity.asExternalModel() = Category(

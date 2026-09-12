@@ -44,7 +44,7 @@ import com.demo.jetupdates.core.database.util.InstantConverter
     ],
     version = 3,
     autoMigrations = [
-        AutoMigration(from = 2, to = 3) // That's it!
+        AutoMigration(from = 2, to = 3), // That's it!
     ],
     exportSchema = true,
 )

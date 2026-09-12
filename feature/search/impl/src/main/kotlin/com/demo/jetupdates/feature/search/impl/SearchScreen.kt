@@ -100,7 +100,7 @@ import com.demo.jetupdates.feature.search.api.R as searchR
 internal fun SearchScreen(
     onBackClick: () -> Unit,
     onTrendingClick: () -> Unit,
-    onCategoryClick: (String) -> Unit,
+    onCategoryClick: (String, String) -> Unit,
     onProductClick: (String) -> Unit,
     modifier: Modifier = Modifier,
     searchViewModel: SearchViewModel = hiltViewModel(),
@@ -141,7 +141,7 @@ internal fun SearchScreen(
     onFollowButtonClick: (String, Boolean) -> Unit = { _, _ -> },
     onBackClick: () -> Unit = {},
     onTrendingClick: () -> Unit = {},
-    onCategoryClick: (String) -> Unit = {},
+    onCategoryClick: (String, String) -> Unit = { _, _ -> },
     onProductClick: (String) -> Unit = {},
 ) {
     // TrackScreenViewEvent(screenName = "Search")
@@ -294,7 +294,7 @@ private fun SearchResultBody(
     categories: List<FollowableCategory2>,
     shopItems: List<UserShopItem>,
     onSearchTriggered: (String) -> Unit,
-    onCategoryClick: (String) -> Unit,
+    onCategoryClick: (String, String) -> Unit,
     onProductClick: (String) -> Unit,
     onShopItemsCheckedChanged: (String, Boolean) -> Unit,
     onShopItemViewed: (String) -> Unit,
@@ -328,7 +328,7 @@ private fun SearchResultBody(
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                     )
                 }
-                categories.forEach { followableCategory ->
+                categories.forEachIndexed { index, followableCategory ->
                     val categoryId = followableCategory.category.id
                     item(
                         // Append a prefix to distinguish a key for news resources
@@ -336,7 +336,7 @@ private fun SearchResultBody(
                         span = StaggeredGridItemSpan.FullLine,
                     ) {
                         TrendingItem(
-                            id = categoryId,
+                            index = "${index + 1}",
                             name = followableCategory.category.name,
                             following = followableCategory.isFollowed,
                             description = followableCategory.category.shortDescription,
@@ -344,7 +344,7 @@ private fun SearchResultBody(
                             onClick = {
                                 // Pass the current search query to ViewModel to save it as recent searches
                                 onSearchTriggered(searchQuery)
-                                onCategoryClick(categoryId)
+                                onCategoryClick(categoryId, "${index + 1}")
                             },
                             onFollowButtonClick = { onFollowButtonClick(categoryId, it) },
                         )

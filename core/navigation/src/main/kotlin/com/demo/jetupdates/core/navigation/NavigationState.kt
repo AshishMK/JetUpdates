@@ -16,7 +16,6 @@
 
 package com.demo.jetupdates.core.navigation
 
-import android.util.Log
 import androidx.annotation.VisibleForTesting
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -98,7 +97,6 @@ fun NavigationState.toEntries(
             entryProvider = entryProvider,
         )
     }
-    Log.v("try", "try ${topLevelStack.size}")
     return topLevelStack // if we are at 2nd tab than will have  topLevelStack = 2
         .flatMap { decoratedEntries[it] ?: emptyList() }
         .toMutableStateList()
