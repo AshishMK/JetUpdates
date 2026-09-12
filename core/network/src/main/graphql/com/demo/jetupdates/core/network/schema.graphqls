@@ -2216,6 +2216,8 @@ type Category implements Entity & Node {
 
   url: String
 
+  isDeleted: Boolean!
+
   """
   User that last published this document
   """
@@ -2284,6 +2286,8 @@ input CategoryCreateInput {
   imageUrl: String
 
   url: String
+
+  isDeleted: Boolean!
 
   shopItems: ShopItemCreateManyInlineInput
 }
@@ -2750,6 +2754,13 @@ input CategoryManyWhereInput {
   """
   url_not_ends_with: String
 
+  isDeleted: Boolean
+
+  """
+  Any other value that exists and is not equal to the given value.
+  """
+  isDeleted_not: Boolean
+
   publishedBy: UserWhereInput
 
   updatedBy: UserWhereInput
@@ -2805,6 +2816,10 @@ enum CategoryOrderByInput {
   url_ASC
 
   url_DESC
+
+  isDeleted_ASC
+
+  isDeleted_DESC
 }
 
 input CategoryUpdateInput {
@@ -2817,6 +2832,8 @@ input CategoryUpdateInput {
   imageUrl: String
 
   url: String
+
+  isDeleted: Boolean
 
   shopItems: ShopItemUpdateManyInlineInput
 }
@@ -2866,6 +2883,8 @@ input CategoryUpdateManyInput {
   imageUrl: String
 
   url: String
+
+  isDeleted: Boolean
 }
 
 input CategoryUpdateManyWithNestedWhereInput {
@@ -3381,6 +3400,13 @@ input CategoryWhereInput {
   """
   url_not_ends_with: String
 
+  isDeleted: Boolean
+
+  """
+  Any other value that exists and is not equal to the given value.
+  """
+  isDeleted_not: Boolean
+
   publishedBy: UserWhereInput
 
   updatedBy: UserWhereInput
@@ -3574,9 +3600,9 @@ interface Entity {
 This enumeration holds all typenames that implement the Entity interface. Components and models implement the Entity interface.
 """
 enum EntityTypeName {
-  Category
-
   ShopItem
+
+  Category
 
   Author
 
@@ -3835,86 +3861,6 @@ scalar Long
 
 type Mutation {
   """
-  Create one category
-  """
-  createCategory(data: CategoryCreateInput!): Category
-
-  """
-  Update one category
-  """
-  updateCategory(where: CategoryWhereUniqueInput!, data: CategoryUpdateInput!): Category
-
-  """
-  Delete one category from _all_ existing stages. Returns deleted document.
-  """
-  deleteCategory("Document to delete" where: CategoryWhereUniqueInput!): Category
-
-  """
-  Upsert one category
-  """
-  upsertCategory(where: CategoryWhereUniqueInput!, upsert: CategoryUpsertInput!): Category
-
-  """
-  Publish one category
-  """
-  publishCategory("Document to publish" where: CategoryWhereUniqueInput!, "Publishing target stage" to: [Stage!]! = [PUBLISHED]): Category
-
-  """
-  Unpublish one category from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only.
-  """
-  unpublishCategory("Document to unpublish" where: CategoryWhereUniqueInput!, "Stages to unpublish document from" from: [Stage!]! = [PUBLISHED]): Category
-
-  """
-  Update many Category documents
-  """
-  updateManyCategoriesConnection("Documents to apply update on" where: CategoryManyWhereInput, "Updates to document content" data: CategoryUpdateManyInput!, skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
-
-  """
-  Delete many Category documents, return deleted documents
-  """
-  deleteManyCategoriesConnection("Documents to delete" where: CategoryManyWhereInput, skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
-
-  """
-  Publish many Category documents
-  """
-  publishManyCategoriesConnection("Identifies documents in each stage to be published" where: CategoryManyWhereInput, "Stage to find matching documents in" from: Stage = DRAFT, "Stages to publish documents to" to: [Stage!]! = [PUBLISHED], skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
-
-  """
-  Find many Category documents that match criteria in specified stage and unpublish from target stages
-  """
-  unpublishManyCategoriesConnection("Identifies documents in draft stage" where: CategoryManyWhereInput, "Stage to find matching documents in" stage: Stage = DRAFT, "Stages to unpublish documents from" from: [Stage!]! = [PUBLISHED], skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
-
-  """
-  Update many categories
-  """
-  updateManyCategories("Documents to apply update on" where: CategoryManyWhereInput, "Updates to document content" data: CategoryUpdateManyInput!): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (updateManyCategoriesConnection)")
-
-  """
-  Delete many Category documents
-  """
-  deleteManyCategories("Documents to delete" where: CategoryManyWhereInput): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (deleteManyCategoriesConnection)")
-
-  """
-  Publish many Category documents
-  """
-  publishManyCategories("Identifies documents in each stage to be published" where: CategoryManyWhereInput, "Stages to publish documents to" to: [Stage!]! = [PUBLISHED]): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (publishManyCategoriesConnection)")
-
-  """
-  Unpublish many Category documents
-  """
-  unpublishManyCategories("Identifies documents in each stage" where: CategoryManyWhereInput, "Stages to unpublish documents from" from: [Stage!]! = [PUBLISHED]): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (unpublishManyCategoriesConnection)")
-
-  """
-  Schedule to publish one category
-  """
-  schedulePublishCategory("Document to publish" where: CategoryWhereUniqueInput!, "Publishing target stage" to: [Stage!]! = [PUBLISHED], "Release at point in time, will create new release containing this operation" releaseAt: DateTime, "Optionally attach this scheduled operation to an existing release" releaseId: String): Category
-
-  """
-  Unpublish one category from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only.
-  """
-  scheduleUnpublishCategory("Document to unpublish" where: CategoryWhereUniqueInput!, "Stages to unpublish document from" from: [Stage!]! = [PUBLISHED], "Release at point in time, will create new release containing this operation" releaseAt: DateTime, "Optionally attach this scheduled operation to an existing release" releaseId: String): Category
-
-  """
   Create one shopItem
   """
   createShopItem(data: ShopItemCreateInput!): ShopItem
@@ -3993,6 +3939,86 @@ type Mutation {
   Unpublish one shopItem from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only.
   """
   scheduleUnpublishShopItem("Document to unpublish" where: ShopItemWhereUniqueInput!, "Stages to unpublish document from" from: [Stage!]! = [PUBLISHED], "Release at point in time, will create new release containing this operation" releaseAt: DateTime, "Optionally attach this scheduled operation to an existing release" releaseId: String): ShopItem
+
+  """
+  Create one category
+  """
+  createCategory(data: CategoryCreateInput!): Category
+
+  """
+  Update one category
+  """
+  updateCategory(where: CategoryWhereUniqueInput!, data: CategoryUpdateInput!): Category
+
+  """
+  Delete one category from _all_ existing stages. Returns deleted document.
+  """
+  deleteCategory("Document to delete" where: CategoryWhereUniqueInput!): Category
+
+  """
+  Upsert one category
+  """
+  upsertCategory(where: CategoryWhereUniqueInput!, upsert: CategoryUpsertInput!): Category
+
+  """
+  Publish one category
+  """
+  publishCategory("Document to publish" where: CategoryWhereUniqueInput!, "Publishing target stage" to: [Stage!]! = [PUBLISHED]): Category
+
+  """
+  Unpublish one category from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only.
+  """
+  unpublishCategory("Document to unpublish" where: CategoryWhereUniqueInput!, "Stages to unpublish document from" from: [Stage!]! = [PUBLISHED]): Category
+
+  """
+  Update many Category documents
+  """
+  updateManyCategoriesConnection("Documents to apply update on" where: CategoryManyWhereInput, "Updates to document content" data: CategoryUpdateManyInput!, skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
+
+  """
+  Delete many Category documents, return deleted documents
+  """
+  deleteManyCategoriesConnection("Documents to delete" where: CategoryManyWhereInput, skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
+
+  """
+  Publish many Category documents
+  """
+  publishManyCategoriesConnection("Identifies documents in each stage to be published" where: CategoryManyWhereInput, "Stage to find matching documents in" from: Stage = DRAFT, "Stages to publish documents to" to: [Stage!]! = [PUBLISHED], skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
+
+  """
+  Find many Category documents that match criteria in specified stage and unpublish from target stages
+  """
+  unpublishManyCategoriesConnection("Identifies documents in draft stage" where: CategoryManyWhereInput, "Stage to find matching documents in" stage: Stage = DRAFT, "Stages to unpublish documents from" from: [Stage!]! = [PUBLISHED], skip: Int, first: Int, last: Int, before: ID, after: ID): CategoryConnection!
+
+  """
+  Update many categories
+  """
+  updateManyCategories("Documents to apply update on" where: CategoryManyWhereInput, "Updates to document content" data: CategoryUpdateManyInput!): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (updateManyCategoriesConnection)")
+
+  """
+  Delete many Category documents
+  """
+  deleteManyCategories("Documents to delete" where: CategoryManyWhereInput): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (deleteManyCategoriesConnection)")
+
+  """
+  Publish many Category documents
+  """
+  publishManyCategories("Identifies documents in each stage to be published" where: CategoryManyWhereInput, "Stages to publish documents to" to: [Stage!]! = [PUBLISHED]): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (publishManyCategoriesConnection)")
+
+  """
+  Unpublish many Category documents
+  """
+  unpublishManyCategories("Identifies documents in each stage" where: CategoryManyWhereInput, "Stages to unpublish documents from" from: [Stage!]! = [PUBLISHED]): BatchPayload! @deprecated(reason: "Please use the new paginated many mutation (unpublishManyCategoriesConnection)")
+
+  """
+  Schedule to publish one category
+  """
+  schedulePublishCategory("Document to publish" where: CategoryWhereUniqueInput!, "Publishing target stage" to: [Stage!]! = [PUBLISHED], "Release at point in time, will create new release containing this operation" releaseAt: DateTime, "Optionally attach this scheduled operation to an existing release" releaseId: String): Category
+
+  """
+  Unpublish one category from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only.
+  """
+  scheduleUnpublishCategory("Document to unpublish" where: CategoryWhereUniqueInput!, "Stages to unpublish document from" from: [Stage!]! = [PUBLISHED], "Release at point in time, will create new release containing this operation" releaseAt: DateTime, "Optionally attach this scheduled operation to an existing release" releaseId: String): Category
 
   """
   Create one author
@@ -4244,26 +4270,6 @@ type Query {
   entities("The where parameters to query components" where: [EntityWhereInput!]!, "Defines which locales to query for" locales: [Locale!]): [Entity!]
 
   """
-  Retrieve multiple categories
-  """
-  categories(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `Category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): [Category!]!
-
-  """
-  Retrieve a single category
-  """
-  category(where: CategoryWhereUniqueInput!, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `Category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): Category
-
-  """
-  Retrieve multiple categories using the Relay connection interface
-  """
-  categoriesConnection(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `Category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): CategoryConnection!
-
-  """
-  Retrieve document version
-  """
-  categoryVersion(where: VersionWhereInput!): DocumentVersion
-
-  """
   Retrieve multiple shopItems
   """
   shopItems(where: ShopItemWhereInput, orderBy: ShopItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `ShopItem` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): [ShopItem!]!
@@ -4282,6 +4288,26 @@ type Query {
   Retrieve document version
   """
   shopItemVersion(where: VersionWhereInput!): DocumentVersion
+
+  """
+  Retrieve multiple categories
+  """
+  categories(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `Category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): [Category!]!
+
+  """
+  Retrieve a single category
+  """
+  category(where: CategoryWhereUniqueInput!, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `Category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): Category
+
+  """
+  Retrieve multiple categories using the Relay connection interface
+  """
+  categoriesConnection(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int, stage: Stage! = PUBLISHED, "Defines which locales should be returned.\n\nNote that `Category` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree." locales: [Locale!]! = [en]): CategoryConnection!
+
+  """
+  Retrieve document version
+  """
+  categoryVersion(where: VersionWhereInput!): DocumentVersion
 
   """
   Retrieve multiple authors
@@ -6515,6 +6541,8 @@ type ShopItem implements Entity & Node {
 
   images: [String!]!
 
+  isDeleted: Boolean!
+
   """
   User that last published this document
   """
@@ -6591,6 +6619,8 @@ input ShopItemCreateInput {
   categories: [String!]!
 
   images: [String!]
+
+  isDeleted: Boolean!
 
   categoriesRef: CategoryCreateManyInlineInput
 }
@@ -7181,6 +7211,13 @@ input ShopItemManyWhereInput {
   """
   images_contains_none: [String!]
 
+  isDeleted: Boolean
+
+  """
+  Any other value that exists and is not equal to the given value.
+  """
+  isDeleted_not: Boolean
+
   publishedBy: UserWhereInput
 
   updatedBy: UserWhereInput
@@ -7252,6 +7289,10 @@ enum ShopItemOrderByInput {
   images_ASC
 
   images_DESC
+
+  isDeleted_ASC
+
+  isDeleted_DESC
 }
 
 input ShopItemUpdateInput {
@@ -7272,6 +7313,8 @@ input ShopItemUpdateInput {
   categories: [String!]
 
   images: [String!]
+
+  isDeleted: Boolean
 
   categoriesRef: CategoryUpdateManyInlineInput
 }
@@ -7329,6 +7372,8 @@ input ShopItemUpdateManyInput {
   categories: [String!]
 
   images: [String!]
+
+  isDeleted: Boolean
 }
 
 input ShopItemUpdateManyWithNestedWhereInput {
@@ -7967,6 +8012,13 @@ input ShopItemWhereInput {
   Matches if the field array does not contain any of the items provided to the filter
   """
   images_contains_none: [String!]
+
+  isDeleted: Boolean
+
+  """
+  Any other value that exists and is not equal to the given value.
+  """
+  isDeleted_not: Boolean
 
   publishedBy: UserWhereInput
 
