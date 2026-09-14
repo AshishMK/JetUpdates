@@ -35,7 +35,9 @@ import kotlinx.datetime.toInstant
  * This [PreviewParameterProvider](https://developer.android.com/reference/kotlin/androidx/compose/ui/tooling/preview/PreviewParameterProvider)
  * provides list of [UserShopItem] for Composable previews.
  */
-const val IMAGE_HOST_URL = "https://raw.githubusercontent.com/AshishMK/jetupdates-android-demo-images/refs/heads/main/"
+const val IMAGE_HOST_URL =
+    "https://raw.githubusercontent.com/AshishMK/jetupdates-android-demo-images/refs/heads/main/"
+
 class UserShopResourcePreviewParameterProvider : PreviewParameterProvider<List<UserShopItem>> {
 
     override val values: Sequence<List<UserShopItem>> = sequenceOf(shopItems)
@@ -61,6 +63,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "3",
@@ -69,6 +72,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "4",
@@ -77,6 +81,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "5",
@@ -85,6 +90,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "6",
@@ -93,6 +99,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "7",
@@ -101,6 +108,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "8",
@@ -109,6 +117,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "9",
@@ -117,6 +126,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
 
         Category(
@@ -126,6 +136,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "11",
@@ -134,6 +145,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "12",
@@ -142,6 +154,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "13",
@@ -150,6 +163,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "14",
@@ -158,6 +172,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "15",
@@ -166,6 +181,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "16",
@@ -174,6 +190,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "17",
@@ -182,6 +199,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
 
         Category(
@@ -191,6 +209,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "19",
@@ -199,6 +218,8 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "20",
@@ -207,6 +228,8 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "21",
@@ -215,6 +238,8 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "22",
@@ -223,6 +248,8 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "23",
@@ -231,6 +258,8 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "24",
@@ -239,6 +268,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "25",
@@ -247,6 +277,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
 
         Category(
@@ -256,6 +287,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "27",
@@ -264,6 +296,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "28",
@@ -272,6 +305,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "29",
@@ -280,6 +314,7 @@ object PreviewParameterData {
             longDescription = "Stay up to date with the latest events and announcements from Android!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "30",
@@ -288,6 +323,7 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
         ),
         Category(
             id = "31",
@@ -296,6 +332,8 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "32",
@@ -304,6 +342,8 @@ object PreviewParameterData {
             longDescription = "Learn how to optimize your app's user interface - everything that users can see and interact with. Stay up to date on topics such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
             url = "",
+            updatedAt = "-1",
+
         ),
         Category(
             id = "33",
@@ -312,6 +352,7 @@ object PreviewParameterData {
             longDescription = "Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.",
             imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
             url = "",
+            updatedAt = "-1",
         ),
     )
 

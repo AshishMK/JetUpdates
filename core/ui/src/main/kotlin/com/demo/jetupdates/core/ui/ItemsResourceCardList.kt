@@ -217,7 +217,7 @@ fun ItemResourceCardForList2(
                     sharedContentState = rememberSharedContentState(
                         key = SnackSharedElementKey(
                             snackId = userShopItem.id,
-                            origin = userShopItem.id.toString(),
+                            origin = userShopItem.id,
                             type = SnackSharedElementType.Bounds,
                         ),
                     ),

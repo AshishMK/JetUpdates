@@ -36,6 +36,7 @@ class NetworkEntityTest {
             longDescription = "long description",
             url = "URL",
             imageUrl = "image URL",
+            updatedAt = "-1",
         )
         val entity = networkModel.asEntity()
 
@@ -81,6 +82,7 @@ class NetworkEntityTest {
             longDescription = "long description",
             url = "URL",
             imageUrl = "imageUrl",
+            updatedAt = "-1",
         )
 
         val expected = Category(
@@ -90,6 +92,7 @@ class NetworkEntityTest {
             longDescription = "long description",
             url = "URL",
             imageUrl = "imageUrl",
+            updatedAt = "-1",
         )
 
         assertEquals(expected, networkCategory.asExternalModel())
@@ -117,6 +120,7 @@ class NetworkEntityTest {
                 longDescription = "long description 1",
                 url = "url 1",
                 imageUrl = "imageUrl 1",
+                updatedAt = "-1",
             ),
             NetworkCategory(
                 id = "2",
@@ -125,6 +129,7 @@ class NetworkEntityTest {
                 longDescription = "long description 2",
                 url = "url 2",
                 imageUrl = "imageUrl 2",
+                updatedAt = "-1",
             ),
         )
 

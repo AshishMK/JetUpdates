@@ -26,4 +26,5 @@ data class Category(
     val longDescription: String,
     val url: String,
     val imageUrl: String,
+    val updatedAt: String,
 )

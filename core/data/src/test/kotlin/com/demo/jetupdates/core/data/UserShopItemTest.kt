@@ -54,6 +54,7 @@ class UserShopItemTest {
                     longDescription = "Topic 1 long description",
                     url = "Topic 1 URL",
                     imageUrl = "Topic 1 image URL",
+                    updatedAt = "-1",
                 ),
                 Category(
                     id = "2",
@@ -62,6 +63,7 @@ class UserShopItemTest {
                     longDescription = "Topic 2 long description",
                     url = "Topic 2 URL",
                     imageUrl = "Topic 2 image URL",
+                    updatedAt = "-1",
                 ),
             ),
         )

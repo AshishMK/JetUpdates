@@ -65,7 +65,6 @@ class TestAppNetworkDataSource : AppNetworkDataSource {
 
     override suspend fun getCategoryChangeList(after: String?): List<NetworkChangeList> {
         val t = changeLists.getValue(CollectionType.Categories).after(after)
-        println("lass $after ${t.map { it.id }}")
         return t
     }
 

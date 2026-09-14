@@ -38,4 +38,12 @@ dependencies {
     testImplementation(libs.kotlinx.serialization.json)
     testImplementation(projects.core.datastoreTest)
     testImplementation(projects.core.testing)
+
+    // Apollo Runtime
+    testImplementation(libs.apollo.runtime)
+    testImplementation(libs.okhttp.mockwebserver)
+    testImplementation(libs.okhttp)
+    implementation(platform(libs.okhttp.bom))
+    testImplementation(platform(libs.okhttp.bom))
+
 }

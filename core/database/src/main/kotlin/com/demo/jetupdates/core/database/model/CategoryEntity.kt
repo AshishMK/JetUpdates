@@ -50,4 +50,5 @@ fun CategoryEntity.asExternalModel() = Category(
     longDescription = longDescription,
     url = url,
     imageUrl = imageUrl,
+    updatedAt = updatedAt ?: "-1",
 )

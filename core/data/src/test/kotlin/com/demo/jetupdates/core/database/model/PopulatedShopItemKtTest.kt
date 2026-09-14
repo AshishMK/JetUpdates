@@ -67,6 +67,7 @@ class PopulatedShopItemKtTest {
                         longDescription = "long description",
                         url = "URL",
                         imageUrl = "image URL",
+                        updatedAt = "-1",
                     ),
                 ),
             ),

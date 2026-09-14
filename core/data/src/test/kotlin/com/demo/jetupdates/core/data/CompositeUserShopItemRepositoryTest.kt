@@ -173,6 +173,7 @@ private val sampleCategory1 = Category(
     longDescription = "long description",
     url = "URL",
     imageUrl = "image URL",
+    updatedAt = "-1",
 )
 
 private val sampleCategory2 = Category(
@@ -182,6 +183,7 @@ private val sampleCategory2 = Category(
     longDescription = "long description",
     url = "URL",
     imageUrl = "image URL",
+    updatedAt = "-1",
 )
 
 private val sampleShopItems = listOf(

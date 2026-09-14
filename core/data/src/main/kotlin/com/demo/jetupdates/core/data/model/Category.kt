@@ -26,4 +26,5 @@ fun NetworkCategory.asEntity() = CategoryEntity(
     longDescription = longDescription,
     url = url,
     imageUrl = imageUrl,
+    updatedAt = updatedAt,
 )

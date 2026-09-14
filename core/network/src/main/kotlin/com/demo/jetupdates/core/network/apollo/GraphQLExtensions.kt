@@ -47,6 +47,7 @@ object GraphQLExtensions {
         shortDescription = shortDescription ?: "",
         longDescription = longDescription ?: "",
         url = url ?: "",
+        updatedAt = updatedAt,
     )
 
     fun GetShopItemsByIdsQuery.ShopItem.asNetworkShopItem() = NetworkShopItem(

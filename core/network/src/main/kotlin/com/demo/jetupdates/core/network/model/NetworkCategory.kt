@@ -31,6 +31,7 @@ data class NetworkCategory(
     val url: String = "",
     val imageUrl: String = "",
     val followed: Boolean = false,
+    val updatedAt: String = "-1",
 )
 
 fun NetworkCategory.asExternalModel(): Category =
@@ -41,4 +42,5 @@ fun NetworkCategory.asExternalModel(): Category =
         longDescription = longDescription,
         url = url,
         imageUrl = imageUrl,
+        updatedAt = updatedAt,
     )

@@ -50,6 +50,7 @@ internal class FakeCategoriesRepository @Inject constructor(
                     longDescription = it.longDescription,
                     url = it.url,
                     imageUrl = it.imageUrl,
+                    updatedAt = "-1",
                 )
             },
         )

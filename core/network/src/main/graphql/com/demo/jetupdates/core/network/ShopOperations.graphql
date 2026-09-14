@@ -85,8 +85,8 @@ query GetShopItemChangeList($after: DateTime, $first: Int = 100) {
 }
 
 # 3. Fetch full category payloads by a batch of IDs
-query GetCategoriesByIds($ids: [ID!]) {
-  categories(where: { id_in: $ids }) {
+query GetCategoriesByIds($ids: [ID!], $first: Int = 100) {
+  categories(where: { id_in: $ids }, first: $first) {
     id
     name
     shortDescription
@@ -99,8 +99,8 @@ query GetCategoriesByIds($ids: [ID!]) {
 }
 
 # 4. Fetch full shop item payloads by a batch of IDs
-query GetShopItemsByIds($ids: [ID!]) {
-  shopItems(where: { id_in: $ids }) {
+query GetShopItemsByIds($ids: [ID!], $first: Int = 100) {
+  shopItems(where: { id_in: $ids }, first: $first) {
     id
     title
     description
