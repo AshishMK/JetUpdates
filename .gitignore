@@ -50,3 +50,5 @@ captures/
 .kotlin
 *.jks
 *.keystore
+**/build/
+.idea/
