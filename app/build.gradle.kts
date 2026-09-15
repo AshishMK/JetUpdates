@@ -87,6 +87,7 @@ android {
             signingConfig = if(hasKey) signingConfigs.getByName("myKey") else signingConfigs.named("debug").get()
         }
         release {
+            
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
                 .map(String::toBooleanStrict).getOrElse(true)
             applicationIdSuffix = AppBuildType.RELEASE.applicationIdSuffix
